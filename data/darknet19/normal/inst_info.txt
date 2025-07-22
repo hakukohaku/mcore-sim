@@ -1,0 +1,1128 @@
+Instruction33: type 5, layer_id 0, pe_id 0
+    ready_time 37632, exe_time 9261, end_time 37632
+    operands_time: [48, 37632]
+Instruction97: type 5, layer_id 0, pe_id 0
+    ready_time 37632, exe_time 9261, end_time 46893
+    operands_time: [48, 37632]
+Instruction161: type 5, layer_id 0, pe_id 0
+    ready_time 143962, exe_time 7938, end_time 143962
+    operands_time: [89, 37680]
+Instruction225: type 5, layer_id 0, pe_id 0
+    ready_time 181594, exe_time 7938, end_time 181594
+    operands_time: [144003, 181594]
+Instruction289: type 5, layer_id 0, pe_id 0
+    ready_time 181594, exe_time 7938, end_time 189532
+    operands_time: [144003, 181594]
+Instruction353: type 5, layer_id 0, pe_id 0
+    ready_time 310366, exe_time 9261, end_time 310366
+    operands_time: [272782, 310366]
+Instruction417: type 5, layer_id 0, pe_id 0
+    ready_time 310366, exe_time 9261, end_time 319627
+    operands_time: [272782, 310366]
+Instruction481: type 5, layer_id 0, pe_id 0
+    ready_time 416696, exe_time 7938, end_time 416696
+    operands_time: [272823, 310414]
+Instruction545: type 5, layer_id 0, pe_id 0
+    ready_time 454328, exe_time 7938, end_time 454328
+    operands_time: [416737, 454328]
+Instruction609: type 5, layer_id 0, pe_id 0
+    ready_time 454328, exe_time 7938, end_time 462266
+    operands_time: [416737, 454328]
+Instruction673: type 5, layer_id 0, pe_id 0
+    ready_time 583100, exe_time 9261, end_time 583100
+    operands_time: [545516, 583100]
+Instruction737: type 5, layer_id 0, pe_id 0
+    ready_time 583100, exe_time 9261, end_time 592361
+    operands_time: [545516, 583100]
+Instruction801: type 5, layer_id 0, pe_id 0
+    ready_time 689430, exe_time 7938, end_time 689430
+    operands_time: [545557, 583148]
+Instruction865: type 5, layer_id 0, pe_id 0
+    ready_time 727062, exe_time 7938, end_time 727062
+    operands_time: [689471, 727062]
+Instruction929: type 5, layer_id 0, pe_id 0
+    ready_time 727062, exe_time 7938, end_time 735000
+    operands_time: [689471, 727062]
+Instruction993: type 5, layer_id 0, pe_id 0
+    ready_time 855834, exe_time 9261, end_time 855834
+    operands_time: [818250, 855834]
+Instruction1057: type 5, layer_id 0, pe_id 0
+    ready_time 855834, exe_time 9261, end_time 865095
+    operands_time: [818250, 855834]
+Instruction1121: type 5, layer_id 0, pe_id 0
+    ready_time 962164, exe_time 7938, end_time 962164
+    operands_time: [818291, 855882]
+Instruction1185: type 5, layer_id 0, pe_id 0
+    ready_time 999796, exe_time 7938, end_time 999796
+    operands_time: [962205, 999796]
+Instruction1249: type 5, layer_id 0, pe_id 0
+    ready_time 999796, exe_time 7938, end_time 1007734
+    operands_time: [962205, 999796]
+Instruction1313: type 6, layer_id 1, pe_id 0
+    ready_time 1112888, exe_time 98, end_time 1112888
+    operands_time: [1094072, 1112888]
+Instruction1377: type 6, layer_id 1, pe_id 0
+    ready_time 1112888, exe_time 98, end_time 1112986
+    operands_time: [1094072, 1112888]
+Instruction1441: type 6, layer_id 1, pe_id 0
+    ready_time 1119356, exe_time 98, end_time 1119356
+    operands_time: [1097208, 1116024]
+Instruction1505: type 6, layer_id 1, pe_id 0
+    ready_time 1141308, exe_time 98, end_time 1141308
+    operands_time: [1122492, 1141308]
+Instruction1569: type 6, layer_id 1, pe_id 0
+    ready_time 1141308, exe_time 98, end_time 1141406
+    operands_time: [1122492, 1141308]
+Instruction1633: type 6, layer_id 1, pe_id 0
+    ready_time 1169728, exe_time 98, end_time 1169728
+    operands_time: [1150912, 1169728]
+Instruction1697: type 6, layer_id 1, pe_id 0
+    ready_time 1169728, exe_time 98, end_time 1169826
+    operands_time: [1150912, 1169728]
+Instruction1761: type 6, layer_id 1, pe_id 0
+    ready_time 1176196, exe_time 98, end_time 1176196
+    operands_time: [1154048, 1172864]
+Instruction1825: type 6, layer_id 1, pe_id 0
+    ready_time 1198148, exe_time 98, end_time 1198148
+    operands_time: [1179332, 1198148]
+Instruction1889: type 6, layer_id 1, pe_id 0
+    ready_time 1198148, exe_time 98, end_time 1198246
+    operands_time: [1179332, 1198148]
+Instruction1953: type 6, layer_id 1, pe_id 0
+    ready_time 1226568, exe_time 98, end_time 1226568
+    operands_time: [1207752, 1226568]
+Instruction2017: type 6, layer_id 1, pe_id 0
+    ready_time 1226568, exe_time 98, end_time 1226666
+    operands_time: [1207752, 1226568]
+Instruction2081: type 6, layer_id 1, pe_id 0
+    ready_time 1233036, exe_time 98, end_time 1233036
+    operands_time: [1210888, 1229704]
+Instruction2145: type 6, layer_id 1, pe_id 0
+    ready_time 1254988, exe_time 98, end_time 1254988
+    operands_time: [1236172, 1254988]
+Instruction2209: type 6, layer_id 1, pe_id 0
+    ready_time 1254988, exe_time 98, end_time 1255086
+    operands_time: [1236172, 1254988]
+Instruction2273: type 6, layer_id 1, pe_id 0
+    ready_time 1283408, exe_time 98, end_time 1283408
+    operands_time: [1264592, 1283408]
+Instruction2337: type 6, layer_id 1, pe_id 0
+    ready_time 1283408, exe_time 98, end_time 1283506
+    operands_time: [1264592, 1283408]
+Instruction2401: type 6, layer_id 1, pe_id 0
+    ready_time 1289876, exe_time 98, end_time 1289876
+    operands_time: [1267728, 1286544]
+Instruction2465: type 6, layer_id 1, pe_id 0
+    ready_time 1311828, exe_time 98, end_time 1311828
+    operands_time: [1293012, 1311828]
+Instruction2529: type 6, layer_id 1, pe_id 0
+    ready_time 1311828, exe_time 98, end_time 1311926
+    operands_time: [1293012, 1311828]
+Instruction2593: type 6, layer_id 1, pe_id 0
+    ready_time 1340248, exe_time 98, end_time 1340248
+    operands_time: [1321432, 1340248]
+Instruction2657: type 6, layer_id 1, pe_id 0
+    ready_time 1340248, exe_time 98, end_time 1340346
+    operands_time: [1321432, 1340248]
+Instruction2721: type 6, layer_id 1, pe_id 0
+    ready_time 1346716, exe_time 98, end_time 1346716
+    operands_time: [1324568, 1343384]
+Instruction2785: type 6, layer_id 1, pe_id 0
+    ready_time 1368668, exe_time 98, end_time 1368668
+    operands_time: [1349852, 1368668]
+Instruction2849: type 6, layer_id 1, pe_id 0
+    ready_time 1368668, exe_time 98, end_time 1368766
+    operands_time: [1349852, 1368668]
+Instruction2913: type 6, layer_id 1, pe_id 0
+    ready_time 1397088, exe_time 98, end_time 1397088
+    operands_time: [1378272, 1397088]
+Instruction2977: type 6, layer_id 1, pe_id 0
+    ready_time 1397088, exe_time 98, end_time 1397186
+    operands_time: [1378272, 1397088]
+Instruction3041: type 6, layer_id 1, pe_id 0
+    ready_time 1403556, exe_time 98, end_time 1403556
+    operands_time: [1381408, 1400224]
+Instruction3105: type 6, layer_id 1, pe_id 0
+    ready_time 1425508, exe_time 98, end_time 1425508
+    operands_time: [1406692, 1425508]
+Instruction3169: type 6, layer_id 1, pe_id 0
+    ready_time 1425508, exe_time 98, end_time 1425606
+    operands_time: [1406692, 1425508]
+Instruction3233: type 6, layer_id 1, pe_id 0
+    ready_time 1453928, exe_time 98, end_time 1453928
+    operands_time: [1435112, 1453928]
+Instruction3297: type 6, layer_id 1, pe_id 0
+    ready_time 1453928, exe_time 98, end_time 1454026
+    operands_time: [1435112, 1453928]
+Instruction3361: type 6, layer_id 1, pe_id 0
+    ready_time 1460396, exe_time 98, end_time 1460396
+    operands_time: [1438248, 1457064]
+Instruction3425: type 6, layer_id 1, pe_id 0
+    ready_time 1482348, exe_time 98, end_time 1482348
+    operands_time: [1463532, 1482348]
+Instruction3489: type 6, layer_id 1, pe_id 0
+    ready_time 1482348, exe_time 98, end_time 1482446
+    operands_time: [1463532, 1482348]
+Instruction3553: type 6, layer_id 1, pe_id 0
+    ready_time 1510768, exe_time 98, end_time 1510768
+    operands_time: [1491952, 1510768]
+Instruction3617: type 6, layer_id 1, pe_id 0
+    ready_time 1510768, exe_time 98, end_time 1510866
+    operands_time: [1491952, 1510768]
+Instruction3681: type 6, layer_id 1, pe_id 0
+    ready_time 1517236, exe_time 98, end_time 1517236
+    operands_time: [1495088, 1513904]
+Instruction3745: type 6, layer_id 1, pe_id 0
+    ready_time 1539188, exe_time 98, end_time 1539188
+    operands_time: [1520372, 1539188]
+Instruction3809: type 6, layer_id 1, pe_id 0
+    ready_time 1539188, exe_time 98, end_time 1539286
+    operands_time: [1520372, 1539188]
+Instruction3873: type 6, layer_id 1, pe_id 0
+    ready_time 1567608, exe_time 98, end_time 1567608
+    operands_time: [1548792, 1567608]
+Instruction3937: type 6, layer_id 1, pe_id 0
+    ready_time 1567608, exe_time 98, end_time 1567706
+    operands_time: [1548792, 1567608]
+Instruction4001: type 6, layer_id 1, pe_id 0
+    ready_time 1574076, exe_time 98, end_time 1574076
+    operands_time: [1551928, 1570744]
+Instruction4065: type 6, layer_id 1, pe_id 0
+    ready_time 1596028, exe_time 98, end_time 1596028
+    operands_time: [1577212, 1596028]
+Instruction4129: type 6, layer_id 1, pe_id 0
+    ready_time 1596028, exe_time 98, end_time 1596126
+    operands_time: [1577212, 1596028]
+Instruction4193: type 6, layer_id 1, pe_id 0
+    ready_time 1624448, exe_time 98, end_time 1624448
+    operands_time: [1605632, 1624448]
+Instruction4257: type 6, layer_id 1, pe_id 0
+    ready_time 1624448, exe_time 98, end_time 1624546
+    operands_time: [1605632, 1624448]
+Instruction4321: type 6, layer_id 1, pe_id 0
+    ready_time 1630916, exe_time 98, end_time 1630916
+    operands_time: [1608768, 1627584]
+Instruction4385: type 6, layer_id 1, pe_id 0
+    ready_time 1652868, exe_time 98, end_time 1652868
+    operands_time: [1634052, 1652868]
+Instruction4449: type 6, layer_id 1, pe_id 0
+    ready_time 1652868, exe_time 98, end_time 1652966
+    operands_time: [1634052, 1652868]
+Instruction4513: type 6, layer_id 1, pe_id 0
+    ready_time 1681288, exe_time 98, end_time 1681288
+    operands_time: [1662472, 1681288]
+Instruction4577: type 6, layer_id 1, pe_id 0
+    ready_time 1681288, exe_time 98, end_time 1681386
+    operands_time: [1662472, 1681288]
+Instruction4641: type 6, layer_id 1, pe_id 0
+    ready_time 1687756, exe_time 98, end_time 1687756
+    operands_time: [1665608, 1684424]
+Instruction4705: type 6, layer_id 1, pe_id 0
+    ready_time 1709708, exe_time 98, end_time 1709708
+    operands_time: [1690892, 1709708]
+Instruction4769: type 6, layer_id 1, pe_id 0
+    ready_time 1709708, exe_time 98, end_time 1709806
+    operands_time: [1690892, 1709708]
+Instruction4833: type 6, layer_id 1, pe_id 0
+    ready_time 1738128, exe_time 98, end_time 1738128
+    operands_time: [1719312, 1738128]
+Instruction4897: type 6, layer_id 1, pe_id 0
+    ready_time 1738128, exe_time 98, end_time 1738226
+    operands_time: [1719312, 1738128]
+Instruction4961: type 6, layer_id 1, pe_id 0
+    ready_time 1744596, exe_time 98, end_time 1744596
+    operands_time: [1722448, 1741264]
+Instruction5025: type 6, layer_id 1, pe_id 0
+    ready_time 1766548, exe_time 98, end_time 1766548
+    operands_time: [1747732, 1766548]
+Instruction5089: type 6, layer_id 1, pe_id 0
+    ready_time 1766548, exe_time 98, end_time 1766646
+    operands_time: [1747732, 1766548]
+Instruction5153: type 6, layer_id 1, pe_id 0
+    ready_time 1794968, exe_time 98, end_time 1794968
+    operands_time: [1776152, 1794968]
+Instruction5217: type 6, layer_id 1, pe_id 0
+    ready_time 1794968, exe_time 98, end_time 1795066
+    operands_time: [1776152, 1794968]
+Instruction5281: type 6, layer_id 1, pe_id 0
+    ready_time 1801436, exe_time 98, end_time 1801436
+    operands_time: [1779288, 1798104]
+Instruction5345: type 6, layer_id 1, pe_id 0
+    ready_time 1823388, exe_time 98, end_time 1823388
+    operands_time: [1804572, 1823388]
+Instruction5649: type 5, layer_id 2, pe_id 0
+    ready_time 1854846, exe_time 35280, end_time 1854846
+    operands_time: [1807708, 1807708, 1810844, 1813980, 1836030, 1836030, 1836030, 1836030, 1842302, 1842302, 1842302, 1842302, 1848574, 1848574, 1849294, 1854846, 1854846]
+Instruction5953: type 5, layer_id 2, pe_id 0
+    ready_time 1946574, exe_time 31752, end_time 1946574
+    operands_time: [1854846, 1855566, 1861118, 1861118, 1861118, 1927758, 1927758, 1927758, 1927758, 1934030, 1934030, 1934030, 1934030, 1940302, 1940302, 1940950, 1946574]
+Instruction6257: type 5, layer_id 2, pe_id 0
+    ready_time 2026014, exe_time 31752, end_time 2026014
+    operands_time: [1946574, 1946574, 1947222, 1952846, 1952846, 1952846, 2012822, 2012822, 2012822, 2012822, 2019094, 2019094, 2019094, 2019094, 2025366, 2025366, 2026014]
+Instruction6561: type 5, layer_id 2, pe_id 0
+    ready_time 2104806, exe_time 31752, end_time 2104806
+    operands_time: [2031638, 2031638, 2031638, 2032286, 2037910, 2037910, 2037910, 2092262, 2092262, 2092262, 2092262, 2098534, 2098534, 2098534, 2098534, 2099182, 2104806]
+Instruction6865: type 5, layer_id 2, pe_id 0
+    ready_time 2177974, exe_time 31752, end_time 2177974
+    operands_time: [2111078, 2111078, 2111078, 2111078, 2117350, 2117350, 2117350, 2117350, 2171054, 2171054, 2171054, 2171054, 2177326, 2177326, 2177326, 2177326, 2177974]
+Instruction7169: type 5, layer_id 2, pe_id 0
+    ready_time 2250494, exe_time 31752, end_time 2250494
+    operands_time: [2215998, 2215998, 2215998, 2222270, 2222270, 2222270, 2228542, 2228542, 2228542, 2244222, 2244222, 2244222, 2244222, 2244870, 2250494, 2250494, 2250494]
+Instruction7473: type 5, layer_id 2, pe_id 0
+    ready_time 2341830, exe_time 31752, end_time 2341830
+    operands_time: [2316742, 2316742, 2316742, 2316742, 2323014, 2323014, 2323014, 2323014, 2329286, 2329286, 2335558, 2335558, 2335558, 2335558, 2336206, 2341830, 2341830]
+Instruction7777: type 5, layer_id 2, pe_id 0
+    ready_time 2433166, exe_time 35280, end_time 2433166
+    operands_time: [2341830, 2408078, 2408078, 2408078, 2408078, 2414350, 2414350, 2414350, 2414350, 2420622, 2420622, 2426894, 2426894, 2426894, 2426894, 2427614, 2433166]
+Instruction8081: type 5, layer_id 2, pe_id 0
+    ready_time 2525542, exe_time 31752, end_time 2525542
+    operands_time: [2433166, 2433166, 2506078, 2506078, 2506078, 2506078, 2512350, 2512350, 2512350, 2512350, 2518622, 2518622, 2524894, 2524894, 2524894, 2524894, 2525542]
+Instruction8385: type 5, layer_id 2, pe_id 0
+    ready_time 2610606, exe_time 31752, end_time 2610606
+    operands_time: [2531166, 2531166, 2531166, 2591790, 2591790, 2591790, 2591790, 2598062, 2598062, 2598062, 2598062, 2604334, 2604334, 2604982, 2610606, 2610606, 2610606]
+Instruction8689: type 5, layer_id 2, pe_id 0
+    ready_time 2695670, exe_time 31752, end_time 2695670
+    operands_time: [2611254, 2616878, 2616878, 2616878, 2676854, 2676854, 2676854, 2676854, 2683126, 2683126, 2683126, 2683126, 2689398, 2689398, 2690046, 2695670, 2695670]
+Instruction8993: type 5, layer_id 2, pe_id 0
+    ready_time 2780734, exe_time 31752, end_time 2780734
+    operands_time: [2695670, 2696318, 2701942, 2701942, 2701942, 2761918, 2761918, 2761918, 2761918, 2768190, 2768190, 2768190, 2768190, 2774462, 2774462, 2775110, 2780734]
+Instruction9297: type 5, layer_id 2, pe_id 0
+    ready_time 2860174, exe_time 31752, end_time 2860174
+    operands_time: [2780734, 2780734, 2781382, 2787006, 2787006, 2787006, 2846982, 2846982, 2846982, 2846982, 2853254, 2853254, 2853254, 2853254, 2859526, 2859526, 2860174]
+Instruction9601: type 5, layer_id 2, pe_id 0
+    ready_time 2938966, exe_time 31752, end_time 2938966
+    operands_time: [2865798, 2865798, 2865798, 2866446, 2872070, 2872070, 2872070, 2926422, 2926422, 2926422, 2926422, 2932694, 2932694, 2932694, 2932694, 2933342, 2938966]
+Instruction9905: type 5, layer_id 2, pe_id 0
+    ready_time 3012206, exe_time 35280, end_time 3012206
+    operands_time: [2945238, 2945238, 2945238, 2945238, 2951510, 2951510, 2951510, 2951510, 3005214, 3005214, 3005214, 3005214, 3011486, 3011486, 3011486, 3011486, 3012206]
+Instruction10209: type 5, layer_id 2, pe_id 0
+    ready_time 3091390, exe_time 31752, end_time 3091390
+    operands_time: [3053758, 3053758, 3053758, 3060030, 3060030, 3060030, 3066302, 3066302, 3066302, 3085118, 3085118, 3085118, 3085118, 3085766, 3091390, 3091390, 3091390]
+Instruction10513: type 5, layer_id 2, pe_id 0
+    ready_time 3182726, exe_time 31752, end_time 3182726
+    operands_time: [3157638, 3157638, 3157638, 3157638, 3163910, 3163910, 3163910, 3163910, 3170182, 3170182, 3176454, 3176454, 3176454, 3176454, 3177102, 3182726, 3182726]
+Instruction10817: type 5, layer_id 2, pe_id 0
+    ready_time 3274062, exe_time 31752, end_time 3274062
+    operands_time: [3182726, 3248974, 3248974, 3248974, 3248974, 3255246, 3255246, 3255246, 3255246, 3261518, 3261518, 3267790, 3267790, 3267790, 3267790, 3268438, 3274062]
+Instruction11121: type 5, layer_id 2, pe_id 0
+    ready_time 3359774, exe_time 31752, end_time 3359774
+    operands_time: [3274062, 3274062, 3340310, 3340310, 3340310, 3340310, 3346582, 3346582, 3346582, 3346582, 3352854, 3352854, 3359126, 3359126, 3359126, 3359126, 3359774]
+Instruction11425: type 5, layer_id 2, pe_id 0
+    ready_time 3444838, exe_time 31752, end_time 3444838
+    operands_time: [3365398, 3365398, 3365398, 3426022, 3426022, 3426022, 3426022, 3432294, 3432294, 3432294, 3432294, 3438566, 3438566, 3439214, 3444838, 3444838, 3444838]
+Instruction11729: type 5, layer_id 2, pe_id 0
+    ready_time 3529902, exe_time 31752, end_time 3529902
+    operands_time: [3445486, 3451110, 3451110, 3451110, 3511086, 3511086, 3511086, 3511086, 3517358, 3517358, 3517358, 3517358, 3523630, 3523630, 3524278, 3529902, 3529902]
+Instruction12033: type 5, layer_id 2, pe_id 0
+    ready_time 3614966, exe_time 35280, end_time 3614966
+    operands_time: [3529902, 3530550, 3536174, 3536174, 3536174, 3596150, 3596150, 3596150, 3596150, 3602422, 3602422, 3602422, 3602422, 3608694, 3608694, 3609414, 3614966]
+Instruction12337: type 5, layer_id 2, pe_id 0
+    ready_time 3701070, exe_time 31752, end_time 3701070
+    operands_time: [3614966, 3614966, 3615686, 3621238, 3621238, 3621238, 3687878, 3687878, 3687878, 3687878, 3694150, 3694150, 3694150, 3694150, 3700422, 3700422, 3701070]
+Instruction12641: type 5, layer_id 2, pe_id 0
+    ready_time 3779862, exe_time 31752, end_time 3779862
+    operands_time: [3706694, 3706694, 3706694, 3707342, 3712966, 3712966, 3712966, 3767318, 3767318, 3767318, 3767318, 3773590, 3773590, 3773590, 3773590, 3774238, 3779862]
+Instruction12945: type 5, layer_id 2, pe_id 0
+    ready_time 3853030, exe_time 31752, end_time 3853030
+    operands_time: [3786134, 3786134, 3786134, 3786134, 3792406, 3792406, 3792406, 3792406, 3846110, 3846110, 3846110, 3846110, 3852382, 3852382, 3852382, 3852382, 3853030]
+Instruction13249: type 5, layer_id 2, pe_id 0
+    ready_time 3925550, exe_time 31752, end_time 3925550
+    operands_time: [3891054, 3891054, 3891054, 3897326, 3897326, 3897326, 3903598, 3903598, 3903598, 3919278, 3919278, 3919278, 3919278, 3919926, 3925550, 3925550, 3925550]
+Instruction13553: type 5, layer_id 2, pe_id 0
+    ready_time 4016886, exe_time 31752, end_time 4016886
+    operands_time: [3991798, 3991798, 3991798, 3991798, 3998070, 3998070, 3998070, 3998070, 4004342, 4004342, 4010614, 4010614, 4010614, 4010614, 4011262, 4016886, 4016886]
+Instruction13857: type 5, layer_id 2, pe_id 0
+    ready_time 4108222, exe_time 31752, end_time 4108222
+    operands_time: [4016886, 4083134, 4083134, 4083134, 4083134, 4089406, 4089406, 4089406, 4089406, 4095678, 4095678, 4101950, 4101950, 4101950, 4101950, 4102598, 4108222]
+Instruction14001: type 6, layer_id 3, pe_id 0
+    ready_time 4171222, exe_time 42, end_time 4171222
+    operands_time: [4103462, 4103630, 4169710, 4169710, 4169710, 4169710, 4171222]
+Instruction14145: type 6, layer_id 3, pe_id 0
+    ready_time 4175464, exe_time 42, end_time 4175464
+    operands_time: [4171222, 4171222, 4171390, 4175464, 4175464, 4175464, 4175464]
+Instruction14289: type 6, layer_id 3, pe_id 0
+    ready_time 4181176, exe_time 42, end_time 4181176
+    operands_time: [4176976, 4176976, 4176976, 4177144, 4181176, 4181176, 4181176]
+Instruction14433: type 6, layer_id 3, pe_id 0
+    ready_time 4186888, exe_time 42, end_time 4186888
+    operands_time: [4181344, 4182688, 4182688, 4182688, 4182856, 4186888, 4186888]
+Instruction14577: type 6, layer_id 3, pe_id 0
+    ready_time 4192600, exe_time 42, end_time 4192600
+    operands_time: [4186888, 4187056, 4188400, 4188400, 4188400, 4188568, 4192600]
+Instruction14721: type 6, layer_id 3, pe_id 0
+    ready_time 4196800, exe_time 42, end_time 4196800
+    operands_time: [4192600, 4192600, 4192768, 4194112, 4194112, 4194112, 4194280]
+Instruction14865: type 6, layer_id 3, pe_id 0
+    ready_time 4199824, exe_time 42, end_time 4199824
+    operands_time: [4198312, 4198312, 4198312, 4198480, 4199824, 4199824, 4199824]
+Instruction15009: type 6, layer_id 3, pe_id 0
+    ready_time 4205368, exe_time 42, end_time 4205368
+    operands_time: [4202680, 4202680, 4202848, 4204192, 4204192, 4204360, 4205368]
+Instruction15153: type 6, layer_id 3, pe_id 0
+    ready_time 4211122, exe_time 42, end_time 4211122
+    operands_time: [4209610, 4209610, 4209610, 4209778, 4211122, 4211122, 4211122]
+Instruction15297: type 6, layer_id 3, pe_id 0
+    ready_time 4216876, exe_time 42, end_time 4216876
+    operands_time: [4211458, 4215364, 4215364, 4215364, 4215364, 4216876, 4216876]
+Instruction15441: type 6, layer_id 3, pe_id 0
+    ready_time 4222630, exe_time 42, end_time 4222630
+    operands_time: [4216876, 4217044, 4221118, 4221118, 4221118, 4221118, 4222630]
+Instruction15585: type 6, layer_id 3, pe_id 0
+    ready_time 4226872, exe_time 42, end_time 4226872
+    operands_time: [4222630, 4222630, 4222798, 4226872, 4226872, 4226872, 4226872]
+Instruction15729: type 6, layer_id 3, pe_id 0
+    ready_time 4232584, exe_time 42, end_time 4232584
+    operands_time: [4228384, 4228384, 4228384, 4228552, 4232584, 4232584, 4232584]
+Instruction15873: type 6, layer_id 3, pe_id 0
+    ready_time 4238296, exe_time 42, end_time 4238296
+    operands_time: [4232752, 4234096, 4234096, 4234096, 4234264, 4238296, 4238296]
+Instruction16017: type 6, layer_id 3, pe_id 0
+    ready_time 4244008, exe_time 42, end_time 4244008
+    operands_time: [4238296, 4238464, 4239808, 4239808, 4239808, 4239976, 4244008]
+Instruction16161: type 6, layer_id 3, pe_id 0
+    ready_time 4248208, exe_time 42, end_time 4248208
+    operands_time: [4244008, 4244008, 4244176, 4245520, 4245520, 4245520, 4245688]
+Instruction16305: type 6, layer_id 3, pe_id 0
+    ready_time 4251232, exe_time 42, end_time 4251232
+    operands_time: [4249720, 4249720, 4249720, 4249888, 4251232, 4251232, 4251232]
+Instruction16449: type 6, layer_id 3, pe_id 0
+    ready_time 4256776, exe_time 42, end_time 4256776
+    operands_time: [4254088, 4254088, 4254256, 4255600, 4255600, 4255768, 4256776]
+Instruction16593: type 6, layer_id 3, pe_id 0
+    ready_time 4262530, exe_time 42, end_time 4262530
+    operands_time: [4261018, 4261018, 4261018, 4261186, 4262530, 4262530, 4262530]
+Instruction16737: type 6, layer_id 3, pe_id 0
+    ready_time 4268284, exe_time 42, end_time 4268284
+    operands_time: [4262866, 4266772, 4266772, 4266772, 4266772, 4268284, 4268284]
+Instruction16881: type 6, layer_id 3, pe_id 0
+    ready_time 4274038, exe_time 42, end_time 4274038
+    operands_time: [4268284, 4268452, 4272526, 4272526, 4272526, 4272526, 4274038]
+Instruction17025: type 6, layer_id 3, pe_id 0
+    ready_time 4278280, exe_time 42, end_time 4278280
+    operands_time: [4274038, 4274038, 4274206, 4278280, 4278280, 4278280, 4278280]
+Instruction17169: type 6, layer_id 3, pe_id 0
+    ready_time 4283992, exe_time 42, end_time 4283992
+    operands_time: [4279792, 4279792, 4279792, 4279960, 4283992, 4283992, 4283992]
+Instruction17313: type 6, layer_id 3, pe_id 0
+    ready_time 4289704, exe_time 42, end_time 4289704
+    operands_time: [4284160, 4285504, 4285504, 4285504, 4285672, 4289704, 4289704]
+Instruction17457: type 6, layer_id 3, pe_id 0
+    ready_time 4295416, exe_time 42, end_time 4295416
+    operands_time: [4289704, 4289872, 4291216, 4291216, 4291216, 4291384, 4295416]
+Instruction17601: type 6, layer_id 3, pe_id 0
+    ready_time 4299616, exe_time 42, end_time 4299616
+    operands_time: [4295416, 4295416, 4295584, 4296928, 4296928, 4296928, 4297096]
+Instruction17745: type 6, layer_id 3, pe_id 0
+    ready_time 4302640, exe_time 42, end_time 4302640
+    operands_time: [4301128, 4301128, 4301128, 4301296, 4302640, 4302640, 4302640]
+Instruction17889: type 6, layer_id 3, pe_id 0
+    ready_time 4308184, exe_time 42, end_time 4308184
+    operands_time: [4305496, 4305496, 4305664, 4307008, 4307008, 4307176, 4308184]
+Instruction18033: type 6, layer_id 3, pe_id 0
+    ready_time 4313938, exe_time 42, end_time 4313938
+    operands_time: [4312426, 4312426, 4312426, 4312594, 4313938, 4313938, 4313938]
+Instruction18177: type 6, layer_id 3, pe_id 0
+    ready_time 4319692, exe_time 42, end_time 4319692
+    operands_time: [4314274, 4318180, 4318180, 4318180, 4318180, 4319692, 4319692]
+Instruction18321: type 6, layer_id 3, pe_id 0
+    ready_time 4325446, exe_time 42, end_time 4325446
+    operands_time: [4319692, 4319860, 4323934, 4323934, 4323934, 4323934, 4325446]
+Instruction18465: type 6, layer_id 3, pe_id 0
+    ready_time 4329688, exe_time 42, end_time 4329688
+    operands_time: [4325446, 4325446, 4325614, 4329688, 4329688, 4329688, 4329688]
+Instruction18609: type 6, layer_id 3, pe_id 0
+    ready_time 4335400, exe_time 42, end_time 4335400
+    operands_time: [4331200, 4331200, 4331200, 4331368, 4335400, 4335400, 4335400]
+Instruction18753: type 6, layer_id 3, pe_id 0
+    ready_time 4341112, exe_time 42, end_time 4341112
+    operands_time: [4335568, 4336912, 4336912, 4336912, 4337080, 4341112, 4341112]
+Instruction18897: type 6, layer_id 3, pe_id 0
+    ready_time 4346824, exe_time 42, end_time 4346824
+    operands_time: [4341112, 4341280, 4342624, 4342624, 4342624, 4342792, 4346824]
+Instruction19041: type 6, layer_id 3, pe_id 0
+    ready_time 4351024, exe_time 42, end_time 4351024
+    operands_time: [4346824, 4346824, 4346992, 4348336, 4348336, 4348336, 4348504]
+Instruction19185: type 6, layer_id 3, pe_id 0
+    ready_time 4354048, exe_time 42, end_time 4354048
+    operands_time: [4352536, 4352536, 4352536, 4352704, 4354048, 4354048, 4354048]
+Instruction19329: type 6, layer_id 3, pe_id 0
+    ready_time 4359592, exe_time 42, end_time 4359592
+    operands_time: [4356904, 4356904, 4357072, 4358416, 4358416, 4358584, 4359592]
+Instruction19473: type 6, layer_id 3, pe_id 0
+    ready_time 4365346, exe_time 42, end_time 4365346
+    operands_time: [4363834, 4363834, 4363834, 4364002, 4365346, 4365346, 4365346]
+Instruction19617: type 6, layer_id 3, pe_id 0
+    ready_time 4371100, exe_time 42, end_time 4371100
+    operands_time: [4365682, 4369588, 4369588, 4369588, 4369588, 4371100, 4371100]
+Instruction19761: type 6, layer_id 3, pe_id 0
+    ready_time 4376854, exe_time 42, end_time 4376854
+    operands_time: [4371100, 4371268, 4375342, 4375342, 4375342, 4375342, 4376854]
+Instruction19905: type 6, layer_id 3, pe_id 0
+    ready_time 4381096, exe_time 42, end_time 4381096
+    operands_time: [4376854, 4376854, 4377022, 4381096, 4381096, 4381096, 4381096]
+Instruction20049: type 6, layer_id 3, pe_id 0
+    ready_time 4386808, exe_time 42, end_time 4386808
+    operands_time: [4382608, 4382608, 4382608, 4382776, 4386808, 4386808, 4386808]
+Instruction20193: type 6, layer_id 3, pe_id 0
+    ready_time 4392520, exe_time 42, end_time 4392520
+    operands_time: [4386976, 4388320, 4388320, 4388320, 4388488, 4392520, 4392520]
+Instruction20337: type 6, layer_id 3, pe_id 0
+    ready_time 4398232, exe_time 42, end_time 4398232
+    operands_time: [4392520, 4392688, 4394032, 4394032, 4394032, 4394200, 4398232]
+Instruction20481: type 6, layer_id 3, pe_id 0
+    ready_time 4402432, exe_time 42, end_time 4402432
+    operands_time: [4398232, 4398232, 4398400, 4399744, 4399744, 4399744, 4399912]
+Instruction20625: type 6, layer_id 3, pe_id 0
+    ready_time 4405456, exe_time 42, end_time 4405456
+    operands_time: [4403944, 4403944, 4403944, 4404112, 4405456, 4405456, 4405456]
+Instruction20769: type 6, layer_id 3, pe_id 0
+    ready_time 4411000, exe_time 42, end_time 4411000
+    operands_time: [4408312, 4408312, 4408480, 4409824, 4409824, 4409992, 4411000]
+Instruction20913: type 6, layer_id 3, pe_id 0
+    ready_time 4416754, exe_time 42, end_time 4416754
+    operands_time: [4415242, 4415242, 4415242, 4415410, 4416754, 4416754, 4416754]
+Instruction21057: type 6, layer_id 3, pe_id 0
+    ready_time 4422508, exe_time 42, end_time 4422508
+    operands_time: [4417090, 4420996, 4420996, 4420996, 4420996, 4422508, 4422508]
+Instruction21201: type 6, layer_id 3, pe_id 0
+    ready_time 4428262, exe_time 42, end_time 4428262
+    operands_time: [4422508, 4422676, 4426750, 4426750, 4426750, 4426750, 4428262]
+Instruction21345: type 6, layer_id 3, pe_id 0
+    ready_time 4432504, exe_time 42, end_time 4432504
+    operands_time: [4428262, 4428262, 4428430, 4432504, 4432504, 4432504, 4432504]
+Instruction21489: type 6, layer_id 3, pe_id 0
+    ready_time 4438216, exe_time 42, end_time 4438216
+    operands_time: [4434016, 4434016, 4434016, 4434184, 4438216, 4438216, 4438216]
+Instruction21633: type 6, layer_id 3, pe_id 0
+    ready_time 4443928, exe_time 42, end_time 4443928
+    operands_time: [4438384, 4439728, 4439728, 4439728, 4439896, 4443928, 4443928]
+Instruction21777: type 6, layer_id 3, pe_id 0
+    ready_time 4449640, exe_time 42, end_time 4449640
+    operands_time: [4443928, 4444096, 4445440, 4445440, 4445440, 4445608, 4449640]
+Instruction21921: type 6, layer_id 3, pe_id 0
+    ready_time 4453840, exe_time 42, end_time 4453840
+    operands_time: [4449640, 4449640, 4449808, 4451152, 4451152, 4451152, 4451320]
+Instruction22065: type 6, layer_id 3, pe_id 0
+    ready_time 4456864, exe_time 42, end_time 4456864
+    operands_time: [4455352, 4455352, 4455352, 4455520, 4456864, 4456864, 4456864]
+Instruction22209: type 6, layer_id 3, pe_id 0
+    ready_time 4462408, exe_time 42, end_time 4462408
+    operands_time: [4459720, 4459720, 4459888, 4461232, 4461232, 4461400, 4462408]
+Instruction22353: type 6, layer_id 3, pe_id 0
+    ready_time 4468162, exe_time 42, end_time 4468162
+    operands_time: [4466650, 4466650, 4466650, 4466818, 4468162, 4468162, 4468162]
+Instruction22497: type 6, layer_id 3, pe_id 0
+    ready_time 4473916, exe_time 42, end_time 4473916
+    operands_time: [4468498, 4472404, 4472404, 4472404, 4472404, 4473916, 4473916]
+Instruction22641: type 6, layer_id 3, pe_id 0
+    ready_time 4479670, exe_time 42, end_time 4479670
+    operands_time: [4473916, 4474084, 4478158, 4478158, 4478158, 4478158, 4479670]
+Instruction22785: type 6, layer_id 3, pe_id 0
+    ready_time 4483912, exe_time 42, end_time 4483912
+    operands_time: [4479670, 4479670, 4479838, 4483912, 4483912, 4483912, 4483912]
+Instruction22929: type 6, layer_id 3, pe_id 0
+    ready_time 4489624, exe_time 42, end_time 4489624
+    operands_time: [4485424, 4485424, 4485424, 4485592, 4489624, 4489624, 4489624]
+Instruction23073: type 6, layer_id 3, pe_id 0
+    ready_time 4495336, exe_time 42, end_time 4495336
+    operands_time: [4489792, 4491136, 4491136, 4491136, 4491304, 4495336, 4495336]
+Instruction23165: type 5, layer_id 4, pe_id 0
+    ready_time 4513768, exe_time 16128, end_time 4513768
+    operands_time: [4494288, 4494752, 4496144, 4496144, 4513768]
+Instruction23253: type 5, layer_id 4, pe_id 0
+    ready_time 4548792, exe_time 16128, end_time 4548792
+    operands_time: [4530360, 4530824, 4531288, 4531752, 4548792]
+Instruction23341: type 5, layer_id 4, pe_id 0
+    ready_time 4583577, exe_time 16128, end_time 4583577
+    operands_time: [4531288, 4532216, 4566537, 4567001, 4583577]
+Instruction23429: type 5, layer_id 4, pe_id 0
+    ready_time 4599930, exe_time 16128, end_time 4599930
+    operands_time: [4565609, 4566537, 4567929, 4568393, 4585433]
+Instruction23517: type 5, layer_id 4, pe_id 0
+    ready_time 4618826, exe_time 16128, end_time 4618826
+    operands_time: [4600394, 4600858, 4601322, 4601786, 4618826]
+Instruction23605: type 5, layer_id 4, pe_id 0
+    ready_time 4653611, exe_time 16128, end_time 4653611
+    operands_time: [4601322, 4636107, 4636571, 4637035, 4653611]
+Instruction23693: type 5, layer_id 4, pe_id 0
+    ready_time 4688396, exe_time 16128, end_time 4688396
+    operands_time: [4636571, 4637499, 4638427, 4638427, 4688396]
+Instruction23781: type 5, layer_id 4, pe_id 0
+    ready_time 4689324, exe_time 16128, end_time 4704524
+    operands_time: [4670428, 4670892, 4671820, 4671820, 4689324]
+Instruction23869: type 5, layer_id 4, pe_id 0
+    ready_time 4739773, exe_time 16128, end_time 4739773
+    operands_time: [4721341, 4721805, 4722269, 4722733, 4739773]
+Instruction23957: type 5, layer_id 4, pe_id 0
+    ready_time 4774558, exe_time 16128, end_time 4774558
+    operands_time: [4722269, 4723197, 4724125, 4757518, 4774558]
+Instruction24045: type 5, layer_id 4, pe_id 0
+    ready_time 4775950, exe_time 16128, end_time 4790686
+    operands_time: [4756590, 4757054, 4758446, 4758446, 4775950]
+Instruction24133: type 5, layer_id 4, pe_id 0
+    ready_time 4825710, exe_time 16128, end_time 4825710
+    operands_time: [4807278, 4807742, 4808206, 4808670, 4825710]
+Instruction24221: type 5, layer_id 4, pe_id 0
+    ready_time 4860495, exe_time 16128, end_time 4860495
+    operands_time: [4808206, 4809134, 4843455, 4843919, 4860495]
+Instruction24309: type 5, layer_id 4, pe_id 0
+    ready_time 4876848, exe_time 16128, end_time 4876848
+    operands_time: [4842527, 4843455, 4844847, 4845311, 4862351]
+Instruction24397: type 5, layer_id 4, pe_id 0
+    ready_time 4895744, exe_time 16128, end_time 4895744
+    operands_time: [4877312, 4877776, 4878240, 4878704, 4895744]
+Instruction24485: type 5, layer_id 4, pe_id 0
+    ready_time 4930529, exe_time 16128, end_time 4930529
+    operands_time: [4878240, 4913025, 4913489, 4913953, 4930529]
+Instruction24573: type 5, layer_id 4, pe_id 0
+    ready_time 4965314, exe_time 16128, end_time 4965314
+    operands_time: [4913489, 4914417, 4915345, 4915345, 4965314]
+Instruction24661: type 5, layer_id 4, pe_id 0
+    ready_time 4966242, exe_time 16128, end_time 4981442
+    operands_time: [4947346, 4947810, 4948738, 4948738, 4966242]
+Instruction24749: type 5, layer_id 4, pe_id 0
+    ready_time 5016691, exe_time 16128, end_time 5016691
+    operands_time: [4998259, 4998723, 4999187, 4999651, 5016691]
+Instruction24837: type 5, layer_id 4, pe_id 0
+    ready_time 5051476, exe_time 16128, end_time 5051476
+    operands_time: [4999187, 5000115, 5001043, 5034436, 5051476]
+Instruction24925: type 5, layer_id 4, pe_id 0
+    ready_time 5052868, exe_time 16128, end_time 5067604
+    operands_time: [5033508, 5033972, 5035364, 5035364, 5052868]
+Instruction25013: type 5, layer_id 4, pe_id 0
+    ready_time 5102628, exe_time 16128, end_time 5102628
+    operands_time: [5084196, 5084660, 5085124, 5085588, 5102628]
+Instruction25101: type 5, layer_id 4, pe_id 0
+    ready_time 5137413, exe_time 16128, end_time 5137413
+    operands_time: [5085124, 5086052, 5120373, 5120837, 5137413]
+Instruction25189: type 5, layer_id 4, pe_id 0
+    ready_time 5153766, exe_time 16128, end_time 5153766
+    operands_time: [5119445, 5120373, 5121765, 5122229, 5139269]
+Instruction25277: type 5, layer_id 4, pe_id 0
+    ready_time 5172662, exe_time 16128, end_time 5172662
+    operands_time: [5154230, 5154694, 5155158, 5155622, 5172662]
+Instruction25365: type 5, layer_id 4, pe_id 0
+    ready_time 5207447, exe_time 16128, end_time 5207447
+    operands_time: [5155158, 5189943, 5190407, 5190871, 5207447]
+Instruction25453: type 5, layer_id 4, pe_id 0
+    ready_time 5242232, exe_time 16128, end_time 5242232
+    operands_time: [5190407, 5191335, 5192263, 5192263, 5242232]
+Instruction25541: type 5, layer_id 4, pe_id 0
+    ready_time 5243160, exe_time 16128, end_time 5258360
+    operands_time: [5224264, 5224728, 5225656, 5225656, 5243160]
+Instruction25629: type 5, layer_id 4, pe_id 0
+    ready_time 5293609, exe_time 16128, end_time 5293609
+    operands_time: [5275177, 5275641, 5276105, 5276569, 5293609]
+Instruction25717: type 5, layer_id 4, pe_id 0
+    ready_time 5328394, exe_time 16128, end_time 5328394
+    operands_time: [5276105, 5277033, 5277961, 5311354, 5328394]
+Instruction25805: type 5, layer_id 4, pe_id 0
+    ready_time 5329786, exe_time 16128, end_time 5344522
+    operands_time: [5310426, 5310890, 5312282, 5312282, 5329786]
+Instruction25893: type 5, layer_id 4, pe_id 0
+    ready_time 5379546, exe_time 16128, end_time 5379546
+    operands_time: [5361114, 5361578, 5362042, 5362506, 5379546]
+Instruction25981: type 5, layer_id 4, pe_id 0
+    ready_time 5414331, exe_time 16128, end_time 5414331
+    operands_time: [5362042, 5362970, 5397291, 5397755, 5414331]
+Instruction26069: type 5, layer_id 4, pe_id 0
+    ready_time 5430684, exe_time 16128, end_time 5430684
+    operands_time: [5396363, 5397291, 5398683, 5399147, 5416187]
+Instruction26157: type 5, layer_id 4, pe_id 0
+    ready_time 5449580, exe_time 16128, end_time 5449580
+    operands_time: [5431148, 5431612, 5432076, 5432540, 5449580]
+Instruction26245: type 5, layer_id 4, pe_id 0
+    ready_time 5484365, exe_time 16128, end_time 5484365
+    operands_time: [5432076, 5466861, 5467325, 5467789, 5484365]
+Instruction26333: type 5, layer_id 4, pe_id 0
+    ready_time 5519150, exe_time 16128, end_time 5519150
+    operands_time: [5467325, 5468253, 5469181, 5469181, 5519150]
+Instruction26421: type 5, layer_id 4, pe_id 0
+    ready_time 5520078, exe_time 16128, end_time 5535278
+    operands_time: [5501182, 5501646, 5502574, 5502574, 5520078]
+Instruction26509: type 5, layer_id 4, pe_id 0
+    ready_time 5570527, exe_time 16128, end_time 5570527
+    operands_time: [5552095, 5552559, 5553023, 5553487, 5570527]
+Instruction26597: type 5, layer_id 4, pe_id 0
+    ready_time 5605312, exe_time 16128, end_time 5605312
+    operands_time: [5553023, 5553951, 5554879, 5588272, 5605312]
+Instruction26685: type 5, layer_id 4, pe_id 0
+    ready_time 5606704, exe_time 16128, end_time 5621440
+    operands_time: [5587344, 5587808, 5589200, 5589200, 5606704]
+Instruction26773: type 5, layer_id 4, pe_id 0
+    ready_time 5656464, exe_time 16128, end_time 5656464
+    operands_time: [5638032, 5638496, 5638960, 5639424, 5656464]
+Instruction26861: type 5, layer_id 4, pe_id 0
+    ready_time 5691249, exe_time 16128, end_time 5691249
+    operands_time: [5638960, 5639888, 5674209, 5674673, 5691249]
+Instruction26949: type 5, layer_id 4, pe_id 0
+    ready_time 5707602, exe_time 16128, end_time 5707602
+    operands_time: [5673281, 5674209, 5675601, 5676065, 5693105]
+Instruction27037: type 5, layer_id 4, pe_id 0
+    ready_time 5726498, exe_time 16128, end_time 5726498
+    operands_time: [5708066, 5708530, 5708994, 5709458, 5726498]
+Instruction27125: type 5, layer_id 4, pe_id 0
+    ready_time 5761283, exe_time 16128, end_time 5761283
+    operands_time: [5708994, 5743779, 5744243, 5744707, 5761283]
+Instruction27213: type 5, layer_id 4, pe_id 0
+    ready_time 5796068, exe_time 16128, end_time 5796068
+    operands_time: [5744243, 5745171, 5746099, 5746099, 5796068]
+Instruction27301: type 5, layer_id 4, pe_id 0
+    ready_time 5796996, exe_time 16128, end_time 5812196
+    operands_time: [5778100, 5778564, 5779492, 5779492, 5796996]
+Instruction27389: type 5, layer_id 4, pe_id 0
+    ready_time 5847445, exe_time 16128, end_time 5847445
+    operands_time: [5829013, 5829477, 5829941, 5830405, 5847445]
+Instruction27477: type 5, layer_id 4, pe_id 0
+    ready_time 5882230, exe_time 16128, end_time 5882230
+    operands_time: [5829941, 5830869, 5831797, 5865190, 5882230]
+Instruction27565: type 5, layer_id 4, pe_id 0
+    ready_time 5883622, exe_time 16128, end_time 5898358
+    operands_time: [5864262, 5864726, 5866118, 5866118, 5883622]
+Instruction27653: type 5, layer_id 4, pe_id 0
+    ready_time 5933382, exe_time 16128, end_time 5933382
+    operands_time: [5914950, 5915414, 5915878, 5916342, 5933382]
+Instruction27741: type 5, layer_id 4, pe_id 0
+    ready_time 5968167, exe_time 16128, end_time 5968167
+    operands_time: [5915878, 5916806, 5951127, 5951591, 5968167]
+Instruction27829: type 5, layer_id 4, pe_id 0
+    ready_time 5984520, exe_time 16128, end_time 5984520
+    operands_time: [5950199, 5951127, 5952519, 5952983, 5970023]
+Instruction27917: type 5, layer_id 4, pe_id 0
+    ready_time 6003416, exe_time 16128, end_time 6003416
+    operands_time: [5984984, 5985448, 5985912, 5986376, 6003416]
+Instruction28005: type 5, layer_id 4, pe_id 0
+    ready_time 6038201, exe_time 16128, end_time 6038201
+    operands_time: [5985912, 6020697, 6021161, 6021625, 6038201]
+Instruction28093: type 5, layer_id 4, pe_id 0
+    ready_time 6072986, exe_time 16128, end_time 6072986
+    operands_time: [6021161, 6022089, 6023017, 6023017, 6072986]
+Instruction28181: type 5, layer_id 4, pe_id 0
+    ready_time 6073914, exe_time 16128, end_time 6089114
+    operands_time: [6055018, 6055482, 6056410, 6056410, 6073914]
+Instruction28269: type 5, layer_id 4, pe_id 0
+    ready_time 6124363, exe_time 16128, end_time 6124363
+    operands_time: [6105931, 6106395, 6106859, 6107323, 6124363]
+Instruction28357: type 5, layer_id 4, pe_id 0
+    ready_time 6159148, exe_time 16128, end_time 6159148
+    operands_time: [6106859, 6107787, 6108715, 6142108, 6159148]
+Instruction28445: type 5, layer_id 4, pe_id 0
+    ready_time 6160540, exe_time 16128, end_time 6175276
+    operands_time: [6141180, 6141644, 6143036, 6143036, 6160540]
+Instruction28533: type 5, layer_id 4, pe_id 0
+    ready_time 6210300, exe_time 16128, end_time 6210300
+    operands_time: [6191868, 6192332, 6192796, 6193260, 6210300]
+Instruction28621: type 5, layer_id 4, pe_id 0
+    ready_time 6245085, exe_time 16128, end_time 6245085
+    operands_time: [6192796, 6193724, 6228045, 6228509, 6245085]
+Instruction28709: type 5, layer_id 4, pe_id 0
+    ready_time 6261438, exe_time 16128, end_time 6261438
+    operands_time: [6227117, 6228045, 6229437, 6229901, 6246941]
+Instruction29169: type 5, layer_id 6, pe_id 0
+    ready_time 6286526, exe_time 112896, end_time 6286526
+    operands_time: [6270654, 6286526, 6286526]
+Instruction29249: type 5, layer_id 6, pe_id 0
+    ready_time 6449598, exe_time 112896, end_time 6449598
+    operands_time: [6286526, 6295742, 6295742]
+Instruction29329: type 5, layer_id 6, pe_id 0
+    ready_time 6474686, exe_time 112896, end_time 6562494
+    operands_time: [6458814, 6474686, 6474686]
+Instruction29409: type 5, layer_id 6, pe_id 0
+    ready_time 6725566, exe_time 112896, end_time 6725566
+    operands_time: [6474686, 6483902, 6483902]
+Instruction29489: type 5, layer_id 6, pe_id 0
+    ready_time 6750654, exe_time 112896, end_time 6838462
+    operands_time: [6734782, 6750654, 6750654]
+Instruction29569: type 5, layer_id 6, pe_id 0
+    ready_time 7001534, exe_time 112896, end_time 7001534
+    operands_time: [6750654, 6759870, 6759870]
+Instruction29649: type 5, layer_id 6, pe_id 0
+    ready_time 7026622, exe_time 112896, end_time 7114430
+    operands_time: [7010750, 7026622, 7026622]
+Instruction29729: type 5, layer_id 6, pe_id 0
+    ready_time 7277502, exe_time 112896, end_time 7277502
+    operands_time: [7026622, 7035838, 7035838]
+Instruction29793: type 6, layer_id 7, pe_id 0
+    ready_time 7279294, exe_time 14, end_time 7390398
+    operands_time: [7279294, 7279294]
+Instruction29857: type 6, layer_id 7, pe_id 0
+    ready_time 7279294, exe_time 14, end_time 7390412
+    operands_time: [7279294, 7279294]
+Instruction29921: type 6, layer_id 7, pe_id 0
+    ready_time 7442366, exe_time 14, end_time 7442380
+    operands_time: [7442366, 7442366]
+Instruction29985: type 6, layer_id 7, pe_id 0
+    ready_time 7442366, exe_time 14, end_time 7442366
+    operands_time: [7442143, 7442366]
+Instruction30049: type 6, layer_id 7, pe_id 0
+    ready_time 7444158, exe_time 14, end_time 7444158
+    operands_time: [7442366, 7444158]
+Instruction30113: type 6, layer_id 7, pe_id 0
+    ready_time 7445950, exe_time 14, end_time 7445950
+    operands_time: [7445950, 7445950]
+Instruction30177: type 6, layer_id 7, pe_id 0
+    ready_time 7445950, exe_time 14, end_time 7445964
+    operands_time: [7445950, 7445950]
+Instruction30241: type 6, layer_id 7, pe_id 0
+    ready_time 7448666, exe_time 14, end_time 7448666
+    operands_time: [7448666, 7448666]
+Instruction30305: type 6, layer_id 7, pe_id 0
+    ready_time 7496340, exe_time 14, end_time 7496340
+    operands_time: [7448666, 7496340]
+Instruction30369: type 6, layer_id 7, pe_id 0
+    ready_time 7797396, exe_time 14, end_time 7797396
+    operands_time: [7609236, 7797396]
+Instruction30433: type 6, layer_id 7, pe_id 0
+    ready_time 8098452, exe_time 14, end_time 8098452
+    operands_time: [7910292, 8098452]
+Instruction30497: type 6, layer_id 7, pe_id 0
+    ready_time 8399508, exe_time 14, end_time 8399508
+    operands_time: [8211348, 8399508]
+Instruction30561: type 6, layer_id 7, pe_id 0
+    ready_time 8402210, exe_time 14, end_time 8402210
+    operands_time: [8402210, 8402210]
+Instruction30625: type 6, layer_id 7, pe_id 0
+    ready_time 8402210, exe_time 14, end_time 8402224
+    operands_time: [8402210, 8402210]
+Instruction30689: type 6, layer_id 7, pe_id 0
+    ready_time 8404002, exe_time 14, end_time 8404002
+    operands_time: [8404002, 8404002]
+Instruction30753: type 6, layer_id 7, pe_id 0
+    ready_time 8405794, exe_time 14, end_time 8405794
+    operands_time: [8405794, 8405794]
+Instruction30817: type 6, layer_id 7, pe_id 0
+    ready_time 8405794, exe_time 14, end_time 8405808
+    operands_time: [8405794, 8405794]
+Instruction30881: type 6, layer_id 7, pe_id 0
+    ready_time 8408510, exe_time 14, end_time 8408510
+    operands_time: [8408510, 8408510]
+Instruction30945: type 6, layer_id 7, pe_id 0
+    ready_time 8408510, exe_time 14, end_time 8408524
+    operands_time: [8408510, 8408510]
+Instruction31009: type 6, layer_id 7, pe_id 0
+    ready_time 8410302, exe_time 14, end_time 8410302
+    operands_time: [8410302, 8410302]
+Instruction31073: type 6, layer_id 7, pe_id 0
+    ready_time 8412094, exe_time 14, end_time 8412094
+    operands_time: [8412094, 8412094]
+Instruction31137: type 6, layer_id 7, pe_id 0
+    ready_time 8412094, exe_time 14, end_time 8412108
+    operands_time: [8412094, 8412094]
+Instruction31201: type 6, layer_id 7, pe_id 0
+    ready_time 8414810, exe_time 14, end_time 8414810
+    operands_time: [8414810, 8414810]
+Instruction31265: type 6, layer_id 7, pe_id 0
+    ready_time 8421921, exe_time 14, end_time 8421921
+    operands_time: [8414810, 8421921]
+Instruction31329: type 6, layer_id 7, pe_id 0
+    ready_time 8422831, exe_time 14, end_time 8422831
+    operands_time: [8414810, 8416602]
+Instruction31393: type 6, layer_id 7, pe_id 0
+    ready_time 8424623, exe_time 14, end_time 8424623
+    operands_time: [8424623, 8424623]
+Instruction31457: type 6, layer_id 7, pe_id 0
+    ready_time 8424623, exe_time 14, end_time 8424637
+    operands_time: [8424623, 8424623]
+Instruction31521: type 6, layer_id 7, pe_id 0
+    ready_time 8427339, exe_time 14, end_time 8427339
+    operands_time: [8427339, 8427339]
+Instruction31585: type 6, layer_id 7, pe_id 0
+    ready_time 8427339, exe_time 14, end_time 8427353
+    operands_time: [8427339, 8427339]
+Instruction31649: type 6, layer_id 7, pe_id 0
+    ready_time 8429131, exe_time 14, end_time 8429131
+    operands_time: [8429131, 8429131]
+Instruction31713: type 6, layer_id 7, pe_id 0
+    ready_time 8430923, exe_time 14, end_time 8430923
+    operands_time: [8430923, 8430923]
+Instruction31777: type 6, layer_id 7, pe_id 0
+    ready_time 8430923, exe_time 14, end_time 8430937
+    operands_time: [8430923, 8430923]
+Instruction31841: type 6, layer_id 7, pe_id 0
+    ready_time 8433639, exe_time 14, end_time 8433639
+    operands_time: [8433639, 8433639]
+Instruction31905: type 6, layer_id 7, pe_id 0
+    ready_time 8433639, exe_time 14, end_time 8433653
+    operands_time: [8433639, 8433639]
+Instruction31969: type 6, layer_id 7, pe_id 0
+    ready_time 8435431, exe_time 14, end_time 8435431
+    operands_time: [8435431, 8435431]
+Instruction32033: type 6, layer_id 7, pe_id 0
+    ready_time 8437223, exe_time 14, end_time 8437223
+    operands_time: [8437223, 8437223]
+Instruction32097: type 6, layer_id 7, pe_id 0
+    ready_time 8437223, exe_time 14, end_time 8437237
+    operands_time: [8437223, 8437223]
+Instruction32161: type 6, layer_id 7, pe_id 0
+    ready_time 8439939, exe_time 14, end_time 8439939
+    operands_time: [8439939, 8439939]
+Instruction32225: type 6, layer_id 7, pe_id 0
+    ready_time 8439939, exe_time 14, end_time 8439953
+    operands_time: [8439939, 8439939]
+Instruction32289: type 6, layer_id 7, pe_id 0
+    ready_time 8441731, exe_time 14, end_time 8441731
+    operands_time: [8441731, 8441731]
+Instruction32353: type 6, layer_id 7, pe_id 0
+    ready_time 8443523, exe_time 14, end_time 8443523
+    operands_time: [8443523, 8443523]
+Instruction32417: type 6, layer_id 7, pe_id 0
+    ready_time 8443523, exe_time 14, end_time 8443537
+    operands_time: [8443523, 8443523]
+Instruction32481: type 6, layer_id 7, pe_id 0
+    ready_time 8446239, exe_time 14, end_time 8446239
+    operands_time: [8446239, 8446239]
+Instruction32545: type 6, layer_id 7, pe_id 0
+    ready_time 8446239, exe_time 14, end_time 8446253
+    operands_time: [8446239, 8446239]
+Instruction32609: type 6, layer_id 7, pe_id 0
+    ready_time 8448031, exe_time 14, end_time 8448031
+    operands_time: [8448031, 8448031]
+Instruction32673: type 6, layer_id 7, pe_id 0
+    ready_time 8449823, exe_time 14, end_time 8449823
+    operands_time: [8449823, 8449823]
+Instruction32737: type 6, layer_id 7, pe_id 0
+    ready_time 8449823, exe_time 14, end_time 8449837
+    operands_time: [8449823, 8449823]
+Instruction32801: type 6, layer_id 7, pe_id 0
+    ready_time 8452539, exe_time 14, end_time 8452539
+    operands_time: [8452539, 8452539]
+Instruction32865: type 6, layer_id 7, pe_id 0
+    ready_time 8452539, exe_time 14, end_time 8452553
+    operands_time: [8452539, 8452539]
+Instruction32929: type 6, layer_id 7, pe_id 0
+    ready_time 8454331, exe_time 14, end_time 8454331
+    operands_time: [8454331, 8454331]
+Instruction32993: type 6, layer_id 7, pe_id 0
+    ready_time 8456123, exe_time 14, end_time 8456123
+    operands_time: [8456123, 8456123]
+Instruction33057: type 6, layer_id 7, pe_id 0
+    ready_time 8456123, exe_time 14, end_time 8456137
+    operands_time: [8456123, 8456123]
+Instruction33121: type 6, layer_id 7, pe_id 0
+    ready_time 8458839, exe_time 14, end_time 8458839
+    operands_time: [8458839, 8458839]
+Instruction33185: type 6, layer_id 7, pe_id 0
+    ready_time 8458839, exe_time 14, end_time 8458853
+    operands_time: [8458839, 8458839]
+Instruction33249: type 6, layer_id 7, pe_id 0
+    ready_time 8460631, exe_time 14, end_time 8460631
+    operands_time: [8460631, 8460631]
+Instruction33313: type 6, layer_id 7, pe_id 0
+    ready_time 8462423, exe_time 14, end_time 8462423
+    operands_time: [8462423, 8462423]
+Instruction33377: type 6, layer_id 7, pe_id 0
+    ready_time 8462423, exe_time 14, end_time 8462437
+    operands_time: [8462423, 8462423]
+Instruction33441: type 6, layer_id 7, pe_id 0
+    ready_time 8465139, exe_time 14, end_time 8465139
+    operands_time: [8465139, 8465139]
+Instruction33505: type 6, layer_id 7, pe_id 0
+    ready_time 8465139, exe_time 14, end_time 8465153
+    operands_time: [8465139, 8465139]
+Instruction33569: type 6, layer_id 7, pe_id 0
+    ready_time 8466931, exe_time 14, end_time 8466931
+    operands_time: [8466931, 8466931]
+Instruction33633: type 6, layer_id 7, pe_id 0
+    ready_time 8468723, exe_time 14, end_time 8468723
+    operands_time: [8468723, 8468723]
+Instruction33697: type 6, layer_id 7, pe_id 0
+    ready_time 8468723, exe_time 14, end_time 8468737
+    operands_time: [8468723, 8468723]
+Instruction33761: type 6, layer_id 7, pe_id 0
+    ready_time 8471439, exe_time 14, end_time 8471439
+    operands_time: [8471439, 8471439]
+Instruction33825: type 6, layer_id 7, pe_id 0
+    ready_time 8471439, exe_time 14, end_time 8471453
+    operands_time: [8471439, 8471439]
+Instruction33889: type 5, layer_id 8, pe_id 0
+    ready_time 8546959, exe_time 32256, end_time 8546959
+    operands_time: [8472335, 8473231, 8474127, 8475023, 8546959]
+Instruction33935: type 5, layer_id 8, pe_id 0
+    ready_time 8579440, exe_time 32256, end_time 8579440
+    operands_time: [8475023, 8475023, 8475919, 8476815, 8548751]
+Instruction33981: type 5, layer_id 8, pe_id 0
+    ready_time 8654064, exe_time 32256, end_time 8654064
+    operands_time: [8580336, 8580336, 8581232, 8581232, 8654064]
+Instruction34027: type 5, layer_id 8, pe_id 0
+    ready_time 8760273, exe_time 32256, end_time 8760273
+    operands_time: [8582128, 8687441, 8687441, 8688337, 8760273]
+Instruction34073: type 5, layer_id 8, pe_id 0
+    ready_time 8866482, exe_time 32256, end_time 8866482
+    operands_time: [8688337, 8689233, 8689233, 8690129, 8866482]
+Instruction34119: type 5, layer_id 8, pe_id 0
+    ready_time 8868274, exe_time 32256, end_time 8898738
+    operands_time: [8793650, 8794546, 8794546, 8794546, 8868274]
+Instruction34165: type 5, layer_id 8, pe_id 0
+    ready_time 9005843, exe_time 32256, end_time 9005843
+    operands_time: [8932115, 8932115, 8933011, 8933011, 9005843]
+Instruction34211: type 5, layer_id 8, pe_id 0
+    ready_time 9112052, exe_time 32256, end_time 9112052
+    operands_time: [8933907, 8933907, 8934803, 9039220, 9112052]
+Instruction34257: type 5, layer_id 8, pe_id 0
+    ready_time 9113844, exe_time 32256, end_time 9144308
+    operands_time: [9039220, 9040116, 9040116, 9041012, 9113844]
+Instruction34303: type 5, layer_id 8, pe_id 0
+    ready_time 9251188, exe_time 32256, end_time 9251188
+    operands_time: [9177460, 9177460, 9178356, 9178356, 9251188]
+Instruction34349: type 5, layer_id 8, pe_id 0
+    ready_time 9357397, exe_time 32256, end_time 9357397
+    operands_time: [9179252, 9179252, 9284565, 9285461, 9357397]
+Instruction34395: type 5, layer_id 8, pe_id 0
+    ready_time 9389878, exe_time 32256, end_time 9389878
+    operands_time: [9285461, 9285461, 9286357, 9287253, 9359189]
+Instruction34441: type 5, layer_id 8, pe_id 0
+    ready_time 9464502, exe_time 32256, end_time 9464502
+    operands_time: [9390774, 9390774, 9391670, 9391670, 9464502]
+Instruction34487: type 5, layer_id 8, pe_id 0
+    ready_time 9570711, exe_time 32256, end_time 9570711
+    operands_time: [9392566, 9497879, 9497879, 9498775, 9570711]
+Instruction34533: type 5, layer_id 8, pe_id 0
+    ready_time 9676920, exe_time 32256, end_time 9676920
+    operands_time: [9498775, 9499671, 9499671, 9500567, 9676920]
+Instruction34579: type 5, layer_id 8, pe_id 0
+    ready_time 9678712, exe_time 32256, end_time 9709176
+    operands_time: [9604088, 9604984, 9604984, 9604984, 9678712]
+Instruction34625: type 5, layer_id 8, pe_id 0
+    ready_time 9816281, exe_time 32256, end_time 9816281
+    operands_time: [9742553, 9742553, 9743449, 9743449, 9816281]
+Instruction34671: type 5, layer_id 8, pe_id 0
+    ready_time 9922490, exe_time 32256, end_time 9922490
+    operands_time: [9744345, 9744345, 9745241, 9849658, 9922490]
+Instruction34717: type 5, layer_id 8, pe_id 0
+    ready_time 9924282, exe_time 32256, end_time 9954746
+    operands_time: [9849658, 9850554, 9850554, 9851450, 9924282]
+Instruction34763: type 5, layer_id 8, pe_id 0
+    ready_time 10061626, exe_time 32256, end_time 10061626
+    operands_time: [9987898, 9987898, 9988794, 9988794, 10061626]
+Instruction34809: type 5, layer_id 8, pe_id 0
+    ready_time 10167835, exe_time 32256, end_time 10167835
+    operands_time: [9989690, 9989690, 10095003, 10095899, 10167835]
+Instruction34855: type 5, layer_id 8, pe_id 0
+    ready_time 10200316, exe_time 32256, end_time 10200316
+    operands_time: [10095899, 10095899, 10096795, 10097691, 10169627]
+Instruction34901: type 5, layer_id 8, pe_id 0
+    ready_time 10274940, exe_time 32256, end_time 10274940
+    operands_time: [10201212, 10201212, 10202108, 10202108, 10274940]
+Instruction34947: type 5, layer_id 8, pe_id 0
+    ready_time 10381149, exe_time 32256, end_time 10381149
+    operands_time: [10203004, 10308317, 10308317, 10309213, 10381149]
+Instruction34993: type 5, layer_id 8, pe_id 0
+    ready_time 10487358, exe_time 32256, end_time 10487358
+    operands_time: [10309213, 10310109, 10310109, 10311005, 10487358]
+Instruction35039: type 5, layer_id 8, pe_id 0
+    ready_time 10489150, exe_time 32256, end_time 10519614
+    operands_time: [10414526, 10415422, 10415422, 10415422, 10489150]
+Instruction35085: type 5, layer_id 8, pe_id 0
+    ready_time 10626719, exe_time 32256, end_time 10626719
+    operands_time: [10552991, 10552991, 10553887, 10553887, 10626719]
+Instruction35131: type 5, layer_id 8, pe_id 0
+    ready_time 10732928, exe_time 32256, end_time 10732928
+    operands_time: [10554783, 10554783, 10555679, 10660096, 10732928]
+Instruction35177: type 5, layer_id 8, pe_id 0
+    ready_time 10734720, exe_time 32256, end_time 10765184
+    operands_time: [10660096, 10660992, 10660992, 10661888, 10734720]
+Instruction35223: type 5, layer_id 8, pe_id 0
+    ready_time 10872064, exe_time 32256, end_time 10872064
+    operands_time: [10798336, 10798336, 10799232, 10799232, 10872064]
+Instruction35269: type 5, layer_id 8, pe_id 0
+    ready_time 10978273, exe_time 32256, end_time 10978273
+    operands_time: [10800128, 10800128, 10905441, 10906337, 10978273]
+Instruction35315: type 5, layer_id 8, pe_id 0
+    ready_time 11010754, exe_time 32256, end_time 11010754
+    operands_time: [10906337, 10906337, 10907233, 10908129, 10980065]
+Instruction35361: type 5, layer_id 8, pe_id 0
+    ready_time 11085378, exe_time 32256, end_time 11085378
+    operands_time: [11011650, 11011650, 11012546, 11012546, 11085378]
+Instruction35407: type 5, layer_id 8, pe_id 0
+    ready_time 11191587, exe_time 32256, end_time 11191587
+    operands_time: [11013442, 11118755, 11118755, 11119651, 11191587]
+Instruction35453: type 5, layer_id 8, pe_id 0
+    ready_time 11297796, exe_time 32256, end_time 11297796
+    operands_time: [11119651, 11120547, 11120547, 11121443, 11297796]
+Instruction35499: type 5, layer_id 8, pe_id 0
+    ready_time 11299588, exe_time 32256, end_time 11330052
+    operands_time: [11224964, 11225860, 11225860, 11225860, 11299588]
+Instruction35545: type 5, layer_id 8, pe_id 0
+    ready_time 11437157, exe_time 32256, end_time 11437157
+    operands_time: [11363429, 11363429, 11364325, 11364325, 11437157]
+Instruction35591: type 5, layer_id 8, pe_id 0
+    ready_time 11543366, exe_time 32256, end_time 11543366
+    operands_time: [11365221, 11365221, 11366117, 11470534, 11543366]
+Instruction35637: type 5, layer_id 8, pe_id 0
+    ready_time 11545158, exe_time 32256, end_time 11575622
+    operands_time: [11470534, 11471430, 11471430, 11472326, 11545158]
+Instruction35683: type 5, layer_id 8, pe_id 0
+    ready_time 11682502, exe_time 32256, end_time 11682502
+    operands_time: [11608774, 11608774, 11609670, 11609670, 11682502]
+Instruction35729: type 5, layer_id 8, pe_id 0
+    ready_time 11788711, exe_time 32256, end_time 11788711
+    operands_time: [11610566, 11610566, 11715879, 11716775, 11788711]
+Instruction35775: type 5, layer_id 8, pe_id 0
+    ready_time 11821192, exe_time 32256, end_time 11821192
+    operands_time: [11716775, 11716775, 11717671, 11718567, 11790503]
+Instruction35821: type 5, layer_id 8, pe_id 0
+    ready_time 11895816, exe_time 32256, end_time 11895816
+    operands_time: [11822088, 11822088, 11822984, 11822984, 11895816]
+Instruction35867: type 5, layer_id 8, pe_id 0
+    ready_time 12002025, exe_time 32256, end_time 12002025
+    operands_time: [11823880, 11929193, 11929193, 11930089, 12002025]
+Instruction35913: type 5, layer_id 8, pe_id 0
+    ready_time 12108234, exe_time 32256, end_time 12108234
+    operands_time: [11930089, 11930985, 11930985, 11931881, 12108234]
+Instruction35959: type 5, layer_id 8, pe_id 0
+    ready_time 12110026, exe_time 32256, end_time 12140490
+    operands_time: [12035402, 12036298, 12036298, 12036298, 12110026]
+Instruction36005: type 5, layer_id 8, pe_id 0
+    ready_time 12247595, exe_time 32256, end_time 12247595
+    operands_time: [12173867, 12173867, 12174763, 12174763, 12247595]
+Instruction36051: type 5, layer_id 8, pe_id 0
+    ready_time 12353804, exe_time 32256, end_time 12353804
+    operands_time: [12175659, 12175659, 12176555, 12280972, 12353804]
+Instruction36097: type 5, layer_id 8, pe_id 0
+    ready_time 12355596, exe_time 32256, end_time 12386060
+    operands_time: [12280972, 12281868, 12281868, 12282764, 12355596]
+Instruction36143: type 5, layer_id 8, pe_id 0
+    ready_time 12492940, exe_time 32256, end_time 12492940
+    operands_time: [12419212, 12419212, 12420108, 12420108, 12492940]
+Instruction36189: type 5, layer_id 8, pe_id 0
+    ready_time 12599149, exe_time 32256, end_time 12599149
+    operands_time: [12421004, 12421004, 12526317, 12527213, 12599149]
+Instruction36235: type 5, layer_id 8, pe_id 0
+    ready_time 12631630, exe_time 32256, end_time 12631630
+    operands_time: [12527213, 12527213, 12528109, 12529005, 12600941]
+Instruction36281: type 5, layer_id 8, pe_id 0
+    ready_time 12706254, exe_time 32256, end_time 12706254
+    operands_time: [12632526, 12632526, 12633422, 12633422, 12706254]
+Instruction36327: type 5, layer_id 8, pe_id 0
+    ready_time 12812463, exe_time 32256, end_time 12812463
+    operands_time: [12634318, 12739631, 12739631, 12740527, 12812463]
+Instruction36373: type 5, layer_id 8, pe_id 0
+    ready_time 12918672, exe_time 32256, end_time 12918672
+    operands_time: [12740527, 12741423, 12741423, 12742319, 12918672]
+Instruction36419: type 5, layer_id 8, pe_id 0
+    ready_time 12920464, exe_time 32256, end_time 12950928
+    operands_time: [12845840, 12846736, 12846736, 12846736, 12920464]
+Instruction36465: type 5, layer_id 8, pe_id 0
+    ready_time 13058033, exe_time 32256, end_time 13058033
+    operands_time: [12984305, 12984305, 12985201, 12985201, 13058033]
+Instruction36511: type 5, layer_id 8, pe_id 0
+    ready_time 13164242, exe_time 32256, end_time 13164242
+    operands_time: [12986097, 12986097, 12986993, 13091410, 13164242]
+Instruction36557: type 5, layer_id 8, pe_id 0
+    ready_time 13166034, exe_time 32256, end_time 13196498
+    operands_time: [13091410, 13092306, 13092306, 13093202, 13166034]
+Instruction36603: type 5, layer_id 8, pe_id 0
+    ready_time 13303378, exe_time 32256, end_time 13303378
+    operands_time: [13229650, 13229650, 13230546, 13230546, 13303378]
+Instruction36649: type 5, layer_id 8, pe_id 0
+    ready_time 13409587, exe_time 32256, end_time 13409587
+    operands_time: [13231442, 13231442, 13336755, 13337651, 13409587]
+Instruction36695: type 5, layer_id 8, pe_id 0
+    ready_time 13442068, exe_time 32256, end_time 13442068
+    operands_time: [13337651, 13337651, 13338547, 13339443, 13411379]
+Instruction36741: type 5, layer_id 8, pe_id 0
+    ready_time 13516692, exe_time 32256, end_time 13516692
+    operands_time: [13442964, 13442964, 13443860, 13443860, 13516692]
+Instruction36787: type 5, layer_id 8, pe_id 0
+    ready_time 13622901, exe_time 32256, end_time 13622901
+    operands_time: [13444756, 13550069, 13550069, 13550965, 13622901]

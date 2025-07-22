@@ -1,0 +1,4 @@
+pydantic
+simpy
+logging
+matplotlib

@@ -1,0 +1,671 @@
+2025-06-14 20:50:14 - PE - DEBUG - PE0 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 1, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 2, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 4, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE1 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 5, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 6, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 8, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE2 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 9, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 10, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 12, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE3 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 13, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 14, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 16, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE4 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 2, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 4, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE5 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 6, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 8, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE6 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 10, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 12, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE7 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 14, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 16, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE8 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 2, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 4, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE9 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 6, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 8, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE10 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 10, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 12, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE11 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 14, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 16, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE12 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 3, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 4, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 2, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE13 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 7, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 8, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 6, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE14 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 11, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 12, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 10, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE15 is task_block_updating
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 0, index is 15, type is 0
+2025-06-14 20:50:14 - PE - DEBUG - para is 0/0, feat is 0/0
+2025-06-14 20:50:14 - PE - DEBUG - insert 0 into waiting queue
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 1, index is 16, type is 2
+2025-06-14 20:50:14 - PE - DEBUG - ------------------------------
+2025-06-14 20:50:14 - PE - DEBUG - inst_id is 2, index is 14, type is 3
+2025-06-14 20:50:14 - PE - DEBUG - PE0 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE0 add a <class 'src.sim_type.Read'> task(id:1, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE1 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE1 add a <class 'src.sim_type.Read'> task(id:5, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE2 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE2 add a <class 'src.sim_type.Read'> task(id:9, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE3 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE3 add a <class 'src.sim_type.Read'> task(id:13, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE12 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE12 add a <class 'src.sim_type.Read'> task(id:3, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - Before AnyOf yield
+2025-06-14 20:50:14 - PE - DEBUG - PE12's running_queue is [<Process(run) object at 0x7652ffdc9cf0>]
+2025-06-14 20:50:14 - PE - DEBUG - PE12 is yielding AnyOf
+2025-06-14 20:50:14 - PE - DEBUG - PE13 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE13 add a <class 'src.sim_type.Read'> task(id:7, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE14 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE14 add a <class 'src.sim_type.Read'> task(id:11, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE15 block_counter: 0/10
+2025-06-14 20:50:14 - PE - INFO - Time 0.00: PE15 add a <class 'src.sim_type.Read'> task(id:15, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE0 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE1 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE2 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE3 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE12 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE13 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE14 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE15 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE0 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE1 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE2 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE3 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE12 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE13 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE14 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 0.00: PE15 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE0's result is <ConditionValue {<Process(run) object at 0x7652ffdbc430>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE0 finish processing <class 'src.sim_type.Read'> task(id:1).
+2025-06-14 20:50:14 - PE - DEBUG - updating task1
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE0 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task1 triggered 2
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE0 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE0 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE0 add a <class 'src.sim_type.Send'> task(id:2, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE1's result is <ConditionValue {<Process(run) object at 0x7652ffdbc550>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE1 finish processing <class 'src.sim_type.Read'> task(id:5).
+2025-06-14 20:50:14 - PE - DEBUG - updating task5
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE1 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task5 triggered 6
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE1 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE1 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE1 add a <class 'src.sim_type.Send'> task(id:6, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE2's result is <ConditionValue {<Process(run) object at 0x7652ffdbedd0>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE2 finish processing <class 'src.sim_type.Read'> task(id:9).
+2025-06-14 20:50:14 - PE - DEBUG - updating task9
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE2 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task9 triggered 10
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE2 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE2 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE2 add a <class 'src.sim_type.Send'> task(id:10, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE3's result is <ConditionValue {<Process(run) object at 0x7652ffdbf280>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE3 finish processing <class 'src.sim_type.Read'> task(id:13).
+2025-06-14 20:50:14 - PE - DEBUG - updating task13
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE3 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task13 triggered 14
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE3 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE3 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE3 add a <class 'src.sim_type.Send'> task(id:14, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - PE12 finish yielding AnyOf
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE12's result is <ConditionValue {<Process(run) object at 0x7652ffdc9cf0>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE12 finish processing <class 'src.sim_type.Read'> task(id:3).
+2025-06-14 20:50:14 - PE - DEBUG - updating task3
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE12 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task3 triggered 4
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE12 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE12 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE12 add a <class 'src.sim_type.Send'> task(id:4, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - DEBUG - Before AnyOf yield
+2025-06-14 20:50:14 - PE - DEBUG - PE12's running_queue is [<Process(run) object at 0x7652ffdf1f60>]
+2025-06-14 20:50:14 - PE - DEBUG - PE12 is yielding AnyOf
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE13's result is <ConditionValue {<Process(run) object at 0x7652ffdca1a0>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE13 finish processing <class 'src.sim_type.Read'> task(id:7).
+2025-06-14 20:50:14 - PE - DEBUG - updating task7
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE13 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task7 triggered 8
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE13 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE13 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE13 add a <class 'src.sim_type.Send'> task(id:8, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE14's result is <ConditionValue {<Process(run) object at 0x7652ffdca650>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE14 finish processing <class 'src.sim_type.Read'> task(id:11).
+2025-06-14 20:50:14 - PE - DEBUG - updating task11
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE14 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task11 triggered 12
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE14 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE14 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE14 add a <class 'src.sim_type.Send'> task(id:12, layer:1) into running queue.
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE15's result is <ConditionValue {<Process(run) object at 0x7652ffdcab00>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE15 finish processing <class 'src.sim_type.Read'> task(id:15).
+2025-06-14 20:50:14 - PE - DEBUG - updating task15
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE15 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - task15 triggered 16
+2025-06-14 20:50:14 - PE - DEBUG - triggered block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - update triggered instruction...
+2025-06-14 20:50:14 - PE - DEBUG - para:0/0 + feat:1/1
+2025-06-14 20:50:14 - PE - DEBUG - PE15 insert 1 into waiting_queue
+2025-06-14 20:50:14 - PE - DEBUG - PE15 block_counter: 1/10
+2025-06-14 20:50:14 - PE - INFO - Time 4096.00: PE15 add a <class 'src.sim_type.Send'> task(id:16, layer:1) into running queue.
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router0 start sending data2 to router4(dst:12).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE0's result is <ConditionValue {<Process(run) object at 0x7652ffdf2650>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE0 finish processing <class 'src.sim_type.Send'> task(id:2).
+2025-06-14 20:50:14 - PE - DEBUG - updating task2
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE0 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router1 start sending data6 to router5(dst:13).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE1's result is <ConditionValue {<Process(run) object at 0x7652ffdf2380>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE1 finish processing <class 'src.sim_type.Send'> task(id:6).
+2025-06-14 20:50:14 - PE - DEBUG - updating task6
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE1 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router2 start sending data10 to router6(dst:14).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE2's result is <ConditionValue {<Process(run) object at 0x7652ffdf2440>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE2 finish processing <class 'src.sim_type.Send'> task(id:10).
+2025-06-14 20:50:14 - PE - DEBUG - updating task10
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE2 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router3 start sending data14 to router7(dst:15).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE3's result is <ConditionValue {<Process(run) object at 0x7652ffdf21a0>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE3 finish processing <class 'src.sim_type.Send'> task(id:14).
+2025-06-14 20:50:14 - PE - DEBUG - updating task14
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE3 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router12 start sending data4 to router8(dst:0).
+2025-06-14 20:50:14 - PE - DEBUG - PE12 finish yielding AnyOf
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE12's result is <ConditionValue {<Process(run) object at 0x7652ffdf1f60>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE12 finish processing <class 'src.sim_type.Send'> task(id:4).
+2025-06-14 20:50:14 - PE - DEBUG - updating task4
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE12 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - Before AnyOf yield
+2025-06-14 20:50:14 - PE - DEBUG - PE12's running_queue is []
+2025-06-14 20:50:14 - PE - DEBUG - PE12 is yielding AnyOf
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router13 start sending data8 to router9(dst:1).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE13's result is <ConditionValue {<Process(run) object at 0x7652ffdf2500>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE13 finish processing <class 'src.sim_type.Send'> task(id:8).
+2025-06-14 20:50:14 - PE - DEBUG - updating task8
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE13 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router14 start sending data12 to router10(dst:2).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE14's result is <ConditionValue {<Process(run) object at 0x7652ffdf1f00>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE14 finish processing <class 'src.sim_type.Send'> task(id:12).
+2025-06-14 20:50:14 - PE - DEBUG - updating task12
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE14 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 4225.00: Router15 start sending data16 to router11(dst:3).
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE15's result is <ConditionValue {<Process(run) object at 0x7652ffdf1b10>: None}>
+2025-06-14 20:50:14 - PE - INFO - Time 4225.00: PE15 finish processing <class 'src.sim_type.Send'> task(id:16).
+2025-06-14 20:50:14 - PE - DEBUG - updating task16
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE15 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router0 finish sending data2 to router4(dst:12).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router1 finish sending data6 to router5(dst:13).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router2 finish sending data10 to router6(dst:14).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router3 finish sending data14 to router7(dst:15).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router12 finish sending data4 to router8(dst:0).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router13 finish sending data8 to router9(dst:1).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router14 finish sending data12 to router10(dst:2).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router15 finish sending data16 to router11(dst:3).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data2 to router4 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router4 start sending data2 to router8(dst:12).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data6 to router5 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router5 start sending data6 to router9(dst:13).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data10 to router6 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router6 start sending data10 to router10(dst:14).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data14 to router7 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router7 start sending data14 to router11(dst:15).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data4 to router8 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router8 start sending data4 to router4(dst:0).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data8 to router9 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router9 start sending data8 to router5(dst:1).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data12 to router10 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router10 start sending data12 to router6(dst:2).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Finish routing data16 to router11 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 5249.00: Router11 start sending data16 to router7(dst:3).
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data2 to PE4
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data6 to PE5
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data10 to PE6
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data14 to PE7
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data4 to PE8
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data8 to PE9
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data12 to PE10
+2025-06-14 20:50:14 - NoC - INFO - Time 5378.00: Finish putting data16 to PE11
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE4's result is <ConditionValue {<StoreGet() object at 0x7652ffdbfc10>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=2, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=12, path_dst=[4, 8, 12], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=0), running=False, waitinglast=False, hot=0, next=[]), src=0, data=Data(index=2, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=12, path_dst=[4, 8, 12])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE4 receive data2
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=2 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE4 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE5's result is <ConditionValue {<StoreGet() object at 0x7652ffdc8100>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=6, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=13, path_dst=[5, 9, 13], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=1), running=False, waitinglast=False, hot=0, next=[]), src=1, data=Data(index=6, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=13, path_dst=[5, 9, 13])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE5 receive data6
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=6 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE5 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE6's result is <ConditionValue {<StoreGet() object at 0x7652ffdc85b0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=10, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=14, path_dst=[6, 10, 14], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=2), running=False, waitinglast=False, hot=0, next=[]), src=2, data=Data(index=10, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=14, path_dst=[6, 10, 14])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE6 receive data10
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=10 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE6 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE7's result is <ConditionValue {<StoreGet() object at 0x7652ffdc8a60>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=14, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=15, path_dst=[7, 11, 15], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=3), running=False, waitinglast=False, hot=0, next=[]), src=3, data=Data(index=14, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=15, path_dst=[7, 11, 15])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE7 receive data14
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=14 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE7 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE8's result is <ConditionValue {<StoreGet() object at 0x7652ffdc8f10>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=4, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[0, 4, 8], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=12), running=False, waitinglast=False, hot=0, next=[]), src=12, data=Data(index=4, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=0, path_dst=[0, 4, 8])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE8 receive data4
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=4 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE8 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE9's result is <ConditionValue {<StoreGet() object at 0x7652ffdc93c0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=8, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=1, path_dst=[1, 5, 9], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=13), running=False, waitinglast=False, hot=0, next=[]), src=13, data=Data(index=8, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=1, path_dst=[1, 5, 9])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE9 receive data8
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=8 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE9 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE10's result is <ConditionValue {<StoreGet() object at 0x7652ffdc9870>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=12, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=2, path_dst=[2, 6, 10], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=14), running=False, waitinglast=False, hot=0, next=[]), src=14, data=Data(index=12, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=2, path_dst=[2, 6, 10])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE10 receive data12
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=12 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE10 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE11's result is <ConditionValue {<StoreGet() object at 0x7652ffdc9d20>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=16, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=3, path_dst=[3, 7, 11], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249], exe_end_time=[4225, 5249, 5378], ready_run_time=[4096, 4096, 4225, 5249, 5249], mulins=[4096], pe_id=15), running=False, waitinglast=False, hot=0, next=[]), src=15, data=Data(index=16, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=3, path_dst=[3, 7, 11])}>
+2025-06-14 20:50:14 - PE - INFO - Time 5378.00: PE11 receive data16
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=16 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE11 before-allocate: 16384, [2097152/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE4 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE5 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE6 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE7 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE8 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE9 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE10 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 5378.00: PE11 after-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - updating data2
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE4 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data6
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE5 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data10
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE6 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data14
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE7 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data4
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE8 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data8
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE9 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data12
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE10 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data16
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE11 self.counter += 1, [1/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router4 finish sending data2 to router8(dst:12).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router5 finish sending data6 to router9(dst:13).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router6 finish sending data10 to router10(dst:14).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router7 finish sending data14 to router11(dst:15).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router8 finish sending data4 to router4(dst:0).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router9 finish sending data8 to router5(dst:1).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router10 finish sending data12 to router6(dst:2).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router11 finish sending data16 to router7(dst:3).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data2 to router8 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router8 start sending data2 to router12(dst:12).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data6 to router9 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router9 start sending data6 to router13(dst:13).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data10 to router10 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router10 start sending data10 to router14(dst:14).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data14 to router11 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router11 start sending data14 to router15(dst:15).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data4 to router4 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router4 start sending data4 to router0(dst:0).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data8 to router5 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router5 start sending data8 to router1(dst:1).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data12 to router6 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router6 start sending data12 to router2(dst:2).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Finish routing data16 to router7 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 6273.00: Router7 start sending data16 to router3(dst:3).
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data2 to PE8
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data6 to PE9
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data10 to PE10
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data14 to PE11
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data4 to PE4
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data8 to PE5
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data12 to PE6
+2025-06-14 20:50:14 - NoC - INFO - Time 6402.00: Finish putting data16 to PE7
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE8's result is <ConditionValue {<StoreGet() object at 0x7652ffdf1c60>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=2, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=12, path_dst=[4, 8, 12], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=0), running=False, waitinglast=False, hot=0, next=[]), src=0, data=Data(index=2, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=12, path_dst=[4, 8, 12])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE8 receive data2
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=2 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE8 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE9's result is <ConditionValue {<StoreGet() object at 0x7652ffdf09d0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=6, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=13, path_dst=[5, 9, 13], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=1), running=False, waitinglast=False, hot=0, next=[]), src=1, data=Data(index=6, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=13, path_dst=[5, 9, 13])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE9 receive data6
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=6 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE9 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE10's result is <ConditionValue {<StoreGet() object at 0x7652ffdf05b0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=10, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=14, path_dst=[6, 10, 14], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=2), running=False, waitinglast=False, hot=0, next=[]), src=2, data=Data(index=10, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=14, path_dst=[6, 10, 14])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE10 receive data10
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=10 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE10 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE11's result is <ConditionValue {<StoreGet() object at 0x7652ffdf00d0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=14, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=15, path_dst=[7, 11, 15], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=3), running=False, waitinglast=False, hot=0, next=[]), src=3, data=Data(index=14, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=15, path_dst=[7, 11, 15])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE11 receive data14
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=14 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE11 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE4's result is <ConditionValue {<StoreGet() object at 0x7652ffdc8a30>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=4, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[0, 4, 8], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=12), running=False, waitinglast=False, hot=0, next=[]), src=12, data=Data(index=4, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=0, path_dst=[0, 4, 8])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE4 receive data4
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=4 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE4 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE5's result is <ConditionValue {<StoreGet() object at 0x7652ffdcbaf0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=8, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=1, path_dst=[1, 5, 9], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=13), running=False, waitinglast=False, hot=0, next=[]), src=13, data=Data(index=8, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=1, path_dst=[1, 5, 9])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE5 receive data8
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=8 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE5 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE6's result is <ConditionValue {<StoreGet() object at 0x7652ffdc9840>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=12, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=2, path_dst=[2, 6, 10], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=14), running=False, waitinglast=False, hot=0, next=[]), src=14, data=Data(index=12, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=2, path_dst=[2, 6, 10])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE6 receive data12
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=12 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE6 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE7's result is <ConditionValue {<StoreGet() object at 0x7652ffdbfbe0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=16, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=3, path_dst=[3, 7, 11], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], exe_end_time=[4225, 5249, 5378, 6273, 6402], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273], mulins=[4096], pe_id=15), running=False, waitinglast=False, hot=0, next=[]), src=15, data=Data(index=16, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=3, path_dst=[3, 7, 11])}>
+2025-06-14 20:50:14 - PE - INFO - Time 6402.00: PE7 receive data16
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=16 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE7 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE8 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE9 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE10 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE11 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE4 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE5 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE6 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 6402.00: PE7 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - updating data2
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE8 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data6
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE9 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data10
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE10 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data14
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE11 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data4
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE4 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data8
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE5 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data12
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE6 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data16
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE7 self.counter += 1, [2/10]
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router8 finish sending data2 to router12(dst:12).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router9 finish sending data6 to router13(dst:13).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router10 finish sending data10 to router14(dst:14).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router11 finish sending data14 to router15(dst:15).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router4 finish sending data4 to router0(dst:0).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router5 finish sending data8 to router1(dst:1).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router6 finish sending data12 to router2(dst:2).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Router7 finish sending data16 to router3(dst:3).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data2 to router12 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data6 to router13 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data10 to router14 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data14 to router15 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data4 to router0 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data8 to router1 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data12 to router2 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7297.00: Finish routing data16 to router3 (broadcast delivery).
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data2 to PE12
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data6 to PE13
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data10 to PE14
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data14 to PE15
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data4 to PE0
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data8 to PE1
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data12 to PE2
+2025-06-14 20:50:14 - NoC - INFO - Time 7426.00: Finish putting data16 to PE3
+2025-06-14 20:50:14 - PE - DEBUG - PE12 finish yielding AnyOf
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE12's result is <ConditionValue {<StoreGet() object at 0x7652ffdf1ba0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=2, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=12, path_dst=[4, 8, 12], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=0), running=False, waitinglast=False, hot=0, next=[]), src=0, data=Data(index=2, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=12, path_dst=[4, 8, 12])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE12 receive data2
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=2 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=0, end=256), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE12 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE13's result is <ConditionValue {<StoreGet() object at 0x7652ffdf1fc0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=6, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=13, path_dst=[5, 9, 13], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=1), running=False, waitinglast=False, hot=0, next=[]), src=1, data=Data(index=6, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=13, path_dst=[5, 9, 13])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE13 receive data6
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=6 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=512, end=768), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE13 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE14's result is <ConditionValue {<StoreGet() object at 0x7652ffdf20e0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=10, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=14, path_dst=[6, 10, 14], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=2), running=False, waitinglast=False, hot=0, next=[]), src=2, data=Data(index=10, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=14, path_dst=[6, 10, 14])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE14 receive data10
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=10 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1024, end=1280), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE14 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE15's result is <ConditionValue {<StoreGet() object at 0x7652ffdf2200>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=14, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=15, path_dst=[7, 11, 15], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=3), running=False, waitinglast=False, hot=0, next=[]), src=3, data=Data(index=14, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=15, path_dst=[7, 11, 15])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE15 receive data14
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=14 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1536, end=1792), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE15 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE0's result is <ConditionValue {<StoreGet() object at 0x7652ffdcafb0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=4, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[0, 4, 8], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=12), running=False, waitinglast=False, hot=0, next=[]), src=12, data=Data(index=4, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=0, path_dst=[0, 4, 8])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE0 receive data4
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=4 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=256, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE0 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE1's result is <ConditionValue {<StoreGet() object at 0x7652ffdcbbb0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=8, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=1, path_dst=[1, 5, 9], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=13), running=False, waitinglast=False, hot=0, next=[]), src=13, data=Data(index=8, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=1, path_dst=[1, 5, 9])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE1 receive data8
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=8 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=768, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE1 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE2's result is <ConditionValue {<StoreGet() object at 0x7652ffdcba30>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=12, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=2, path_dst=[2, 6, 10], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=14), running=False, waitinglast=False, hot=0, next=[]), src=14, data=Data(index=12, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=2, path_dst=[2, 6, 10])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE2 receive data12
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=12 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1280, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE2 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE3's result is <ConditionValue {<StoreGet() object at 0x7652ffdf1a80>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=16, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=3, path_dst=[3, 7, 11], tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, start_time=-1, record=Record(exe_start_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], exe_end_time=[4225, 5249, 5378, 6273, 6402, 7297, 7426], ready_run_time=[4096, 4096, 4225, 5249, 5249, 6273, 6273, 7297], mulins=[4096], pe_id=15), running=False, waitinglast=False, hot=0, next=[]), src=15, data=Data(index=16, tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=3, path_dst=[3, 7, 11])}>
+2025-06-14 20:50:14 - PE - INFO - Time 7426.00: PE3 receive data16
+2025-06-14 20:50:14 - PE - DEBUG - received data is index=16 tensor_slice=[DimSlice(start=0, end=64), DimSlice(start=1792, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-06-14 20:50:14 - PE - DEBUG - function call: receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - in function receive_data()
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE3 before-allocate: 16384, [2080768/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE12 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE13 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE14 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE15 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE0 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE1 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE2 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - Time 7426.00: PE3 after-allocate: 16384, [2064384/2097152]
+2025-06-14 20:50:14 - PE - DEBUG - updating data2
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE12 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data6
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE13 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data10
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE14 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data14
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE15 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data4
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE0 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data8
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE1 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data12
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE2 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - updating data16
+2025-06-14 20:50:14 - PE - DEBUG - current block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - task block_ptr is 0
+2025-06-14 20:50:14 - PE - DEBUG - PE3 self.counter += 1, [3/10]
+2025-06-14 20:50:14 - PE - DEBUG - Before AnyOf yield
+2025-06-14 20:50:14 - PE - DEBUG - PE12's running_queue is []
+2025-06-14 20:50:14 - PE - DEBUG - PE12 is yielding AnyOf

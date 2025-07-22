@@ -1,0 +1,186 @@
+2025-07-18 01:44:46 - Core - DEBUG - Core0 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 1, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 2, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 4, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core1 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 5, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 6, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 8, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core2 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 9, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 10, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 12, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core3 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 13, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 14, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 16, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core4 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 2, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 4, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core5 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 6, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 8, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core6 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 10, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 12, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core7 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 14, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 16, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core8 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 2, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 4, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core9 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 6, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 8, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core10 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 10, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 12, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core11 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 14, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 16, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core12 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 3, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 4, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 2, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core13 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 7, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 8, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 6, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core14 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 11, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 12, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 10, type is 3
+2025-07-18 01:44:46 - Core - DEBUG - Core15 is task_block_updating
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 0, index is 15, type is 0
+2025-07-18 01:44:46 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-07-18 01:44:46 - Core - DEBUG - insert 0 into waiting queue
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 1, index is 16, type is 2
+2025-07-18 01:44:46 - Core - DEBUG - ------------------------------
+2025-07-18 01:44:46 - Core - DEBUG - inst_id is 2, index is 14, type is 3
+2025-07-18 01:44:46 - matplotlib.pyplot - DEBUG - Loaded backend tkagg version 8.6.
+2025-07-18 01:44:49 - Core - DEBUG - Core0 block_counter: 0/10
+2025-07-18 01:44:57 - Core - INFO - Time 0.00: Core0 add a <class 'src.sim_type.Read'> task(id:1, layer:1) into running queue.
+2025-07-18 01:44:57 - Core - DEBUG - Core1 block_counter: 0/10
+2025-07-18 01:44:59 - Core - INFO - Time 0.00: Core1 add a <class 'src.sim_type.Read'> task(id:5, layer:1) into running queue.
+2025-07-18 01:44:59 - Core - DEBUG - Core2 block_counter: 0/10
+2025-07-18 01:45:02 - Core - INFO - Time 0.00: Core2 add a <class 'src.sim_type.Read'> task(id:9, layer:1) into running queue.
+2025-07-18 01:45:02 - Core - DEBUG - Core3 block_counter: 0/10
+2025-07-18 01:45:09 - Core - INFO - Time 0.00: Core3 add a <class 'src.sim_type.Read'> task(id:13, layer:1) into running queue.
+2025-07-18 01:45:09 - Core - DEBUG - Core12 block_counter: 0/10
+2025-07-18 01:45:13 - Core - INFO - Time 0.00: Core12 add a <class 'src.sim_type.Read'> task(id:3, layer:1) into running queue.
+2025-07-18 01:45:13 - Core - DEBUG - Before AnyOf yield
+2025-07-18 01:45:13 - Core - DEBUG - Core12's running_queue is [<Process(run) object at 0x7e29f408c360>]
+2025-07-18 01:45:13 - Core - DEBUG - Core12 is yielding AnyOf
+2025-07-18 01:45:13 - Core - DEBUG - Core13 block_counter: 0/10
+2025-07-18 01:45:18 - Core - INFO - Time 0.00: Core13 add a <class 'src.sim_type.Read'> task(id:7, layer:1) into running queue.
+2025-07-18 01:45:18 - Core - DEBUG - Core14 block_counter: 0/10
+2025-07-18 01:45:22 - Core - INFO - Time 0.00: Core14 add a <class 'src.sim_type.Read'> task(id:11, layer:1) into running queue.
+2025-07-18 01:45:22 - Core - DEBUG - Core15 block_counter: 0/10
+2025-07-18 01:45:27 - Core - INFO - Time 0.00: Core15 add a <class 'src.sim_type.Read'> task(id:15, layer:1) into running queue.
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core0 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core1 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core2 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core3 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core12 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core13 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core14 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core15 before-allocate: 16384, [2097152/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core0 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core1 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core2 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core3 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core12 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core13 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core14 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - DEBUG - Time 0.00: Core15 after-allocate: 16384, [2080768/2097152]
+2025-07-18 01:45:34 - Core - INFO - Time 4096.00: Core0's result is <ConditionValue {<Process(run) object at 0x7e29f3f14bb0>: None}>
+2025-07-18 01:45:34 - Core - INFO - Time 4096.00: Core0 finish processing <class 'src.sim_type.Read'> task(id:1).
+2025-07-18 01:45:34 - Core - DEBUG - updating task1
+2025-07-18 01:45:34 - Core - DEBUG - current block_ptr is 0
+2025-07-18 01:45:34 - Core - DEBUG - task block_ptr is 0
+2025-07-18 01:45:34 - Core - DEBUG - Core0 self.counter += 1, [1/10]
+2025-07-18 01:45:34 - Core - DEBUG - task1 triggered 2
+2025-07-18 01:45:34 - Core - DEBUG - triggered block_ptr is 0
+2025-07-18 01:45:36 - Core - DEBUG - update triggered instruction...
+2025-07-18 01:45:38 - Core - DEBUG - para:0/0 + feat:1/1
+2025-07-18 01:45:41 - Core - DEBUG - Core0 insert 1 into waiting_queue
+2025-07-18 01:46:08 - Core - DEBUG - Core0 block_counter: 1/10
+2025-07-18 01:46:17 - Core - INFO - Time 4096.00: Core0 add a <class 'src.sim_type.Send'> task(id:2, layer:1) into running queue.
+2025-07-18 01:46:25 - Core - INFO - Time 4096.00: Core1's result is <ConditionValue {<Process(run) object at 0x7e29f3f14ad0>: None}>
+2025-07-18 01:46:25 - Core - INFO - Time 4096.00: Core1 finish processing <class 'src.sim_type.Read'> task(id:5).
+2025-07-18 01:46:25 - Core - DEBUG - updating task5
+2025-07-18 01:46:25 - Core - DEBUG - current block_ptr is 0
+2025-07-18 01:46:25 - Core - DEBUG - task block_ptr is 0
+2025-07-18 01:46:25 - Core - DEBUG - Core1 self.counter += 1, [1/10]
+2025-07-18 01:46:25 - Core - DEBUG - task5 triggered 6
+2025-07-18 01:46:25 - Core - DEBUG - triggered block_ptr is 0
+2025-07-18 01:46:29 - Core - DEBUG - update triggered instruction...
+2025-07-18 01:46:29 - Core - DEBUG - para:0/0 + feat:1/1
+2025-07-18 01:46:30 - Core - DEBUG - Core1 insert 1 into waiting_queue
+2025-07-18 01:46:30 - Core - DEBUG - Core1 block_counter: 1/10
+2025-07-18 01:46:35 - Core - INFO - Time 4096.00: Core1 add a <class 'src.sim_type.Send'> task(id:6, layer:1) into running queue.
+2025-07-18 01:46:38 - Core - INFO - Time 4096.00: Core2's result is <ConditionValue {<Process(run) object at 0x7e29f408d9b0>: None}>
+2025-07-18 01:46:38 - Core - INFO - Time 4096.00: Core2 finish processing <class 'src.sim_type.Read'> task(id:9).
+2025-07-18 01:46:38 - Core - DEBUG - updating task9
+2025-07-18 01:46:38 - Core - DEBUG - current block_ptr is 0
+2025-07-18 01:46:38 - Core - DEBUG - task block_ptr is 0
+2025-07-18 01:46:38 - Core - DEBUG - Core2 self.counter += 1, [1/10]
+2025-07-18 01:46:38 - Core - DEBUG - task9 triggered 10
+2025-07-18 01:46:38 - Core - DEBUG - triggered block_ptr is 0
+2025-07-18 01:46:39 - Core - DEBUG - update triggered instruction...
+2025-07-18 01:46:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-07-18 01:46:40 - Core - DEBUG - Core2 insert 1 into waiting_queue
+2025-07-18 01:46:40 - Core - DEBUG - Core2 block_counter: 1/10
