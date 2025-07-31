@@ -9,7 +9,7 @@
 			"size" : 2097152,
 			"delay" : 0
 		},
-		"tpu" : {
+		"compute" : {
 			"flops" : 1024
 		},
 		"lsu" : {
@@ -30,7 +30,7 @@
 		}
 	},
 	"mem" : {
-		"type" : "all_core_distributed",
+		"type" : "two_sides_edge",
 		"num" : 8,
 		"dram_bw" : 128,
 		"dram_capacity" : 1048576,

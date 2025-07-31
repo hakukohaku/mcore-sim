@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import List, Dict, Optional
 
 class SPMConfig(BaseModel):
     size: int
@@ -36,8 +37,11 @@ class NoCConfig(BaseModel):
     link: LinkConfig
 
 class MemConfig(BaseModel):
-    width: int
-    delay: int
+    type: str
+    num: int
+    dram_bw: int
+    dram_capacity: int
+    mem_core: Optional[Dict[str, dict]] = None
 
 class ArchConfig(BaseModel):
     core: CoreConfig

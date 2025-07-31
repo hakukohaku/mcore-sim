@@ -6,6 +6,7 @@ from functools import partial, wraps
 from src.core import Core
 from src.noc_new import NoC, Link, Direction
 from src.arch_config import CoreConfig, NoCConfig, ArchConfig, LinkConfig, MemConfig
+from src.dram import Dram
 from src.sim_type import *
 from src.common import cfg,Timer, init_graph, ind2ins
 from src.draw import draw_grid
@@ -114,14 +115,19 @@ class Arch:
         self.env = simpy.Environment()
         self.stage = stage
         
+        self.mem_type = arch.mem.type
         self.noc = self.build_noc(arch.noc)
+        self.dram = self.build_dram(arch.mem)
+        
         #print(len(self.noc.r2r_links))
         if stage == "pre_analysis":
             init_graph(program)
         self.program = program
 
-        self.cores = self.build_cores(arch.core, program)
-
+        self.cores = self.build_cores(arch.core, program, arch.mem)
+        self.core_x = arch.core.x
+        self.core_y = arch.core.y
+        
         self.layer_start = [-1 for _ in range(25)]
         self.layer_end = [-1 for _ in range(25)]
 
@@ -201,7 +207,7 @@ class Arch:
         for tpu_fail in self.fail_slow.tpu:
             self.env.process(self.tpu_fail(tpu_fail))
 
-    def build_cores(self, config: CoreConfig, program: List[List[Instruction]]) -> List[Core]:
+    def build_cores(self, config: CoreConfig, program: List[List[Instruction]], mem_config: MemConfig) -> List[Core]:
         cores = []
         for id in range(config.x * config.y):
             link1 = Link(self.env, LinkConfig(width=128, delay=1))
@@ -217,12 +223,50 @@ class Arch:
         for id in range(config.x * config.y):
             cores[id].scheduler.bound_cores(cores)
 
+        if mem_config.type == "all_core_distributed":
+            for id in range(len(cores)):
+                # 每个核心都连接到一个DRAM，DRAM的ID与核心ID相同
+                cores[id].dram_list.append(id)
+        elif mem_config.type == "two_sides_edge":
+            # 只有特定的核心连接到DRAM
+            if not hasattr(mem_config, 'mem_core'):
+                 raise ValueError("DRAM type is 'two_sides_edge' but 'mem_core' is not defined in config.")
+            for core_id_str, dram_info in mem_config.mem_core.items():
+                core_id = int(core_id_str)
+                if core_id < len(cores):
+                    cores[core_id].dram_list.append(dram_info['dram_id'])
+
         return cores
 
     def build_noc(self, config: NoCConfig) -> NoC:
         print("Building NoC architecture.")
         return NoC(self.env, config).build_connection()
-
+    
+    def build_dram(self, config: MemConfig) -> List[Dram]:
+        print("Building Dram")
+        dram = []
+        if config.type == "all_core_distributed":
+            for id in range(config.num):
+                dram.append(Dram(self.env, config, id))
+        elif config.type == "two_sides_edge":
+            if not hasattr(config, 'mem_core') or not config.mem_core:
+                raise ValueError("DRAM type is 'two_sides_edge' but 'mem_core' is not defined or is empty in config.")
+            
+            # 找出最大的dram_id来确定列表大小
+            all_dram_ids = [d['dram_id'] for d in config.mem_core.values()]
+            max_dram_id = max(all_dram_ids)
+            
+            # 创建一个正确大小的列表，用None填充
+            dram = [None] * (max_dram_id + 1)
+            
+            # 将DRAM实例填充到正确的位置
+            for core_id_str, dram_info in config.mem_core.items():
+                dram_id = dram_info['dram_id']
+                dram[dram_id] = Dram(self.env, config, dram_id)
+        else:
+            raise ValueError(f"Unsupported DRAM distribution type: {config.type}")
+            
+        return dram
 
     # 输出可视化文件
     def make_print_lsu():

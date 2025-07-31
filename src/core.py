@@ -6,7 +6,7 @@ from src.common import MonitoredResource, cfg, ind2ins
 from src.arch_config import CoreConfig, ScratchpadConfig
 from src.noc_new import Link, Router
 from src.sim_type import *
-from typing import List
+from typing import List, Tuple
 
 logger = logging.getLogger("Core")
 waitready = []
@@ -238,9 +238,9 @@ class TableScheduler:
                 case TaskType.RECV:
                     self.tasks.append(Recv(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.READ:
-                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
+                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.WRITE:
-                    self.tasks.append(Write(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
+                    self.tasks.append(Write(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.SEND:
                     self.tasks.append(Send(index=inst.index, feat_num=inst.feat_num,tensor_slice=inst.tensor_slice, inst=inst, dst=inst.position, path_dst=inst.path_dst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.CONV:
@@ -431,7 +431,47 @@ class TableScheduler:
                 if feat_len == self.tasks[tri_task_id].feat_num and para_len == self.tasks[tri_task_id].para_num:
                     self.program[tri_task_id].start_time = self.env.now
 
-    def task_update(self, inst_index):
+    def task_update(self, task):
+        """任务完成后的更新逻辑，task是刚完成的任务对象本身"""
+        # 如果是代理读任务完成，则创建并调度一个衍生的Send任务
+        if isinstance(task, Read) and task.original_requester_id != -1:
+            print(f"Core {self.id} finished proxy Read for Core {task.original_requester_id}. Preparing to send data back.")
+            logger.debug(f"Core {self.id} finished proxy Read for Core {task.original_requester_id}. Preparing to send data back.")
+            
+            # 1. 创建代理指令
+            proxy_ins = Instruction(
+                index=task.index,
+                inst_type=TaskType.SEND,
+                tensor_slice=task.tensor_slice,
+                data_type=DataType.FEAT, # 假设内存读写总是特征数据
+                # 其他必要的默认值
+            )
+
+            # 2. 创建衍生Send任务
+            derivative_send_task = DerivativeSend(
+                index=task.index,
+                dst=task.original_requester_id,
+                tensor_slice=task.tensor_slice,
+                proxy_ins=proxy_ins,
+                feat_num=0,  # 衍生Send任务不需要等待任何数据
+                para_num=0   # 衍生Send任务不需要等待任何数据
+            )
+
+            # 3. 将衍生任务放入就绪队列
+            
+            self.waiting_queue.put(derivative_send_task)
+            print(f"Core {self.id} created and queued a DerivativeSend task (index: {task.index}) to Core {task.original_requester_id}")
+            logger.debug(f"Core {self.id} created and queued a DerivativeSend task (index: {task.index}) to Core {task.original_requester_id}")
+            return # 代理任务的更新到此为止，不触发后续指令
+
+        # 如果是衍生任务，它的生命周期到此结束，不触发程序中的其他指令
+        if isinstance(task, DerivativeTask):
+            print(f"Core {self.id} finished a derivative task ({type(task).__name__}, index: {task.index}). No further updates needed.")
+            logger.debug(f"Core {self.id} finished a derivative task ({type(task).__name__}, index: {task.index}). No further updates needed.")
+            return
+
+        # 静态任务（由指令直接初始化产生）的更新逻辑
+        inst_index = task.index
         logger.debug(f"updating task{inst_index}")
         # 将指令的index转换成core内部task id
         self.inst_counter += 1
@@ -678,10 +718,22 @@ class TableScheduler:
 
             task_ready = []
             while not self.waiting_queue.empty():
-                task_id = self.waiting_queue.get()
-                if task_id == len(self.program) - 1:
-                    self.finish = True
-                task_ready.append(self.tasks[task_id])
+                item = self.waiting_queue.get()
+                
+                # 检查是task_id（整数）还是task对象（代理任务）
+                if isinstance(item, int):
+                    # 静态任务：item是task_id
+                    task_id = item
+                    if task_id == len(self.program) - 1:
+                        self.finish = True
+                    task_ready.append(self.tasks[task_id])
+                    print(f"Core{self.id} got static task_id {task_id} from waiting_queue")
+                    logger.debug(f"Core{self.id} got static task_id {task_id} from waiting_queue")
+                else:
+                    # 代理任务：item是task对象
+                    task_ready.append(item)
+                    print(f"Core{self.id} got derivative task {type(item).__name__} (index {item.index}) from waiting_queue")
+                    logger.debug(f"Core{self.id} got derivative task {type(item).__name__} (index {item.index}) from waiting_queue")
 
             return task_ready
 
@@ -705,7 +757,10 @@ class Core:
         self.flow_in = []
         self.stage = stage
 
+        self.dram_list = []
+
         self.bound_with_router(link2, link1)
+        logger.info(f"Core{self.id} initialized with data_in store: {self.data_in}")
 
         # 1.in a block, 2.close to running instruction
         self.waitinglist = []
@@ -723,6 +778,7 @@ class Core:
         self.tpu = MonitoredResource(env=env, capacity=1)
 
         self.data_ready = {}
+        self.pending_recvs = {}
         
         
         self.arch = arch
@@ -732,8 +788,57 @@ class Core:
         self.data_in = data_in
         self.data_out = data_out
 
+    def _id_to_coords(self):
+        """将一维的核心ID转换为二维的（行，列）坐标。"""
+        row = self.id % self.arch.core_y
+        col = self.id // self.arch.core_y
+        return row, col
+    def _coords_to_id(self, x: int, y: int) -> int:
+        """
+        将NoC中的（x，y）坐标转换为一维的ID。
+        假定是列主序映射 (ID = x * y_dim + y)。
+        """
+        return x * self.arch.core_y + y
+    
+    def get_dram_index(self):
+        """
+        根据DRAM的分布类型和当前核心的位置，确定应该访问哪个DRAM。
+        - all_core_distributed: 每个核心都有DRAM，返回自己的ID。
+        - one_side_edge: DRAM位于右边缘，返回右边缘对应的DRAM核心ID。
+        - two_sides_edge: DRAM位于左右边缘，返回最近的DRAM核心ID。
+        
+        返回:
+            (int, int): 一个元组，包含 (目标核心ID, 目标DRAM ID)
+        """
+        mem_core_id = -1
+        if self.arch.mem_type == "all_core_distributed":
+            mem_core_id = self.id
+        elif self.arch.mem_type == "two_sides_edge":
+            my_row, my_col = self._id_to_coords()
+  
+            # 确定最近的边缘
+            dist_to_left = my_col
+            dist_to_right = (self.arch.core_x - 1) - my_col
+  
+            if dist_to_left < dist_to_right:
+                mem_core_id = self._coords_to_id(0, my_row)  # 左边缘DRAM ID
+            else:
+                mem_core_id = self._coords_to_id(self.arch.core_x - 1, my_row)
+        else:
+            raise ValueError(f"Unsupported DRAM distribution type: {self.arch.mem_type}")
+
+        # 根据计算出的mem_core_id，查找其连接的dram_id
+        # 假设每个内存核心只连接一个DRAM
+        target_core = self.arch.cores[mem_core_id]
+        if not target_core.dram_list:
+            raise ValueError(f"Target memory core {mem_core_id} has no connected DRAMs.")
+        # 这里假设一个core只挂了一个dram
+        dram_id = target_core.dram_list[0]
+        
+        return mem_core_id, dram_id
+  
     def lsu_fail(self, times):
-        self.lsu_bandwidth /= times
+        self.lsu.change_delay(times)
     
     def lsu_recover(self, times):
         self.lsu_bandwidth *= times
@@ -743,6 +848,40 @@ class Core:
 
     def tpu_recover(self, times):
         self.tpu_flops *= times
+
+    def _handle_mem_request(self, payload: MemReqPayload):
+        """处理一个远程内存请求，创建并调度一个代理任务。"""
+        
+        if payload.req_op == "Read":
+            print(f"Core {self.id} creating proxy Read task for index {payload.original_index}")
+            logger.debug(f"Core {self.id} creating proxy Read task for index {payload.original_index}")
+            proxy_task = Read(
+                index=payload.original_index,
+                tensor_slice=payload.original_slice,
+                original_requester_id=payload.requester_id,
+                # 从payload继承精度信息，如果需要的话
+            )
+            print(f"Core {self.id} putting proxy Read task into waiting_queue")
+            logger.debug(f"Core {self.id} putting proxy Read task into waiting_queue")
+            self.scheduler.waiting_queue.put(proxy_task)
+        elif payload.req_op == "Write":
+            # 写操作的逻辑可能更复杂，因为数据需要先到达
+            # 目前，我们假设写请求和数据是分开的
+            # 这里我们只处理元请求
+            print(f"Core {self.id} creating proxy Write task for index {payload.original_index}")
+            logger.debug(f"Core {self.id} creating proxy Write task for index {payload.original_index}")
+            proxy_task = Write(
+                index=payload.original_index,
+                tensor_slice=payload.original_slice,
+                original_requester_id=payload.requester_id,
+            )
+            # 对于写，我们可能需要一个机制来等待数据到达
+            print(f"Core {self.id} putting proxy Write task into waiting_queue")
+            logger.debug(f"Core {self.id} putting proxy Write task into waiting_queue")
+            self.scheduler.waiting_queue.put(proxy_task)
+            
+        else:
+            raise ValueError(f"Unknown memory request operation: {payload.req_op}")
 
     def receive_data(self, msg):
         logger.debug(f"in function receive_data()")
@@ -768,6 +907,7 @@ class Core:
         self.event2task = {}
 
         while True:
+            logger.info(f"Time {self.env.now:.2f}: Core{self.id} entered top of main loop.")
             while self.recv_queue:
                 top = self.recv_queue[0]
                 if top.data.index in range(self.scheduler.start, self.scheduler.end):      
@@ -795,41 +935,91 @@ class Core:
             #     self.env.process(self.receive_data(msg))
 
             task_ready = self.scheduler.schedule()
+            
+            # Debug: 为Memory Cores添加调度信息
+            if self.id in [0, 1, 2, 3, 12, 13, 14, 15]:  # Memory cores
+                if task_ready:
+                    print(f"Time {self.env.now:.2f}: Core{self.id} (Memory Core) scheduler returned {len(task_ready)} ready tasks")
+                    logger.debug(f"Time {self.env.now:.2f}: Core{self.id} (Memory Core) scheduler returned {len(task_ready)} ready tasks")
+                else:
+                    print(f"Time {self.env.now:.2f}: Core{self.id} (Memory Core) scheduler returned NO ready tasks")
+                    logger.debug(f"Time {self.env.now:.2f}: Core{self.id} (Memory Core) scheduler returned NO ready tasks")
+            
             if task_ready:
                 for task in task_ready:
+                    instruction = None
+                    # 根据任务类型获取指令
+                    if isinstance(task, DerivativeTask):
+                        # 衍生任务自带代理指令
+                        instruction = task.proxy_ins
+                    else:
+                        # 静态任务从程序列表中查找
+                        instruction = self.program[self.scheduler.index2taskid[task.index]]
 
-                    instruction = self.program[self.scheduler.index2taskid[task.index]]
-                    task_event = self.env.process(task.run(self, instruction))
+                    if isinstance(task, MemTask):
+                        task_event = self.env.process(task.run(self, instruction, self.arch.dram))
+                    else:
+                        task_event = self.env.process(task.run(self, instruction))
                     
-                    logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}, layer:{self.scheduler.program[self.scheduler.index2taskid[task.index]].layer_id}) into running queue.")
+                    # 日志记录可能需要调整以处理衍生任务
+                    if isinstance(task, DerivativeTask):
+                        logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}) into running queue.")
+                    else:
+                        logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}, layer:{self.scheduler.program[self.scheduler.index2taskid[task.index]].layer_id}) into running queue.")
+
                     self.running_event.append(task_event)
                     self.event2task[task_event] = task
 
-            if self.id == 12:
-                logger.debug(f"Before AnyOf yield")
-                logger.debug(f"Core{self.id}'s running_queue is {self.running_event}")
-
+            logger.info(f"Time {self.env.now:.2f}: Core{self.id} reached checkpoint BEFORE 'with data_in.get()'.")
             with self.data_in.get() as msg_arrive:
-                if self.id == 12:
-                    logger.debug(f"Core{self.id} is yielding AnyOf")
+                # ---- START: Added for debugging ----
+                if not self.running_event:
+                    logger.info(f"Time {self.env.now:.2f}: Core{self.id} has no running tasks. WAITING ONLY for incoming messages.")
+                else:
+                    logger.info(f"Time {self.env.now:.2f}: Core{self.id} waiting for {len(self.running_event)} running tasks OR a message.")
+                # ---- END: Added for debugging ----
 
-                # 其他core更新当前core的任务时，控制权不在当前core
-                # running_event无法及时更新（可能为空），导致只yield了msg，没数据来就会卡死
-                # 把WRITE触发的READ数据包装到data_in里，而非修改waiting_queue可以解决
-                #print(f"=== Core{self.id} Debug Info at time {self.env.now} ===")
-                #print(f"running_event count: {len(self.running_event)}")
-                #print(f"running_event types: {[type(self.event2task[e]).__name__ for e in self.running_event]}")
-                #print(f"msg_arrive.triggered: {msg_arrive.triggered if hasattr(msg_arrive, 'triggered') else 'N/A'}")
-                #print(f"data_in queue length: {self.data_in.store.level if hasattr(self.data_in.store, 'level') else 'N/A'}")
                 result = yield simpy.events.AnyOf(self.env, self.running_event + [msg_arrive])
+                print(f"Time {self.env.now}: Core {self.id} AnyOf returned. Result: {result}")
+                print(f"Time {self.env.now}: Core {self.id} msg_arrive triggered: {msg_arrive.triggered}")
+                # 遍历 result 字典，它包含了所有被触发的事件
+                for triggered_event, value in result.items():
+                # 检查这个被触发的事件是否在我们的 event2task 映射中
+                    if triggered_event in self.event2task:
+                    # 如果在，说明它是一个我们自己创建的任务
+                        task_object = self.event2task[triggered_event]
+        
+                # 现在可以打印这个任务的详细信息了
+                        print("="*40)
+                        print(f"DEBUG: AnyOf was triggered by a running_event!")
+                        print(f"  - Core ID: {self.id}")
+                        print(f"  - Simulation Time: {self.env.now}")
+                        print(f"  - Task Type: {type(task_object).__name__}")
+                        print(f"  - Task Index: {task_object.index}")
+                        print(f"  - Task Layer ID: {task_object.layer_id}")
+                        print(f"  - Task Flops: {task_object.flops}")
+                        print("="*40)
+
+
+# --- 调试代码结束 ---
                 if self.id == 12:
                     logger.debug(f"Core{self.id} finish yielding AnyOf")
 
-                logger.info(f"Time {self.env.now:.2f}: Core{self.id}'s result is {result}")
+                logger.debug(f"Time {self.env.now:.2f}: Core{self.id}'s result is {result}")
             
-                # 是因为从NoC接收数据，所以跳出yield
+                
                 if msg_arrive.triggered:
                     msg = msg_arrive.value
+                    print(f"Core{self.id} received a message: msg_type={msg.msg_type}")
+                    logger.debug(f"Core{self.id} received a message: msg_type={msg.msg_type}")
+
+                    if msg.msg_type == MsgType.MEM_REQUEST:
+                        logger.debug(f"Core{self.id} receive a mem request")
+                        print(f"Core{self.id} receive a mem request")
+                        print(f"Core{self.id} calling _handle_mem_request")
+                        logger.debug(f"Core{self.id} calling _handle_mem_request")
+                        self._handle_mem_request(msg.payload)
+                        continue # 处理完内存请求后，直接进入下一个循环迭代
 
                     # 记录数据到达的时间（可能未及时接收）
                     task_id = self.scheduler.index2taskid[msg.data.index]
@@ -874,14 +1064,16 @@ class Core:
 
                         # print(f"Core{self.id} free: {task.input_size()}, [{self.spm_manager.capacity}/{self.spm_manager.size}]")
 
+                        print(f"Time {self.env.now:.2f}: Core{self.id} finish processing {type(self.event2task[event])} task(id:{self.event2task[event].index}).")
                         logger.info(f"Time {self.env.now:.2f}: Core{self.id} finish processing {type(self.event2task[event])} task(id:{self.event2task[event].index}).")
                         # 这个也不可能是RECV，我需要找到其中的SEND
                         # print(self.program[self.scheduler.index2taskid[self.event2task[event].index]].inst_type)
                         if cfg.flow and self.env.now >= cfg.simstart and self.env.now <= cfg.simend:
-                            if self.program[self.scheduler.index2taskid[self.event2task[event].index]].inst_type == TaskType.SEND:
-                                self.flow_out.append((self.event2task[event].index, self.program[self.scheduler.index2taskid[self.event2task[event].index]].inst_type,"send",self.env.now))
+                            # 识别衍生Send任务
+                            if isinstance(task, DerivativeSend) or self.program[self.scheduler.index2taskid[task.index]].inst_type == TaskType.SEND:
+                                self.flow_out.append((task.index, self.program[self.scheduler.index2taskid[task.index]].inst_type,"send",self.env.now))
                         # 所有更新都经过update
-                        self.scheduler.task_update(self.event2task[event].index)
+                        self.scheduler.task_update(task)
                         
                         # 这个是仿真时间的瓶颈,大致用这个估算规模
                         if self.stage == "post_analysis":

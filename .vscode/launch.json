@@ -25,10 +25,24 @@
             "program": "${workspaceFolder}/run.py",
             "console": "integratedTerminal",
             "args": [
-              "--arch", "./arch/gemini4_4.json",
+              "--arch", "./arch/myarch_gemini4_4_all_distributed.json",
               "--fail", "./failslow/normal.json",
               "--workload", "./tests/communication/path_based_broadcast.json",
               "--log", "./log/broadcast_test-2.txt",
+              "--level", "debug"
+            ]
+        },
+        {
+            "name": "remote_read_weight",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+              "--arch", "./arch/myarch_gemini4_4.json",
+              "--fail", "./failslow/normal.json",
+              "--workload", "./tests/communication/remote_read_weight.json",
+              "--log", "./log/remote_read_weight.txt",
               "--level", "debug"
             ]
         }

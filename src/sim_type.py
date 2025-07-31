@@ -1,7 +1,9 @@
 from enum import IntEnum
-from typing import List
+from typing import List, Optional, Any
 from pydantic import BaseModel
+import logging
 
+logger = logging.getLogger(__name__)
 
 def ceil(a: int, b: int):
     return (a + b - 1) // b
@@ -42,6 +44,10 @@ class FailSlow(BaseModel):
     link: List[LinkFail]
     lsu: List[LsuFail]
     tpu: List[TpuFail]
+
+class MsgType(IntEnum):
+    DATA = 0
+    MEM_REQUEST = 1
 
 class TaskType(IntEnum):
     READ = 0
@@ -104,6 +110,15 @@ class Data(BaseModel):
     def __lt__(self, other: "Data") -> bool:
         return self.index < other.index
 
+class MemReqPayload(BaseModel):
+    # 对于core向非直连的dram读写数据，需要调用noc先向目标core发送读写请求，对应这里的MemReqPayload
+    req_op: str # "Read" or "Write"
+    requester_id: int
+    original_index: int
+    original_slice: List[DimSlice]
+    # 对于写操作，数据需要预先通过NoC发送，这里只发送元数据
+    # size: int
+
 class Task(BaseModel):
     layer_id: int = -1
     opcode: str
@@ -131,7 +146,9 @@ class Nop(Task):
         ins.record.exe_end_time.append(core.env.now)
 
 class IOTask(Task):
+    target_dram_id: int = -1
     num_operands: int = 0
+    original_requester_id: int = -1
 
     def size(self) -> int:
         """
@@ -164,6 +181,113 @@ class IOTask(Task):
         yield core.lsu.execute(self.opcode+str(self.index),ceil(self.size(), core.lsu_bandwidth), ins, self.index)
         core.env.process(core.spm_manager.free(self.opcode+str(self.index), self.input_size()))
 
+class MemTask(Task):
+    """
+    对外部存储（Dram）的读写、释放任务
+    """
+    target_dram_id: int = -1
+    num_operands: int = 1
+    original_requester_id: int = -1
+
+    def run(self, core, ins, dram):
+        """
+        执行内存任务的流程：
+        1. 请求DRAM资源。
+        2. 根据mem_opcode执行相应的DRAM操作（read/write/free）。
+        3. 释放DRAM资源（由resource内部的.execute函数自动处理）。
+        """
+        # 记录任务准备信息
+        ins.record.ready_run_time.append(core.env.now)
+        ins.record.pe_id = core.id
+
+        # 1. 确定目标DRAM和拥有它的核心
+        target_mem_core_id = -1
+        target_dram_id = -1
+
+        if self.target_dram_id != -1:
+            # 如果指令指定了DRAM ID，则查找拥有它的核心
+            target_dram_id = self.target_dram_id
+            for c in core.arch.cores:
+                if target_dram_id in c.dram_list:
+                    target_mem_core_id = c.id
+                    break
+            if target_mem_core_id == -1:
+                raise ValueError(f"Instruction specified DRAM {target_dram_id}, but no core is connected to it.")
+        else:
+            # 如果指令未指定，则找最近的
+            target_mem_core_id, target_dram_id = core.get_dram_index()
+
+        ins.record.dram_id = target_dram_id
+
+        # 2. 判断是本地执行还是远程请求
+        is_local = (target_mem_core_id == core.id)
+
+        if is_local:
+            # --- 本地执行 ---
+            logger.debug(f"Time {core.env.now:.2f}: Core {core.id} performing LOCAL access to DRAM {target_dram_id}")
+            
+            # 去掉了外部的 with.request()
+            # 将资源请求和释放完全委托给 dram 的方法
+            ins.record.exe_start_time.append(core.env.now)
+            
+            if self.opcode.lower() == "read":
+                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
+                yield from dram[target_dram_id].read(self.size(), ins)
+            
+            elif self.opcode.lower() == "write":
+                
+                # 注意: free 操作现在应该在 write 内部或之后显式调用，
+                # 但根据现有 dram.write 逻辑, 它不返回任何值来同步,
+                # 所以我们假设 write 完成后 spm 即可释放
+                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
+                yield from dram[target_dram_id].write(self.size(), ins)
+
+            ins.record.exe_end_time.append(core.env.now)
+        else:
+            # --- 远程请求 ---
+            print(f"Time {core.env.now:.2f}: Core {core.id} initiating REMOTE access to DRAM {target_dram_id} via Core {target_mem_core_id}")
+            logger.debug(f"Time {core.env.now:.2f}: Core {core.id} initiating REMOTE access to DRAM {target_dram_id} via Core {target_mem_core_id}")
+            
+            # 1. 创建并发送MemoryRequestMessage
+            payload = MemReqPayload(
+                req_op=self.opcode,
+                requester_id=core.id,
+                original_index=self.index,
+                original_slice=self.tensor_slice
+            )
+            
+            mem_request_msg = Message(
+                src=core.id,
+                dst=target_mem_core_id,
+                msg_type=MsgType.MEM_REQUEST,
+                payload=payload,
+                data=Data(index=self.index, tensor_slice=[DimSlice(start=0,end=1)]) # 添加最小化data
+            )
+            print(f"Time {core.env.now:.2f}: Core {core.id} initiating REMOTE access to DRAM {target_dram_id} via Core {target_mem_core_id}")
+            
+            ins.record.exe_start_time.append(core.env.now)
+            yield core.data_out.put(mem_request_msg)
+
+            if self.opcode.lower() == "read":
+                # 2. 创建并注册一个衍生的RECV任务来等待数据返回
+                derivative_recv_task = DerivativeRecv(
+                    layer_id=self.layer_id,
+                    opcode="Recv",
+                    index=self.index,
+                    tensor_slice=self.tensor_slice,
+                    inst=self.inst,
+                    done_event=core.env.event()
+                )
+                core.pending_recvs[self.index] = derivative_recv_task
+                
+                # 3. 等待衍生的RECV任务完成（即其done_event被触发）
+                print(f"Time {core.env.now:.2f}: Core {core.id} is now PAUSED, waiting for data (index: {self.index}) from Core {target_mem_core_id}.")
+                yield derivative_recv_task.done_event
+                
+                # 4. 数据已返回，任务完成
+                print(f"Time {core.env.now:.2f}: Core {core.id} has RESUMED, data (index: {self.index}) received.")
+                ins.record.exe_end_time.append(core.env.now)
+            
 class ComputeTask(Task):
     layer_id: int
     num_operands: int = 2
@@ -204,6 +328,7 @@ class Record(BaseModel):
     mulins: List[int] = []
     # 记录指令执行的PE
     pe_id: int = -1
+    dram_id: int = -1
 
 class CommunicationTask(Task):
     dst: int
@@ -227,6 +352,7 @@ class Instruction(BaseModel):
     # 数据精度，以byte为单位，默认为1
     feat_precision: int = 1
     para_precision: int = 1
+    target_dram_id: int = -1
 
     # 在想应该累计每个block对后面造成的影响，这样的热点或许更有效
     start_time: int = -1
@@ -272,14 +398,19 @@ class Message(BaseModel):
     msg = Message(ins=instruction, src=0, data=data, dst=5, path_dst=[1, 2, 3])
     # 这将把消息发送给核心5(dst),同时也会传递给核心1、2、3
     """
-    ins: Instruction
+    ins: Optional[Instruction] = None
     src: int
-    data: Data
+    data: Optional[Data] = None
     dst: int
     path_dst: List[int] = []  # 路径广播目标列表，默认为空列表
+    msg_type: MsgType = MsgType.DATA
+    payload: Optional[MemReqPayload] = None
 
     def __lt__(self, other: "Message") -> bool:
-        return self.data < other.data
+        if self.data is not None and other.data is not None:
+            return self.data < other.data
+        # 提供一个回退的比较方法，避免在data为None时出错
+        return self.src < other.src
     
     def should_deliver_to_core(self, core_id: int) -> bool:
         """
@@ -300,7 +431,7 @@ class Workload(BaseModel):
     name: str
     pes: List[PEworkload] = []
 
-class Read(IOTask):
+class Read(MemTask):
     opcode: str = "Read"
 
     def input_size(self):
@@ -309,7 +440,7 @@ class Read(IOTask):
     def output_size(self):
         return self.size()
 
-class Write(IOTask):
+class Write(MemTask):
     opcode: str = "Write"
 
     def input_size(self):
@@ -375,7 +506,6 @@ class Stay(Task):
     def output_size(self):
         return 0
 
-# 这里不用ins.record吗
 class Send(CommunicationTask):
     opcode: str = "Send"
     src: int = -1
@@ -412,3 +542,18 @@ class Recv(CommunicationTask):
     def output_size(self):
         return self.size()
     
+class DerivativeTask:
+    """一个空的Mixin类，用于标记所有在运行时动态生成的任务。"""
+    pass
+
+class DerivativeSend(Send, DerivativeTask):
+    """一个在运行时生成的衍生SEND任务，例如，用于在远程读取后将数据发回。"""
+    proxy_ins: Instruction
+
+class DerivativeRecv(Recv, DerivativeTask):
+    """一个在运行时生成的衍生RECV任务，用于等待远程读操作的返回数据。"""
+    done_event: Any # This will hold a simpy.Event
+
+    class Config:
+        arbitrary_types_allowed = True
+

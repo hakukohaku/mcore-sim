@@ -1,0 +1,67 @@
+2025-07-29 17:21:40 - Core - DEBUG - Core0 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core1 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core2 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core3 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core4 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 0, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 1, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - Core5 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 2, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 3, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - Core6 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 4, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 5, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - Core7 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 6, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
+2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 7, type is 2
+2025-07-29 17:21:40 - Core - DEBUG - Core8 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core9 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core10 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core11 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core12 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core13 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core14 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Core15 is task_block_updating
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Before AnyOf yield
+2025-07-29 17:21:40 - Core - DEBUG - Core12's running_queue is []
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Core12 is yielding AnyOf
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) data_in queue is EMPTY
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) scheduler returned NO ready tasks
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) about to call data_in.get(), current queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) waiting for messages, data_in queue length: 0
+2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) data_in queue is EMPTY

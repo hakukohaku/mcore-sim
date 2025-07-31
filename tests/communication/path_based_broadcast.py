@@ -125,7 +125,7 @@ if __name__ == "__main__":
     for core_y in range(arch_configs.core.y):
         # 只有每行两边的mem_core直接访问DRAM的核，各读入一半的activation并通过path-based multicast广播给行内其他核
         # 当前tile所需的activation范围
-        cur_start_k = (0*arch_configs.core.y + core_y) * tile_size_k
+        cur_start_k = ((temporal_loop_k-1)*arch_configs.core.y + core_y) * tile_size_k
         cur_size_k = min(tile_size_k, total_K - cur_start_k)
         act_range_left = Slice(tensor_slice=[
                 DimSlice(start=cur_start_n, end=cur_start_n + cur_size_n), 

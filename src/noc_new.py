@@ -3,7 +3,7 @@ import logging
 import contextlib
 from enum import IntEnum
 from src.arch_config import LinkConfig, RouterConfig, NoCConfig
-from src.sim_type import Data, Message, ceil, Slice, Direction, DataType
+from src.sim_type import Data, Message, ceil, Slice, Direction, DataType, MsgType
 from src.common import MonitoredResource
 
 logger = logging.getLogger("NoC")
@@ -27,11 +27,12 @@ logger = logging.getLogger("NoC")
 #         self.width *= times
 
 class Link:
-    def __init__(self, env, config):
+    def __init__(self, env: simpy.Environment, config: LinkConfig):
         self.env = env
+        #self.config = config
+        #self.delay = config.delay
         self.width = config.width
         self.delay = config.delay
-        # 按数据的index排序，需要Message的lt方法
         self.store = simpy.PriorityStore(env)
         self.delay_factor = 1
         self.hop = 0
@@ -42,7 +43,6 @@ class Link:
         self.corefrom = idx1
         self.coreto = idx2
         self.tag = tag
-        
     def calc_latency(self, msg):
         #calc latency:
         slice = Slice(tensor_slice=msg.data.tensor_slice)
@@ -58,7 +58,48 @@ class Link:
         msg.ins.record.ready_run_time.append(self.env.now)
         yield self.linkentry.execute("SEND"+str(msg.data.index),latency,msg.ins,attributes=msg.dst)
         self.store.put(msg)
-    
+          
+    # def calc_latency(self, msg: Message):
+    #     latency = 0
+    #     if msg.msg_type == MsgType.MEM_REQUEST:
+    #         # 请求消息：固定延迟
+    #         latency = self.delay
+    #     elif msg.msg_type == MsgType.DATA:
+    #         # 数据消息：延迟与数据大小有关
+    #         if msg.data is None:
+    #             raise ValueError("Message with type DATA has no data payload.")
+    #         slice = Slice(tensor_slice=msg.data.tensor_slice)
+    #         size = slice.size()
+            
+    #         # latency = size / (self.config.width / 8) + self.delay
+    #         latency = ceil(size, self.config.width) + self.delay
+    #     else:
+    #         # 对于其他未知的消息类型，可以返回一个默认延迟或抛出错误
+    #         latency = self.delay
+
+    #     # 模拟传输延迟
+    #     yield self.env.timeout(latency)
+        
+    #     # 延迟结束后，将消息放入store，使其在链路另一端可用
+    #     put_event = self.store.put(msg)
+    #     yield put_event
+        
+    #     # 调试信息：检查消息是否成功进入store
+    #     if hasattr(self, 'store') and hasattr(self.store, 'items'):
+    #         print(f"Time {self.env.now:.2f}: Link calc_latency finished, store now has {len(self.store.items)} items")
+    #         logger.debug(f"Time {self.env.now:.2f}: Link calc_latency finished, store now has {len(self.store.items)} items")
+            
+    #         # 如果是发送到Memory Cores的消息，输出详细信息
+    #         if hasattr(msg, 'dst') and msg.dst in [0, 1, 2, 3, 12, 13, 14, 15]:
+    #             print(f"Time {self.env.now:.2f}: Message for Core {msg.dst} put into store, store length: {len(self.store.items)}")
+    #             logger.debug(f"Time {self.env.now:.2f}: Message for Core {msg.dst} put into store, store length: {len(self.store.items)}")
+    #             print(f"Time {self.env.now:.2f}: put_event.triggered = {put_event.triggered}")
+    #             logger.debug(f"Time {self.env.now:.2f}: put_event.triggered = {put_event.triggered}")
+            
+    def run(self):
+        while True:
+            msg = yield self.store.get()
+
     def put(self, msg):
         return self.env.process(self.calc_latency(msg))
     
@@ -172,11 +213,19 @@ class Router:
             case Direction.WEST:
                 yield self.west_out.put(msg)
 
-        logger.info(f"Time {self.env.now:.2f}: Router{self.id} finish sending data{msg.data.index} to router{next_router}(dst:{msg.dst}).")
+        # 记录日志
+        if msg.data:
+            logger.info(f"Time {self.env.now:.2f}: Router {self.id} finish sending data {msg.data.index} to Router {next_router} (dst: {msg.dst}).")
+        else:
+            logger.info(f"Time {self.env.now:.2f}: Router {self.id} finish sending {msg.msg_type.name} to Router {next_router} (dst: {msg.dst}).")
 
     def route_core(self, msg):
+        logger.info(f"Router{self.id} routing to core. Store object: {self.core_out}")
         yield self.core_out.put(msg)
-        logger.info(f"Time {self.env.now:.2f}: Finish putting data{msg.data.index} to Core{self.id}")
+        if msg.data:
+            logger.info(f"Time {self.env.now:.2f}: Finish putting data {msg.data.index} to Core {self.id}")
+        else:
+            logger.info(f"Time {self.env.now:.2f}: Finish putting {msg.msg_type.name} to Core {self.id}")
  
     def run(self):
         while True:
@@ -201,13 +250,19 @@ class Router:
                         # 检查是否应该传递给本地核心（支持路径广播）
                     
                         if msg.should_deliver_to_core(self.id):
-                            logger.info(f"Time {self.env.now:.2f}: Finish routing data{msg.data.index} to router{self.id} (broadcast delivery).")
+                            if msg.data:
+                                logger.info(f"Time {self.env.now:.2f}: Finish routing data {msg.data.index} to router {self.id}.")
+                            else:
+                                logger.info(f"Time {self.env.now:.2f}: Finish routing {msg.msg_type.name} to router {self.id}.")
                             self.env.process(self.route_core(msg))
                         
                         # 如果不是最终目标，继续路由
                         if msg.dst != self.id:
                             next_dir, next_router = self.calculate_next_router(msg.dst)
-                            logger.info(f"Time {self.env.now:.2f}: Router{self.id} start sending data{msg.data.index} to router{next_router}(dst:{msg.dst}).")
+                            if msg.data:
+                                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start sending data {msg.data.index} to Router {next_router} (dst: {msg.dst}).")
+                            else:
+                                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start sending {msg.msg_type.name} to Router {next_router} (dst: {msg.dst}).")
                             self.env.process(self.route(msg, next_dir, next_router))
                         
                         channel = None
@@ -223,13 +278,19 @@ class Router:
 
                             # 检查是否应该传递给本地核心（支持路径广播）
                             if msg.should_deliver_to_core(self.id):
-                                logger.info(f"Time {self.env.now:.2f}: Finish routing data{msg.data.index} to router{self.id} (broadcast delivery).")
+                                if msg.data:
+                                    logger.info(f"Time {self.env.now:.2f}: Finish routing data {msg.data.index} to router {self.id} (broadcast delivery).")
+                                else:
+                                    logger.info(f"Time {self.env.now:.2f}: Finish routing {msg.msg_type.name} to router {self.id} (broadcast delivery).")
                                 self.env.process(self.route_core(msg))
                             
                             # 如果不是最终目标，继续路由
                             if msg.dst != self.id:
                                 next_dir, next_router = self.calculate_next_router(msg.dst)
-                                logger.info(f"Time {self.env.now:.2f}: Router{self.id} finished sending data{msg.data.index} to router{next_router}(dst:{msg.dst}).")
+                                if msg.data:
+                                    logger.info(f"Time {self.env.now:.2f}: Router {self.id} finished sending data {msg.data.index} to router {next_router} (dst:{msg.dst}).")
+                                else:
+                                    logger.info(f"Time {self.env.now:.2f}: Router {self.id} finished sending {msg.msg_type.name} to router {next_router} (dst:{msg.dst}).")
                                 self.env.process(self.route(msg, next_dir, next_router))
 
     #模拟其它流量造成的网络拥堵
@@ -400,7 +461,8 @@ class Router:
         if self.noc is None:
             raise RuntimeError("NoC reference not available for wormhole routing")
         
-        logger.info(f"Time {self.env.now:.2f}: Router{self.id} initiating wormhole routing for data{msg.data.index} to Router{msg.dst}")
+        log_payload = f"data {msg.data.index}" if msg.data else f"{msg.msg_type.name}"
+        logger.info(f"Time {self.env.now:.2f}: Router {self.id} initiating wormhole routing for {log_payload} to Router {msg.dst}")
         yield self.env.process(self.noc.wormhole_send(self.id, msg))
 
 class NoC:
@@ -530,12 +592,15 @@ class NoC:
         # 5. 计算整条路径的传输延迟（基于最窄带宽）
         min_bandwidth = min(link.width for link in path_links)
         
-        slice = Slice(tensor_slice=msg.data.tensor_slice)
-        if msg.ins.data_type == DataType.FEAT:
-            transmission_time = ceil(slice.size() * msg.feat_precision, min_bandwidth)
-        else:
-            transmission_time = ceil(slice.size() * msg.para_precision, min_bandwidth)
-        
+        if msg.msg_type == MsgType.DATA and msg.data:
+            slice = Slice(tensor_slice=msg.data.tensor_slice)
+            if msg.ins.data_type == DataType.FEAT:
+                transmission_time = ceil(slice.size() * msg.feat_precision, min_bandwidth)
+            else:
+                transmission_time = ceil(slice.size() * msg.para_precision, min_bandwidth)
+        else: # for MEM_REQUEST or other types
+            transmission_time = 1 # Assume a small, fixed transmission time for request packets
+
         # 基础延迟是所有链路延迟之和
         total_delay = sum(link.delay * link.delay_factor for link in path_links)
         total_latency = total_delay + transmission_time
