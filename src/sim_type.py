@@ -1,4 +1,4 @@
-from enum import IntEnum
+from enum import IntEnum, Enum
 from typing import List, Optional, Any
 from pydantic import BaseModel
 import logging
@@ -63,8 +63,15 @@ class TaskType(IntEnum):
     GCONV = 9
     PTP = 10
     TRANS = 11
+    LOAD = 12
+    STORE = 13
+    FREE = 14
 
 compute_task = [TaskType.CONV, TaskType.POOL, TaskType.FC, TaskType.ELEM, TaskType.GCONV, TaskType.PTP, TaskType.TRANS]
+
+class AggrType(str, Enum):
+    CONCAT_DIM_1 = "concat_dim_1"  # Aggregate by concatenating on the 1st dimension (index 1)
+    CONCAT_DIM_0 = "concat_dim_0"  # Aggregate by concatenating on the 0th dimension (index 0)
 
 class OperationType(IntEnum):
     CONV = 0
@@ -118,6 +125,8 @@ class MemReqPayload(BaseModel):
     original_slice: List[DimSlice]
     # 对于写操作，数据需要预先通过NoC发送，这里只发送元数据
     # size: int
+    data_type: DataType
+    layer_id: int
 
 class Task(BaseModel):
     layer_id: int = -1
@@ -188,8 +197,29 @@ class MemTask(Task):
     target_dram_id: int = -1
     num_operands: int = 1
     original_requester_id: int = -1
+    data_type: DataType = DataType.FEAT # 代理任务需要继承此属性
 
     def run(self, core, ins, dram):
+        # 代理任务的专属执行路径
+        if self.original_requester_id != -1: # 是代理任务，接受请求帮助别的core进行read。
+            # 代理任务已经被路由到正确的内存核心，直接在此核心上执行
+            # 假设每个内存核心只连接一个DRAM
+            if not core.dram_list:
+                raise ValueError(f"Proxy task running on Core {core.id}, but it has no connected DRAM.")
+            
+            target_dram_id = core.dram_list[0]
+            logger.debug(f"Time {core.env.now:.2f}: Core {core.id} executing PROXY access to its local DRAM {target_dram_id}")
+
+            ins.record.exe_start_time.append(core.env.now)
+            if self.opcode.lower() == "read":
+                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
+                yield from dram[target_dram_id].read(self.size(), ins)
+            elif self.opcode.lower() == "write":
+                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
+                yield from dram[target_dram_id].write(self.size(), ins)
+            ins.record.exe_end_time.append(core.env.now)
+            return # 代理任务执行完毕，结束
+
         """
         执行内存任务的流程：
         1. 请求DRAM资源。
@@ -226,8 +256,6 @@ class MemTask(Task):
             # --- 本地执行 ---
             logger.debug(f"Time {core.env.now:.2f}: Core {core.id} performing LOCAL access to DRAM {target_dram_id}")
             
-            # 去掉了外部的 with.request()
-            # 将资源请求和释放完全委托给 dram 的方法
             ins.record.exe_start_time.append(core.env.now)
             
             if self.opcode.lower() == "read":
@@ -235,10 +263,6 @@ class MemTask(Task):
                 yield from dram[target_dram_id].read(self.size(), ins)
             
             elif self.opcode.lower() == "write":
-                
-                # 注意: free 操作现在应该在 write 内部或之后显式调用，
-                # 但根据现有 dram.write 逻辑, 它不返回任何值来同步,
-                # 所以我们假设 write 完成后 spm 即可释放
                 yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
                 yield from dram[target_dram_id].write(self.size(), ins)
 
@@ -253,7 +277,9 @@ class MemTask(Task):
                 req_op=self.opcode,
                 requester_id=core.id,
                 original_index=self.index,
-                original_slice=self.tensor_slice
+                original_slice=self.tensor_slice,
+                data_type=ins.data_type,
+                layer_id=ins.layer_id
             )
             
             mem_request_msg = Message(
@@ -261,6 +287,7 @@ class MemTask(Task):
                 dst=target_mem_core_id,
                 msg_type=MsgType.MEM_REQUEST,
                 payload=payload,
+                ins=ins,  # 将当前指令添加到消息中
                 data=Data(index=self.index, tensor_slice=[DimSlice(start=0,end=1)]) # 添加最小化data
             )
             print(f"Time {core.env.now:.2f}: Core {core.id} initiating REMOTE access to DRAM {target_dram_id} via Core {target_mem_core_id}")
@@ -291,6 +318,7 @@ class MemTask(Task):
 class ComputeTask(Task):
     layer_id: int
     num_operands: int = 2
+    feat_aggr_type: Optional[AggrType] = None
 
     def input_size(self):
         res = 0
@@ -313,12 +341,23 @@ class ComputeTask(Task):
         self.calc_flops()
         ins.record.ready_run_time.append(core.env.now)
         ins.record.pe_id = core.id
+
+        # log_prefix = f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}]"
+        # logger.debug(f"{log_prefix} - ComputeTask.run START")
+
         #为output准备空间
         yield core.env.process(core.spm_manager.allocate(self.opcode+str(self.index), self.output_size()))
+        
+        # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - ALLOC complete, starting TPU execute.")
+
         #执行tpu计算
         yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
+
+        # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - TPU EXEC complete.")
+
         #释放input空间
         core.env.process(core.spm_manager.free(self.opcode+str(self.index), self.input_size()))
+        # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - ComputeTask.run END (free initiated).")
     
 class Record(BaseModel):
     exe_start_time: List[int] = []
@@ -349,6 +388,7 @@ class Instruction(BaseModel):
     tensor_slice: List[DimSlice]
     feat_num: int = 0
     para_num: int = 0
+    feat_aggr_type: Optional[AggrType] = None
     # 数据精度，以byte为单位，默认为1
     feat_precision: int = 1
     para_precision: int = 1
@@ -405,6 +445,7 @@ class Message(BaseModel):
     path_dst: List[int] = []  # 路径广播目标列表，默认为空列表
     msg_type: MsgType = MsgType.DATA
     payload: Optional[MemReqPayload] = None
+    route_strategy: str = "wormhole"
 
     def __lt__(self, other: "Message") -> bool:
         if self.data is not None and other.data is not None:
@@ -471,7 +512,28 @@ class Elem(ComputeTask):
 class FC(ComputeTask):
     opcode: str = "FC"
     def calc_flops(self):
-        self.flops = self.input_size() * self.size()
+        """
+        Calculates FLOPs for a fully-connected layer (matrix multiplication).
+        FLOPs = M * N * K
+        - self.size() provides the output size (e.g., M * N).
+        - K is the common dimension, which is robustly derived from the parameter
+          input tensor (self.para), which represents the weight matrix.
+        """
+        if not self.para:
+            raise ValueError(f"FC.calc_flops() called for task index {self.index} before parameter input (self.para) is available.")
+
+        # The weight matrix defines the K dimension.
+        # Based on my_geninst_GEMM.py, the weight slice is (M, K).
+        # Therefore, K is the size of the second dimension (index 1).
+        weight_slice = self.para[0].tensor_slice
+        if len(weight_slice) < 2:
+            raise ValueError(f"FC task index {self.index} expects at least a 2D tensor for parameter input, but got {len(weight_slice)} dimensions.")
+
+        k_dim = weight_slice[1]
+        k_size = k_dim.end - k_dim.start
+
+        # M*N*K
+        self.flops = self.size() * k_size
 
 class GConv(ComputeTask):
     opcode: str = "GConv"
@@ -512,6 +574,7 @@ class Send(CommunicationTask):
     path_dst: List[int] = []  # 路径广播目标列表，默认为空列表
     
     def run(self, core, ins):
+        logger.debug(f"Time {core.env.now:.2f}: Core {core.id} [Send.run] START for index {self.index}")
         # 分析时send/recv合并处理，因为index一致
         # 记录
         ins.record.pe_id = core.id
@@ -520,7 +583,9 @@ class Send(CommunicationTask):
         yield core.env.process(core.spm_manager.allocate(self.opcode+str(self.index), self.output_size()))
         ins.record.exe_start_time.append(core.env.now)
         # 将 Message 对象放入 Core 的数据输出通道 (data_out)，包含路径广播信息
+        logger.debug(f"Time {core.env.now:.2f}: Core {core.id} [Send.run] About to PUT message for index {self.index} into data_out link.")
         yield core.data_out.put(Message(data=Data(index=self.index, tensor_slice=self.tensor_slice), dst=self.dst, src=core.id, ins=ins, path_dst=self.path_dst))
+        logger.debug(f"Time {core.env.now:.2f}: Core {core.id} [Send.run] FINISHED PUT for index {self.index}")
 
     def input_size(self):
         return 0
@@ -556,4 +621,50 @@ class DerivativeRecv(Recv, DerivativeTask):
 
     class Config:
         arbitrary_types_allowed = True
+
+class Store(Task):
+    opcode: str = "Store"
+
+    def run(self, core, ins):
+        ins.record.exe_start_time.append(core.env.now)
+        # Allocate space for the tensor in SPM. After this, the data is considered available.
+        yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.size()))
+        ins.record.exe_end_time.append(core.env.now)
+
+    def input_size(self):
+        return 0
+
+    def output_size(self):
+        return self.size()
+
+class Load(Task):
+    opcode: str = "Load"
+
+    def run(self, core, ins):
+        # This is a logical operation. It assumes data is already in SPM.
+        # Its completion triggers subsequent tasks. It consumes no time.
+        ins.record.exe_start_time.append(core.env.now)
+        yield core.env.timeout(0)
+        ins.record.exe_end_time.append(core.env.now)
+
+    def input_size(self):
+        return 0
+
+    def output_size(self):
+        return 0
+
+class Free(Task):
+    opcode: str = "Free"
+
+    def run(self, core, ins):
+        ins.record.exe_start_time.append(core.env.now)
+        # Explicitly free a tensor slice from SPM.
+        yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.size()))
+        ins.record.exe_end_time.append(core.env.now)
+    
+    def input_size(self):
+        return self.size()
+
+    def output_size(self):
+        return 0
 

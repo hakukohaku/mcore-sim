@@ -18,7 +18,7 @@ class CoreConfig(BaseModel):
     width: int
     blk_size: int
     spm: SPMConfig
-    tpu: TPUConfig
+    compute: TPUConfig
     lsu: LSUConfig
 
 class RouterConfig(BaseModel):

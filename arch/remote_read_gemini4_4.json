@@ -30,7 +30,21 @@
 		}
 	},
 	"mem" : {
-		"width" : 128,
-		"delay" : 1
+		"type" : "two_sides_edge",
+		"num" : 8,
+		"dram_bw" : 128,
+		"dram_capacity" : 1048576,
+		"mem_core" : {
+			"0": {"dram_id": 0},
+			"1": {"dram_id": 1},
+			"2": {"dram_id": 2},
+			"3": {"dram_id": 3},
+			"12": {"dram_id": 4},
+			"13": {"dram_id": 5},
+			"14": {"dram_id": 6},
+			"15": {"dram_id": 7}
+		}
 	}
+	
+	
 }

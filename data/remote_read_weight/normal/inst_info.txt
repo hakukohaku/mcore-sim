@@ -1,12 +1,4 @@
 Debug: Starting to process 8 instructions
 Debug: Phase 1 - Collecting all SEND instructions
-Debug: Phase 1 complete - Collected 8 SEND instructions
+Debug: Phase 1 complete - Collected 0 SEND instructions
 Debug: Phase 2 - Processing all instructions
-Error: Instruction0 (Core4, Type:2) not executed.
-Error: Instruction1 (Core4, Type:2) not executed.
-Error: Instruction2 (Core5, Type:2) not executed.
-Error: Instruction3 (Core5, Type:2) not executed.
-Error: Instruction4 (Core6, Type:2) not executed.
-Error: Instruction5 (Core6, Type:2) not executed.
-Error: Instruction6 (Core7, Type:2) not executed.
-Error: Instruction7 (Core7, Type:2) not executed.

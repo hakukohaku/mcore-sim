@@ -9,7 +9,7 @@
 			"size" : 2097152,
 			"delay" : 0
 		},
-		"tpu" : {
+		"compute" : {
 			"flops" : 1024
 		},
 		"lsu" : {

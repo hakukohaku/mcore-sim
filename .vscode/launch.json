@@ -39,10 +39,24 @@
             "program": "${workspaceFolder}/run.py",
             "console": "integratedTerminal",
             "args": [
-              "--arch", "./arch/myarch_gemini4_4.json",
+              "--arch", "./arch/remote_read_gemini4_4.json",
               "--fail", "./failslow/normal.json",
               "--workload", "./tests/communication/remote_read_weight.json",
               "--log", "./log/remote_read_weight.txt",
+              "--level", "debug"
+            ]
+        },
+        {
+            "name": "gemm_test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+              "--arch", "./arch/myarch_gemini4_4_cim.json",
+              "--fail", "./failslow/normal.json",
+              "--workload", "./tests/gemm/workload_gemm_test.json",
+              "--log", "./log/gemm_test.txt",
               "--level", "debug"
             ]
         }

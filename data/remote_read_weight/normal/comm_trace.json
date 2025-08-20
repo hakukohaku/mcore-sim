@@ -1,3 +1,84 @@
 {
-    "trace": []
+    "trace": [
+        {
+            "instruction_id": 0,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 4,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 2,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 5,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 4,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 6,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 6,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 7,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 1,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 8,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 3,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 9,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 5,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 10,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        },
+        {
+            "instruction_id": 7,
+            "instruction_type": 0,
+            "layer_id": 1,
+            "pe_id": 11,
+            "start_time": 0,
+            "end_time": 2,
+            "src_id": -1,
+            "dst_id": -1
+        }
+    ]
 }

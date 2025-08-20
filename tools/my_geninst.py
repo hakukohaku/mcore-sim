@@ -245,7 +245,7 @@ def get_spm_size(layer: Layer):
 
     return spm_size
 
-def GEMM():
+def GEMM(read_activation=True):
     print(f"Generating inst of layer{lid}.")
     total_N = 64
     total_K = 2048
@@ -259,6 +259,7 @@ def GEMM():
     tile_size_k = 512
     tile_size_m = 256
     
+    # weight stationary, 以weight tensor为主映射到空间core上。
     # 将矩阵k维度映射到空间阵列的y维度（行），m维度映射到x维度（列）
     temporal_loop_k = math.ceil(tile_num_k / arch_configs.core.y)
     temporal_loop_m = math.ceil(tile_num_m / arch_configs.core.x)
@@ -268,13 +269,13 @@ def GEMM():
         cur_start_n = n * tile_size_n
         cur_size_n = min(tile_size_n, total_N - cur_start_n)
         
-        activation = layer.input_feature
-        if activation.source == "dram":
+
+        if read_activation:
             for tp_k in range(temporal_loop_k):
                 for tp_m in range(temporal_loop_m):
                     # 读入activation
                     # 硬件架构：只有边缘的核可以直接访问外部DRAM
-                    if arch_configs.mem_core.type == "double_edge": 
+                    if arch_configs.mem.type == "two_sides_edge": 
                         # 遍历阵列，为每个核创建instruction
                         for core_y in range(arch_configs.core.y):
                             # 只有每行两边的mem_core直接访问DRAM的核，各读入一半的activation并通过path-based multicast广播给行内其他核

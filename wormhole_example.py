@@ -9,7 +9,7 @@ import simpy
 import logging
 from src.noc_new import NoC, Router
 from src.arch_config import NoCConfig, RouterConfig, LinkConfig
-from src.sim_type import Message, Data, DataType, Instruction, Record
+from src.sim_type import Message, Data, DataType, Instruction, Record, DimSlice
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -18,15 +18,21 @@ def create_sample_message(env, data_index, dst_router):
     """创建一个示例消息"""
     # 创建一个简单的指令记录
     record = Record()
+    
+    # 示例张量切片
+    tensor_slice = [DimSlice(start=0, end=8), DimSlice(start=0, end=8), DimSlice(start=0, end=8)]
+    
     instruction = Instruction(
         index=data_index,
         inst_type=2,  # SEND
         data_type=DataType.FEAT,
-        record=record
+        record=record,
+        layer_id=0,  # 添加缺失的 layer_id
+        tensor_slice=tensor_slice  # 添加缺失的 tensor_slice
     )
     
     # 创建数据
-    data = Data(index=data_index, tensor_slice=[8, 8, 8])  # 示例张量切片
+    data = Data(index=data_index, tensor_slice=tensor_slice)
     
     # 创建消息
     message = Message(
@@ -50,7 +56,7 @@ def wormhole_routing_demo():
     # 创建NoC配置
     link_config = LinkConfig(width=64, delay=1)
     router_config = RouterConfig(type="XY", vc=1)
-    noc_config = NoCConfig(x=4, y=4, router=router_config, link=link_config)
+    noc_config = NoCConfig(type="mesh", x=4, y=4, router=router_config, link=link_config)
     
     # 创建NoC网络
     noc = NoC(env, noc_config)
@@ -108,8 +114,8 @@ def wormhole_routing_demo():
         print(f"Wormhole路由完成时间: {wormhole_time}")
     
     # 运行测试
-    env.process(test_wormhole_routing())
-    env.process(test_router_interface())
+    #env.process(test_wormhole_routing())
+    #nv.process(test_router_interface())
     env.process(test_strategy_comparison())
     
     # 运行仿真

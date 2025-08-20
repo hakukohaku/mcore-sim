@@ -21,7 +21,7 @@ def config_analyzer(filename: str) -> ArchConfig:
         except ValidationError as e:
             print(e.json())
             
-arch_configs = config_analyzer(os.path.join(project_root, "arch", "gemini4_4.json"))
+arch_configs = config_analyzer(os.path.join(project_root, "arch", "myarch_gemini4_4_cim.json"))
 arch_configs.core.spm.size /= 4
 
 class Core(BaseModel):
@@ -254,7 +254,7 @@ output_inst = [TaskType.WRITE, TaskType.SEND]
 wl = Workload(name="path_based_broadcast", pes=pewls)
 workload_json = wl.model_dump_json(indent=4)
 
-output_file_path = os.path.join(project_root, "tests", "communication", "path_based_broadcast.json")
+output_file_path = os.path.join(project_root, "tests", "communication", "path_based_broadcast-2.json")
 output_dir = os.path.dirname(output_file_path)
 os.makedirs(output_dir, exist_ok=True)
 

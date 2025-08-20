@@ -1,67 +1,859 @@
-2025-07-29 17:21:40 - Core - DEBUG - Core0 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core1 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core2 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core3 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core4 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 0, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 1, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - Core5 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 2, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 3, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - Core6 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 4, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 5, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - Core7 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 0, index is 6, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - ------------------------------
-2025-07-29 17:21:40 - Core - DEBUG - inst_id is 1, index is 7, type is 2
-2025-07-29 17:21:40 - Core - DEBUG - Core8 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core9 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core10 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core11 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core12 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core13 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core14 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Core15 is task_block_updating
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core0 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core1 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core2 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core3 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Before AnyOf yield
-2025-07-29 17:21:40 - Core - DEBUG - Core12's running_queue is []
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Core12 is yielding AnyOf
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core12 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core13 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core14 (Memory Core) data_in queue is EMPTY
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) scheduler returned NO ready tasks
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) about to call data_in.get(), current queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) waiting for messages, data_in queue length: 0
-2025-07-29 17:21:40 - Core - DEBUG - Time 0.00: Core15 (Memory Core) data_in queue is EMPTY
+2025-08-18 17:45:53 - Core - INFO - Core0 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f570e10>
+2025-08-18 17:45:53 - Core - DEBUG - Core0 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core1 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f571130>
+2025-08-18 17:45:53 - Core - DEBUG - Core1 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core2 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f5711d0>
+2025-08-18 17:45:53 - Core - DEBUG - Core2 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core3 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f571310>
+2025-08-18 17:45:53 - Core - DEBUG - Core3 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core4 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f571630>
+2025-08-18 17:45:53 - Core - DEBUG - Core4 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 0, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core5 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f5719f0>
+2025-08-18 17:45:53 - Core - DEBUG - Core5 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 2, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core6 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f571c70>
+2025-08-18 17:45:53 - Core - DEBUG - Core6 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 4, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core7 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f571ef0>
+2025-08-18 17:45:53 - Core - DEBUG - Core7 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 6, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core8 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572170>
+2025-08-18 17:45:53 - Core - DEBUG - Core8 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 1, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core9 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f5723f0>
+2025-08-18 17:45:53 - Core - DEBUG - Core9 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 3, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core10 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572670>
+2025-08-18 17:45:53 - Core - DEBUG - Core10 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 5, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core11 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f5728f0>
+2025-08-18 17:45:53 - Core - DEBUG - Core11 is task_block_updating
+2025-08-18 17:45:53 - Core - DEBUG - ------------------------------
+2025-08-18 17:45:53 - Core - DEBUG - inst_id is 0, index is 7, type is 0
+2025-08-18 17:45:53 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-08-18 17:45:53 - Core - DEBUG - insert 0 into waiting queue
+2025-08-18 17:45:53 - Core - INFO - Core12 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572b70>
+2025-08-18 17:45:53 - Core - DEBUG - Core12 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core13 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572c10>
+2025-08-18 17:45:53 - Core - DEBUG - Core13 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core14 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572d50>
+2025-08-18 17:45:53 - Core - DEBUG - Core14 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Core15 initialized with data_in store: <src.noc_new.Link object at 0x7ef61f572e90>
+2025-08-18 17:45:53 - Core - DEBUG - Core15 is task_block_updating
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core0 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core0 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core1 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core1 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core1 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core2 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core2 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core2 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core3 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core3 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core3 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core4 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core4 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core4 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core4 add a <class 'src.sim_type.Read'> task(id:0, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core4 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core5 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core5 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core5 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core5 add a <class 'src.sim_type.Read'> task(id:2, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core5 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core6 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core6 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core6 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core6 add a <class 'src.sim_type.Read'> task(id:4, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core6 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core7 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core7 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core7 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core7 add a <class 'src.sim_type.Read'> task(id:6, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core7 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core8 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core8 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core8 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core8 add a <class 'src.sim_type.Read'> task(id:1, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core8 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core8 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core9 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core9 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core9 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core9 add a <class 'src.sim_type.Read'> task(id:3, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core9 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core9 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core10 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core10 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core10 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core10 add a <class 'src.sim_type.Read'> task(id:5, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core10 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core10 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core11 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core11 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core11 got static task_id 0 from waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core11 add a <class 'src.sim_type.Read'> task(id:7, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core11 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core11 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core12 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core12 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core12 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core12 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core13 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core13 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core13 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core13 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core14 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core14 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core14 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core14 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core15 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 0.00: Core15 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core15 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 0.00: Core15 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 4 initiating REMOTE access to DRAM 0 via Core 0
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 5 initiating REMOTE access to DRAM 1 via Core 1
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 6 initiating REMOTE access to DRAM 2 via Core 2
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 7 initiating REMOTE access to DRAM 3 via Core 3
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 8 initiating REMOTE access to DRAM 4 via Core 12
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 9 initiating REMOTE access to DRAM 5 via Core 13
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 10 initiating REMOTE access to DRAM 6 via Core 14
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 0.00: Core 11 initiating REMOTE access to DRAM 7 via Core 15
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND0' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND2' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND4' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND6' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND1' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND3' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND5' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND7' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND0' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND2' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND4' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND6' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND1' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND3' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND5' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 0.00: Task 'SEND7' acquired a resource. Starting execution for 2 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND0' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND2' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND4' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND6' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND1' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND3' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND5' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 2.00: Task 'SEND7' released a resource.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 4 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 4 begins wormhole request for data 0 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 4 initiating wormhole routing for data 0 to Router 0
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router4 to Router0: [4, 0]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router4 -> Router0) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 5 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 5 begins wormhole request for data 2 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 5 initiating wormhole routing for data 2 to Router 1
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router5 to Router1: [5, 1]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router5 -> Router1) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 6 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 6 begins wormhole request for data 4 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 6 initiating wormhole routing for data 4 to Router 2
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router6 to Router2: [6, 2]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router6 -> Router2) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 7 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 7 begins wormhole request for data 6 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 7 initiating wormhole routing for data 6 to Router 3
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router7 to Router3: [7, 3]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router7 -> Router3) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 8 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 8 begins wormhole request for data 1 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 8 initiating wormhole routing for data 1 to Router 12
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router8 to Router12: [8, 12]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router8 -> Router12) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 9 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 9 begins wormhole request for data 3 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 9 initiating wormhole routing for data 3 to Router 13
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router9 to Router13: [9, 13]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router9 -> Router13) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 10 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 10 begins wormhole request for data 5 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 10 initiating wormhole routing for data 5 to Router 14
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router10 to Router14: [10, 14]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router10 -> Router14) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Router 11 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 11 begins wormhole request for data 7 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Router 11 initiating wormhole routing for data 7 to Router 15
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole routing path from Router11 to Router15: [11, 15]
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 2.00: Added link 0 (Router11 -> Router15) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 2.00: Wormhole transmission starting, latency=1.00 (delay=0.00, transmission=1.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 0 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [0]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router4 to Router0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 2 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [1]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router5 to Router1
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 4 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [2]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router6 to Router2
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 6 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [3]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router7 to Router3
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 1 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [12]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router8 to Router12
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 3 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [13]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router9 to Router13
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 5 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [14]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router10 to Router14
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission for data 7 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Message delivered via wormhole to Cores: [15]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 3.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 3.00: Wormhole transmission completed from Router11 to Router15
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core0's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c4e50>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=0, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=4, dram_id=0), running=False, waitinglast=False, hot=0, next=[]), src=4, data=Data(index=0, tensor_slice=[DimSlice(start=0, end=1)]), dst=0, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=4, original_index=0, original_slice=[DimSlice(start=256, end=512), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core0 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core0 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core0 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 0 creating proxy Read task for index 0
+2025-08-18 17:45:53 - Core - DEBUG - Core 0 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core0 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core0 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core0 got derivative task Read (index 0) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core0 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core0 add a <class 'src.sim_type.Read'> task(id:0, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core0 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 0 executing PROXY access to its local DRAM 0
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core0 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core1's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c4ec0>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=2, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=5, dram_id=1), running=False, waitinglast=False, hot=0, next=[]), src=5, data=Data(index=2, tensor_slice=[DimSlice(start=0, end=1)]), dst=1, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=5, original_index=2, original_slice=[DimSlice(start=256, end=512), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core1 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core1 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core1 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 1 creating proxy Read task for index 2
+2025-08-18 17:45:53 - Core - DEBUG - Core 1 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core1 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core1 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core1 got derivative task Read (index 2) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core1 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core1 add a <class 'src.sim_type.Read'> task(id:2, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core1 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 1 executing PROXY access to its local DRAM 1
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core1 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core2's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c4f30>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=4, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=6, dram_id=2), running=False, waitinglast=False, hot=0, next=[]), src=6, data=Data(index=4, tensor_slice=[DimSlice(start=0, end=1)]), dst=2, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=6, original_index=4, original_slice=[DimSlice(start=256, end=512), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core2 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core2 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core2 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 2 creating proxy Read task for index 4
+2025-08-18 17:45:53 - Core - DEBUG - Core 2 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core2 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core2 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core2 got derivative task Read (index 4) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core2 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core2 add a <class 'src.sim_type.Read'> task(id:4, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core2 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 2 executing PROXY access to its local DRAM 2
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core2 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core3's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c4fa0>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=6, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=7, dram_id=3), running=False, waitinglast=False, hot=0, next=[]), src=7, data=Data(index=6, tensor_slice=[DimSlice(start=0, end=1)]), dst=3, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=7, original_index=6, original_slice=[DimSlice(start=256, end=512), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core3 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core3 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core3 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 3 creating proxy Read task for index 6
+2025-08-18 17:45:53 - Core - DEBUG - Core 3 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core3 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core3 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core3 got derivative task Read (index 6) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core3 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core3 add a <class 'src.sim_type.Read'> task(id:6, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core3 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 3 executing PROXY access to its local DRAM 3
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core3 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Core12 finish yielding AnyOf
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core12's result is <ConditionValue {<StoreGet() object at 0x7ef61f513000>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=1, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=8, dram_id=4), running=False, waitinglast=False, hot=0, next=[]), src=8, data=Data(index=1, tensor_slice=[DimSlice(start=0, end=1)]), dst=12, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=8, original_index=1, original_slice=[DimSlice(start=512, end=768), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core12 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core12 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core12 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 12 creating proxy Read task for index 1
+2025-08-18 17:45:53 - Core - DEBUG - Core 12 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core12 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core12 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core12 got derivative task Read (index 1) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core12 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core12 add a <class 'src.sim_type.Read'> task(id:1, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core12 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core12 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 12 executing PROXY access to its local DRAM 4
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core12 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core13's result is <ConditionValue {<StoreGet() object at 0x7ef61f513310>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=3, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=9, dram_id=5), running=False, waitinglast=False, hot=0, next=[]), src=9, data=Data(index=3, tensor_slice=[DimSlice(start=0, end=1)]), dst=13, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=9, original_index=3, original_slice=[DimSlice(start=512, end=768), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core13 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core13 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core13 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 13 creating proxy Read task for index 3
+2025-08-18 17:45:53 - Core - DEBUG - Core 13 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core13 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core13 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core13 got derivative task Read (index 3) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core13 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core13 add a <class 'src.sim_type.Read'> task(id:3, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core13 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core13 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 13 executing PROXY access to its local DRAM 5
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core13 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core14's result is <ConditionValue {<StoreGet() object at 0x7ef61f513620>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=5, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=10, dram_id=6), running=False, waitinglast=False, hot=0, next=[]), src=10, data=Data(index=5, tensor_slice=[DimSlice(start=0, end=1)]), dst=14, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=10, original_index=5, original_slice=[DimSlice(start=512, end=768), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core14 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core14 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core14 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 14 creating proxy Read task for index 5
+2025-08-18 17:45:53 - Core - DEBUG - Core 14 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core14 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core14 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core14 got derivative task Read (index 5) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core14 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core14 add a <class 'src.sim_type.Read'> task(id:5, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core14 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core14 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 14 executing PROXY access to its local DRAM 6
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core14 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core15's result is <ConditionValue {<StoreGet() object at 0x7ef61f513930>: Message(ins=Instruction(inst_type=<TaskType.READ: 0>, index=7, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[0, 0], exe_end_time=[2], ready_run_time=[0, 0, 2], mulins=[], pe_id=11, dram_id=7), running=False, waitinglast=False, hot=0, next=[]), src=11, data=Data(index=7, tensor_slice=[DimSlice(start=0, end=1)]), dst=15, path_dst=[], msg_type=<MsgType.MEM_REQUEST: 1>, payload=MemReqPayload(req_op='Read', requester_id=11, original_index=7, original_slice=[DimSlice(start=512, end=768), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], data_type=<DataType.FEAT: 1>, layer_id=1), route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core15 received a message: msg_type=1
+2025-08-18 17:45:53 - Core - DEBUG - Core15 receive a mem request
+2025-08-18 17:45:53 - Core - DEBUG - Core15 calling _handle_mem_request
+2025-08-18 17:45:53 - Core - DEBUG - Core 15 creating proxy Read task for index 7
+2025-08-18 17:45:53 - Core - DEBUG - Core 15 putting proxy Read task into waiting_queue
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core15 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core15 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core15 got derivative task Read (index 7) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core15 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core15 add a <class 'src.sim_type.Read'> task(id:7, layer:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core15 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 3.00: Core15 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 3.00: Core 15 executing PROXY access to its local DRAM 7
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core15 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core0 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core1 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core2 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core3 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core12 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core13 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core14 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 3.00: Core15 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ0' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ1' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ2' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ3' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ4' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ5' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ6' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ7' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ0' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ1' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ2' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ3' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ4' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ5' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ6' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 3.00: Task 'READ7' acquired a resource. Starting execution for 1024 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ0' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ1' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ2' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ3' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ4' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ5' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ6' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'READ7' released a resource.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core0's result is <ConditionValue {<Process(run) object at 0x7ef61f513d20>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core0 finish processing <class 'src.sim_type.Read'> task(id:0).
+2025-08-18 17:45:53 - Core - DEBUG - Core 0 finished proxy Read for Core 4. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 0 created and queued a DerivativeSend task (index: 0) to Core 4
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core0 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core0 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core0 got derivative task DerivativeSend (index 0) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core0 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core0 add a <class 'src.sim_type.DerivativeSend'> task(id:0) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core0 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 0 [Send.run] START for index 0
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core1's result is <ConditionValue {<Process(run) object at 0x7ef61f513bd0>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core1 finish processing <class 'src.sim_type.Read'> task(id:2).
+2025-08-18 17:45:53 - Core - DEBUG - Core 1 finished proxy Read for Core 5. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 1 created and queued a DerivativeSend task (index: 2) to Core 5
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core1 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core1 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core1 got derivative task DerivativeSend (index 2) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core1 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core1 add a <class 'src.sim_type.DerivativeSend'> task(id:2) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core1 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 1 [Send.run] START for index 2
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core2's result is <ConditionValue {<Process(run) object at 0x7ef61f513e70>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core2 finish processing <class 'src.sim_type.Read'> task(id:4).
+2025-08-18 17:45:53 - Core - DEBUG - Core 2 finished proxy Read for Core 6. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 2 created and queued a DerivativeSend task (index: 4) to Core 6
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core2 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core2 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core2 got derivative task DerivativeSend (index 4) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core2 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core2 add a <class 'src.sim_type.DerivativeSend'> task(id:4) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core2 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 2 [Send.run] START for index 4
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core3's result is <ConditionValue {<Process(run) object at 0x7ef61f5c4050>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core3 finish processing <class 'src.sim_type.Read'> task(id:6).
+2025-08-18 17:45:53 - Core - DEBUG - Core 3 finished proxy Read for Core 7. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 3 created and queued a DerivativeSend task (index: 6) to Core 7
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core3 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core3 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core3 got derivative task DerivativeSend (index 6) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core3 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core3 add a <class 'src.sim_type.DerivativeSend'> task(id:6) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core3 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 3 [Send.run] START for index 6
+2025-08-18 17:45:53 - Core - DEBUG - Core12 finish yielding AnyOf
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core12's result is <ConditionValue {<Process(run) object at 0x7ef61f5c40c0>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core12 finish processing <class 'src.sim_type.Read'> task(id:1).
+2025-08-18 17:45:53 - Core - DEBUG - Core 12 finished proxy Read for Core 8. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 12 created and queued a DerivativeSend task (index: 1) to Core 8
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core12 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core12 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core12 got derivative task DerivativeSend (index 1) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core12 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core12 add a <class 'src.sim_type.DerivativeSend'> task(id:1) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core12 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core12 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 12 [Send.run] START for index 1
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core13's result is <ConditionValue {<Process(run) object at 0x7ef61f5c6c80>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core13 finish processing <class 'src.sim_type.Read'> task(id:3).
+2025-08-18 17:45:53 - Core - DEBUG - Core 13 finished proxy Read for Core 9. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 13 created and queued a DerivativeSend task (index: 3) to Core 9
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core13 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core13 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core13 got derivative task DerivativeSend (index 3) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core13 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core13 add a <class 'src.sim_type.DerivativeSend'> task(id:3) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core13 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core13 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 13 [Send.run] START for index 3
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core14's result is <ConditionValue {<Process(run) object at 0x7ef61f5c6dd0>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core14 finish processing <class 'src.sim_type.Read'> task(id:5).
+2025-08-18 17:45:53 - Core - DEBUG - Core 14 finished proxy Read for Core 10. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 14 created and queued a DerivativeSend task (index: 5) to Core 10
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core14 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core14 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core14 got derivative task DerivativeSend (index 5) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core14 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core14 add a <class 'src.sim_type.DerivativeSend'> task(id:5) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core14 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core14 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 14 [Send.run] START for index 5
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core15's result is <ConditionValue {<Process(run) object at 0x7ef61f5c6f20>: None}>
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core15 finish processing <class 'src.sim_type.Read'> task(id:7).
+2025-08-18 17:45:53 - Core - DEBUG - Core 15 finished proxy Read for Core 11. Preparing to send data back.
+2025-08-18 17:45:53 - Core - DEBUG - Core 15 created and queued a DerivativeSend task (index: 7) to Core 11
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core15 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Core15 block_counter: 0/10
+2025-08-18 17:45:53 - Core - DEBUG - Core15 got derivative task DerivativeSend (index 7) from waiting_queue
+2025-08-18 17:45:53 - Core - DEBUG - Time 1027.00: Core15 (Memory Core) scheduler returned 1 ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core15 add a <class 'src.sim_type.DerivativeSend'> task(id:7) into running queue.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core15 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1027.00: Core15 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 15 [Send.run] START for index 7
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 0 [Send.run] About to PUT message for index 0 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND0' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 1 [Send.run] About to PUT message for index 2 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND2' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 2 [Send.run] About to PUT message for index 4 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND4' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 3 [Send.run] About to PUT message for index 6 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND6' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 12 [Send.run] About to PUT message for index 1 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND1' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 13 [Send.run] About to PUT message for index 3 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND3' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 14 [Send.run] About to PUT message for index 5 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND5' trying to acquire a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1027.00: Core 15 [Send.run] About to PUT message for index 7 into data_out link.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND7' trying to acquire a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND0' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND2' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND4' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND6' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND1' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND3' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND5' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1027.00: Task 'SEND7' acquired a resource. Starting execution for 17 cycles.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND0' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND2' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND4' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND6' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND1' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND3' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND5' released a resource.
+2025-08-18 17:45:53 - Common - DEBUG - Time 1044.00: Task 'SEND7' released a resource.
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 0 [Send.run] FINISHED PUT for index 0
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 1 [Send.run] FINISHED PUT for index 2
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 2 [Send.run] FINISHED PUT for index 4
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 3 [Send.run] FINISHED PUT for index 6
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 12 [Send.run] FINISHED PUT for index 1
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 13 [Send.run] FINISHED PUT for index 3
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 14 [Send.run] FINISHED PUT for index 5
+2025-08-18 17:45:53 - src.sim_type - DEBUG - Time 1044.00: Core 15 [Send.run] FINISHED PUT for index 7
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 0 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 0 begins wormhole request for data 0 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 0 initiating wormhole routing for data 0 to Router 4
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router0 to Router4: [0, 4]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router0 -> Router4) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core0's result is <ConditionValue {<Process(run) object at 0x7ef61f5c4e50>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 0 finished executing a DerivativeSend task for index 0.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core0 finish processing <class 'src.sim_type.DerivativeSend'> task(id:0).
+2025-08-18 17:45:53 - Core - DEBUG - Core 0 finished a derivative task (DerivativeSend, index: 0). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core0 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core0 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 1 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 1 begins wormhole request for data 2 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 1 initiating wormhole routing for data 2 to Router 5
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router1 to Router5: [1, 5]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router1 -> Router5) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core1's result is <ConditionValue {<Process(run) object at 0x7ef61f5c4ec0>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 1 finished executing a DerivativeSend task for index 2.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core1 finish processing <class 'src.sim_type.DerivativeSend'> task(id:2).
+2025-08-18 17:45:53 - Core - DEBUG - Core 1 finished a derivative task (DerivativeSend, index: 2). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core1 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core1 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core1 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 2 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 2 begins wormhole request for data 4 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 2 initiating wormhole routing for data 4 to Router 6
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router2 to Router6: [2, 6]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router2 -> Router6) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core2's result is <ConditionValue {<Process(run) object at 0x7ef61f5c4f30>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 2 finished executing a DerivativeSend task for index 4.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core2 finish processing <class 'src.sim_type.DerivativeSend'> task(id:4).
+2025-08-18 17:45:53 - Core - DEBUG - Core 2 finished a derivative task (DerivativeSend, index: 4). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core2 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core2 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core2 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 3 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 3 begins wormhole request for data 6 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 3 initiating wormhole routing for data 6 to Router 7
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router3 to Router7: [3, 7]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router3 -> Router7) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core3's result is <ConditionValue {<Process(run) object at 0x7ef61f5c4fa0>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 3 finished executing a DerivativeSend task for index 6.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core3 finish processing <class 'src.sim_type.DerivativeSend'> task(id:6).
+2025-08-18 17:45:53 - Core - DEBUG - Core 3 finished a derivative task (DerivativeSend, index: 6). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core3 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core3 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core3 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 12 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 12 begins wormhole request for data 1 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 12 initiating wormhole routing for data 1 to Router 8
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router12 to Router8: [12, 8]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router12 -> Router8) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Core12 finish yielding AnyOf
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core12's result is <ConditionValue {<Process(run) object at 0x7ef61f513000>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 12 finished executing a DerivativeSend task for index 1.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core12 finish processing <class 'src.sim_type.DerivativeSend'> task(id:1).
+2025-08-18 17:45:53 - Core - DEBUG - Core 12 finished a derivative task (DerivativeSend, index: 1). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core12 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core12 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core12 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core12 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 13 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 13 begins wormhole request for data 3 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 13 initiating wormhole routing for data 3 to Router 9
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router13 to Router9: [13, 9]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router13 -> Router9) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core13's result is <ConditionValue {<Process(run) object at 0x7ef61f513310>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 13 finished executing a DerivativeSend task for index 3.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core13 finish processing <class 'src.sim_type.DerivativeSend'> task(id:3).
+2025-08-18 17:45:53 - Core - DEBUG - Core 13 finished a derivative task (DerivativeSend, index: 3). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core13 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core13 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core13 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core13 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 14 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 14 begins wormhole request for data 5 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 14 initiating wormhole routing for data 5 to Router 10
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router14 to Router10: [14, 10]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router14 -> Router10) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core14's result is <ConditionValue {<Process(run) object at 0x7ef61f513620>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 14 finished executing a DerivativeSend task for index 5.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core14 finish processing <class 'src.sim_type.DerivativeSend'> task(id:5).
+2025-08-18 17:45:53 - Core - DEBUG - Core 14 finished a derivative task (DerivativeSend, index: 5). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core14 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core14 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core14 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core14 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Router 15 received a message from its core_in link.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 15 begins wormhole request for data 7 from core.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Router 15 initiating wormhole routing for data 7 to Router 11
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole routing path from Router15 to Router11: [15, 11]
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Requesting 1 links for wormhole routing
+2025-08-18 17:45:53 - NoC - DEBUG - Time 1044.00: Added link 0 (Router15 -> Router11) to request batch.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Waiting for all 1 links to be available simultaneously...
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core15's result is <ConditionValue {<Process(run) object at 0x7ef61f513930>: None}>
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core 15 finished executing a DerivativeSend task for index 7.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core15 finish processing <class 'src.sim_type.DerivativeSend'> task(id:7).
+2025-08-18 17:45:53 - Core - DEBUG - Core 15 finished a derivative task (DerivativeSend, index: 7). No further updates needed.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core15 entered top of main loop.
+2025-08-18 17:45:53 - Core - DEBUG - Time 1044.00: Core15 (Memory Core) scheduler returned NO ready tasks
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core15 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 1044.00: Core15 has no running tasks. WAITING ONLY for incoming messages.
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: All links acquired for wormhole routing
+2025-08-18 17:45:53 - NoC - INFO - Time 1044.00: Wormhole transmission starting, latency=8192.00 (delay=0.00, transmission=8192.00)
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 0 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [4]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router0 to Router4
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 2 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [5]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router1 to Router5
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 4 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [6]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router2 to Router6
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 6 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [7]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router3 to Router7
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 1 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [8]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router12 to Router8
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 3 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [9]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router13 to Router9
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 5 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [10]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router14 to Router10
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission for data 7 arrived. Delivering to path destinations.
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Message delivered via wormhole to Cores: [11]
+2025-08-18 17:45:53 - NoC - DEBUG - Time 9236.00: Released link 0
+2025-08-18 17:45:53 - NoC - INFO - Time 9236.00: Wormhole transmission completed from Router15 to Router11
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core4's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c50f0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=0, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=0, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=0, data=Data(index=0, tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=4, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core4 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core4 receive data0
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=0 tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core4 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core5's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c5240>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=2, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=1, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=1, data=Data(index=2, tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=5, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core5 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core5 receive data2
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=2 tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core5 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core6's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c5390>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=4, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=2, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=2, data=Data(index=4, tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=6, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core6 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core6 receive data4
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=4 tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core6 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core7's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c54e0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=6, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=3, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=3, data=Data(index=6, tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=7, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core7 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core7 receive data6
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=6 tensor_slice=[DimSlice(start=256, end=512), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core7 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core8's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c5630>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=1, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=12, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=12, data=Data(index=1, tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=8, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core8 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core8 receive data1
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=1 tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=0, end=512), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core8 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core9's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c5780>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=3, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=13, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=13, data=Data(index=3, tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=9, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core9 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core9 receive data3
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=3 tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=512, end=1024), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core9 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core10's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c5860>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=5, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=14, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=14, data=Data(index=5, tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=10, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core10 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core10 receive data5
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=5 tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1024, end=1536), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core10 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core11's result is <ConditionValue {<StoreGet() object at 0x7ef61f5c59b0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=7, trigger_index=[], trigger_core_id=[], layer_id=1, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)], feat_num=0, para_num=0, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1027, 1027], exe_end_time=[1044], ready_run_time=[1027, 1027, 1044], mulins=[], pe_id=15, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=15, data=Data(index=7, tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]), dst=11, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-08-18 17:45:53 - Core - DEBUG - Core11 received a message: msg_type=0
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core11 receive data7
+2025-08-18 17:45:53 - Core - DEBUG - received data is index=7 tensor_slice=[DimSlice(start=512, end=768), DimSlice(start=1536, end=2048), DimSlice(start=0, end=1), DimSlice(start=0, end=1)]
+2025-08-18 17:45:53 - Core - DEBUG - function call: receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - in function receive_data()
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core11 before-allocate: 131072, [2097152/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core4 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core5 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core6 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core7 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core8 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core9 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core10 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - Time 9236.00: Core11 after-allocate: 131072, [1966080/2097152]
+2025-08-18 17:45:53 - Core - DEBUG - updating data0
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core4 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data2
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core5 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data4
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core6 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data6
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core7 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data1
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core8 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data3
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core9 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data5
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core10 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - DEBUG - updating data7
+2025-08-18 17:45:53 - Core - DEBUG - current block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - task block_ptr is 0
+2025-08-18 17:45:53 - Core - DEBUG - Core11 self.counter += 1, [1/10]
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core4 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core4 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core5 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core5 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core6 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core6 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core7 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core7 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core8 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core8 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core8 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core9 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core9 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core9 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core10 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core10 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core10 waiting for 1 running tasks OR a message.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core11 entered top of main loop.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core11 reached checkpoint BEFORE 'with data_in.get()'.
+2025-08-18 17:45:53 - Core - INFO - Time 9236.00: Core11 waiting for 1 running tasks OR a message.

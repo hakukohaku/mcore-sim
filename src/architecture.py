@@ -210,8 +210,8 @@ class Arch:
     def build_cores(self, config: CoreConfig, program: List[List[Instruction]], mem_config: MemConfig) -> List[Core]:
         cores = []
         for id in range(config.x * config.y):
-            link1 = Link(self.env, LinkConfig(width=128, delay=1))
-            link2 = Link(self.env, LinkConfig(width=128, delay=1))
+            link1 = Link(self.env, LinkConfig(width=8192, delay=1))
+            link2 = Link(self.env, LinkConfig(width=8192, delay=1))
             core = Core(self.env, config, program[id], id, self, link1, link2, self.stage)
 
             self.noc.routers[id].bound_with_core(link1, link2)

@@ -238,11 +238,17 @@ class TableScheduler:
                 case TaskType.RECV:
                     self.tasks.append(Recv(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.READ:
-                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
+                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.WRITE:
                     self.tasks.append(Write(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.SEND:
                     self.tasks.append(Send(index=inst.index, feat_num=inst.feat_num,tensor_slice=inst.tensor_slice, inst=inst, dst=inst.position, path_dst=inst.path_dst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
+                case TaskType.LOAD:
+                    self.tasks.append(Load(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
+                case TaskType.STORE:
+                    self.tasks.append(Store(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
+                case TaskType.FREE:
+                    self.tasks.append(Free(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
                 case TaskType.CONV:
                     self.tasks.append(Conv(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.POOL:
@@ -250,7 +256,7 @@ class TableScheduler:
                 case TaskType.ELEM:
                     self.tasks.append(Elem(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.FC:
-                    self.tasks.append(FC(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
+                    self.tasks.append(FC(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_aggr_type=inst.feat_aggr_type, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.GCONV:
                     self.tasks.append(GConv(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, group_num=inst.group_num, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.PTP:
@@ -444,7 +450,7 @@ class TableScheduler:
                 inst_type=TaskType.SEND,
                 tensor_slice=task.tensor_slice,
                 data_type=DataType.FEAT, # 假设内存读写总是特征数据
-                # 其他必要的默认值
+                layer_id=task.layer_id # 继承原始任务的layer_id
             )
 
             # 2. 创建衍生Send任务
@@ -454,7 +460,8 @@ class TableScheduler:
                 tensor_slice=task.tensor_slice,
                 proxy_ins=proxy_ins,
                 feat_num=0,  # 衍生Send任务不需要等待任何数据
-                para_num=0   # 衍生Send任务不需要等待任何数据
+                para_num=0,   # 衍生Send任务不需要等待任何数据
+                layer_id=task.layer_id # 继承原始任务的layer_id
             )
 
             # 3. 将衍生任务放入就绪队列
@@ -773,7 +780,7 @@ class Core:
         self.scheduler = TableScheduler(self.program, self.spm_manager, config.blk_size, self.id, self.env, arch, self.data_in, stage)
 
         self.lsu_bandwidth = config.lsu.width
-        self.tpu_flops = config.tpu.flops
+        self.tpu_flops = config.compute.flops
         self.lsu = MonitoredResource(env=env, capacity=4)
         self.tpu = MonitoredResource(env=env, capacity=1)
 
@@ -810,32 +817,32 @@ class Core:
         返回:
             (int, int): 一个元组，包含 (目标核心ID, 目标DRAM ID)
         """
-        mem_core_id = -1
-        if self.arch.mem_type == "all_core_distributed":
-            mem_core_id = self.id
-        elif self.arch.mem_type == "two_sides_edge":
-            my_row, my_col = self._id_to_coords()
-  
-            # 确定最近的边缘
-            dist_to_left = my_col
-            dist_to_right = (self.arch.core_x - 1) - my_col
-  
-            if dist_to_left < dist_to_right:
-                mem_core_id = self._coords_to_id(0, my_row)  # 左边缘DRAM ID
-            else:
-                mem_core_id = self._coords_to_id(self.arch.core_x - 1, my_row)
-        else:
-            raise ValueError(f"Unsupported DRAM distribution type: {self.arch.mem_type}")
+        # 1. 找到所有连接了DRAM的内存核心
+        mem_core_candidates = [c for c in self.arch.cores if c.dram_list]
+        if not mem_core_candidates:
+            raise ValueError("Architecture has no cores with DRAM connected.")
 
-        # 根据计算出的mem_core_id，查找其连接的dram_id
-        # 假设每个内存核心只连接一个DRAM
-        target_core = self.arch.cores[mem_core_id]
-        if not target_core.dram_list:
-            raise ValueError(f"Target memory core {mem_core_id} has no connected DRAMs.")
-        # 这里假设一个core只挂了一个dram
-        dram_id = target_core.dram_list[0]
+        # 2. 计算当前核心到每个内存核心的曼哈顿距离
+        my_row, my_col = self._id_to_coords()
+        closest_core = None
+        min_dist = float('inf')
+
+        for mem_core in mem_core_candidates:
+            mem_row, mem_col = mem_core._id_to_coords()
+            dist = abs(my_row - mem_row) + abs(my_col - mem_col)
+            if dist < min_dist:
+                min_dist = dist
+                closest_core = mem_core
         
-        return mem_core_id, dram_id
+        # 3. 获取最近的内存核心所连接的DRAM ID
+        # (假设每个内存核心只连接一个DRAM)
+        if not closest_core or not closest_core.dram_list:
+             raise ValueError(f"Could not find a valid DRAM for core {self.id}")
+
+        target_mem_core_id = closest_core.id
+        target_dram_id = closest_core.dram_list[0]
+        
+        return target_mem_core_id, target_dram_id
   
     def lsu_fail(self, times):
         self.lsu.change_delay(times)
@@ -859,6 +866,8 @@ class Core:
                 index=payload.original_index,
                 tensor_slice=payload.original_slice,
                 original_requester_id=payload.requester_id,
+                data_type=payload.data_type,
+                layer_id=payload.layer_id
                 # 从payload继承精度信息，如果需要的话
             )
             print(f"Core {self.id} putting proxy Read task into waiting_queue")
@@ -874,6 +883,8 @@ class Core:
                 index=payload.original_index,
                 tensor_slice=payload.original_slice,
                 original_requester_id=payload.requester_id,
+                data_type=payload.data_type,
+                layer_id=payload.layer_id
             )
             # 对于写，我们可能需要一个机制来等待数据到达
             print(f"Core {self.id} putting proxy Write task into waiting_queue")
@@ -948,10 +959,22 @@ class Core:
             if task_ready:
                 for task in task_ready:
                     instruction = None
+                    is_proxy_task = isinstance(task, MemTask) and task.original_requester_id != -1
                     # 根据任务类型获取指令
                     if isinstance(task, DerivativeTask):
                         # 衍生任务自带代理指令
                         instruction = task.proxy_ins
+                    elif is_proxy_task:
+                        # 代理任务没有对应的静态指令，需要动态创建一个用于记录
+                        # 从任务对象中获取必要的属性来构建指令
+                        instruction = Instruction(
+                            inst_type=TaskType[task.opcode.upper()],
+                            index=task.index,
+                            tensor_slice=task.tensor_slice,
+                            data_type=task.data_type,
+                            layer_id=task.layer_id,
+                            record=Record()  # 使用一个新的Record对象
+                        )
                     else:
                         # 静态任务从程序列表中查找
                         instruction = self.program[self.scheduler.index2taskid[task.index]]
@@ -964,7 +987,11 @@ class Core:
                     # 日志记录可能需要调整以处理衍生任务
                     if isinstance(task, DerivativeTask):
                         logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}) into running queue.")
+                    elif is_proxy_task:
+                        # 代理任务直接从任务对象获取layer_id
+                        logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}, layer:{task.layer_id}) into running queue.")
                     else:
+                        # 静态任务才需要从程序列表中查找
                         logger.info(f"Time {self.env.now:.2f}: Core{self.id} add a {type(task)} task(id:{task.index}, layer:{self.scheduler.program[self.scheduler.index2taskid[task.index]].layer_id}) into running queue.")
 
                     self.running_event.append(task_event)
@@ -1061,6 +1088,9 @@ class Core:
                     if event.triggered:
                         # updated = True
                         task=self.event2task[event]
+
+                        if isinstance(task, DerivativeSend):
+                            logger.debug(f"Time {self.env.now:.2f}: Core {self.id} finished executing a DerivativeSend task for index {task.index}.")
 
                         # print(f"Core{self.id} free: {task.input_size()}, [{self.spm_manager.capacity}/{self.spm_manager.size}]")
 

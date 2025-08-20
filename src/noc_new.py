@@ -200,9 +200,9 @@ class Router:
             if msg.dst != self.id:
                 next_dir, next_router = self.calculate_next_router(msg.dst)
                 logger.info(f"Time {self.env.now:.2f}: Router{self.id} start hop-by-hop routing data{msg.data.index} to router{next_router}(dst:{msg.dst}).")
-                yield self.env.process(self.route(msg, next_dir, next_router))
+                yield self.env.process(self.one_hop_route(msg, next_dir, next_router))
 
-    def route(self, msg: Message, next_dir, next_router):
+    def one_hop_route(self, msg: Message, next_dir, next_router):
         match next_dir:
             case Direction.NORTH:
                 yield self.north_out.put(msg)
@@ -227,71 +227,57 @@ class Router:
         else:
             logger.info(f"Time {self.env.now:.2f}: Finish putting {msg.msg_type.name} to Core {self.id}")
  
+    def process_hop_by_hop(self, message):
+        """Helper function to process a single message via hop-by-hop routing."""
+        if message.should_deliver_to_core(self.id):
+            if message.data:
+                logger.info(f"Time {self.env.now:.2f}: Hop-by-hop message {message.data.index} delivered to Router {self.id} for core.")
+            else:
+                logger.info(f"Time {self.env.now:.2f}: Hop-by-hop {message.msg_type.name} delivered to Router {self.id} for core.")
+            self.env.process(self.route_core(message))
+        
+        if message.dst != self.id:
+            next_dir, next_router = self.calculate_next_router(message.dst)
+            if message.data:
+                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start hop-by-hop forwarding data {message.data.index} to Router {next_router} (dst: {message.dst}).")
+            else:
+                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start hop-by-hop forwarding {message.msg_type.name} to Router {next_router} (dst: {message.dst}).")
+            self.env.process(self.one_hop_route(message, next_dir, next_router))
+
     def run(self):
+        all_possible_channels = [
+            (self.north_in, "north"), (self.south_in, "south"),
+            (self.east_in, "east"), (self.west_in, "west"),
+            (self.core_in, "core")
+        ]
+        all_channels = [channel for channel in all_possible_channels if channel[0] is not None]
+
         while True:
-            all_possible_channels = [(self.north_in, 0), (self.south_in, 1), (self.east_in, 2), (self.west_in, 3), (self.core_in, 4)]
-            #有的没有四个方向
-            all_channels = [channel for channel in all_possible_channels if channel[0] is not None]
-
-            # with self.north_in.get() as n, self.south_in.get() as s, self.east_in.get() as e, self.west_in.get() as w, self.core_in.get() as c:
             with contextlib.ExitStack() as stack:
-                # all_in_channels = [self.north_in.get(), self.south_in.get(), self.east_in.get(), self.west_in.get(), self.core_in.get()]
-                all_events = [stack.enter_context(channel[0].get()) for channel in all_channels]
+                events = [stack.enter_context(channel[0].get()) for channel in all_channels]
+                yield self.env.any_of(events)
 
-                events = self.env.any_of(all_events)
-                #等到至少有一个触发
-                result = yield events
-
-                for id, event in enumerate(all_events):
-                    
+                for idx, event in enumerate(events):
                     if event.triggered:
                         msg = event.value
+                        channel_obj, channel_name = all_channels[idx]
+                        
+                        # Apply wormhole logic ONLY for the first message from the core if flagged
+                        is_from_core = (channel_name == "core")
+                        if is_from_core:
+                            logger.debug(f"Time {self.env.now:.2f}: Router {self.id} received a message from its core_in link.")
+                        
+                        if is_from_core and hasattr(msg, 'route_strategy') and msg.route_strategy == 'wormhole':
+                            log_payload = f"data {msg.data.index}" if msg.data else f"{msg.msg_type.name}"
+                            logger.info(f"Time {self.env.now:.2f}: Router {self.id} begins wormhole request for {log_payload} from core.")
+                            self.env.process(self.wormhole_route_via_noc(msg))
+                        else:
+                            self.process_hop_by_hop(msg)
 
-                        # 检查是否应该传递给本地核心（支持路径广播）
-                    
-                        if msg.should_deliver_to_core(self.id):
-                            if msg.data:
-                                logger.info(f"Time {self.env.now:.2f}: Finish routing data {msg.data.index} to router {self.id}.")
-                            else:
-                                logger.info(f"Time {self.env.now:.2f}: Finish routing {msg.msg_type.name} to router {self.id}.")
-                            self.env.process(self.route_core(msg))
-                        
-                        # 如果不是最终目标，继续路由
-                        if msg.dst != self.id:
-                            next_dir, next_router = self.calculate_next_router(msg.dst)
-                            if msg.data:
-                                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start sending data {msg.data.index} to Router {next_router} (dst: {msg.dst}).")
-                            else:
-                                logger.info(f"Time {self.env.now:.2f}: Router {self.id} start sending {msg.msg_type.name} to Router {next_router} (dst: {msg.dst}).")
-                            self.env.process(self.route(msg, next_dir, next_router))
-                        
-                        channel = None
-                        match all_channels[id][1]:
-                            case 0: channel = self.north_in
-                            case 1: channel = self.south_in
-                            case 2: channel = self.east_in
-                            case 3: channel = self.west_in
-                            case 4: channel = self.core_in
-                        
-                        while channel.len() > 0:
-                            msg = yield channel.get()
-
-                            # 检查是否应该传递给本地核心（支持路径广播）
-                            if msg.should_deliver_to_core(self.id):
-                                if msg.data:
-                                    logger.info(f"Time {self.env.now:.2f}: Finish routing data {msg.data.index} to router {self.id} (broadcast delivery).")
-                                else:
-                                    logger.info(f"Time {self.env.now:.2f}: Finish routing {msg.msg_type.name} to router {self.id} (broadcast delivery).")
-                                self.env.process(self.route_core(msg))
-                            
-                            # 如果不是最终目标，继续路由
-                            if msg.dst != self.id:
-                                next_dir, next_router = self.calculate_next_router(msg.dst)
-                                if msg.data:
-                                    logger.info(f"Time {self.env.now:.2f}: Router {self.id} finished sending data {msg.data.index} to router {next_router} (dst:{msg.dst}).")
-                                else:
-                                    logger.info(f"Time {self.env.now:.2f}: Router {self.id} finished sending {msg.msg_type.name} to router {next_router} (dst:{msg.dst}).")
-                                self.env.process(self.route(msg, next_dir, next_router))
+                        # Restore the original logic: drain the rest of the channel using hop-by-hop
+                        while channel_obj.len() > 0:
+                            next_msg = yield channel_obj.get()
+                            self.process_hop_by_hop(next_msg)
 
     #模拟其它流量造成的网络拥堵
     def trans(self,start_time,link,flow):
@@ -554,6 +540,20 @@ class NoC:
             src_router_id: 源路由器ID
             msg: 要传输的消息
         """
+        # 紧急修复：处理源和目的地相同的情况
+        if src_router_id == msg.dst:
+            target_router = self.routers[msg.dst]
+            log_payload = f"data {msg.data.index}" if msg.data else f"{msg.msg_type.name}"
+            logger.info(f"Time {self.env.now:.2f}: Wormhole source Router{src_router_id} is same as destination. Delivering {log_payload} locally.")
+            if hasattr(target_router, 'core_in') and target_router.core_in:
+                # 对于本地投递，没有网络延迟。可以立即放入
+                # 使用 timeout(0) 是为了确保它在下一个仿真delta中发生，避免同步执行问题
+                yield self.env.timeout(0)
+                target_router.core_in.store.put(msg)
+            else:
+                logger.warning(f"Time {self.env.now:.2f}: Local delivery target Router{msg.dst} has no core_in, message may be lost.")
+            return  # 提前退出
+
         from src.sim_type import Slice, DataType
         from src.sim_type import ceil
         
@@ -580,12 +580,11 @@ class NoC:
         for i, link in enumerate(path_links):
             req = link.linkentry.request()
             link_requests.append(req)
-            logger.debug(f"Time {self.env.now:.2f}: Requesting link {i} (Router{path[i]} -> Router{path[i+1]})")
+            logger.debug(f"Time {self.env.now:.2f}: Added link {i} (Router{path[i]} -> Router{path[i+1]}) to request batch.")
         
-        # 4. 等待所有链路资源都可用
-        for i, req in enumerate(link_requests):
-            yield req
-            logger.debug(f"Time {self.env.now:.2f}: Acquired link {i} for wormhole routing")
+        # 4. 等待所有链路资源都可用 (All-or-Nothing)
+        logger.info(f"Time {self.env.now:.2f}: Waiting for all {len(link_requests)} links to be available simultaneously...")
+        yield self.env.all_of(link_requests)
         
         logger.info(f"Time {self.env.now:.2f}: All links acquired for wormhole routing")
         
@@ -595,9 +594,9 @@ class NoC:
         if msg.msg_type == MsgType.DATA and msg.data:
             slice = Slice(tensor_slice=msg.data.tensor_slice)
             if msg.ins.data_type == DataType.FEAT:
-                transmission_time = ceil(slice.size() * msg.feat_precision, min_bandwidth)
+                transmission_time = ceil(slice.size() * msg.ins.feat_precision, min_bandwidth)
             else:
-                transmission_time = ceil(slice.size() * msg.para_precision, min_bandwidth)
+                transmission_time = ceil(slice.size() * msg.ins.para_precision, min_bandwidth)
         else: # for MEM_REQUEST or other types
             transmission_time = 1 # Assume a small, fixed transmission time for request packets
 
@@ -611,13 +610,24 @@ class NoC:
         msg.ins.record.ready_run_time.append(self.env.now)
         yield self.env.timeout(total_latency)
         
-        # 7. 将消息放入目标Router的输入缓冲区
-        target_router = self.routers[msg.dst]
-        if hasattr(target_router, 'core_in') and target_router.core_in:
-            target_router.core_in.store.put(msg)
-            logger.info(f"Time {self.env.now:.2f}: Message delivered to Router{msg.dst} core input")
-        else:
-            logger.warning(f"Time {self.env.now:.2f}: Router{msg.dst} has no core_in, message may be lost")
+        # 7. 将消息传递给路径上所有相关的核心（不包括源）
+        log_payload = f"data {msg.data.index}" if msg.data else f"{msg.msg_type.name}"
+        logger.info(f"Time {self.env.now:.2f}: Wormhole transmission for {log_payload} arrived. Delivering to path destinations.")
+        
+        delivered_to = []
+        # 遍历路径上的所有中间节点和终点 (path[0]是源，跳过)
+        for router_id in path[1:]:
+            if msg.should_deliver_to_core(router_id):
+                target_router = self.routers[router_id]
+                if hasattr(target_router, 'core_in') and target_router.core_in:
+                    # 广播/多播时，所有接收方获取对同一消息对象的引用
+                    target_router.core_out.store.put(msg)
+                    delivered_to.append(router_id)
+                else:
+                    logger.warning(f"Time {self.env.now:.2f}: Wormhole path destination Router{router_id} has no core_in, message could not be delivered.")
+
+        if delivered_to:
+            logger.info(f"Time {self.env.now:.2f}: Message delivered via wormhole to Cores: {delivered_to}")
         
         # 8. 释放所有链路资源
         for i, req in enumerate(link_requests):

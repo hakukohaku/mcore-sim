@@ -138,13 +138,14 @@ if __name__ == "__main__":
        
         pewls[list_core_id].insts.append(
             Instruction(
-                inst_type = TaskType.SEND,
+                inst_type = TaskType.READ,
                 index = global_inst_id,
                 layer_id = 1,
                 data_type = DataType.FEAT,
-                position = get_list_id(0, core_y),
+                target_dram_id = core_y,
                 tensor_slice = weight_range_left.tensor_slice,
-                feat_num = 1,
+                feat_num = 0,
+                para_num = 0,
                 feat_precision = FEAT_PRECISION,
                 para_precision = PARA_PRECISION
             )
@@ -167,6 +168,7 @@ if __name__ == "__main__":
         # 第三列core
         cur_start_m = 2*tile_size_m
         cur_size_m = min(tile_size_m, total_M - cur_start_m)
+        list_core_id = get_list_id(2, core_y)
         weight_range_right = Slice(tensor_slice=[
                 DimSlice(start=cur_start_m, end=cur_start_m + cur_size_m), 
                 DimSlice(start=cur_start_k, end=cur_start_k + cur_size_k), 
@@ -175,19 +177,20 @@ if __name__ == "__main__":
             ])
         pewls[list_core_id].insts.append(
             Instruction(
-                inst_type = TaskType.SEND,
+                inst_type = TaskType.READ,
                 index = global_inst_id,
                 layer_id = 1,
                 data_type = DataType.FEAT,
-                position = get_list_id(3, core_y),
                 tensor_slice = weight_range_right.tensor_slice,
-                feat_num = 1,
+                target_dram_id = 4 + core_y,
+                feat_num = 0,
+                para_num = 0,
                 feat_precision = FEAT_PRECISION,
                 para_precision = PARA_PRECISION
             )
         )
         global_inst_id += 1
-        list_core_id = get_list_id(2, core_y)
+        
         
         # pewls[list_core_id].insts.append(
         #     Instruction(

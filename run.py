@@ -1,13 +1,18 @@
-import json
+import os
+import sys
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 import time
 import logging
 import argparse
 from src.arch_config import ArchConfig
-from src.sim_type import Workload, FailSlow
+from src.sim_type import Workload, FailSlow, PEworkload, Instruction
 from src.architecture import Arch
 from pydantic import ValidationError
 from src.common import *
-import sys
+
 print("Python executable used:", sys.executable)
 def fail_analyzer(filename: str) -> FailSlow:
     with open(filename, 'r') as file:

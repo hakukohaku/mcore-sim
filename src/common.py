@@ -4,7 +4,11 @@ import json
 import time
 import logging
 import argparse
+from src.sim_type import Instruction
+from typing import List, Dict
 from pydantic import ValidationError
+
+logger = logging.getLogger("Common")
 
 class CFG:
     def __init__(self, args):
@@ -46,8 +50,10 @@ class MonitoredResource(simpy.Resource):
             return False
 
     def exe(self, task, delay, ins, v=None, attributes=None):
+        logger.debug(f"Time {self._env.now:.2f}: Task '{task}' trying to acquire a resource.")
         req = super().request()
         yield req
+        logger.debug(f"Time {self._env.now:.2f}: Task '{task}' acquired a resource. Starting execution for {delay} cycles.")
         ins.record.exe_start_time.append(self._env.now)
         if self.checkneed():
             if attributes is None:
@@ -65,6 +71,7 @@ class MonitoredResource(simpy.Resource):
                 self.data.append((task, self._env.now, len(self.queue), "req", "E", attributes))
         ins.record.exe_end_time.append(self._env.now)
         super().release(req)
+        logger.debug(f"Time {self._env.now:.2f}: Task '{task}' released a resource.")
 
     def execute(self, task, delay, ins, v=None, attributes=None):
         return self._env.process(self.exe(task, delay, ins, v, attributes))
