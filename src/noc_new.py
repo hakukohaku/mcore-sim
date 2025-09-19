@@ -4,7 +4,7 @@ import contextlib
 from enum import IntEnum
 from src.arch_config import LinkConfig, RouterConfig, NoCConfig
 from src.sim_type import Data, Message, ceil, Slice, Direction, DataType, MsgType
-from src.common import MonitoredResource
+from src import common
 
 logger = logging.getLogger("NoC")
 
@@ -36,7 +36,7 @@ class Link:
         self.store = simpy.PriorityStore(env)
         self.delay_factor = 1
         self.hop = 0
-        self.linkentry = MonitoredResource(env,capacity=1)
+        self.linkentry = common.MonitoredResource(env,capacity=1)
         self.tag = False
 
     def bind(self, idx1, idx2, tag):
@@ -240,6 +240,10 @@ class Router:
             next_dir, next_router = self.calculate_next_router(message.dst)
             if message.data:
                 logger.info(f"Time {self.env.now:.2f}: Router {self.id} start hop-by-hop forwarding data {message.data.index} to Router {next_router} (dst: {message.dst}).")
+                slice = Slice(tensor_slice=message.data.tensor_slice)
+                size = slice.size() * (message.ins.feat_precision if message.ins.data_type == DataType.FEAT else message.ins.para_precision)
+                power = size * common.noc_hop_power
+                common.record_power_trace(self.env.now, self.id, message.data.index, power, "noc_hop_by_hop")
             else:
                 logger.info(f"Time {self.env.now:.2f}: Router {self.id} start hop-by-hop forwarding {message.msg_type.name} to Router {next_router} (dst: {message.dst}).")
             self.env.process(self.one_hop_route(message, next_dir, next_router))
@@ -591,14 +595,20 @@ class NoC:
         # 5. 计算整条路径的传输延迟（基于最窄带宽）
         min_bandwidth = min(link.width for link in path_links)
         
+        data_size = 0
         if msg.msg_type == MsgType.DATA and msg.data:
             slice = Slice(tensor_slice=msg.data.tensor_slice)
             if msg.ins.data_type == DataType.FEAT:
                 transmission_time = ceil(slice.size() * msg.ins.feat_precision, min_bandwidth)
+                data_size = slice.size() * msg.ins.feat_precision
             else:
                 transmission_time = ceil(slice.size() * msg.ins.para_precision, min_bandwidth)
+                data_size = slice.size() * msg.ins.para_precision
         else: # for MEM_REQUEST or other types
             transmission_time = 1 # Assume a small, fixed transmission time for request packets
+
+        power = len(path_links) * data_size * common.noc_hop_power
+        common.record_power_trace(self.env.now, src_router_id, msg.data.index, power, "noc_wormhole")
 
         # 基础延迟是所有链路延迟之和
         total_delay = sum(link.delay * link.delay_factor for link in path_links)

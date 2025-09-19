@@ -59,6 +59,34 @@
               "--log", "./log/gemm_test.txt",
               "--level", "debug"
             ]
-        }
+        },
+        {
+            "name": "HW_tiny_gemm_test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+              "--arch", "./arch/myarch_gemini1_4_cim.json",
+              "--fail", "./failslow/normal.json",
+              "--workload", "./tests/gemm/HW_workload.json",
+              "--log", "./log/HW_gemm_test.txt",
+              "--level", "debug"
+            ]
+        },
+        {
+          "name": "simple_pipeline",
+          "type": "debugpy",
+          "request": "launch",
+          "program": "${workspaceFolder}/run.py",
+          "console": "integratedTerminal",
+          "args": [
+            "--arch", "./arch/myarch_gemini4_4_cim.json",
+            "--fail", "./failslow/normal.json",
+            "--workload", "./tests/pipeline/workload_pipeline_fixed_test.json",
+            "--log", "./log/workload_pipeline_fixed_test.txt",
+            "--level", "debug"
+          ]
+      }
     ]
 }

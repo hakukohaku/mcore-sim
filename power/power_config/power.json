@@ -1,0 +1,9 @@
+{
+    "tpu_flop_power": 0.000097,
+    "dram_read_power": 0.032,
+    "dram_write_power": 0.032,
+    "noc_hop_power": 0.001784,
+    "sram_write_power": 0.001568,
+    "sram_read_power": 0.001568,
+    "cim_local_read_power": 0.000436
+}

@@ -6,11 +6,11 @@
 		"width" : 8,
 		"blk_size" : 10,
 		"spm" : {
-			"size" : 2097152,
+			"size" : 8192,
 			"delay" : 0
 		},
 		"compute" : {
-			"flops" : 1024
+			"flops" : 256
 		},
 		"lsu" : {
 			"width" : 4
@@ -30,19 +30,26 @@
 		}
 	},
 	"mem" : {
-		"type" : "two_sides_edge",
-		"num" : 8,
-		"dram_bw" : 128,
+		"type" : "all_distributed",
+		"num" : 16,
+		"dram_bw" : 1,
 		"dram_capacity" : 1048576,
 		"mem_core" : {
 			"0": {"dram_id": 0},
 			"1": {"dram_id": 1},
 			"2": {"dram_id": 2},
 			"3": {"dram_id": 3},
-			"12": {"dram_id": 4},
-			"13": {"dram_id": 5},
-			"14": {"dram_id": 6},
-			"15": {"dram_id": 7}
+			"4": {"dram_id": 4},
+			"5": {"dram_id": 5},
+			"6": {"dram_id": 6},
+			"7": {"dram_id": 7},
+			"8": {"dram_id": 8},
+			"9": {"dram_id": 9},
+			"10": {"dram_id": 10},
+			"11": {"dram_id": 12},
+			"12": {"dram_id": 13},
+			"14": {"dram_id": 14},
+			"15": {"dram_id": 15}
 		}
 	}
 	

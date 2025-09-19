@@ -21,7 +21,7 @@ def config_analyzer(filename: str) -> ArchConfig:
         except ValidationError as e:
             print(e.json())
 
-arch_configs = config_analyzer("../arch/myarch_gemini4_4_cim.json")
+arch_configs = config_analyzer("../arch/myarch_gemini1_4_cim.json")
 arch_configs.core.spm.size /= 4
 core_num = arch_configs.core.x * arch_configs.core.y
 
@@ -92,8 +92,13 @@ def json_analyzer(filename: str) -> Network:
         except ValidationError as e:
             print(e.json())
 
-def get_list_id(x: int, y: int) -> int:
-    return x * arch_configs.core.y + y
+def get_list_id(core_x, core_y):
+    return core_y * arch_configs.core.x + core_x
+
+def get_core_coor(core_id):
+    core_x = core_id % arch_configs.core.x
+    core_y = core_id // arch_configs.core.x
+    return core_x, core_y
 
 def intersect(a: Slice, b: Slice) -> Slice:
     new_slice = []
@@ -248,17 +253,17 @@ def get_spm_size(layer: Layer):
 def GEMM(read_activation=True, read_weight=True, write_back=True):
     global global_inst_id, pewls, send_map, write_map, lid, layer
     print(f"Generating inst of layer{lid}.")
-    total_N = 1024
-    total_K = 256
-    total_M = 256
+    total_N = 48
+    total_K = 48
+    total_M = 192
     
     tile_num_n = 1
-    tile_num_k = 4
-    tile_num_m = 16
+    tile_num_k = 1
+    tile_num_m = 4
     
     tile_size_n = 64
-    tile_size_k = 512
-    tile_size_m = 256
+    tile_size_k = 48
+    tile_size_m = 48
     
     # weight stationary, 以weight tensor为主映射到空间core上。
     # 将矩阵k维度映射到空间阵列的y维度（行），m维度映射到x维度（列）
@@ -404,7 +409,6 @@ def GEMM(read_activation=True, read_weight=True, write_back=True):
                             global_inst_id += 1
                             
                 if read_weight:
-                    # 读入weight
                     for core_x in range(arch_configs.core.x):
                         for core_y in range(arch_configs.core.y):
                             list_core_id = get_list_id(core_x, core_y)
@@ -456,7 +460,7 @@ def GEMM(read_activation=True, read_weight=True, write_back=True):
                             layer_id=lid,
                             data_type=DataType.FEAT,
                             feat_num=2 if read_activation else 0,
-                            para_num=1 if read_weight else 0, # read_weight=false时，不需要weight
+                            para_num=1, # read_weight=false时，不需要weight
                             tensor_slice=output_range.tensor_slice,
                             feat_aggr_type=AggrType.CONCAT_DIM_1
                         )
@@ -699,18 +703,40 @@ def GEMM(read_activation=True, read_weight=True, write_back=True):
         # 统一建立所有计算指令的trigger关系
         for core_id, comp_map_for_core in comp_inst_map.items():
             for (tp_k, tp_m), comp_inst in comp_map_for_core.items():
-                # 1. 设置weight READ对comp的trigger
-                if core_id in wgt_read_map and (tp_k, tp_m) in wgt_read_map[core_id]:
-                    wgt_read_inst = wgt_read_map[core_id][(tp_k, tp_m)]
-                    wgt_read_inst.trigger_index.append(comp_inst.index)
+                core_x, core_y = get_core_coor(core_id)
+                # 1. activation
+                if read_activation:
+                    act_provider = act_providers_map[(core_x, core_y, tp_k)]
+                    act_provider.trigger_index.append(comp_inst.index)
                 
-                # 2. 设置activation READ/RECV对comp的trigger
-                if core_id in act_providers_map and tp_k in act_providers_map[core_id]:
-                    act_insts = act_providers_map[core_id][tp_k]
-                    for act_inst in act_insts:
-                        act_inst.trigger_index.append(comp_inst.index)
-        
-        # 统一建立所有累加指令的trigger关系
+                # 2. weight
+                if read_weight:
+                    wgt_provider = wgt_read_map[(core_x, core_y, tp_k, tp_m)]
+                    wgt_provider.trigger_index.append(comp_inst.index)
+                else:
+                    # 如果不读权重，则创建一个LOAD指令来逻辑上提供权重
+                    cur_start_k = tp_k * tile_size_k
+                    cur_size_k = min(tile_size_k, total_K - cur_start_k)
+                    cur_start_m = (tp_m * arch_configs.core.x + core_x) * tile_size_m
+                    cur_size_m = min(tile_size_m, total_M - cur_start_m)
+                    wgt_range = Slice(tensor_slice=[
+                        DimSlice(start=cur_start_m, end=cur_start_m + cur_size_m),
+                        DimSlice(start=cur_start_k, end=cur_start_k + cur_size_k)
+                    ])
+                    wgt_load_inst = Instruction(
+                        lid=lid,
+                        inst_type=TaskType.LOAD,
+                        index=global_inst_id,
+                        layer_id=lid,
+                        data_type=DataType.PARA,
+                        tensor_slice=wgt_range.tensor_slice
+                    )
+                    pewls[core_id].insts.append(wgt_load_inst)
+                    wgt_load_inst.trigger_index.append(comp_inst.index)
+                    global_inst_id += 1
+
+
+        # 建立累加的trigger关系
         for core_id, elem_map_for_core in elem_inst_map.items():
             for (tp_k, tp_m), elem_inst in elem_map_for_core.items():
                 # ELEM 指令只在 tp_k > 0 时存在
@@ -753,15 +779,15 @@ if __name__ == "__main__":
     )
 
     # 调用GEMM函数生成指令
-    GEMM(write_back=False)
+    GEMM(read_activation=False, read_weight=False, write_back=True)
 
     # 将生成的workload输出到json文件
     wl = Workload(name="GEMM_test", pes=pewls)
     workload_json = wl.model_dump_json(indent=4)
 
-    output_path = "../tests/gemm/workload_gemm_test.json"
+    output_path = "../tests/gemm/HW_workload.json"
     with open(output_path, "w") as file:
         print(workload_json, file=file)
     
-    print(f"GEMM activation broadcast 指令生成完成！")
+    print(f"HW_GEMM activation broadcast 指令生成完成！")
     print(f"测试workload已保存至: {output_path}")

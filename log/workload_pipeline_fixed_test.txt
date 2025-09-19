@@ -1,0 +1,966 @@
+2025-09-19 15:34:39 - Core - INFO - Core0 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4d8b0>
+2025-09-19 15:34:39 - Core - DEBUG - Core0 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 0, type is 0
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 0 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 1, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 2, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 3, type is 2
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 4, index is 24, type is 3
+2025-09-19 15:34:39 - Core - INFO - Core1 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4dd10>
+2025-09-19 15:34:39 - Core - DEBUG - Core1 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 3, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 4, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 5, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 6, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core2 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4df90>
+2025-09-19 15:34:39 - Core - DEBUG - Core2 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 6, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 7, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 8, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 9, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core3 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4e210>
+2025-09-19 15:34:39 - Core - DEBUG - Core3 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 9, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 10, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 11, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 12, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core4 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4e5d0>
+2025-09-19 15:34:39 - Core - DEBUG - Core4 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 21, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 22, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 23, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 24, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core5 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4e990>
+2025-09-19 15:34:39 - Core - DEBUG - Core5 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 18, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 19, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 20, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 21, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core6 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4ec10>
+2025-09-19 15:34:39 - Core - DEBUG - Core6 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 15, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 16, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 17, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 18, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core7 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4ee90>
+2025-09-19 15:34:39 - Core - DEBUG - Core7 is task_block_updating
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 0, index is 12, type is 3
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 1, index is 13, type is 12
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/0, feat is 0/0
+2025-09-19 15:34:39 - Core - DEBUG - insert 1 into waiting queue
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 2, index is 14, type is 7
+2025-09-19 15:34:39 - Core - DEBUG - para is 0/1, feat is 0/1
+2025-09-19 15:34:39 - Core - DEBUG - ------------------------------
+2025-09-19 15:34:39 - Core - DEBUG - inst_id is 3, index is 15, type is 2
+2025-09-19 15:34:39 - Core - INFO - Core8 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f110>
+2025-09-19 15:34:39 - Core - DEBUG - Core8 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core9 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f1b0>
+2025-09-19 15:34:39 - Core - DEBUG - Core9 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core10 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f2f0>
+2025-09-19 15:34:39 - Core - DEBUG - Core10 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core11 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f430>
+2025-09-19 15:34:39 - Core - DEBUG - Core11 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core12 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f570>
+2025-09-19 15:34:39 - Core - DEBUG - Core12 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core13 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f6b0>
+2025-09-19 15:34:39 - Core - DEBUG - Core13 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core14 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f7f0>
+2025-09-19 15:34:39 - Core - DEBUG - Core14 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Core15 initialized with data_in store: <src.noc_new.Link object at 0x7eb4d9a4f930>
+2025-09-19 15:34:39 - Core - DEBUG - Core15 is task_block_updating
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core0 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core0 got static task_id 0 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Core0 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core0 (Memory Core) scheduler returned 2 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 add a <class 'src.sim_type.Read'> task(id:0, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 add a <class 'src.sim_type.Load'> task(id:1, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 waiting for 2 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core1 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core1 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core1 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 add a <class 'src.sim_type.Load'> task(id:4, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core2 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core2 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core2 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 add a <class 'src.sim_type.Load'> task(id:7, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core3 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core3 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core3 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 add a <class 'src.sim_type.Load'> task(id:10, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core4 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core4 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 add a <class 'src.sim_type.Load'> task(id:22, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core5 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core5 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 add a <class 'src.sim_type.Load'> task(id:19, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core6 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core6 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 add a <class 'src.sim_type.Load'> task(id:16, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core7 block_counter: 0/10
+2025-09-19 15:34:39 - Core - DEBUG - Core7 got static task_id 1 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 add a <class 'src.sim_type.Load'> task(id:13, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core8 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core8 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core8 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core9 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core9 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core9 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core10 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core10 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core10 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core11 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core11 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core11 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core12 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core12 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core12 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core12 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core13 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core13 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core13 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core13 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core14 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core14 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core14 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core14 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core15 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core15 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core15 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core15 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 0.00: Core 0 performing LOCAL access to DRAM 0
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core0 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core0 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 0.00: Task 'READ0' trying to acquire a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core0's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad0f0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 finish processing <class 'src.sim_type.Load'> task(id:1).
+2025-09-19 15:34:39 - Core - DEBUG - updating task1
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core0 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task1 triggered 2
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core0 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core1's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad240>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 finish processing <class 'src.sim_type.Load'> task(id:4).
+2025-09-19 15:34:39 - Core - DEBUG - updating task4
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core1 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task4 triggered 5
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core1 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core1 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core2's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad390>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 finish processing <class 'src.sim_type.Load'> task(id:7).
+2025-09-19 15:34:39 - Core - DEBUG - updating task7
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core2 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task7 triggered 8
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core2 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core2 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core3's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad4e0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 finish processing <class 'src.sim_type.Load'> task(id:10).
+2025-09-19 15:34:39 - Core - DEBUG - updating task10
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core3 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task10 triggered 11
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core3 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core3 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core4's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad630>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 finish processing <class 'src.sim_type.Load'> task(id:22).
+2025-09-19 15:34:39 - Core - DEBUG - updating task22
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core4 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task22 triggered 23
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core4 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core5's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad780>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 finish processing <class 'src.sim_type.Load'> task(id:19).
+2025-09-19 15:34:39 - Core - DEBUG - updating task19
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core5 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task19 triggered 20
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core5 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core6's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad8d0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 finish processing <class 'src.sim_type.Load'> task(id:16).
+2025-09-19 15:34:39 - Core - DEBUG - updating task16
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core6 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task16 triggered 17
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core6 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Core - DEBUG - Time 0.00: Core7's result is <ConditionValue {<Process(run) object at 0x7eb4d9aada20>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 finish processing <class 'src.sim_type.Load'> task(id:13).
+2025-09-19 15:34:39 - Core - DEBUG - updating task13
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core7 self.counter += 1, [1/10]
+2025-09-19 15:34:39 - Core - DEBUG - task13 triggered 14
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:0/1
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 0.00: Core7 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - Common - DEBUG - Time 0.00: Task 'READ0' acquired a resource. Starting execution for 12 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 12.00: Task 'READ0' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 12.00: Core0's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad010>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 12.00: Core0 finish processing <class 'src.sim_type.Read'> task(id:0).
+2025-09-19 15:34:39 - Core - DEBUG - updating task0
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core0 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - task0 triggered 2
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core0 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - task0 triggered 1
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 12.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core0 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core0 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 12.00: Core0 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 12.00: Core0 add a <class 'src.sim_type.FC'> task(id:2, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 12.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 12.00: Core0 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 12.00: Core0 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 12.00: Core0 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 12.00: Task 'FC2' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 12.00: Task 'FC2' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 84.00: Task 'FC2' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 84.00: Core0 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 84.00: Core0's result is <ConditionValue {<Process(run) object at 0x7eb4d9aadb00>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 84.00: Core0 finish processing <class 'src.sim_type.FC'> task(id:2).
+2025-09-19 15:34:39 - Core - DEBUG - updating task2
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core0 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task2 triggered 3
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core0 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 84.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core0 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core0 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 84.00: Core0 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 84.00: Core0 add a <class 'src.sim_type.Send'> task(id:3, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 84.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 84.00: Core0 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 84.00: Core 0 [Send.run] START for index 3
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 84.00: Core 0 [Send.run] About to PUT message for index 3 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 84.00: Task 'SEND3' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 84.00: Task 'SEND3' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 86.00: Task 'SEND3' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 86.00: Core 0 [Send.run] FINISHED PUT for index 3
+2025-09-19 15:34:39 - NoC - DEBUG - Time 86.00: Router 0 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Router 0 begins wormhole request for data 3 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Router 0 initiating wormhole routing for data 3 to Router 1
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Wormhole routing path from Router0 to Router1: [0, 1]
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 86.00: Added link 0 (Router0 -> Router1) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 86.00: Core0's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad940>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 86.00: Core0 finish processing <class 'src.sim_type.Send'> task(id:3).
+2025-09-19 15:34:39 - Core - DEBUG - updating task3
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core0 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 86.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 86.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 86.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 86.00: Core0 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 86.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 182.00: Wormhole transmission for data 3 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 182.00: Message delivered via wormhole to Cores: [1]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 182.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 182.00: Wormhole transmission completed from Router0 to Router1
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad7f0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=3, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=1, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[84, 84], exe_end_time=[86], ready_run_time=[84, 84, 86], mulins=[84], pe_id=0, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=0, data=Data(index=3, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=1, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core1 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 182.00: Core1 receive data3
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=3 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data3
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core1 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data3 triggered 5
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core1 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data3 triggered 4
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 182.00: Core1 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core1 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core1 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 182.00: Core1 add a <class 'src.sim_type.FC'> task(id:5, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 182.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 182.00: Core1 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 182.00: Core1 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 182.00: Task 'FC5' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 182.00: Task 'FC5' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 254.00: Task 'FC5' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 254.00: Core1 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 254.00: Core1's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad6a0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 254.00: Core1 finish processing <class 'src.sim_type.FC'> task(id:5).
+2025-09-19 15:34:39 - Core - DEBUG - updating task5
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core1 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task5 triggered 6
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core1 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 254.00: Core1 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core1 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core1 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 254.00: Core1 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 254.00: Core1 add a <class 'src.sim_type.Send'> task(id:6, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 254.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 254.00: Core1 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 254.00: Core 1 [Send.run] START for index 6
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 254.00: Core 1 [Send.run] About to PUT message for index 6 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 254.00: Task 'SEND6' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 254.00: Task 'SEND6' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 256.00: Task 'SEND6' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 256.00: Core 1 [Send.run] FINISHED PUT for index 6
+2025-09-19 15:34:39 - NoC - DEBUG - Time 256.00: Router 1 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Router 1 begins wormhole request for data 6 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Router 1 initiating wormhole routing for data 6 to Router 2
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Wormhole routing path from Router1 to Router2: [1, 2]
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 256.00: Added link 0 (Router1 -> Router2) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 256.00: Core1's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad7f0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 256.00: Core1 finish processing <class 'src.sim_type.Send'> task(id:6).
+2025-09-19 15:34:39 - Core - DEBUG - updating task6
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core1 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 256.00: Core1 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 256.00: Core1 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 256.00: Core1 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 256.00: Core1 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 256.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 352.00: Wormhole transmission for data 6 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 352.00: Message delivered via wormhole to Cores: [2]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 352.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 352.00: Wormhole transmission completed from Router1 to Router2
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad320>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=6, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=2, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[254, 254], exe_end_time=[256], ready_run_time=[254, 254, 256], mulins=[254], pe_id=1, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=1, data=Data(index=6, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=2, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core2 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 352.00: Core2 receive data6
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=6 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data6
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core2 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data6 triggered 8
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core2 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data6 triggered 7
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 352.00: Core2 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core2 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core2 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 352.00: Core2 add a <class 'src.sim_type.FC'> task(id:8, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 352.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 352.00: Core2 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 352.00: Core2 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 352.00: Task 'FC8' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 352.00: Task 'FC8' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 424.00: Task 'FC8' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 424.00: Core2 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 424.00: Core2's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad550>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 424.00: Core2 finish processing <class 'src.sim_type.FC'> task(id:8).
+2025-09-19 15:34:39 - Core - DEBUG - updating task8
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core2 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task8 triggered 9
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core2 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 424.00: Core2 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core2 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core2 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 424.00: Core2 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 424.00: Core2 add a <class 'src.sim_type.Send'> task(id:9, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 424.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 424.00: Core2 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 424.00: Core 2 [Send.run] START for index 9
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 424.00: Core 2 [Send.run] About to PUT message for index 9 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 424.00: Task 'SEND9' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 424.00: Task 'SEND9' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 426.00: Task 'SEND9' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 426.00: Core 2 [Send.run] FINISHED PUT for index 9
+2025-09-19 15:34:39 - NoC - DEBUG - Time 426.00: Router 2 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Router 2 begins wormhole request for data 9 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Router 2 initiating wormhole routing for data 9 to Router 3
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Wormhole routing path from Router2 to Router3: [2, 3]
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 426.00: Added link 0 (Router2 -> Router3) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 426.00: Core2's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad320>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 426.00: Core2 finish processing <class 'src.sim_type.Send'> task(id:9).
+2025-09-19 15:34:39 - Core - DEBUG - updating task9
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core2 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 426.00: Core2 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 426.00: Core2 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 426.00: Core2 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 426.00: Core2 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 426.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 522.00: Wormhole transmission for data 9 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 522.00: Message delivered via wormhole to Cores: [3]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 522.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 522.00: Wormhole transmission completed from Router2 to Router3
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad470>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=9, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=3, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[424, 424], exe_end_time=[426], ready_run_time=[424, 424, 426], mulins=[424], pe_id=2, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=2, data=Data(index=9, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=3, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core3 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 522.00: Core3 receive data9
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=9 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data9
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core3 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data9 triggered 11
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core3 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data9 triggered 10
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 522.00: Core3 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core3 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core3 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 522.00: Core3 add a <class 'src.sim_type.FC'> task(id:11, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 522.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 522.00: Core3 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 522.00: Core3 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 522.00: Task 'FC11' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 522.00: Task 'FC11' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 594.00: Task 'FC11' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 594.00: Core3 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 594.00: Core3's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad400>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 594.00: Core3 finish processing <class 'src.sim_type.FC'> task(id:11).
+2025-09-19 15:34:39 - Core - DEBUG - updating task11
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core3 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task11 triggered 12
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core3 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 594.00: Core3 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core3 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core3 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - Time 594.00: Core3 (Memory Core) scheduler returned 1 ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 594.00: Core3 add a <class 'src.sim_type.Send'> task(id:12, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 594.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 594.00: Core3 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 594.00: Core 3 [Send.run] START for index 12
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 594.00: Core 3 [Send.run] About to PUT message for index 12 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 594.00: Task 'SEND12' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 594.00: Task 'SEND12' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 596.00: Task 'SEND12' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 596.00: Core 3 [Send.run] FINISHED PUT for index 12
+2025-09-19 15:34:39 - NoC - DEBUG - Time 596.00: Router 3 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Router 3 begins wormhole request for data 12 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Router 3 initiating wormhole routing for data 12 to Router 7
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Wormhole routing path from Router3 to Router7: [3, 7]
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 596.00: Added link 0 (Router3 -> Router7) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 596.00: Core3's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad470>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 596.00: Core3 finish processing <class 'src.sim_type.Send'> task(id:12).
+2025-09-19 15:34:39 - Core - DEBUG - updating task12
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core3 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 596.00: Core3 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 596.00: Core3 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 596.00: Core3 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 596.00: Core3 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 596.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 692.00: Wormhole transmission for data 12 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 692.00: Message delivered via wormhole to Cores: [7]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 692.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 692.00: Wormhole transmission completed from Router3 to Router7
+2025-09-19 15:34:39 - Core - DEBUG - Time 692.00: Core7's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad9b0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=12, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=7, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[594, 594], exe_end_time=[596], ready_run_time=[594, 594, 596], mulins=[594], pe_id=3, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=3, data=Data(index=12, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=7, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core7 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 692.00: Core7 receive data12
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=12 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 692.00: Core7 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 692.00: Core7 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data12
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core7 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data12 triggered 14
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core7 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data12 triggered 13
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 692.00: Core7 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core7 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core7 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 692.00: Core7 add a <class 'src.sim_type.FC'> task(id:14, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 692.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 692.00: Core7 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 692.00: Core7 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 692.00: Core7 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 692.00: Task 'FC14' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 692.00: Task 'FC14' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 764.00: Task 'FC14' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 764.00: Core7 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 764.00: Core7's result is <ConditionValue {<Process(run) object at 0x7eb4d9aadfd0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 764.00: Core7 finish processing <class 'src.sim_type.FC'> task(id:14).
+2025-09-19 15:34:39 - Core - DEBUG - updating task14
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core7 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task14 triggered 15
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core7 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 764.00: Core7 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core7 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core7 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 764.00: Core7 add a <class 'src.sim_type.Send'> task(id:15, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 764.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 764.00: Core7 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 764.00: Core 7 [Send.run] START for index 15
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 764.00: Core 7 [Send.run] About to PUT message for index 15 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 764.00: Task 'SEND15' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 764.00: Task 'SEND15' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 766.00: Task 'SEND15' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 766.00: Core 7 [Send.run] FINISHED PUT for index 15
+2025-09-19 15:34:39 - NoC - DEBUG - Time 766.00: Router 7 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Router 7 begins wormhole request for data 15 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Router 7 initiating wormhole routing for data 15 to Router 6
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Wormhole routing path from Router7 to Router6: [7, 6]
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 766.00: Added link 0 (Router7 -> Router6) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 766.00: Core7's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad9b0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 766.00: Core7 finish processing <class 'src.sim_type.Send'> task(id:15).
+2025-09-19 15:34:39 - Core - DEBUG - updating task15
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core7 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 766.00: Core7 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 766.00: Core7 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 766.00: Core7 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 766.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 862.00: Wormhole transmission for data 15 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 862.00: Message delivered via wormhole to Cores: [6]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 862.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 862.00: Wormhole transmission completed from Router7 to Router6
+2025-09-19 15:34:39 - Core - DEBUG - Time 862.00: Core6's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad860>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=15, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=6, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[764, 764], exe_end_time=[766], ready_run_time=[764, 764, 766], mulins=[764], pe_id=7, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=7, data=Data(index=15, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=6, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core6 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 862.00: Core6 receive data15
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=15 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 862.00: Core6 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 862.00: Core6 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data15
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core6 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data15 triggered 17
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core6 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data15 triggered 16
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 862.00: Core6 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core6 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core6 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 862.00: Core6 add a <class 'src.sim_type.FC'> task(id:17, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 862.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 862.00: Core6 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 862.00: Core6 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 862.00: Core6 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 862.00: Task 'FC17' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 862.00: Task 'FC17' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 934.00: Task 'FC17' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 934.00: Core6 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 934.00: Core6's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad080>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 934.00: Core6 finish processing <class 'src.sim_type.FC'> task(id:17).
+2025-09-19 15:34:39 - Core - DEBUG - updating task17
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core6 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task17 triggered 18
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core6 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 934.00: Core6 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core6 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core6 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 934.00: Core6 add a <class 'src.sim_type.Send'> task(id:18, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 934.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 934.00: Core6 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 934.00: Core 6 [Send.run] START for index 18
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 934.00: Core 6 [Send.run] About to PUT message for index 18 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 934.00: Task 'SEND18' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 934.00: Task 'SEND18' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 936.00: Task 'SEND18' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 936.00: Core 6 [Send.run] FINISHED PUT for index 18
+2025-09-19 15:34:39 - NoC - DEBUG - Time 936.00: Router 6 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Router 6 begins wormhole request for data 18 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Router 6 initiating wormhole routing for data 18 to Router 5
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Wormhole routing path from Router6 to Router5: [6, 5]
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 936.00: Added link 0 (Router6 -> Router5) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 936.00: Core6's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad860>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 936.00: Core6 finish processing <class 'src.sim_type.Send'> task(id:18).
+2025-09-19 15:34:39 - Core - DEBUG - updating task18
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core6 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 936.00: Core6 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 936.00: Core6 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 936.00: Core6 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 936.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 1032.00: Wormhole transmission for data 18 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 1032.00: Message delivered via wormhole to Cores: [5]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1032.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 1032.00: Wormhole transmission completed from Router6 to Router5
+2025-09-19 15:34:39 - Core - DEBUG - Time 1032.00: Core5's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad710>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=18, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=5, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[934, 934], exe_end_time=[936], ready_run_time=[934, 934, 936], mulins=[934], pe_id=6, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=6, data=Data(index=18, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=5, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core5 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 1032.00: Core5 receive data18
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=18 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 1032.00: Core5 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1032.00: Core5 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data18
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core5 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data18 triggered 20
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core5 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data18 triggered 19
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 1032.00: Core5 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core5 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core5 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1032.00: Core5 add a <class 'src.sim_type.FC'> task(id:20, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 1032.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1032.00: Core5 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 1032.00: Core5 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1032.00: Core5 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 1032.00: Task 'FC20' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1032.00: Task 'FC20' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1104.00: Task 'FC20' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 1104.00: Core5 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1104.00: Core5's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad160>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 1104.00: Core5 finish processing <class 'src.sim_type.FC'> task(id:20).
+2025-09-19 15:34:39 - Core - DEBUG - updating task20
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core5 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task20 triggered 21
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core5 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1104.00: Core5 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core5 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core5 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1104.00: Core5 add a <class 'src.sim_type.Send'> task(id:21, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 1104.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1104.00: Core5 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1104.00: Core 5 [Send.run] START for index 21
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1104.00: Core 5 [Send.run] About to PUT message for index 21 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1104.00: Task 'SEND21' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1104.00: Task 'SEND21' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1106.00: Task 'SEND21' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1106.00: Core 5 [Send.run] FINISHED PUT for index 21
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1106.00: Router 5 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Router 5 begins wormhole request for data 21 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Router 5 initiating wormhole routing for data 21 to Router 4
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Wormhole routing path from Router5 to Router4: [5, 4]
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1106.00: Added link 0 (Router5 -> Router4) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 1106.00: Core5's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad710>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 1106.00: Core5 finish processing <class 'src.sim_type.Send'> task(id:21).
+2025-09-19 15:34:39 - Core - DEBUG - updating task21
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core5 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 1106.00: Core5 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 1106.00: Core5 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1106.00: Core5 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 1106.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 1202.00: Wormhole transmission for data 21 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 1202.00: Message delivered via wormhole to Cores: [4]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1202.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 1202.00: Wormhole transmission completed from Router5 to Router4
+2025-09-19 15:34:39 - Core - DEBUG - Time 1202.00: Core4's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aad5c0>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=21, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=4, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1104, 1104], exe_end_time=[1106], ready_run_time=[1104, 1104, 1106], mulins=[1104], pe_id=5, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=5, data=Data(index=21, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=4, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core4 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 1202.00: Core4 receive data21
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=21 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 1202.00: Core4 before-allocate: 1536, [2097152/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1202.00: Core4 after-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data21
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core4 self.counter += 1, [2/10]
+2025-09-19 15:34:39 - Core - DEBUG - data21 triggered 23
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:1/1 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core4 insert 2 into waiting_queue
+2025-09-19 15:34:39 - Core - DEBUG - data21 triggered 22
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/0
+2025-09-19 15:34:39 - Core - INFO - Time 1202.00: Core4 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core4 block_counter: 2/10
+2025-09-19 15:34:39 - Core - DEBUG - Core4 got static task_id 2 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1202.00: Core4 add a <class 'src.sim_type.FC'> task(id:23, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 1202.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1202.00: Core4 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - Core - DEBUG - Time 1202.00: Core4 before-allocate: 1536, [2095616/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1202.00: Core4 after-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Common - DEBUG - Time 1202.00: Task 'FC23' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1202.00: Task 'FC23' acquired a resource. Starting execution for 72 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1274.00: Task 'FC23' released a resource.
+2025-09-19 15:34:39 - Core - DEBUG - Time 1274.00: Core4 before-free: 5376, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1274.00: Core4's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad2b0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 1274.00: Core4 finish processing <class 'src.sim_type.FC'> task(id:23).
+2025-09-19 15:34:39 - Core - DEBUG - updating task23
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core4 self.counter += 1, [3/10]
+2025-09-19 15:34:39 - Core - DEBUG - task23 triggered 24
+2025-09-19 15:34:39 - Core - DEBUG - triggered block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - update triggered instruction...
+2025-09-19 15:34:39 - Core - DEBUG - para:0/0 + feat:1/1
+2025-09-19 15:34:39 - Core - DEBUG - Core4 insert 3 into waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1274.00: Core4 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Core4 block_counter: 3/10
+2025-09-19 15:34:39 - Core - DEBUG - Core4 got static task_id 3 from waiting_queue
+2025-09-19 15:34:39 - Core - INFO - Time 1274.00: Core4 add a <class 'src.sim_type.Send'> task(id:24, layer:0) into running queue.
+2025-09-19 15:34:39 - Core - INFO - Time 1274.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1274.00: Core4 waiting for 1 running tasks OR a message.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1274.00: Core 4 [Send.run] START for index 24
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1274.00: Core 4 [Send.run] About to PUT message for index 24 into data_out link.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1274.00: Task 'SEND24' trying to acquire a resource.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1274.00: Task 'SEND24' acquired a resource. Starting execution for 2 cycles.
+2025-09-19 15:34:39 - Common - DEBUG - Time 1276.00: Task 'SEND24' released a resource.
+2025-09-19 15:34:39 - src.sim_type - DEBUG - Time 1276.00: Core 4 [Send.run] FINISHED PUT for index 24
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1276.00: Router 4 received a message from its core_in link.
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Router 4 begins wormhole request for data 24 from core.
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Router 4 initiating wormhole routing for data 24 to Router 0
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Wormhole routing path from Router4 to Router0: [4, 0]
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Requesting 1 links for wormhole routing
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1276.00: Added link 0 (Router4 -> Router0) to request batch.
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Waiting for all 1 links to be available simultaneously...
+2025-09-19 15:34:39 - Core - DEBUG - Time 1276.00: Core4's result is <ConditionValue {<Process(run) object at 0x7eb4d9aad5c0>: None}>
+2025-09-19 15:34:39 - Core - INFO - Time 1276.00: Core4 finish processing <class 'src.sim_type.Send'> task(id:24).
+2025-09-19 15:34:39 - Core - DEBUG - updating task24
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core4 self.counter += 1, [4/10]
+2025-09-19 15:34:39 - Core - INFO - Time 1276.00: Core4 entered top of main loop.
+2025-09-19 15:34:39 - Core - INFO - Time 1276.00: Core4 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1276.00: Core4 has no running tasks. WAITING ONLY for incoming messages.
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: All links acquired for wormhole routing
+2025-09-19 15:34:39 - NoC - INFO - Time 1276.00: Wormhole transmission starting, latency=96.00 (delay=0.00, transmission=96.00)
+2025-09-19 15:34:39 - NoC - INFO - Time 1372.00: Wormhole transmission for data 24 arrived. Delivering to path destinations.
+2025-09-19 15:34:39 - NoC - INFO - Time 1372.00: Message delivered via wormhole to Cores: [0]
+2025-09-19 15:34:39 - NoC - DEBUG - Time 1372.00: Released link 0
+2025-09-19 15:34:39 - NoC - INFO - Time 1372.00: Wormhole transmission completed from Router4 to Router0
+2025-09-19 15:34:39 - Core - DEBUG - Time 1372.00: Core0's result is <ConditionValue {<StoreGet() object at 0x7eb4d9aae510>: Message(ins=Instruction(inst_type=<TaskType.SEND: 2>, index=24, trigger_index=[], trigger_core_id=[], layer_id=0, group_num=1, data_type=<DataType.FEAT: 1>, position=0, path_dst=[], tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)], feat_num=1, para_num=0, feat_aggr_type=None, feat_precision=1, para_precision=1, target_dram_id=-1, start_time=-1, record=Record(exe_start_time=[1274, 1274], exe_end_time=[1276], ready_run_time=[1274, 1274, 1276], mulins=[1274], pe_id=4, dram_id=-1), running=False, waitinglast=False, hot=0, next=[]), src=4, data=Data(index=24, tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]), dst=0, path_dst=[], msg_type=<MsgType.DATA: 0>, payload=None, route_strategy='wormhole')}>
+2025-09-19 15:34:39 - Core - DEBUG - Core0 received a message: msg_type=0
+2025-09-19 15:34:39 - Core - INFO - Time 1372.00: Core0 receive data24
+2025-09-19 15:34:39 - Core - DEBUG - received data is index=24 tensor_slice=[DimSlice(start=0, end=32), DimSlice(start=0, end=48)]
+2025-09-19 15:34:39 - Core - DEBUG - function call: receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - in function receive_data()
+2025-09-19 15:34:39 - Core - DEBUG - Time 1372.00: Core0 before-allocate: 1536, [2094080/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - Time 1372.00: Core0 after-allocate: 1536, [2092544/2097152]
+2025-09-19 15:34:39 - Core - DEBUG - updating data24
+2025-09-19 15:34:39 - Core - DEBUG - current block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - task block_ptr is 0
+2025-09-19 15:34:39 - Core - DEBUG - Core0 self.counter += 1, [5/10]
+2025-09-19 15:34:39 - Core - INFO - Time 1372.00: Core0 entered top of main loop.
+2025-09-19 15:34:39 - Core - DEBUG - Time 1372.00: Core0 (Memory Core) scheduler returned NO ready tasks
+2025-09-19 15:34:39 - Core - INFO - Time 1372.00: Core0 reached checkpoint BEFORE 'with data_in.get()'.
+2025-09-19 15:34:39 - Core - INFO - Time 1372.00: Core0 has no running tasks. WAITING ONLY for incoming messages.

@@ -159,7 +159,7 @@ class IOTask(Task):
     num_operands: int = 0
     original_requester_id: int = -1
 
-    def size(self) -> int:
+    def size(self):
         """
         根据Instruction的data_type判断tensor类型并乘以相应的数据精度
         """
@@ -199,6 +199,11 @@ class MemTask(Task):
     original_requester_id: int = -1
     data_type: DataType = DataType.FEAT # 代理任务需要继承此属性
 
+    def size_in_bytes(self) -> int:
+        base_size = self.size()
+        precision = self.feat_precision if self.data_type == DataType.FEAT else self.para_precision
+        return base_size * precision
+
     def run(self, core, ins, dram):
         # 代理任务的专属执行路径
         if self.original_requester_id != -1: # 是代理任务，接受请求帮助别的core进行read。
@@ -213,10 +218,10 @@ class MemTask(Task):
             ins.record.exe_start_time.append(core.env.now)
             if self.opcode.lower() == "read":
                 yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
-                yield from dram[target_dram_id].read(self.size(), ins)
+                yield from dram[target_dram_id].read(self.size_in_bytes(), ins)
             elif self.opcode.lower() == "write":
                 yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
-                yield from dram[target_dram_id].write(self.size(), ins)
+                yield from dram[target_dram_id].write(self.size_in_bytes(), ins)
             ins.record.exe_end_time.append(core.env.now)
             return # 代理任务执行完毕，结束
 
@@ -260,11 +265,11 @@ class MemTask(Task):
             
             if self.opcode.lower() == "read":
                 yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
-                yield from dram[target_dram_id].read(self.size(), ins)
+                yield from dram[target_dram_id].read(self.size_in_bytes(), ins)
             
             elif self.opcode.lower() == "write":
                 yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
-                yield from dram[target_dram_id].write(self.size(), ins)
+                yield from dram[target_dram_id].write(self.size_in_bytes(), ins)
 
             ins.record.exe_end_time.append(core.env.now)
         else:
@@ -338,9 +343,22 @@ class ComputeTask(Task):
         raise NotImplementedError(f"{self.opcode} 类未实现 calc_flops 方法")
     
     def run(self, core, ins):
+        from src.common import tpu_flop_power, record_power_trace, sram_read_power, cim_local_read_power
         self.calc_flops()
         ins.record.ready_run_time.append(core.env.now)
         ins.record.pe_id = core.id
+
+        # SRAM read power for features
+        feat_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.feat) * self.feat_precision
+        if feat_size > 0:
+            power = feat_size * sram_read_power
+            record_power_trace(core.env.now, core.id, self.index, power, "sram_read_feat")
+
+        # SRAM read power for parameters (CIM local read)
+        para_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.para) * self.para_precision
+        if para_size > 0:
+            power = para_size * cim_local_read_power
+            record_power_trace(core.env.now, core.id, self.index, power, "cim_local_read_para")
 
         # log_prefix = f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}]"
         # logger.debug(f"{log_prefix} - ComputeTask.run START")
@@ -352,6 +370,9 @@ class ComputeTask(Task):
 
         #执行tpu计算
         yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
+
+        power = self.flops * tpu_flop_power
+        record_power_trace(core.env.now, core.id, self.index, power, "tpu_compute", self.feat_precision, self.para_precision, self.flops)
 
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - TPU EXEC complete.")
 
@@ -514,26 +535,92 @@ class FC(ComputeTask):
     def calc_flops(self):
         """
         Calculates FLOPs for a fully-connected layer (matrix multiplication).
-        FLOPs = M * N * K
-        - self.size() provides the output size (e.g., M * N).
-        - K is the common dimension, which is robustly derived from the parameter
-          input tensor (self.para), which represents the weight matrix.
+        Supports aggregating multiple input features (activations) based on `feat_aggr_type`.
+        FLOPs = N * M * K
+        - N is the batch/sequence dimension from input features.
+        - M is the output feature dimension from the weight tensor.
+        - K is the input feature dimension from input features/weight tensor.
         """
         if not self.para:
-            raise ValueError(f"FC.calc_flops() called for task index {self.index} before parameter input (self.para) is available.")
+            raise ValueError(f"FC.calc_flops() for task {self.index} requires parameter input (self.para), but it is empty.")
+        if not self.feat:
+            raise ValueError(f"FC.calc_flops() for task {self.index} requires feature input (self.feat), but it is empty.")
 
-        # The weight matrix defines the K dimension.
-        # Based on my_geninst_GEMM.py, the weight slice is (M, K).
-        # Therefore, K is the size of the second dimension (index 1).
-        weight_slice = self.para[0].tensor_slice
-        if len(weight_slice) < 2:
-            raise ValueError(f"FC task index {self.index} expects at least a 2D tensor for parameter input, but got {len(weight_slice)} dimensions.")
+        # According to my_geninst_GEMM.py, the weight tensor (parameter) has a shape of (M, K).
+        # The feature tensor (activation) has a shape of (N, K).
+        # The output tensor has a shape of (N, M).
+        
+        if len(self.para[0].tensor_slice) < 2:
+            raise ValueError(f"FC task {self.index}: parameter tensor must be at least 2D, but got {len(self.para[0].tensor_slice)} dimensions.")
+        
+        # Get M from the weight tensor's first dimension (index 0).
+        m_size = self.para[0].tensor_slice[0].end - self.para[0].tensor_slice[0].start
+        
+        # Get K from the weight tensor's second dimension (index 1).
+        k_from_para = self.para[0].tensor_slice[1].end - self.para[0].tensor_slice[1].start
 
-        k_dim = weight_slice[1]
-        k_size = k_dim.end - k_dim.start
+        if self.feat_aggr_type is None:
+            # Default case: No aggregation. Expects a single feature input.
+            if len(self.feat) != 1:
+                raise ValueError(f"FC task {self.index} with no feat_aggr_type expects 1 feature input, but got {len(self.feat)}.")
+            
+            feat_slice = self.feat[0].tensor_slice
+            if len(feat_slice) < 2:
+                raise ValueError(f"FC task {self.index}: feature tensor must be at least 2D, but got {len(feat_slice)} dimensions.")
 
-        # M*N*K
-        self.flops = self.size() * k_size
+            n_size = feat_slice[0].end - feat_slice[0].start
+            k_from_feat = feat_slice[1].end - feat_slice[1].start
+            
+            if k_from_feat != k_from_para:
+                raise ValueError(f"FC task {self.index}: K dimension mismatch between feature ({k_from_feat}) and parameter ({k_from_para}).")
+            
+            self.flops = n_size * m_size * k_from_para
+
+        elif self.feat_aggr_type == AggrType.CONCAT_DIM_0:
+            # Concatenate features along dimension 0 (N). Dimension 1 (K) must be consistent across all features.
+            n_total = 0
+            k_first = -1
+            for i, feat_data in enumerate(self.feat):
+                feat_slice = feat_data.tensor_slice
+                if len(feat_slice) < 2:
+                    raise ValueError(f"FC task {self.index} CONCAT_DIM_0: feature input {i} must be at least 2D.")
+                
+                n_total += feat_slice[0].end - feat_slice[0].start
+                k_current = feat_slice[1].end - feat_slice[1].start
+                
+                if k_first == -1:
+                    k_first = k_current
+                elif k_first != k_current:
+                    raise ValueError(f"FC task {self.index} with CONCAT_DIM_0: K dimensions of all features must be equal, but got varying sizes.")
+            
+            if k_first != k_from_para:
+                raise ValueError(f"FC task {self.index}: Aggregated feature K dimension ({k_first}) mismatches parameter K dimension ({k_from_para}).")
+
+            self.flops = n_total * m_size * k_from_para
+
+        elif self.feat_aggr_type == AggrType.CONCAT_DIM_1:
+            # Concatenate features along dimension 1 (K). Dimension 0 (N) must be consistent across all features.
+            k_total = 0
+            n_first = -1
+            for i, feat_data in enumerate(self.feat):
+                feat_slice = feat_data.tensor_slice
+                if len(feat_slice) < 2:
+                    raise ValueError(f"FC task {self.index} CONCAT_DIM_1: feature input {i} must be at least 2D.")
+                
+                k_total += feat_slice[1].end - feat_slice[1].start
+                n_current = feat_slice[0].end - feat_slice[0].start
+
+                if n_first == -1:
+                    n_first = n_current
+                elif n_first != n_current:
+                    raise ValueError(f"FC task {self.index} with CONCAT_DIM_1: N dimensions of all features must be equal, but got varying sizes.")
+            
+            if k_total != k_from_para:
+                raise ValueError(f"FC task {self.index}: Aggregated feature K dimension ({k_total}) mismatches parameter K dimension ({k_from_para}).")
+
+            self.flops = n_first * m_size * k_from_para
+        else:
+            raise NotImplementedError(f"Unsupported feat_aggr_type: {self.feat_aggr_type} for FC task {self.index}")
 
 class GConv(ComputeTask):
     opcode: str = "GConv"
@@ -574,7 +661,14 @@ class Send(CommunicationTask):
     path_dst: List[int] = []  # 路径广播目标列表，默认为空列表
     
     def run(self, core, ins):
+        from src.common import record_power_trace, sram_read_power
         logger.debug(f"Time {core.env.now:.2f}: Core {core.id} [Send.run] START for index {self.index}")
+        # SRAM read power for sending data
+        size = self.size() * (self.feat_precision if ins.data_type == DataType.FEAT else self.para_precision)
+        if size > 0:
+            power = size * sram_read_power
+            record_power_trace(core.env.now, core.id, self.index, power, "sram_read_send")
+
         # 分析时send/recv合并处理，因为index一致
         # 记录
         ins.record.pe_id = core.id
@@ -624,6 +718,7 @@ class DerivativeRecv(Recv, DerivativeTask):
 
 class Store(Task):
     opcode: str = "Store"
+    num_operands: int = 0
 
     def run(self, core, ins):
         ins.record.exe_start_time.append(core.env.now)
@@ -639,6 +734,7 @@ class Store(Task):
 
 class Load(Task):
     opcode: str = "Load"
+    num_operands: int = 0
 
     def run(self, core, ins):
         # This is a logical operation. It assumes data is already in SPM.
@@ -655,6 +751,7 @@ class Load(Task):
 
 class Free(Task):
     opcode: str = "Free"
+    num_operands: int = 0
 
     def run(self, core, ins):
         ins.record.exe_start_time.append(core.env.now)

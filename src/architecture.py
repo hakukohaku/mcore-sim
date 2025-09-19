@@ -8,7 +8,7 @@ from src.noc_new import NoC, Link, Direction
 from src.arch_config import CoreConfig, NoCConfig, ArchConfig, LinkConfig, MemConfig
 from src.dram import Dram
 from src.sim_type import *
-from src.common import cfg,Timer, init_graph, ind2ins
+from src import common
 from src.draw import draw_grid
 from analysis.trace_format import *
 from typing import List
@@ -115,13 +115,15 @@ class Arch:
         self.env = simpy.Environment()
         self.stage = stage
         
+        common.init_power_trace('power/power_config/power.json', 'power/power_trace/power_trace.txt')
+        
         self.mem_type = arch.mem.type
         self.noc = self.build_noc(arch.noc)
         self.dram = self.build_dram(arch.mem)
         
         #print(len(self.noc.r2r_links))
         if stage == "pre_analysis":
-            init_graph(program)
+            common.init_graph(program)
         self.program = program
 
         self.cores = self.build_cores(arch.core, program, arch.mem)
@@ -136,7 +138,7 @@ class Arch:
         self.fail_kind = fail_kind
         
         trace(self.env, monitor)
-        patch_resource(self.cores[9].data_in.store, pre=monitor1, post=monitor2)
+        patch_resource(self.cores[0].data_in.store, pre=monitor1, post=monitor2)
 
         self.fail_slow = fail
         print("Construction finished.")
@@ -218,7 +220,7 @@ class Arch:
             cores.append(core)
             # TODO:timer should be in second stage
         if self.stage == "post_analysis":
-            self.timer = Timer(self.env, 20000, cores)
+            self.timer = common.Timer(self.env, 20000, cores)
 
         for id in range(config.x * config.y):
             cores[id].scheduler.bound_cores(cores)
@@ -346,7 +348,7 @@ class Arch:
             self.processesmonitorlink(self.noc.r2r_links[i].linkentry.data,"gen/link"+str(i)+".json",i,"link")
 
         
-        if cfg.flow:
+        if common.cfg.flow:
             for i in range(len(self.cores)):
                 self.processesflow(self.cores[i].flow_in,"gen/flow_in"+str(i)+".json",i,"flow_in")
             for i in range(len(self.cores)):
@@ -603,6 +605,12 @@ class Arch:
 
         self.output_data(self.net_name, self.fail_kind)
 
+        print(f"Total power: {common.total_power}")
+        print("Power Summary:")
+        for key, value in common.power_summary.items():
+            print(f"  [{key}]: {value}")
+        common.close_power_trace()
+        
         # self.draw()
 
         return self.env

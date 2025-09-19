@@ -159,3 +159,74 @@ class Timer:
             if self.finish:
                 print(self.finish)
                 break
+
+total_power = 0
+power_summary = {
+    "compute": 0,
+    "dram_read": 0,
+    "dram_write": 0,
+    "noc_hop": 0,
+    "sram_read": 0,
+    "sram_write": 0,
+    "cim_local_read": 0
+}
+power_trace_file = None
+tpu_flop_power = 0
+dram_read_power = 0
+dram_write_power = 0
+noc_hop_power = 0
+sram_write_power = 0
+sram_read_power = 0
+cim_local_read_power = 0
+
+def init_power_trace(power_config_path, power_trace_path):
+    global power_trace_file, tpu_flop_power, dram_read_power, dram_write_power, noc_hop_power, sram_write_power, sram_read_power, cim_local_read_power
+    with open(power_config_path, 'r') as f:
+        power_config = json.load(f)
+        tpu_flop_power = power_config['tpu_flop_power']
+        dram_read_power = power_config['dram_read_power']
+        dram_write_power = power_config['dram_write_power']
+        noc_hop_power = power_config['noc_hop_power']
+        sram_write_power = power_config['sram_write_power']
+        sram_read_power = power_config['sram_read_power']
+        cim_local_read_power = power_config['cim_local_read_power']
+    
+    power_trace_file = open(power_trace_path, 'w')
+
+def record_power_trace(time, device_id, task_id, power, event_type, feat_precision="", para_precision="", flops=""):
+    global total_power
+    total_power += power
+
+    if "tpu_compute" in event_type:
+        power_summary["compute"] += power
+    elif "dram_read" in event_type:
+        power_summary["dram_read"] += power
+    elif "dram_write" in event_type:
+        power_summary["dram_write"] += power
+    elif "noc" in event_type:
+        power_summary["noc_hop"] += power
+    elif "sram_read" in event_type:
+        power_summary["sram_read"] += power
+    elif "sram_write" in event_type:
+        power_summary["sram_write"] += power
+    elif "cim_local_read" in event_type:
+        power_summary["cim_local_read"] += power
+
+    if power_trace_file:
+        id_key = "dram_id" if "dram" in event_type else "core_id"
+        log_entry = f"[time]:{time}, [{id_key}]:{device_id}, [task_id]:{task_id}, [power]:{power}, [type]:{event_type}"
+        if feat_precision != "":
+            log_entry += f", [feat_precision]:{feat_precision}"
+        if para_precision != "":
+            log_entry += f", [para_precision]:{para_precision}"
+        if flops != "":
+            log_entry += f", [flops]:{flops}"
+        power_trace_file.write(log_entry + "\n")
+
+def close_power_trace():
+    if power_trace_file:
+        power_trace_file.write(f"\n[total_power]:{total_power}\n\n")
+        power_trace_file.write("Power Summary:\n")
+        for key, value in power_summary.items():
+            power_trace_file.write(f"  [{key}]: {value}\n")
+        power_trace_file.close()

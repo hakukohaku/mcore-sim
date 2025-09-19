@@ -1,0 +1,28 @@
+Debug: Starting to process 33 instructions
+Debug: Phase 1 - Collecting all SEND instructions
+Debug: Phase 1 complete - Collected 8 SEND instructions
+Debug: Phase 2 - Processing all instructions
+Instruction2: type 7, layer_id 0, pe_id 0
+    ready_time 12, exe_time 72, end_time 12
+    operands_time: [0, 12]
+Instruction5: type 7, layer_id 0, pe_id 1
+    ready_time 182, exe_time 72, end_time 182
+    operands_time: [0, 182]
+Instruction8: type 7, layer_id 0, pe_id 2
+    ready_time 352, exe_time 72, end_time 352
+    operands_time: [0, 352]
+Instruction11: type 7, layer_id 0, pe_id 3
+    ready_time 522, exe_time 72, end_time 522
+    operands_time: [0, 522]
+Instruction23: type 7, layer_id 0, pe_id 4
+    ready_time 1202, exe_time 72, end_time 1202
+    operands_time: [0, 1202]
+Instruction20: type 7, layer_id 0, pe_id 5
+    ready_time 1032, exe_time 72, end_time 1032
+    operands_time: [0, 1032]
+Instruction17: type 7, layer_id 0, pe_id 6
+    ready_time 862, exe_time 72, end_time 862
+    operands_time: [0, 862]
+Instruction14: type 7, layer_id 0, pe_id 7
+    ready_time 692, exe_time 72, end_time 692
+    operands_time: [0, 692]

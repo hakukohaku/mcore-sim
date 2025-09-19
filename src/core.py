@@ -2,7 +2,7 @@ import heapq
 import simpy
 import logging
 from queue import Queue
-from src.common import MonitoredResource, cfg, ind2ins
+from src import common
 from src.arch_config import CoreConfig, ScratchpadConfig
 from src.noc_new import Link, Router
 from src.sim_type import *
@@ -43,6 +43,8 @@ class SPMManager:
     def allocate(self, string, size):
         if size > 0:
             logger.debug(f"Time {self.env.now:.2f}: Core{self.id} before-allocate: {size}, [{self.container.level}/{self.container.capacity}]")
+            power = size * common.sram_write_power
+            common.record_power_trace(self.env.now, self.id, -1, power, "sram_write") # task_id is not available here, use -1
             yield self.container.get(size)
             logger.debug(f"Time {self.env.now:.2f}: Core{self.id} after-allocate: {size}, [{self.container.level}/{self.container.capacity}]")
         #TODO:add instruction type and id and check if need record
@@ -238,9 +240,9 @@ class TableScheduler:
                 case TaskType.RECV:
                     self.tasks.append(Recv(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.READ:
-                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
+                    self.tasks.append(Read(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.WRITE:
-                    self.tasks.append(Write(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
+                    self.tasks.append(Write(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision, target_dram_id=inst.target_dram_id))
                 case TaskType.SEND:
                     self.tasks.append(Send(index=inst.index, feat_num=inst.feat_num,tensor_slice=inst.tensor_slice, inst=inst, dst=inst.position, path_dst=inst.path_dst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.LOAD:
@@ -781,8 +783,8 @@ class Core:
 
         self.lsu_bandwidth = config.lsu.width
         self.tpu_flops = config.compute.flops
-        self.lsu = MonitoredResource(env=env, capacity=4)
-        self.tpu = MonitoredResource(env=env, capacity=1)
+        self.lsu = common.MonitoredResource(env=env, capacity=4)
+        self.tpu = common.MonitoredResource(env=env, capacity=1)
 
         self.data_ready = {}
         self.pending_recvs = {}
@@ -1055,12 +1057,12 @@ class Core:
                     # 暂时没用到
                     if self.stage == "post_analysis":
                         src = msg.src
-                        inst = ind2ins[src][msg.data.index]
+                        inst = common.ind2ins[src][msg.data.index]
                         assert inst in self.arch.cores[src].running_send
                         self.arch.cores[src].running_send.remove(inst)
 
                     # 记录数据接收信息
-                    if cfg.flow and self.env.now >= cfg.simstart and self.env.now <= cfg.simend:
+                    if common.cfg.flow and self.env.now >= common.cfg.simstart and self.env.now <= common.cfg.simend:
                         self.flow_in.append((msg.data.index, self.program[self.scheduler.index2taskid[msg.data.index]].inst_type, "recv", self.env.now))
 
                     logger.info(f"Time {self.env.now:.2f}: Core{self.id} receive data{msg.data.index}")
@@ -1098,7 +1100,7 @@ class Core:
                         logger.info(f"Time {self.env.now:.2f}: Core{self.id} finish processing {type(self.event2task[event])} task(id:{self.event2task[event].index}).")
                         # 这个也不可能是RECV，我需要找到其中的SEND
                         # print(self.program[self.scheduler.index2taskid[self.event2task[event].index]].inst_type)
-                        if cfg.flow and self.env.now >= cfg.simstart and self.env.now <= cfg.simend:
+                        if common.cfg.flow and self.env.now >= common.cfg.simstart and self.env.now <= common.cfg.simend:
                             # 识别衍生Send任务
                             if isinstance(task, DerivativeSend) or self.program[self.scheduler.index2taskid[task.index]].inst_type == TaskType.SEND:
                                 self.flow_out.append((task.index, self.program[self.scheduler.index2taskid[task.index]].inst_type,"send",self.env.now))
