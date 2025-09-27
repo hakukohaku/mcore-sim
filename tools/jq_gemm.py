@@ -780,12 +780,21 @@ if __name__ == "__main__":
 
     # 调用GEMM函数生成指令
     GEMM(read_activation=False, read_weight=False, write_back=True)
-
+    
     # 将生成的workload输出到json文件
     wl = Workload(name="GEMM_test", pes=pewls)
+    print(wl)
     workload_json = wl.model_dump_json(indent=4)
 
     output_path = "../tests/gemm/HW_workload.json"
+    # 确保输出目录与文件存在
+    output_dir = os.path.dirname(output_path)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
+    if not os.path.exists(output_path):
+        with open(output_path, "w") as _:
+            pass
+
     with open(output_path, "w") as file:
         print(workload_json, file=file)
     

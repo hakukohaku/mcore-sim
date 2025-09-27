@@ -397,10 +397,13 @@ class CommunicationTask(Task):
 
 class Instruction(BaseModel):
     inst_type: TaskType
+    # inst_name: str =""
     index: int
     trigger_index: List[int] = []
     # 只有WRITE指令会用到
     trigger_core_id: List[int] = []
+    layer_name: str = " "
+    layer_loop_id: int = 0
     layer_id: int
     group_num: int = 1
     data_type: DataType

@@ -24,10 +24,10 @@ parser.add_argument("--simstart", type=int, default=0,
 parser.add_argument("--simend", type=int, default=int((1<<31)-1),
                     help="Simulation end cycle, default is None (natural end)")
 parser.add_argument("--flow", action="store_true", help="enable flow flag")
-parser.add_argument("--workload", type=str, default="tools/workload.json")
+parser.add_argument("--workload", type=str, default="tests/pipeline/workload_pipeline_fixed_test.json")
 parser.add_argument("--arch", type=str, default="arch/gemini4_4.json")
 parser.add_argument("--fail", type=str, default="failslow/normal.json")
-parser.add_argument("--log", type=str, default="logging/simulation.log")
+parser.add_argument("--log", type=str, default="logging/log.txt")
 parser.add_argument("--level", type=str, default="info")
 
 args = parser.parse_args()

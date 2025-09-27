@@ -180,7 +180,7 @@ def test_pipeline(read_activation=True, read_weight=True, write_back=True):
         )
         pewls[current_core_id].insts.append(comp_inst)
         
-        # 设置依赖：READ/RECV 和 LOAD 都完成后才能开始计算
+        # 设置依赖：READ/RECV/LOAD_IN 和 LOAD_W 都完成后才能开始计算
         input_provider_inst.trigger_index.append(comp_inst.index)
         input_provider_inst.trigger_index.append(load_wgt_inst.index)
         load_wgt_inst.trigger_index.append(comp_inst.index)

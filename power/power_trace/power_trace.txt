@@ -1,69 +1,525 @@
-[time]:0, [core_id]:0, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:0, [dram_id]:0, [task_id]:0, [power]:49.152, [type]:dram_read
-[time]:12, [core_id]:0, [task_id]:2, [power]:2.408448, [type]:sram_read_feat
-[time]:12, [core_id]:0, [task_id]:2, [power]:1.004544, [type]:cim_local_read_para
-[time]:12, [core_id]:0, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:84, [core_id]:0, [task_id]:2, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:84, [core_id]:0, [task_id]:3, [power]:2.408448, [type]:sram_read_send
-[time]:86, [core_id]:0, [task_id]:3, [power]:2.740224, [type]:noc_wormhole
-[time]:182, [core_id]:1, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:182, [core_id]:1, [task_id]:5, [power]:2.408448, [type]:sram_read_feat
-[time]:182, [core_id]:1, [task_id]:5, [power]:1.004544, [type]:cim_local_read_para
-[time]:182, [core_id]:1, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:254, [core_id]:1, [task_id]:5, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:254, [core_id]:1, [task_id]:6, [power]:2.408448, [type]:sram_read_send
-[time]:256, [core_id]:1, [task_id]:6, [power]:2.740224, [type]:noc_wormhole
-[time]:352, [core_id]:2, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:352, [core_id]:2, [task_id]:8, [power]:2.408448, [type]:sram_read_feat
-[time]:352, [core_id]:2, [task_id]:8, [power]:1.004544, [type]:cim_local_read_para
-[time]:352, [core_id]:2, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:424, [core_id]:2, [task_id]:8, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:424, [core_id]:2, [task_id]:9, [power]:2.408448, [type]:sram_read_send
-[time]:426, [core_id]:2, [task_id]:9, [power]:2.740224, [type]:noc_wormhole
-[time]:522, [core_id]:3, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:522, [core_id]:3, [task_id]:11, [power]:2.408448, [type]:sram_read_feat
-[time]:522, [core_id]:3, [task_id]:11, [power]:1.004544, [type]:cim_local_read_para
-[time]:522, [core_id]:3, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:594, [core_id]:3, [task_id]:11, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:594, [core_id]:3, [task_id]:12, [power]:2.408448, [type]:sram_read_send
-[time]:596, [core_id]:3, [task_id]:12, [power]:2.740224, [type]:noc_wormhole
-[time]:692, [core_id]:7, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:692, [core_id]:7, [task_id]:14, [power]:2.408448, [type]:sram_read_feat
-[time]:692, [core_id]:7, [task_id]:14, [power]:1.004544, [type]:cim_local_read_para
-[time]:692, [core_id]:7, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:764, [core_id]:7, [task_id]:14, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:764, [core_id]:7, [task_id]:15, [power]:2.408448, [type]:sram_read_send
-[time]:766, [core_id]:7, [task_id]:15, [power]:2.740224, [type]:noc_wormhole
-[time]:862, [core_id]:6, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:862, [core_id]:6, [task_id]:17, [power]:2.408448, [type]:sram_read_feat
-[time]:862, [core_id]:6, [task_id]:17, [power]:1.004544, [type]:cim_local_read_para
-[time]:862, [core_id]:6, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:934, [core_id]:6, [task_id]:17, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:934, [core_id]:6, [task_id]:18, [power]:2.408448, [type]:sram_read_send
-[time]:936, [core_id]:6, [task_id]:18, [power]:2.740224, [type]:noc_wormhole
-[time]:1032, [core_id]:5, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:1032, [core_id]:5, [task_id]:20, [power]:2.408448, [type]:sram_read_feat
-[time]:1032, [core_id]:5, [task_id]:20, [power]:1.004544, [type]:cim_local_read_para
-[time]:1032, [core_id]:5, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:1104, [core_id]:5, [task_id]:20, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:1104, [core_id]:5, [task_id]:21, [power]:2.408448, [type]:sram_read_send
-[time]:1106, [core_id]:5, [task_id]:21, [power]:2.740224, [type]:noc_wormhole
-[time]:1202, [core_id]:4, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:1202, [core_id]:4, [task_id]:23, [power]:2.408448, [type]:sram_read_feat
-[time]:1202, [core_id]:4, [task_id]:23, [power]:1.004544, [type]:cim_local_read_para
-[time]:1202, [core_id]:4, [task_id]:-1, [power]:2.408448, [type]:sram_write
-[time]:1274, [core_id]:4, [task_id]:23, [power]:7.151616, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:73728
-[time]:1274, [core_id]:4, [task_id]:24, [power]:2.408448, [type]:sram_read_send
-[time]:1276, [core_id]:4, [task_id]:24, [power]:2.740224, [type]:noc_wormhole
-[time]:1372, [core_id]:0, [task_id]:-1, [power]:2.408448, [type]:sram_write
+[time]:0, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:0, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:1, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:2, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:3, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:4, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:5, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:6, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:7, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:0, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [dram_id]:0, [task_id]:0, [power]:32.768, [type]:dram_read
+[time]:0, [core_id]:0, [task_id]:6, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:0, [task_id]:6, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:1, [task_id]:30, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:1, [task_id]:30, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:2, [task_id]:54, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:2, [task_id]:54, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:3, [task_id]:78, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:3, [task_id]:78, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:4, [task_id]:174, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:4, [task_id]:174, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:5, [task_id]:150, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:5, [task_id]:150, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:6, [task_id]:126, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:6, [task_id]:126, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:0, [core_id]:7, [task_id]:102, [power]:1.605632, [type]:sram_read_feat
+[time]:0, [core_id]:7, [task_id]:102, [power]:0.446464, [type]:cim_local_read_para
+[time]:0, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:8, [core_id]:0, [task_id]:2, [power]:1.605632, [type]:sram_read_feat
+[time]:8, [core_id]:0, [task_id]:2, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:8, [core_id]:0, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:32, [core_id]:0, [task_id]:6, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:1, [task_id]:30, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:2, [task_id]:54, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:3, [task_id]:78, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:4, [task_id]:174, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:5, [task_id]:150, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:6, [task_id]:126, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:32, [core_id]:7, [task_id]:102, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:128, [core_id]:0, [task_id]:2, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:128, [core_id]:0, [task_id]:10, [power]:1.605632, [type]:sram_read_feat
+[time]:128, [core_id]:0, [task_id]:10, [power]:0.446464, [type]:cim_local_read_para
+[time]:128, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:128, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:128, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:128, [core_id]:0, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:128, [core_id]:0, [task_id]:14, [power]:1.605632, [type]:sram_read_feat
+[time]:128, [core_id]:0, [task_id]:14, [power]:0.446464, [type]:cim_local_read_para
+[time]:128, [core_id]:0, [task_id]:18, [power]:1.605632, [type]:sram_read_feat
+[time]:128, [core_id]:0, [task_id]:18, [power]:0.892928, [type]:cim_local_read_para
+[time]:128, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:128, [core_id]:0, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:160, [core_id]:0, [task_id]:10, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:192, [core_id]:0, [task_id]:14, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:256, [core_id]:0, [task_id]:18, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:256, [core_id]:0, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:256, [core_id]:0, [task_id]:22, [power]:3.211264, [type]:sram_read_feat
+[time]:256, [core_id]:0, [task_id]:22, [power]:0.892928, [type]:cim_local_read_para
+[time]:256, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:320, [core_id]:0, [task_id]:22, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:320, [core_id]:0, [task_id]:23, [power]:1.605632, [type]:sram_read_send
+[time]:322, [core_id]:0, [task_id]:23, [power]:1.826816, [type]:noc_wormhole
+[time]:386, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:386, [core_id]:1, [task_id]:26, [power]:1.605632, [type]:sram_read_feat
+[time]:386, [core_id]:1, [task_id]:26, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:386, [core_id]:1, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:26, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:482, [core_id]:1, [task_id]:34, [power]:1.605632, [type]:sram_read_feat
+[time]:482, [core_id]:1, [task_id]:34, [power]:0.446464, [type]:cim_local_read_para
+[time]:482, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:38, [power]:1.605632, [type]:sram_read_feat
+[time]:482, [core_id]:1, [task_id]:38, [power]:0.446464, [type]:cim_local_read_para
+[time]:482, [core_id]:1, [task_id]:42, [power]:1.605632, [type]:sram_read_feat
+[time]:482, [core_id]:1, [task_id]:42, [power]:0.892928, [type]:cim_local_read_para
+[time]:482, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:482, [core_id]:1, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:514, [core_id]:1, [task_id]:34, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:546, [core_id]:1, [task_id]:38, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:610, [core_id]:1, [task_id]:42, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:610, [core_id]:1, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:610, [core_id]:1, [task_id]:46, [power]:3.211264, [type]:sram_read_feat
+[time]:610, [core_id]:1, [task_id]:46, [power]:0.892928, [type]:cim_local_read_para
+[time]:610, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:674, [core_id]:1, [task_id]:46, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:674, [core_id]:1, [task_id]:47, [power]:1.605632, [type]:sram_read_send
+[time]:676, [core_id]:1, [task_id]:47, [power]:1.826816, [type]:noc_wormhole
+[time]:740, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:740, [core_id]:2, [task_id]:50, [power]:1.605632, [type]:sram_read_feat
+[time]:740, [core_id]:2, [task_id]:50, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:740, [core_id]:2, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:50, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:836, [core_id]:2, [task_id]:58, [power]:1.605632, [type]:sram_read_feat
+[time]:836, [core_id]:2, [task_id]:58, [power]:0.446464, [type]:cim_local_read_para
+[time]:836, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:62, [power]:1.605632, [type]:sram_read_feat
+[time]:836, [core_id]:2, [task_id]:62, [power]:0.446464, [type]:cim_local_read_para
+[time]:836, [core_id]:2, [task_id]:66, [power]:1.605632, [type]:sram_read_feat
+[time]:836, [core_id]:2, [task_id]:66, [power]:0.892928, [type]:cim_local_read_para
+[time]:836, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:836, [core_id]:2, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:868, [core_id]:2, [task_id]:58, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:900, [core_id]:2, [task_id]:62, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:964, [core_id]:2, [task_id]:66, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:964, [core_id]:2, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:964, [core_id]:2, [task_id]:70, [power]:3.211264, [type]:sram_read_feat
+[time]:964, [core_id]:2, [task_id]:70, [power]:0.892928, [type]:cim_local_read_para
+[time]:964, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1028, [core_id]:2, [task_id]:70, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:1028, [core_id]:2, [task_id]:71, [power]:1.605632, [type]:sram_read_send
+[time]:1030, [core_id]:2, [task_id]:71, [power]:1.826816, [type]:noc_wormhole
+[time]:1094, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1094, [core_id]:3, [task_id]:74, [power]:1.605632, [type]:sram_read_feat
+[time]:1094, [core_id]:3, [task_id]:74, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:1094, [core_id]:3, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:74, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:1190, [core_id]:3, [task_id]:82, [power]:1.605632, [type]:sram_read_feat
+[time]:1190, [core_id]:3, [task_id]:82, [power]:0.446464, [type]:cim_local_read_para
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:86, [power]:1.605632, [type]:sram_read_feat
+[time]:1190, [core_id]:3, [task_id]:86, [power]:0.446464, [type]:cim_local_read_para
+[time]:1190, [core_id]:3, [task_id]:90, [power]:1.605632, [type]:sram_read_feat
+[time]:1190, [core_id]:3, [task_id]:90, [power]:0.892928, [type]:cim_local_read_para
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1190, [core_id]:3, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1222, [core_id]:3, [task_id]:82, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:1254, [core_id]:3, [task_id]:86, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:1318, [core_id]:3, [task_id]:90, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:1318, [core_id]:3, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:1318, [core_id]:3, [task_id]:94, [power]:3.211264, [type]:sram_read_feat
+[time]:1318, [core_id]:3, [task_id]:94, [power]:0.892928, [type]:cim_local_read_para
+[time]:1318, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1382, [core_id]:3, [task_id]:94, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:1382, [core_id]:3, [task_id]:95, [power]:1.605632, [type]:sram_read_send
+[time]:1384, [core_id]:3, [task_id]:95, [power]:1.826816, [type]:noc_wormhole
+[time]:1448, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1448, [core_id]:7, [task_id]:98, [power]:1.605632, [type]:sram_read_feat
+[time]:1448, [core_id]:7, [task_id]:98, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:1448, [core_id]:7, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:98, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:1544, [core_id]:7, [task_id]:106, [power]:1.605632, [type]:sram_read_feat
+[time]:1544, [core_id]:7, [task_id]:106, [power]:0.446464, [type]:cim_local_read_para
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:110, [power]:1.605632, [type]:sram_read_feat
+[time]:1544, [core_id]:7, [task_id]:110, [power]:0.446464, [type]:cim_local_read_para
+[time]:1544, [core_id]:7, [task_id]:114, [power]:1.605632, [type]:sram_read_feat
+[time]:1544, [core_id]:7, [task_id]:114, [power]:0.892928, [type]:cim_local_read_para
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1544, [core_id]:7, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1576, [core_id]:7, [task_id]:106, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:1608, [core_id]:7, [task_id]:110, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:1672, [core_id]:7, [task_id]:114, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:1672, [core_id]:7, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:1672, [core_id]:7, [task_id]:118, [power]:3.211264, [type]:sram_read_feat
+[time]:1672, [core_id]:7, [task_id]:118, [power]:0.892928, [type]:cim_local_read_para
+[time]:1672, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1736, [core_id]:7, [task_id]:118, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:1736, [core_id]:7, [task_id]:119, [power]:1.605632, [type]:sram_read_send
+[time]:1738, [core_id]:7, [task_id]:119, [power]:1.826816, [type]:noc_wormhole
+[time]:1802, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1802, [core_id]:6, [task_id]:122, [power]:1.605632, [type]:sram_read_feat
+[time]:1802, [core_id]:6, [task_id]:122, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:1802, [core_id]:6, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:122, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:1898, [core_id]:6, [task_id]:130, [power]:1.605632, [type]:sram_read_feat
+[time]:1898, [core_id]:6, [task_id]:130, [power]:0.446464, [type]:cim_local_read_para
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:134, [power]:1.605632, [type]:sram_read_feat
+[time]:1898, [core_id]:6, [task_id]:134, [power]:0.446464, [type]:cim_local_read_para
+[time]:1898, [core_id]:6, [task_id]:138, [power]:1.605632, [type]:sram_read_feat
+[time]:1898, [core_id]:6, [task_id]:138, [power]:0.892928, [type]:cim_local_read_para
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:1898, [core_id]:6, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:1930, [core_id]:6, [task_id]:130, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:1962, [core_id]:6, [task_id]:134, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:2026, [core_id]:6, [task_id]:138, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2026, [core_id]:6, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2026, [core_id]:6, [task_id]:142, [power]:3.211264, [type]:sram_read_feat
+[time]:2026, [core_id]:6, [task_id]:142, [power]:0.892928, [type]:cim_local_read_para
+[time]:2026, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2090, [core_id]:6, [task_id]:142, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2090, [core_id]:6, [task_id]:143, [power]:1.605632, [type]:sram_read_send
+[time]:2092, [core_id]:6, [task_id]:143, [power]:1.826816, [type]:noc_wormhole
+[time]:2156, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2156, [core_id]:5, [task_id]:146, [power]:1.605632, [type]:sram_read_feat
+[time]:2156, [core_id]:5, [task_id]:146, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:2156, [core_id]:5, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:146, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:2252, [core_id]:5, [task_id]:154, [power]:1.605632, [type]:sram_read_feat
+[time]:2252, [core_id]:5, [task_id]:154, [power]:0.446464, [type]:cim_local_read_para
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:158, [power]:1.605632, [type]:sram_read_feat
+[time]:2252, [core_id]:5, [task_id]:158, [power]:0.446464, [type]:cim_local_read_para
+[time]:2252, [core_id]:5, [task_id]:162, [power]:1.605632, [type]:sram_read_feat
+[time]:2252, [core_id]:5, [task_id]:162, [power]:0.892928, [type]:cim_local_read_para
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2252, [core_id]:5, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:2284, [core_id]:5, [task_id]:154, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:2316, [core_id]:5, [task_id]:158, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:2380, [core_id]:5, [task_id]:162, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2380, [core_id]:5, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2380, [core_id]:5, [task_id]:166, [power]:3.211264, [type]:sram_read_feat
+[time]:2380, [core_id]:5, [task_id]:166, [power]:0.892928, [type]:cim_local_read_para
+[time]:2380, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2444, [core_id]:5, [task_id]:166, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2444, [core_id]:5, [task_id]:167, [power]:1.605632, [type]:sram_read_send
+[time]:2446, [core_id]:5, [task_id]:167, [power]:1.826816, [type]:noc_wormhole
+[time]:2510, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2510, [core_id]:4, [task_id]:170, [power]:1.605632, [type]:sram_read_feat
+[time]:2510, [core_id]:4, [task_id]:170, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:2510, [core_id]:4, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:170, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:2606, [core_id]:4, [task_id]:178, [power]:1.605632, [type]:sram_read_feat
+[time]:2606, [core_id]:4, [task_id]:178, [power]:0.446464, [type]:cim_local_read_para
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:182, [power]:1.605632, [type]:sram_read_feat
+[time]:2606, [core_id]:4, [task_id]:182, [power]:0.446464, [type]:cim_local_read_para
+[time]:2606, [core_id]:4, [task_id]:186, [power]:1.605632, [type]:sram_read_feat
+[time]:2606, [core_id]:4, [task_id]:186, [power]:0.892928, [type]:cim_local_read_para
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2606, [core_id]:4, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:2638, [core_id]:4, [task_id]:178, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:2670, [core_id]:4, [task_id]:182, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:2734, [core_id]:4, [task_id]:186, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2734, [core_id]:4, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2734, [core_id]:4, [task_id]:190, [power]:3.211264, [type]:sram_read_feat
+[time]:2734, [core_id]:4, [task_id]:190, [power]:0.892928, [type]:cim_local_read_para
+[time]:2734, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2798, [core_id]:4, [task_id]:190, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:2798, [core_id]:4, [task_id]:191, [power]:1.605632, [type]:sram_read_send
+[time]:2800, [core_id]:4, [task_id]:191, [power]:1.826816, [type]:noc_wormhole
+[time]:2864, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2864, [core_id]:0, [task_id]:194, [power]:1.605632, [type]:sram_read_feat
+[time]:2864, [core_id]:0, [task_id]:194, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:2864, [core_id]:0, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:194, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:2960, [core_id]:0, [task_id]:198, [power]:1.605632, [type]:sram_read_feat
+[time]:2960, [core_id]:0, [task_id]:198, [power]:0.446464, [type]:cim_local_read_para
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:202, [power]:1.605632, [type]:sram_read_feat
+[time]:2960, [core_id]:0, [task_id]:202, [power]:0.446464, [type]:cim_local_read_para
+[time]:2960, [core_id]:0, [task_id]:206, [power]:1.605632, [type]:sram_read_feat
+[time]:2960, [core_id]:0, [task_id]:206, [power]:0.446464, [type]:cim_local_read_para
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2960, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:2992, [core_id]:0, [task_id]:198, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3024, [core_id]:0, [task_id]:202, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3056, [core_id]:0, [task_id]:206, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3056, [core_id]:0, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3056, [core_id]:0, [task_id]:210, [power]:1.605632, [type]:sram_read_feat
+[time]:3056, [core_id]:0, [task_id]:210, [power]:0.892928, [type]:cim_local_read_para
+[time]:3056, [core_id]:0, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3056, [core_id]:0, [task_id]:214, [power]:3.211264, [type]:sram_read_feat
+[time]:3056, [core_id]:0, [task_id]:214, [power]:0.892928, [type]:cim_local_read_para
+[time]:3056, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3120, [core_id]:0, [task_id]:210, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3184, [core_id]:0, [task_id]:214, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3184, [core_id]:0, [task_id]:215, [power]:1.605632, [type]:sram_read_send
+[time]:3186, [core_id]:0, [task_id]:215, [power]:1.826816, [type]:noc_wormhole
+[time]:3250, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3250, [core_id]:1, [task_id]:218, [power]:1.605632, [type]:sram_read_feat
+[time]:3250, [core_id]:1, [task_id]:218, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:3250, [core_id]:1, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:218, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:3346, [core_id]:1, [task_id]:222, [power]:1.605632, [type]:sram_read_feat
+[time]:3346, [core_id]:1, [task_id]:222, [power]:0.446464, [type]:cim_local_read_para
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:226, [power]:1.605632, [type]:sram_read_feat
+[time]:3346, [core_id]:1, [task_id]:226, [power]:0.446464, [type]:cim_local_read_para
+[time]:3346, [core_id]:1, [task_id]:230, [power]:1.605632, [type]:sram_read_feat
+[time]:3346, [core_id]:1, [task_id]:230, [power]:0.446464, [type]:cim_local_read_para
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3346, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3378, [core_id]:1, [task_id]:222, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3410, [core_id]:1, [task_id]:226, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3442, [core_id]:1, [task_id]:230, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3442, [core_id]:1, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3442, [core_id]:1, [task_id]:234, [power]:1.605632, [type]:sram_read_feat
+[time]:3442, [core_id]:1, [task_id]:234, [power]:0.892928, [type]:cim_local_read_para
+[time]:3442, [core_id]:1, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3442, [core_id]:1, [task_id]:238, [power]:3.211264, [type]:sram_read_feat
+[time]:3442, [core_id]:1, [task_id]:238, [power]:0.892928, [type]:cim_local_read_para
+[time]:3442, [core_id]:1, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3506, [core_id]:1, [task_id]:234, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3570, [core_id]:1, [task_id]:238, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3570, [core_id]:1, [task_id]:239, [power]:1.605632, [type]:sram_read_send
+[time]:3572, [core_id]:1, [task_id]:239, [power]:1.826816, [type]:noc_wormhole
+[time]:3636, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3636, [core_id]:2, [task_id]:242, [power]:1.605632, [type]:sram_read_feat
+[time]:3636, [core_id]:2, [task_id]:242, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:3636, [core_id]:2, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:242, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:3732, [core_id]:2, [task_id]:246, [power]:1.605632, [type]:sram_read_feat
+[time]:3732, [core_id]:2, [task_id]:246, [power]:0.446464, [type]:cim_local_read_para
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:250, [power]:1.605632, [type]:sram_read_feat
+[time]:3732, [core_id]:2, [task_id]:250, [power]:0.446464, [type]:cim_local_read_para
+[time]:3732, [core_id]:2, [task_id]:254, [power]:1.605632, [type]:sram_read_feat
+[time]:3732, [core_id]:2, [task_id]:254, [power]:0.446464, [type]:cim_local_read_para
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3732, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3764, [core_id]:2, [task_id]:246, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3796, [core_id]:2, [task_id]:250, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3828, [core_id]:2, [task_id]:254, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:3828, [core_id]:2, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3828, [core_id]:2, [task_id]:258, [power]:1.605632, [type]:sram_read_feat
+[time]:3828, [core_id]:2, [task_id]:258, [power]:0.892928, [type]:cim_local_read_para
+[time]:3828, [core_id]:2, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:3828, [core_id]:2, [task_id]:262, [power]:3.211264, [type]:sram_read_feat
+[time]:3828, [core_id]:2, [task_id]:262, [power]:0.892928, [type]:cim_local_read_para
+[time]:3828, [core_id]:2, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:3892, [core_id]:2, [task_id]:258, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3956, [core_id]:2, [task_id]:262, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:3956, [core_id]:2, [task_id]:263, [power]:1.605632, [type]:sram_read_send
+[time]:3958, [core_id]:2, [task_id]:263, [power]:1.826816, [type]:noc_wormhole
+[time]:4022, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4022, [core_id]:3, [task_id]:266, [power]:1.605632, [type]:sram_read_feat
+[time]:4022, [core_id]:3, [task_id]:266, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:4022, [core_id]:3, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:266, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:4118, [core_id]:3, [task_id]:270, [power]:1.605632, [type]:sram_read_feat
+[time]:4118, [core_id]:3, [task_id]:270, [power]:0.446464, [type]:cim_local_read_para
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:274, [power]:1.605632, [type]:sram_read_feat
+[time]:4118, [core_id]:3, [task_id]:274, [power]:0.446464, [type]:cim_local_read_para
+[time]:4118, [core_id]:3, [task_id]:278, [power]:1.605632, [type]:sram_read_feat
+[time]:4118, [core_id]:3, [task_id]:278, [power]:0.446464, [type]:cim_local_read_para
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4118, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4150, [core_id]:3, [task_id]:270, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4182, [core_id]:3, [task_id]:274, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4214, [core_id]:3, [task_id]:278, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4214, [core_id]:3, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4214, [core_id]:3, [task_id]:282, [power]:1.605632, [type]:sram_read_feat
+[time]:4214, [core_id]:3, [task_id]:282, [power]:0.892928, [type]:cim_local_read_para
+[time]:4214, [core_id]:3, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4214, [core_id]:3, [task_id]:286, [power]:3.211264, [type]:sram_read_feat
+[time]:4214, [core_id]:3, [task_id]:286, [power]:0.892928, [type]:cim_local_read_para
+[time]:4214, [core_id]:3, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4278, [core_id]:3, [task_id]:282, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:4342, [core_id]:3, [task_id]:286, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:4342, [core_id]:3, [task_id]:287, [power]:1.605632, [type]:sram_read_send
+[time]:4344, [core_id]:3, [task_id]:287, [power]:1.826816, [type]:noc_wormhole
+[time]:4408, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4408, [core_id]:7, [task_id]:290, [power]:1.605632, [type]:sram_read_feat
+[time]:4408, [core_id]:7, [task_id]:290, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:4408, [core_id]:7, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:290, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:4504, [core_id]:7, [task_id]:294, [power]:1.605632, [type]:sram_read_feat
+[time]:4504, [core_id]:7, [task_id]:294, [power]:0.446464, [type]:cim_local_read_para
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:298, [power]:1.605632, [type]:sram_read_feat
+[time]:4504, [core_id]:7, [task_id]:298, [power]:0.446464, [type]:cim_local_read_para
+[time]:4504, [core_id]:7, [task_id]:302, [power]:1.605632, [type]:sram_read_feat
+[time]:4504, [core_id]:7, [task_id]:302, [power]:0.446464, [type]:cim_local_read_para
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4504, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4536, [core_id]:7, [task_id]:294, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4568, [core_id]:7, [task_id]:298, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4600, [core_id]:7, [task_id]:302, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4600, [core_id]:7, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4600, [core_id]:7, [task_id]:306, [power]:1.605632, [type]:sram_read_feat
+[time]:4600, [core_id]:7, [task_id]:306, [power]:0.892928, [type]:cim_local_read_para
+[time]:4600, [core_id]:7, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4600, [core_id]:7, [task_id]:310, [power]:3.211264, [type]:sram_read_feat
+[time]:4600, [core_id]:7, [task_id]:310, [power]:0.892928, [type]:cim_local_read_para
+[time]:4600, [core_id]:7, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4664, [core_id]:7, [task_id]:306, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:4728, [core_id]:7, [task_id]:310, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:4728, [core_id]:7, [task_id]:311, [power]:1.605632, [type]:sram_read_send
+[time]:4730, [core_id]:7, [task_id]:311, [power]:1.826816, [type]:noc_wormhole
+[time]:4794, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4794, [core_id]:6, [task_id]:314, [power]:1.605632, [type]:sram_read_feat
+[time]:4794, [core_id]:6, [task_id]:314, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:4794, [core_id]:6, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:314, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:4890, [core_id]:6, [task_id]:318, [power]:1.605632, [type]:sram_read_feat
+[time]:4890, [core_id]:6, [task_id]:318, [power]:0.446464, [type]:cim_local_read_para
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:322, [power]:1.605632, [type]:sram_read_feat
+[time]:4890, [core_id]:6, [task_id]:322, [power]:0.446464, [type]:cim_local_read_para
+[time]:4890, [core_id]:6, [task_id]:326, [power]:1.605632, [type]:sram_read_feat
+[time]:4890, [core_id]:6, [task_id]:326, [power]:0.446464, [type]:cim_local_read_para
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4890, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:4922, [core_id]:6, [task_id]:318, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4954, [core_id]:6, [task_id]:322, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4986, [core_id]:6, [task_id]:326, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:4986, [core_id]:6, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4986, [core_id]:6, [task_id]:330, [power]:1.605632, [type]:sram_read_feat
+[time]:4986, [core_id]:6, [task_id]:330, [power]:0.892928, [type]:cim_local_read_para
+[time]:4986, [core_id]:6, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:4986, [core_id]:6, [task_id]:334, [power]:3.211264, [type]:sram_read_feat
+[time]:4986, [core_id]:6, [task_id]:334, [power]:0.892928, [type]:cim_local_read_para
+[time]:4986, [core_id]:6, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5050, [core_id]:6, [task_id]:330, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5114, [core_id]:6, [task_id]:334, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5114, [core_id]:6, [task_id]:335, [power]:1.605632, [type]:sram_read_send
+[time]:5116, [core_id]:6, [task_id]:335, [power]:1.826816, [type]:noc_wormhole
+[time]:5180, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5180, [core_id]:5, [task_id]:338, [power]:1.605632, [type]:sram_read_feat
+[time]:5180, [core_id]:5, [task_id]:338, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:5180, [core_id]:5, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:338, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:5276, [core_id]:5, [task_id]:342, [power]:1.605632, [type]:sram_read_feat
+[time]:5276, [core_id]:5, [task_id]:342, [power]:0.446464, [type]:cim_local_read_para
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:346, [power]:1.605632, [type]:sram_read_feat
+[time]:5276, [core_id]:5, [task_id]:346, [power]:0.446464, [type]:cim_local_read_para
+[time]:5276, [core_id]:5, [task_id]:350, [power]:1.605632, [type]:sram_read_feat
+[time]:5276, [core_id]:5, [task_id]:350, [power]:0.446464, [type]:cim_local_read_para
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5276, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5308, [core_id]:5, [task_id]:342, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5340, [core_id]:5, [task_id]:346, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5372, [core_id]:5, [task_id]:350, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5372, [core_id]:5, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:5372, [core_id]:5, [task_id]:354, [power]:1.605632, [type]:sram_read_feat
+[time]:5372, [core_id]:5, [task_id]:354, [power]:0.892928, [type]:cim_local_read_para
+[time]:5372, [core_id]:5, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:5372, [core_id]:5, [task_id]:358, [power]:3.211264, [type]:sram_read_feat
+[time]:5372, [core_id]:5, [task_id]:358, [power]:0.892928, [type]:cim_local_read_para
+[time]:5372, [core_id]:5, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5436, [core_id]:5, [task_id]:354, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5500, [core_id]:5, [task_id]:358, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5500, [core_id]:5, [task_id]:359, [power]:1.605632, [type]:sram_read_send
+[time]:5502, [core_id]:5, [task_id]:359, [power]:1.826816, [type]:noc_wormhole
+[time]:5566, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5566, [core_id]:4, [task_id]:362, [power]:1.605632, [type]:sram_read_feat
+[time]:5566, [core_id]:4, [task_id]:362, [power]:1.3393920000000001, [type]:cim_local_read_para
+[time]:5566, [core_id]:4, [task_id]:-1, [power]:4.816896, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:362, [power]:9.535488, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:98304
+[time]:5662, [core_id]:4, [task_id]:366, [power]:1.605632, [type]:sram_read_feat
+[time]:5662, [core_id]:4, [task_id]:366, [power]:0.446464, [type]:cim_local_read_para
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:370, [power]:1.605632, [type]:sram_read_feat
+[time]:5662, [core_id]:4, [task_id]:370, [power]:0.446464, [type]:cim_local_read_para
+[time]:5662, [core_id]:4, [task_id]:374, [power]:1.605632, [type]:sram_read_feat
+[time]:5662, [core_id]:4, [task_id]:374, [power]:0.446464, [type]:cim_local_read_para
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5662, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5694, [core_id]:4, [task_id]:366, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5726, [core_id]:4, [task_id]:370, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5758, [core_id]:4, [task_id]:374, [power]:3.178496, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:32768
+[time]:5758, [core_id]:4, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:5758, [core_id]:4, [task_id]:378, [power]:1.605632, [type]:sram_read_feat
+[time]:5758, [core_id]:4, [task_id]:378, [power]:0.892928, [type]:cim_local_read_para
+[time]:5758, [core_id]:4, [task_id]:-1, [power]:3.211264, [type]:sram_write
+[time]:5758, [core_id]:4, [task_id]:382, [power]:3.211264, [type]:sram_read_feat
+[time]:5758, [core_id]:4, [task_id]:382, [power]:0.892928, [type]:cim_local_read_para
+[time]:5758, [core_id]:4, [task_id]:-1, [power]:1.605632, [type]:sram_write
+[time]:5822, [core_id]:4, [task_id]:378, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5886, [core_id]:4, [task_id]:382, [power]:6.356992, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:65536
+[time]:5886, [core_id]:4, [task_id]:383, [power]:1.605632, [type]:sram_read_send
+[time]:5888, [core_id]:4, [task_id]:383, [power]:1.826816, [type]:noc_wormhole
+[time]:5952, [core_id]:0, [task_id]:-1, [power]:1.605632, [type]:sram_write
 
-[total_power]:215.801856
+[total_power]:1311.5392000000043
 
 Power Summary:
-  [compute]: 57.21292799999999
-  [dram_read]: 49.152
+  [compute]: 508.55935999999946
+  [dram_read]: 32.768
   [dram_write]: 0
-  [noc_hop]: 21.921792000000003
-  [sram_read]: 38.535168
-  [sram_write]: 40.943616
-  [cim_local_read]: 8.036352
+  [noc_hop]: 29.22905600000001
+  [sram_read]: 205.52089600000033
+  [sram_write]: 464.02764800000125
+  [cim_local_read]: 71.43423999999996
