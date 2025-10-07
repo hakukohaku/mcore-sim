@@ -66,8 +66,9 @@ class TaskType(IntEnum):
     LOAD = 12
     STORE = 13
     FREE = 14
+    NON_LINEAR = 15
 
-compute_task = [TaskType.CONV, TaskType.POOL, TaskType.FC, TaskType.ELEM, TaskType.GCONV, TaskType.PTP, TaskType.TRANS]
+compute_task = [TaskType.CONV, TaskType.POOL, TaskType.FC, TaskType.ELEM, TaskType.GCONV, TaskType.PTP, TaskType.TRANS, TaskType.NON_LINEAR]
 
 class AggrType(str, Enum):
     CONCAT_DIM_1 = "concat_dim_1"  # Aggregate by concatenating on the 1st dimension (index 1)
@@ -368,11 +369,15 @@ class ComputeTask(Task):
         
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - ALLOC complete, starting TPU execute.")
 
-        #执行tpu计算
-        yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
+        #执行计算
+        if self.opcode == "NonLinear": # 非线性计算交给vect unit
+            yield core.vect_unit.execute(self.opcode+str(self.index), 5, ins, self.index)
+            # 可以在这里记录vect_unit的功耗
+        else:
+            yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
 
-        power = self.flops * tpu_flop_power
-        record_power_trace(core.env.now, core.id, self.index, power, "tpu_compute", self.feat_precision, self.para_precision, self.flops)
+            power = self.flops * tpu_flop_power
+            record_power_trace(core.env.now, core.id, self.index, power, "tpu_compute", self.feat_precision, self.para_precision, self.flops)
 
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - TPU EXEC complete.")
 
@@ -642,6 +647,10 @@ class Trans(ComputeTask):
     opcode: str = "Trans"
     def calc_flops(self):
         self.flops = 0
+
+class NonLinear(ComputeTask):
+    opcode: str = "NonLinear"
+    
 
 class Stay(Task):
     opcode: str = "Stay"
