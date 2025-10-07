@@ -265,6 +265,8 @@ class TableScheduler:
                     self.tasks.append(PTP(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.TRANS:
                     self.tasks.append(Trans(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
+                case TaskType.NON_LINEAR:
+                    self.tasks.append(NonLinear(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
 
         self.task_block_update()
 
@@ -783,8 +785,10 @@ class Core:
 
         self.lsu_bandwidth = config.lsu.width
         self.tpu_flops = config.compute.flops
+        self.vect_flops = config.compute.vect_flops
         self.lsu = common.MonitoredResource(env=env, capacity=4)
         self.tpu = common.MonitoredResource(env=env, capacity=1)
+        self.vect_unit = common.MonitoredResource(env=env, capacity=1)
 
         self.data_ready = {}
         self.pending_recvs = {}

@@ -172,6 +172,7 @@ power_summary = {
 }
 power_trace_file = None
 tpu_flop_power = 0
+vect_flop_power = 0
 dram_read_power = 0
 dram_write_power = 0
 noc_hop_power = 0
@@ -180,10 +181,11 @@ sram_read_power = 0
 cim_local_read_power = 0
 
 def init_power_trace(power_config_path, power_trace_path):
-    global power_trace_file, tpu_flop_power, dram_read_power, dram_write_power, noc_hop_power, sram_write_power, sram_read_power, cim_local_read_power
+    global power_trace_file, tpu_flop_power, vect_flop_power, dram_read_power, dram_write_power, noc_hop_power, sram_write_power, sram_read_power, cim_local_read_power
     with open(power_config_path, 'r') as f:
         power_config = json.load(f)
         tpu_flop_power = power_config['tpu_flop_power']
+        vect_flop_power = power_config['vect_flop_power']
         dram_read_power = power_config['dram_read_power']
         dram_write_power = power_config['dram_write_power']
         noc_hop_power = power_config['noc_hop_power']

@@ -286,7 +286,7 @@ class Arch:
                     f.write(",\n")
                 f.write(f"{{\"name\": \"{task}\",\"ph\":\"{ph}\",\"ts\":{ts},\"pid\":{id},\"tid\":\"{source}\",\"args\":{{\"lenthqueue\":{lenthqueue}}}}}")
 
-    # 这个由学长来编号,对于每个编号(id)怎么处理的逻辑我已经写好了:
+    
     def processesmonitorlink(self,data,file,id,source):
         if len(data)==0:
             return

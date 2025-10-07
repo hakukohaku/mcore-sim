@@ -10,7 +10,8 @@
 			"delay" : 0
 		},
 		"compute" : {
-			"flops" : 1024
+			"flops" : 1024,
+			"vect_flops" : 32
 		},
 		"lsu" : {
 			"width" : 4
