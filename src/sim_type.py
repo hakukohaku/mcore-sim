@@ -344,7 +344,7 @@ class ComputeTask(Task):
         raise NotImplementedError(f"{self.opcode} 类未实现 calc_flops 方法")
     
     def run(self, core, ins):
-        from src.common import tpu_flop_power, record_power_trace, sram_read_power, cim_local_read_power
+        from src.common import tpu_flop_power, vect_flop_power, record_power_trace, sram_read_power, cim_local_read_power
         self.calc_flops()
         ins.record.ready_run_time.append(core.env.now)
         ins.record.pe_id = core.id
@@ -371,8 +371,10 @@ class ComputeTask(Task):
 
         #执行计算
         if self.opcode == "NonLinear": # 非线性计算交给vect unit
-            yield core.vect_unit.execute(self.opcode+str(self.index), 5, ins, self.index)
-            # 可以在这里记录vect_unit的功耗
+            yield core.vect_unit.execute(self.opcode+str(self.index), ceil(self.flops, core.vect_flops), ins, self.index)
+            
+            power = self.flops * vect_flop_power
+            record_power_trace(core.env.now, core.id, self.index, power, "vect_compute", self.feat_precision, self.para_precision, self.flops)
         else:
             yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
 
@@ -650,7 +652,10 @@ class Trans(ComputeTask):
 
 class NonLinear(ComputeTask):
     opcode: str = "NonLinear"
-    
+    def calc_flops(self):
+        m_size = self.para[0].tensor_slice[0].end - self.para[0].tensor_slice[0].start
+        k_size = self.para[0].tensor_slice[1].end - self.para[0].tensor_slice[1].start
+        self.flops = m_size * k_size * 5
 
 class Stay(Task):
     opcode: str = "Stay"
