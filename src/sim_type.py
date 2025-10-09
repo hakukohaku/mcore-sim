@@ -656,8 +656,8 @@ class Trans(ComputeTask):
 class NonLinear(ComputeTask):
     opcode: str = "NonLinear"
     def calc_flops(self):
-        m_size = self.para[0].tensor_slice[0].end - self.para[0].tensor_slice[0].start
-        k_size = self.para[0].tensor_slice[1].end - self.para[0].tensor_slice[1].start
+        m_size = self.feat[0].tensor_slice[0].end - self.feat[0].tensor_slice[0].start
+        k_size = self.feat[0].tensor_slice[1].end - self.feat[0].tensor_slice[1].start
         self.flops = m_size * k_size * 5
 
 class Stay(Task):

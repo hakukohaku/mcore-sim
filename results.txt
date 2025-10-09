@@ -1,0 +1,20 @@
+Max buffer usage is 7741440. [3072/209715200]
+Simulation finished.
+Writing performance data...
+Debug: Total instructions to process: 38262
+Phase 1: Collecting all SEND instructions...
+Phase 1 complete: Collected 420 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 541437.1737599636
+Power Summary:
+  [compute]: 176215.81824000826
+  [dram_read]: 16515.072000000007
+  [dram_write]: 0
+  [noc_hop]: 16572.874751999945
+  [sram_read]: 113293.39392001682
+  [sram_write]: 199072.677887975
+  [cim_local_read]: 6000.476159999684
+========================================
+Simulation time is 19.529041051864624.
+Total simulation cycles is 443592.

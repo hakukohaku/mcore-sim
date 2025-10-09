@@ -1,0 +1,255 @@
+----------------Running batch 60 micro_batch 1----------------
+Phase 1 complete: Collected 2400 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 394241.43359966326
+Power Summary:
+  [compute]: 125868.44160000692
+  [dram_read]: 11796.480000000009
+  [dram_write]: 0
+  [noc_hop]: 11837.767679999926
+  [sram_read]: 80923.85280000782
+  [sram_write]: 142194.7699200696
+  [cim_local_read]: 11786.64960000019
+========================================
+Simulation time is 44.03215765953064.
+Total simulation cycles is 317162.
+------------------Finished----------------
+----------------Running batch 60 micro_batch 2----------------
+Phase 1 complete: Collected 1200 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 389955.37920000777
+Power Summary:
+  [compute]: 125868.44160000661
+  [dram_read]: 11796.480000000009
+  [dram_write]: 0
+  [noc_hop]: 11837.767680000115
+  [sram_read]: 80923.852800005
+  [sram_write]: 142194.76992002767
+  [cim_local_read]: 7500.595199999831
+========================================
+Simulation time is 26.03395104408264.
+Total simulation cycles is 316872.
+------------------Finished----------------
+----------------Running batch 60 micro_batch 4----------------
+Phase 1 complete: Collected 600 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 387812.3519999644
+Power Summary:
+  [compute]: 125868.44160000626
+  [dram_read]: 11796.480000000007
+  [dram_write]: 0
+  [noc_hop]: 11837.767679999939
+  [sram_read]: 80923.8528000002
+  [sram_write]: 142194.76992000762
+  [cim_local_read]: 5357.567999999829
+========================================
+Simulation time is 14.533282041549683.
+Total simulation cycles is 316872.
+------------------Finished----------------
+----------------Running batch 72 micro_batch 1----------------
+Phase 1 complete: Collected 2880 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 473089.7203196829
+Power Summary:
+  [compute]: 151042.12992000367
+  [dram_read]: 14155.77600000001
+  [dram_write]: 0
+  [noc_hop]: 14205.321215999773
+  [sram_read]: 97108.62336001208
+  [sram_write]: 170633.72390407746
+  [cim_local_read]: 14143.979519998566
+========================================
+Simulation time is 67.23738741874695.
+Total simulation cycles is 380522.
+------------------Finished----------------
+----------------Running batch 72 micro_batch 2----------------
+Phase 1 complete: Collected 1440 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 467946.4550400587
+Power Summary:
+  [compute]: 151042.1299200186
+  [dram_read]: 14155.77600000001
+  [dram_write]: 0
+  [noc_hop]: 14205.321216000224
+  [sram_read]: 97108.6233600122
+  [sram_write]: 170633.72390403363
+  [cim_local_read]: 9000.714239999748
+========================================
+Simulation time is 36.52244329452515.
+Total simulation cycles is 380232.
+------------------Finished----------------
+----------------Running batch 72 micro_batch 4----------------
+Phase 1 complete: Collected 720 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 465374.82239998627
+Power Summary:
+  [compute]: 151042.12992000984
+  [dram_read]: 14155.776000000009
+  [dram_write]: 0
+  [noc_hop]: 14205.321215999917
+  [sram_read]: 97108.62335999878
+  [sram_write]: 170633.72390399707
+  [cim_local_read]: 6429.081599999758
+========================================
+Simulation time is 22.62124013900757.
+Total simulation cycles is 380474.
+------------------Finished----------------
+----------------Running batch 80 micro_batch 1----------------
+Phase 1 complete: Collected 3200 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 525655.244799675
+Power Summary:
+  [compute]: 167824.58880000087
+  [dram_read]: 15728.640000000012
+  [dram_write]: 0
+  [noc_hop]: 15783.69023999967
+  [sram_read]: 107898.47040002064
+  [sram_write]: 189593.0265600617
+  [cim_local_read]: 15715.532799997867
+========================================
+Simulation time is 83.35558891296387.
+Total simulation cycles is 422762.
+------------------Finished----------------
+----------------Running batch 80 micro_batch 2----------------
+Phase 1 complete: Collected 1600 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 519940.50560008764
+Power Summary:
+  [compute]: 167824.58880002834
+  [dram_read]: 15728.640000000012
+  [dram_write]: 0
+  [noc_hop]: 15783.690240000296
+  [sram_read]: 107898.47040001709
+  [sram_write]: 189593.02656003498
+  [cim_local_read]: 10000.793599999693
+========================================
+Simulation time is 43.5221426486969.
+Total simulation cycles is 422472.
+------------------Finished----------------
+----------------Running batch 80 micro_batch 4----------------
+Phase 1 complete: Collected 800 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 517083.1359999954
+Power Summary:
+  [compute]: 167824.58880001222
+  [dram_read]: 15728.64000000001
+  [dram_write]: 0
+  [noc_hop]: 15783.690239999902
+  [sram_read]: 107898.47039999778
+  [sram_write]: 189593.0265599871
+  [cim_local_read]: 7143.423999999708
+========================================
+Simulation time is 25.231511116027832.
+Total simulation cycles is 422472.
+------------------Finished----------------
+----------------Running batch 84 micro_batch 1----------------
+Phase 1 complete: Collected 3360 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 551938.007039719
+Power Summary:
+  [compute]: 176215.8182399995
+  [dram_read]: 16515.072000000007
+  [dram_write]: 0
+  [noc_hop]: 16572.874751999618
+  [sram_read]: 113293.39392002666
+  [sram_write]: 199072.67788805888
+  [cim_local_read]: 16501.30943999792
+========================================
+Simulation time is 84.77105641365051.
+Total simulation cycles is 443882.
+------------------Finished----------------
+----------------Running batch 84 micro_batch 2----------------
+Phase 1 complete: Collected 1680 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 545937.530879978
+Power Summary:
+  [compute]: 176215.81824003323
+  [dram_read]: 16515.07200000001
+  [dram_write]: 0
+  [noc_hop]: 16572.874752000313
+  [sram_read]: 113293.39392001939
+  [sram_write]: 199072.67788803464
+  [cim_local_read]: 10500.833279999704
+========================================
+Simulation time is 49.524128913879395.
+Total simulation cycles is 443592.
+------------------Finished----------------
+----------------Running batch 84 micro_batch 4----------------
+Phase 1 complete: Collected 840 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 542937.292799977
+Power Summary:
+  [compute]: 176215.8182400134
+  [dram_read]: 16515.07200000001
+  [dram_write]: 0
+  [noc_hop]: 16572.874751999905
+  [sram_read]: 113293.39391999731
+  [sram_write]: 199072.67788798222
+  [cim_local_read]: 7500.595199999683
+========================================
+Simulation time is 27.953189611434937.
+Total simulation cycles is 443592.
+------------------Finished----------------
+----------------Running batch 60 micro_batch 8----------------
+Phase 1 complete: Collected 300 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 386740.8383999525
+Power Summary:
+  [compute]: 125868.4416000086
+  [dram_read]: 11796.480000000005
+  [dram_write]: 0
+  [noc_hop]: 11837.767679999988
+  [sram_read]: 80923.85280000816
+  [sram_write]: 142194.7699200208
+  [cim_local_read]: 4286.054399999815
+========================================
+Simulation time is 10.782904386520386.
+Total simulation cycles is 316872.
+------------------Finished----------------
+----------------Running batch 72 micro_batch 8----------------
+Phase 1 complete: Collected 360 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 464089.00607997534
+Power Summary:
+  [compute]: 151042.12992000877
+  [dram_read]: 14155.776000000007
+  [dram_write]: 0
+  [noc_hop]: 14205.321215999966
+  [sram_read]: 97108.62336001241
+  [sram_write]: 170633.72390399998
+  [cim_local_read]: 5143.265279999754
+========================================
+Simulation time is 16.248043537139893.
+Total simulation cycles is 380232.
+------------------Finished----------------
+----------------Running batch 84 micro_batch 8----------------
+Phase 1 complete: Collected 420 SEND instructions
+Phase 2: Processing all instructions...
+Finished.
+Total power: 541437.1737599636
+Power Summary:
+  [compute]: 176215.81824000826
+  [dram_read]: 16515.072000000007
+  [dram_write]: 0
+  [noc_hop]: 16572.874751999945
+  [sram_read]: 113293.39392001682
+  [sram_write]: 199072.677887975
+  [cim_local_read]: 6000.476159999684
+========================================
+Simulation time is 19.529041051864624.
+Total simulation cycles is 443592.
+------------------Finished----------------

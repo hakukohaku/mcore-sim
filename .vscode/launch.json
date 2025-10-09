@@ -1,92 +1,136 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "geninst_new",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/tools/geninst_new.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "geninst_broadcast",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/tests/communication/path_based_broadcast.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "broadcast_test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/run.py",
-            "console": "integratedTerminal",
-            "args": [
-              "--arch", "./arch/myarch_gemini4_4_all_distributed.json",
-              "--fail", "./failslow/normal.json",
-              "--workload", "./tests/communication/path_based_broadcast.json",
-              "--log", "./log/broadcast_test-2.txt",
-              "--level", "debug"
-            ]
-        },
-        {
-            "name": "remote_read_weight",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/run.py",
-            "console": "integratedTerminal",
-            "args": [
-              "--arch", "./arch/remote_read_gemini4_4.json",
-              "--fail", "./failslow/normal.json",
-              "--workload", "./tests/communication/remote_read_weight.json",
-              "--log", "./log/remote_read_weight.txt",
-              "--level", "debug"
-            ]
-        },
-        {
-            "name": "gemm_test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/run.py",
-            "console": "integratedTerminal",
-            "args": [
-              "--arch", "./arch/myarch_gemini4_4_cim.json",
-              "--fail", "./failslow/normal.json",
-              "--workload", "./tests/gemm/workload_gemm_test.json",
-              "--log", "./log/gemm_test.txt",
-              "--level", "debug"
-            ]
-        },
-        {
-            "name": "HW_tiny_gemm_test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/run.py",
-            "console": "integratedTerminal",
-            "args": [
-              "--arch", "./arch/myarch_gemini1_4_cim.json",
-              "--fail", "./failslow/normal.json",
-              "--workload", "./tests/gemm/HW_workload.json",
-              "--log", "./log/HW_gemm_test.txt",
-              "--level", "debug"
-            ]
-        },
-        {
-          "name": "simple_pipeline",
-          "type": "debugpy",
-          "request": "launch",
-          "program": "${workspaceFolder}/run.py",
-          "console": "integratedTerminal",
-          "args": [
-            "--arch", "./arch/myarch_gemini4_4_cim.json",
-            "--fail", "./failslow/normal.json",
-            "--workload", "./tests/pipeline/workload_pipeline_fixed_test.json",
-            "--log", "./log/workload_pipeline_fixed_test.txt",
-            "--level", "debug"
-          ]
-      }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "hw_pipe",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/myarch_gemini4_4_hw.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/pipeline/workload_pipeline_fixed_test.json",
+        "--log",
+        "./log/workload_pipeline_fixed_test.txt",
+        "--level",
+        "debug"
+      ]
+    },
+    {
+      "name": "geninst_new",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/geninst_new.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "geninst_broadcast",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/tests/communication/path_based_broadcast.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "broadcast_test",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/myarch_gemini4_4_all_distributed.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/communication/path_based_broadcast.json",
+        "--log",
+        "./log/broadcast_test-2.txt",
+        "--level",
+        "debug"
+      ]
+    },
+    {
+      "name": "remote_read_weight",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/remote_read_gemini4_4.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/communication/remote_read_weight.json",
+        "--log",
+        "./log/remote_read_weight.txt",
+        "--level",
+        "debug"
+      ]
+    },
+    {
+      "name": "gemm_test",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/myarch_gemini4_4_cim.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/gemm/workload_gemm_test.json",
+        "--log",
+        "./log/gemm_test.txt",
+        "--level",
+        "debug"
+      ]
+    },
+    {
+      "name": "HW_tiny_gemm_test",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/myarch_gemini1_4_cim.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/gemm/HW_workload.json",
+        "--log",
+        "./log/HW_gemm_test.txt",
+        "--level",
+        "debug"
+      ]
+    },
+    {
+      "name": "simple_pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--arch",
+        "./arch/myarch_gemini4_4_cim.json",
+        "--fail",
+        "./failslow/normal.json",
+        "--workload",
+        "./tests/pipeline/workload_pipeline_fixed_test.json",
+        "--log",
+        "./log/workload_pipeline_fixed_test.txt",
+        "--level",
+        "debug"
+      ]
+    }
+  ]
 }

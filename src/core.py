@@ -410,7 +410,8 @@ class TableScheduler:
             # 更新被触发的指令
             logger.debug(f"triggered block_ptr is {tri_task_id//self.block_size}")
             # block内指令更新
-            if tri_task_id // self.block_size == self.block_ptr:
+            if True:
+            #if tri_task_id // self.block_size == self.block_ptr:
                 logger.debug(f"update triggered instruction...")
                 para_len = len(self.tasks[tri_task_id].para)
                 feat_len = len(self.tasks[tri_task_id].feat)
@@ -524,8 +525,9 @@ class TableScheduler:
                             pur_sche.tasks[tri_task_id].feat.append(Data())
                     
                     # 不在当前block没有影响
-                    if tri_task_id // pur_sche.block_size != pur_sche.block_ptr:
-                        continue
+                    # remove
+                    # if tri_task_id // pur_sche.block_size != pur_sche.block_ptr:
+                    #     continue
                     
                     # block内指令更新
                     logger.debug(f"update triggered instruction...")
@@ -565,7 +567,8 @@ class TableScheduler:
                 # 更新被触发的指令
                 logger.debug(f"triggered block_ptr is {tri_task_id//self.block_size}")
                 # block内指令更新
-                if tri_task_id // self.block_size == self.block_ptr:
+                if True:
+                #if tri_task_id // self.block_size == self.block_ptr:
                     logger.debug(f"update triggered instruction...")
                     para_len = len(self.tasks[tri_task_id].para)
                     feat_len = len(self.tasks[tri_task_id].feat)
@@ -611,10 +614,12 @@ class TableScheduler:
         # 记录每层结束时间
         self.arch.layer_end[layer_id] = max(self.arch.layer_end[layer_id], self.env.now)
         
-        if self.program[task_id].inst_type != TaskType.RECV:
-            assert task_id // self.block_size == self.block_ptr
+        # remove
+        # if self.program[task_id].inst_type != TaskType.RECV:
+        #     assert task_id // self.block_size == self.block_ptr
 
-        if task_id // self.block_size == self.block_ptr:
+        if True:
+        #if task_id // self.block_size == self.block_ptr:
             # print(f"Core{self.id} self.counter += 1")
             logger.debug(f"Core{self.id} self.counter += 1")
             self.block_counter += 1
@@ -642,9 +647,9 @@ class TableScheduler:
                             pur_sche.tasks[tri_task_id].para.append(data)
                         case DataType.FEAT:
                             pur_sche.tasks[tri_task_id].feat.append(data)
-
-                    if tri_task_id // pur_sche.block_size != pur_sche.block_ptr:
-                        continue
+                    # remove
+                    # if tri_task_id // pur_sche.block_size != pur_sche.block_ptr:
+                    #     continue
 
                     feat_len = len(pur_sche.tasks[tri_task_id].feat)
                     if feat_len == pur_sche.tasks[tri_task_id].feat_num:
@@ -676,7 +681,8 @@ class TableScheduler:
 
             logger.debug(f"{data.index} has triggered {self.program[task_id].trigger_index[idx]}")
             logger.debug(f"{tri_task_id} // {self.block_size} == {self.block_ptr}")
-            if tri_task_id // self.block_size == self.block_ptr:
+            if True:    
+            #if tri_task_id // self.block_size == self.block_ptr:
 
                 para_len = len(self.tasks[tri_task_id].para)
                 feat_len = len(self.tasks[tri_task_id].feat)

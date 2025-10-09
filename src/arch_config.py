@@ -7,6 +7,7 @@ class SPMConfig(BaseModel):
 
 class TPUConfig(BaseModel):
     flops: int
+    vect_flops: int
 
 class LSUConfig(BaseModel):
     width: int
