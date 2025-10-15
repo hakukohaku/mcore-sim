@@ -1,17 +1,19 @@
 import os
 import sys
 import math
+import json
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-import json
-from typing import List
+from typing import Dict, List
 import argparse
 from src import ArchConfig
 from pydantic import BaseModel, ValidationError
 from src.sim_type import DimSlice, Slice, Instruction, PEworkload, Workload, TaskType, DataType, AggrType
+
+
 
 def config_analyzer(filename: str) -> ArchConfig:
     with open(filename, 'r') as file:
@@ -21,6 +23,11 @@ def config_analyzer(filename: str) -> ArchConfig:
             return config
         except ValidationError as e:
             print(e.json())
+
+def json_analyzer(filename: str):
+    with open(filename, 'r') as file:
+        data = json.load(file)
+        return data
 
 class Core(BaseModel):
     x: int
@@ -363,49 +370,54 @@ def cmd_stream_gen(tf_network: Transformer_Network, n_micro_batch: int, pipeline
 
 if __name__ == "__main__":
 
-    arch_configs = config_analyzer("/home/syhe/mcore-sim/arch/myarch_gemini4_4_cim.json")
-    arch_configs.core.spm.size /= 4
-    core_num = arch_configs.core.x * arch_configs.core.y
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-b', '--batch', type=int,help='batch size')
-    parser.add_argument('-m', '--micro_batch', type=int, help='micro batch size')
-    parser.add_argument('-c', '--channel', type=int, help='chanel')
+    parser.add_argument('-a', '--architecture', type=str, help='architecture')
+    parser.add_argument('-mb', '--micro_batch', type=int, help='micro batch size')
     parser.add_argument('-dp', '--dp', type=int, help='data parallelism')
     parser.add_argument('-o', '--output', type=str, help='output path')
+    parser.add_argument('-c', '--config', type=str, help='config')
     args = parser.parse_args()
+
     batch = args.batch
     micro_batch = args.micro_batch
-    channel = args.channel
     dp = args.dp
     output = args.output
+    architecture = args.architecture
+    arch_configs = config_analyzer(architecture)
+    arch_configs.core.spm.size /= 4
+    core_num = arch_configs.core.x * arch_configs.core.y
+    config = json_analyzer(args.config)
+    model = config["model"]
+    pipeline_config = config["pipeline_config"]
 
+    channel = model["n_channel"]
+    core_list = pipeline_config["core_list"]
+    loop = pipeline_config["loop"]
+    
     inf = 10000000
     global_inst_id = 0
     pewls = [PEworkload(id=id) for id in range(core_num)]
-    # dp = 4
-    # batch = 60
-    # channel = 16
-    batch_per_dp = batch * channel // dp
-    # micro_batch = 2
-    n_micro_batch = batch_per_dp // micro_batch
-
+    batch_per_dp = math.ceil(batch * channel / dp)
+    n_micro_batch = math.ceil(batch_per_dp / micro_batch)
     last_send_id = [[[] for id in range(core_num)] for id in range(n_micro_batch)]
 
     transformer_model = Transformer_model(
         type="transformer",
-        n_layers=10,
-        n_head=1,
-        n_kv_head=1,
-        dim=32,
-        head_dim=32,
-        ffn_dim=64,
-        input_len=48,
+        n_layers=model["n_layers"],
+        n_head=model["n_head"],
+        n_kv_head=model["n_kv_head"],
+        dim=model["dim"],
+        head_dim=model["head_dim"],
+        ffn_dim=model["ffn_dim"],
+        input_len=model["input_len"],
         batch_size=micro_batch,
         layers=["qkv_gen", "attn_score", "attn_context", "output", "ffn_f1", "ffn_f2"]
     )
     tf_network = data_mapping(transformer_model)
-    pipeline_config = Pipe_Config(core_list=[0, 1, 2, 3, 4, 9, 8, 7, 6, 5], loop=1)
+    # pipeline_config = Pipe_Config(core_list=[0, 1, 2, 3, 4, 9, 8, 7, 6, 5], loop=1)
+    pipeline_config = Pipe_Config(core_list=core_list, loop=loop)
     cmd_stream_gen(tf_network, n_micro_batch, pipeline_config)
 
 

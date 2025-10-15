@@ -2,6 +2,7 @@ import simpy
 import os
 import sys
 import logging
+import csv
 from functools import partial, wraps
 from src.core import Core
 from src.noc_new import NoC, Link, Direction
@@ -110,12 +111,12 @@ monitor1 = partial(monitor1, data)
 monitor2 = partial(monitor2, data)
 
 class Arch:
-    def __init__(self, arch: ArchConfig, program: List[List[Instruction]], fail: FailSlow, net_name: str, fail_kind: str, stage=None):
+    def __init__(self, arch: ArchConfig, program: List[List[Instruction]], fail: FailSlow, net_name: str, fail_kind: str, power_config: str, stage=None):
         print("Constructing hardware architecture.")
         self.env = simpy.Environment()
         self.stage = stage
         
-        common.init_power_trace('power/power_config/power.json', 'power/power_trace/power_trace.txt')
+        common.init_power_trace(power_config, 'power/power_trace/power_trace.txt')
         
         self.mem_type = arch.mem.type
         self.noc = self.build_noc(arch.noc)

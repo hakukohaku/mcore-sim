@@ -1,0 +1,45 @@
+{
+	"freq": 1,
+	"core" : {
+		"type" : "Simple",
+		"x" : 2,
+		"y" : 1,
+		"width" : 8,
+		"blk_size" : 100000000,
+		"spm" : {
+			"size" : 209715200,
+			"delay" : 0
+		},
+		"compute" : {
+			"flops" : 8192,
+			"vect_flops" : 256
+		},
+		"lsu" : {
+			"width" : 4
+		}
+	},
+	"noc" : {
+		"type" : "Mesh",
+		"x" : 2,
+		"y" : 1,
+		"router" : {
+			"type" : "XY",
+			"vc" : 2
+		},
+		"link" : {
+			"width" : 16,
+			"delay" : 0
+		}
+	},
+	"mem" : {
+		"type" : "two_sides_edge",
+		"num" : 1,
+		"dram_bw" : 128,
+		"dram_capacity" : 1048576,
+		"mem_core" : {
+			"0": {"dram_id": 0}
+		}
+	}
+	
+	
+}

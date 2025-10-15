@@ -45,6 +45,7 @@ class MemConfig(BaseModel):
     mem_core: Optional[Dict[str, dict]] = None
 
 class ArchConfig(BaseModel):
+    freq: float
     core: CoreConfig
     noc: NoCConfig
     mem: MemConfig

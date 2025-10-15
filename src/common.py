@@ -16,23 +16,28 @@ class CFG:
         self.simend = args.simend
         self.flow = args.flow
 
-parser = argparse.ArgumentParser()
+# parser = argparse.ArgumentParser()
 
-#set simulation start and end cycle
-parser.add_argument("--simstart", type=int, default=0,
-                    help="Simulation start cycle, default is 0")
-parser.add_argument("--simend", type=int, default=int((1<<31)-1),
-                    help="Simulation end cycle, default is None (natural end)")
-parser.add_argument("--flow", action="store_true", help="enable flow flag")
-parser.add_argument("--workload", type=str, default="tests/pipeline/workload_pipeline_fixed_test.json")
-parser.add_argument("--arch", type=str, default="arch/gemini4_4.json")
-parser.add_argument("--fail", type=str, default="failslow/normal.json")
-parser.add_argument("--log", type=str, default="logging/log.txt")
-parser.add_argument("--level", type=str, default="info")
+# #set simulation start and end cycle
+# parser.add_argument("--simstart", type=int, default=0,
+#                     help="Simulation start cycle, default is 0")
+# parser.add_argument("--simend", type=int, default=int((1<<31)-1),
+#                     help="Simulation end cycle, default is None (natural end)")
+# parser.add_argument("--flow", action="store_true", help="enable flow flag")
+# parser.add_argument("--workload", type=str, default="tests/pipeline/workload_pipeline_fixed_test.json")
+# parser.add_argument("--arch", type=str, default="arch/gemini4_4.json")
+# parser.add_argument("--fail", type=str, default="failslow/normal.json")
+# parser.add_argument("--log", type=str, default="logging/log.txt")
+# parser.add_argument("--level", type=str, default="info")
 
-args = parser.parse_args()
-cfg = CFG(args)
+# args = parser.parse_args()
+# cfg = CFG(args)
+# def build_cfg(cli_args=None):
+#     ns = cli_args if cli_args is not None else parser.parse_args()
+#     return CFG(ns)
 
+# 占位，运行入口来注入
+cfg = None
 
 #record instruction dependency among cores
 cores_deps=[]

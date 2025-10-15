@@ -1,0 +1,17 @@
+{
+	"model" : {
+		"n_channel" : 16,
+		"n_layers" : 10,
+		"n_head" : 1,
+		"n_kv_head" : 1,
+		"dim" : 32,
+		"head_dim" : 32,
+		"ffn_dim" : 64,
+		"input_len" : 48
+	},
+	"pipeline_config" : {
+		"core_list" : [0, 1],
+		"loop" : 5
+	},
+	"freq": 1 
+}
