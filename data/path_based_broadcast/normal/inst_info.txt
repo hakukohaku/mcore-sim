@@ -1,4 +1,0 @@
-Debug: Starting to process 40 instructions
-Debug: Phase 1 - Collecting all SEND instructions
-Debug: Phase 1 complete - Collected 8 SEND instructions
-Debug: Phase 2 - Processing all instructions

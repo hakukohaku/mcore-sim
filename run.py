@@ -45,6 +45,9 @@ def workload_analyzer(filename: str) -> Workload:
             print(e.json())
 
 def setup_logging(filename, level):
+    log_dir = os.path.dirname(filename)
+    if log_dir:
+        os.makedirs(log_dir, exist_ok=True)
     logging.basicConfig(
         level = level,
         format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -54,8 +57,9 @@ def setup_logging(filename, level):
     )
 
 def output_csv(filename: str):
-
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    output_dir = os.path.dirname(filename)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     with open(filename, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         header=["Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "E_Compute", "E_DRAM_Read", "E_DRAM_Write", \
@@ -83,6 +87,7 @@ def main():
         level = logging.DEBUG
     elif args.level == "info":
         level = logging.INFO
+    
     setup_logging(args.log, level)
 
     print("Finished.")
@@ -95,6 +100,7 @@ def main():
     end_time = time.time()
     simulation_time = end_time - start_time
 
+    
     output_csv(args.output)
 
     if stage == "pre_analysis":
@@ -116,21 +122,21 @@ def main():
     e_dram_write = common.power_summary["dram_write"]
     e_dram_access = common.power_summary["dram_read"] + common.power_summary["dram_write"]
     e_noc_hop = common.power_summary["noc_hop"]
-    e_sram_read = common.power_summary["sram_read"] if arch_name == "CIM" else common.power_summary["sram_read"] + common.power_summary["cim_local_read"]
+    e_sram_read = common.power_summary["sram_read"] if arch_name == "CIM" else (common.power_summary["sram_read"] + common.power_summary["cim_local_read"])
     e_sram_write = common.power_summary["sram_write"]
-    e_sram_access = common.power_summary["sram_read"] + common.power_summary["sram_write"]
+    e_sram_access = e_sram_read + common.power_summary["sram_write"]
     e_cim_local_read = common.power_summary["cim_local_read"] if arch_name == "CIM" else 0
     total_energy = common.total_power
-    p_compute = dp * e_compute / (latency/freq)
-    p_dram_read = dp * e_dram_read / (latency/freq)
-    p_dram_write = dp * e_dram_write / (latency/freq)
-    p_dram_access = dp * e_dram_access / (latency/freq)
-    p_noc_hop = dp * e_noc_hop / (latency/freq)  
-    p_sram_read = dp * e_sram_read / (latency/freq)
-    p_sram_write = dp * e_sram_write / (latency/freq)
-    p_sram_access = dp * e_sram_access / (latency/freq)
-    p_cim_local_read = dp * e_cim_local_read / (latency/freq)
-    p_total_power = dp * common.total_power / (latency/freq)
+    p_compute = dp * e_compute / (cycle/freq)
+    p_dram_read = dp * e_dram_read / (cycle/freq)
+    p_dram_write = dp * e_dram_write / (cycle/freq)
+    p_dram_access = dp * e_dram_access / (cycle/freq)
+    p_noc_hop = dp * e_noc_hop / (cycle/freq)  
+    p_sram_read = dp * e_sram_read / (cycle/freq)
+    p_sram_write = dp * e_sram_write / (cycle/freq)
+    p_sram_access = dp * e_sram_access / (cycle/freq)
+    p_cim_local_read = dp * e_cim_local_read / (cycle/freq)
+    p_total_power = dp * common.total_power / (cycle/freq)
     
     result_data = [arch_name, batchsize, micro_batch_size, dp, cycle, latency, e_compute, e_dram_read, e_dram_write, e_dram_access, e_noc_hop, \
             e_sram_read, e_sram_write, e_sram_access, e_cim_local_read, total_energy, p_compute, p_dram_read, p_dram_write, p_dram_access, \
