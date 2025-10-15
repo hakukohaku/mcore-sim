@@ -1,1 +1,0 @@
-----------------Running batch 60 micro_batch 1 arch CIM----------------
