@@ -1,23 +1,21 @@
 # Many-Core Simulation
 本项目是一个基于 SimPy 的架构性能与能耗模拟仿真器。聚焦于存算一体（CIM）架构，描述了一个由多个核心组成的系统（Many-Core System），核心之间通过片上网络（NoC）连接，并包含内存子系统。并支持通过参数配置模拟DaVinci等其他架构。它接收硬件架构配置、模型结构和工作负载作为输入，模拟模型在目标硬件上的执行过程，精确计算以下指标：
-性能指标：latency、cycle
-能耗指标：计算单元、DRAM、SPM、NoC 等组件的能量消耗与功率
+- 性能指标：latency、cycle
+- 能耗指标：计算单元、DRAM、SPM、NoC 等组件的能量消耗与功率
 最终，模拟结果以结构化格式输出至 CSV 文件，用于架构性能优化与能耗分析。
 
-Overview
-1.目录结构
-2.使用方法
-3.配置文件详解
-4.常见问题
-
+## Overview
+[1.目录结构](#1目录结构)
+[2.使用方法](#2get-started使用说明)
+[3.配置文件详解](#3配置文件详解)
+[4.常见问题](#4常见问题faq)
 示例和截图（无）
       
-
-
-1.目录结构
-mcore-sim                                                                            
-├─ arch/                    # 硬件架构配置文件(JSON)                                                      
-├─ config/                  # 模型结构与流水线配置文件(JSON)                                   
+## 1.目录结构
+```bash
+mcore-sim                                       
+├─ arch/                    # 硬件架构配置文件(JSON)                            
+├─ config/                  # 模型结构与流水线配置文件(JSON)               
 ├─ data/                    # 运行时指令真实执行顺序
 ├─ log/                     # 日志输出目录
 ├─ output/                  # 运行结果输出目录(CSV)
@@ -40,49 +38,44 @@ mcore-sim
 ├─ process_results.py       # 将.csv合并
 ├─ requirements.txt         # 依赖库清单
 ├─ run.py                   # 主程序
+```
 
 
+## 2.Get Started/使用说明
 
-2.Get Started/使用说明
-
-1.Installation
+### 2.1 Installation
 Please run the following commands to create a python environment and install required packages.
+
 Python 版本：推荐 Python 3.8~3.11（兼容 Pydantic、SimPy 等库，避免高版本兼容性问题）
+```bash
 pip install -r requirements.txt
-
-simpy>=4.0  	 # 离散事件仿真核心库
-pydantic>=2.0    # 配置文件格式验证
-pandas>=1.5      # 结果数据处理（如 CSV 合并）
-matplotlib>=3.7  # 可选，用于 draw.py 绘图
-argparse>=1.4.0  # 命令行参数解析（Python 内置，无需额外安装）
-
-2.运行仿真（三种方式）
-方式一：使用Makefile一键运行（快速测试默认配置）
+```
+### 2.2 运行仿真（三种方式）
+#### 方式一：使用Makefile一键运行（快速测试默认配置）
+```bash
 # 1. 克隆项目
-git clone [项目仓库地址]
+git clone -b project_wc https://github.com/hakukohaku/mcore-sim.git
 cd mcore-sim
 
-# 2. 切换到目标分支（project_wc 为仿真分支）
-git fetch
-git checkout project_wc
-
-# 3. 一键运行仿真（自动调用默认配置）
+# 2. 一键运行仿真（自动调用默认配置）
 make run
-
-output：/root/mcore-sim/output/all_results.csv
+```
 说明：
-Makefile 默认配置：CIM 架构、固定 batch/micro_batch/dp 参数。
-若需修改默认参数，直接编辑项目根目录的 Makefile，修改 BATCH、MICRO_BATCH、DP 等变量值。
+- Makefile 默认配置：CIM 架构、固定 batch/micro_batch/dp 参数。
+- 若需修改默认参数，直接编辑项目根目录的 Makefile，修改 BATCH、MICRO_BATCH、DP 等变量值。
 
-方式二：参数化扫描
+#### 方式二：参数化扫描
 适合需要测试 “不同 batch/micro_batch/ 架构” 对性能 / 能耗影响的场景，通过脚本循环扫描参数：
+```bash
 # 扫描参数BATCH、MICRO_BATCH、ARCH
-pp_result.sh
+source pp_result.sh
+```
 输出结果​​：多组配置的合并结果文件，可分析规律。
 
-方式三：自定义运行
+#### 方式三：自定义运行
 分两步：生成指令序列 → 运行仿真。
-步骤1：生成指令序列(tools/test_pp.py)
+- 步骤1：生成指令序列(tools/test_pp.py)
+```bash
 # 命令格式
 python tools/test_pp.py \
   -b [BATCH] \          # 总批次大小（必选，如 8）
@@ -100,9 +93,10 @@ python tools/test_pp.py \
   -o data/cim_inst_8_2.json \
   -a arch/cim.json \
   -c config/cim.json
-
-步骤2：运行仿真(run.py)
+```
+- 步骤2：运行仿真(run.py)
 使用生成的指令序列，配置能耗、日志等参数，执行仿真。
+```bash
 # 命令格式
 python run.py \
   -b [BATCH] \          # 总批次大小（必选，需与步骤 1 一致，如 8）
@@ -111,7 +105,7 @@ python run.py \
   --arch_name [ARCH] \  # 架构名（可选，默认 CIM，如 CIM/DaVinci）
   --arch [ARCH_FILE] \  # 硬件架构配置文件（必选，如 arch/cim.json）
   --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 data/cim_inst_8_2.json）
-  --power [POWER_FILE] \  	  # 功率配置文件（必选，如 power/power_config/cim_power.json）
+  --power [POWER_FILE] \      # 功率配置文件（必选，如 power/power_config/cim_power.json）
   --log [LOG_FILE] \    # 日志输出路径（可选，默认 log/run.log）
   --level [LOG_LEVEL] \ # 日志级别（可选，info/debug，默认 info）
   --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/result_8_2.csv）
@@ -130,26 +124,16 @@ python run.py \
   --level debug \
   --output output/cim_result_8_2.csv \
   > log/console.log 2>&1
+```
 
-命令行参数	               格式     含义
---batch (-b)	          int   Transformer 模型的总批次大小，表示一次处理的样本总数
---micro_batch (-mb)	      int   微批次大小，将总批次拆分为微批次以适配流水线调度，减少延迟
---dp (-dp)	              int   数据并行度，表示同时并行处理的硬件数
---output (-o)	          str   输出运行结果(.csv)的路径
---architecture/arch (-a)  str   硬件架构配置文件路径(.JSON)，存储core、SPM等硬件参数
---config (-c)	          str   模型结构与流水线配置文件路径(.JSON)，存储Transformer模型参数与流水线调度参数
---arch_name               str   硬件架构名，默认为CIM
---workload                str   指令序列文件路径（run.py 的参数，即 tools 生成的文件）
---power                   str   硬件操作的能耗参数
-
-
-3.配置文件详解
+## 3.配置文件详解
 所有配置文件均为 JSON 格式，需严格匹配字段要求，Pydantic 会自动验证，格式错误会报错。
-（1）硬件架构配置(../arch/cim.json)
+### （1）硬件架构配置(../arch/cim.json)
+```bash
 {
 	"freq" :0.8,                    # 系统主频(GHz)
 	"core" : {
-		"type" : "Simple",			# 核心类型
+		"type" : "Simple",	# 核心类型
 		"x" : 5,                    # 总核心数5*2=10
 		"y" : 2,
 		"width" : 8,                # 核心数据位宽(bit)
@@ -185,11 +169,13 @@ python run.py \
 		"dram_bw" : 128,            # DRAM的峰值带宽(GB/s)
 		"dram_capacity" : 1048576,  # DRAM总容量(byte,1MB)
 		"mem_core" : {
-			"0": {"dram_id": 0}     # 核心0（坐标(0,0)）连接DRAM控制器0
+			"0": {"dram_id": 0}  # 核心0（坐标(0,0)）连接DRAM控制器0
 		}
 	}
 }
-（2）模型结构配置(../config/cim.json)
+```
+### （2）模型结构配置(../config/cim.json)
+```bash
 {
 	"model" : {
 		"n_channel" : 16,       # 每个样本被分割成的块数？？
@@ -206,7 +192,9 @@ python run.py \
 		"loop" : 1              # 流水线循环次数
 	}
 }
-（3）CIM架构下能耗配置(../power/power_config/cim_power.json)
+```
+### （3）CIM架构下能耗配置(../power/power_config/cim_power.json)
+```bash
 {
   "tpu_flop_power": 0.000097,      # 标量浮点运算能耗
   "vect_flop_power": 0.000170,     # 向量浮点运算能耗
@@ -217,9 +205,9 @@ python run.py \
   "sram_read_power": 0.001568,     # SRAM读能耗
   "cim_local_read_power": 0.000436 # CIM本地读能耗
 }
+```
 
-
-4.常见问题(FAQ)
+## 4.常见问题(FAQ)
 
 1. 如何自定义硬件架构？
 复制 arch/cim.json并修改参数，运行时通过 --arch指定新文件：
