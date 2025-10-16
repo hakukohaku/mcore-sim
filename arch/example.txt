@@ -1,45 +1,43 @@
 {
-	"freq" :0.8,
+	"freq" :0.8,                    # 系统主频(GHz)
 	"core" : {
-		"type" : "Simple",
-		"x" : 5,
+		"type" : "Simple",	# 核心类型
+		"x" : 5,                    # 总核心数5*2=10
 		"y" : 2,
-		"width" : 8,
-		"blk_size" : 100000000,
+		"width" : 8,                # 核心数据位宽(bit)
+		"blk_size" : 100000000,		# 数据传输块大小(byte)
 		"spm" : {
-			"size" : 209715200,
-			"delay" : 0
+			"size" : 209715200,     # spm的容量(byte,200MB)
+			"delay" : 0             # spm的访问延迟
 		},
 		"compute" : {
-			"flops" : 1024,
-			"vect_flops" : 32
+			"flops" : 1024,         # 标量浮点运算单元的计算能力
+			"vect_flops" : 32       # 向量浮点运算单元的计算能力
 		},
 		"lsu" : {
-			"width" : 4
+			"width" : 4             # 访存单元带宽(byte/period)
 		}
 	},
 	"noc" : {
-		"type" : "Mesh",
-		"x" : 5,
+		"type" : "Mesh",            # 网格拓扑
+		"x" : 5,                    # 与核心数对应
 		"y" : 2,
 		"router" : {
-			"type" : "XY",
-			"vc" : 2
+			"type" : "XY",          # XY路由算法
+			"vc" : 2                # 虚拟通道数量
 		},
 		"link" : {
-			"width" : 32,
-			"delay" : 0
+			"width" : 16,           # 链路位宽(bit)
+			"delay" : 0             # 链路传输延迟
 		}
 	},
 	"mem" : {
-		"type" : "two_sides_edge",
-		"num" : 1,
-		"dram_bw" : 128,
-		"dram_capacity" : 1048576,
+		"type" : "two_sides_edge",  # 双端DRAM控制器？？
+		"num" : 1,                  # DRAM控制器数量
+		"dram_bw" : 128,            # DRAM的峰值带宽(GB/s)
+		"dram_capacity" : 1048576,  # DRAM总容量(byte,1MB)
 		"mem_core" : {
-			"0": {"dram_id": 0}
+			"0": {"dram_id": 0}  # 核心0（坐标(0,0)）连接DRAM控制器0
 		}
 	}
-	
-	
 }

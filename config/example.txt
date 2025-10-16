@@ -1,0 +1,16 @@
+{
+	"model" : {
+		"n_channel" : 16,       # 每个样本被分割成的块数？？
+		"n_layers" : 10,        # 解码器/译码器堆叠层数
+		"n_head" : 1,           # 注意力头数
+		"n_kv_head" : 1,        # 键值头数
+		"dim" : 32,             # 模型内部维度
+		"head_dim" : 32,        # 注意力头维度，总维度 = n_head × head_dim
+		"ffn_dim" : 64,         # 前馈神经网络中间层维度
+		"input_len" : 48        # 输入序列长度（token数）
+	},
+	"pipeline_config" : {
+		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],  # 流水线核心执行顺序
+		"loop" : 1              # 流水线循环次数
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "tpu_flop_power": 0.000097,      # 标量浮点运算能耗
+  "vect_flop_power": 0.000170,     # 向量浮点运算能耗
+  "dram_read_power": 0.032,        # DRAM读能耗
+  "dram_write_power": 0.032,       # DRAM写能耗
+  "noc_hop_power": 0.001784,       # NoC每跳能耗
+  "sram_write_power": 0.001568,    # SRAM写能耗
+  "sram_read_power": 0.001568,     # SRAM读能耗
+  "cim_local_read_power": 0.000436 # CIM本地读能耗
+}
