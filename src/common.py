@@ -206,6 +206,8 @@ def record_power_trace(time, device_id, task_id, power, event_type, feat_precisi
 
     if "tpu_compute" in event_type:
         power_summary["compute"] += power
+    elif "vect_compute" in event_type:
+        power_summary["compute"] += power
     elif "dram_read" in event_type:
         power_summary["dram_read"] += power
     elif "dram_write" in event_type:

@@ -1,5 +1,5 @@
 {
-    "tpu_flop_power": 0.000097,
+    "tpu_flop_power": 0.0000823,
     "vect_flop_power": 0.000170,
     "dram_read_power": 0.032,
     "dram_write_power": 0.032,
