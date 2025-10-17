@@ -12,11 +12,11 @@
       
 ## 1.目录结构
 ```bash
-mcore-sim                                       
+mcore-sim 
+├─ .vscode/                 # 调试配置文件                     
 ├─ arch/                    # 硬件架构配置文件(JSON)                            
 ├─ config/                  # 模型结构与流水线配置文件(JSON)               
-├─ data/                    # 运行时指令真实执行顺序
-├─ log/                     # 日志输出目录
+├─ failslow/                # 故障注入文件
 ├─ output/                  # 运行结果输出目录(CSV)
 ├─ power/                   # 操作能耗配置目录
 ├─ src                      # 核心模块目录
@@ -30,15 +30,13 @@ mcore-sim
 │  ├─ sim_type.py           # 定义数据类型、任务类型、指令类型和通信机制
 ├─ tests/                   # 工作负载存放目录
 ├─ tools/                   # 指令序列生成工具
-├─ Makefile                 # 自动化执行脚本
-├─ README.md                                                               
-├─ pp_results.sh            # 参数化扫描仿真脚本
-├─ proc.sh                                           
+├─ Makefile                 # 自动化执行脚本                        
 ├─ process_results.py       # 将.csv合并
+├─ README.md  
 ├─ requirements.txt         # 依赖库清单
+├─ results_gen.sh           # 参数化扫描仿真脚本
 ├─ run.py                   # 主程序
 ```
-
 
 ## 2.Get Started/使用说明
 
@@ -67,7 +65,7 @@ make run
 适合需要测试 “不同 batch/micro_batch/ 架构” 对性能 / 能耗影响的场景，通过脚本循环扫描参数：
 ```bash
 # 扫描参数BATCH、MICRO_BATCH、ARCH
-source pp_result.sh
+source results_gen.sh
 ```
 输出结果​​：多组配置的合并结果文件，可分析规律。
 
@@ -80,16 +78,16 @@ python tools/inst_generation.py \
   -b [BATCH] \          # 总批次大小（必选，如 8）
   -mb [MICRO_BATCH] \   # 微批次大小（必选，如 2）
   -dp [DP] \            # 数据并行度（必选，如 4）
-  -o [INST_STREAM] \    # 指令序列输出路径（必选，如 data/inst_stream.json）
+  -o [INST_STREAM] \    # 指令序列输出路径（必选，如 tests/batch_1_micro_1_dp_2.json）
   -a [ARCH_FILE] \      # 硬件架构配置文件（必选，如 arch/cim.json）
   -c [CONFIG_FILE]      # 模型配置文件（必选，如 config/cim.json）
 
-# 示例：生成 CIM 架构、batch=8、micro_batch=2 的指令序列
+# 示例：生成 CIM 架构、batch=1、micro_batch=1、dp=2 的指令序列
 python tools/inst_generation.py \
-  -b 8 \
-  -mb 2 \
-  -dp 4 \
-  -o data/cim_inst_8_2.json \
+  -b 1 \
+  -mb 1 \
+  -dp 2 \
+  -o tests/batch_1_micro_1_dp_2.json \
   -a arch/cim.json \
   -c config/cim.json
 ```
@@ -98,29 +96,29 @@ python tools/inst_generation.py \
 ```bash
 # 命令格式
 python run.py \
-  -b [BATCH] \          # 总批次大小（必选，需与步骤 1 一致，如 8）
-  -mb [MICRO_BATCH] \   # 微批次大小（必选，需与步骤 1 一致，如 2）
-  -dp [DP] \            # 数据并行度（必选，需与步骤 1 一致，如 4）
+  -b [BATCH] \          # 总批次大小（必选，需与步骤 1 一致）
+  -mb [MICRO_BATCH] \   # 微批次大小（必选，需与步骤 1 一致）
+  -dp [DP] \            # 数据并行度（必选，需与步骤 1 一致）
   --arch_name [ARCH] \  # 架构名（可选，默认 CIM，如 CIM/DaVinci）
   --arch [ARCH_FILE] \  # 硬件架构配置文件（必选，如 arch/cim.json）
-  --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 data/cim_inst_8_2.json）
+  --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 tests/batch_1_micro_1_dp_2.json）
   --power [POWER_FILE] \      # 功率配置文件（必选，如 power/power_config/cim_power.json）
   --log [LOG_FILE] \    # 日志输出路径（可选，默认 log/run.log）
   --level [LOG_LEVEL] \ # 日志级别（可选，info/debug，默认 info）
-  --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/result_8_2.csv）
+  --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/results_arch_CIM_batch_1_micro_1_dp_4_tech_7nm.csv）
 
 # 示例：运行 CIM 架构仿真，输出日志与结果
 python run.py \
-  -b 8 \
-  -mb 2 \
-  -dp 4 \
+  -b 1 \
+  -mb 1 \
+  -dp 2 \
   --arch_name CIM \
   --arch arch/cim.json \
-  --workload data/cim_inst_8_2.json \
+  --workload tests/batch_1_micro_1_dp_2.json \
   --power power/power_config/cim_power.json \
   --log log/cim_sim.log \
   --level debug \
-  --output output/cim_result_8_2.csv \
+  --output output/results_arch_CIM_batch_1_micro_1_dp_4_tech_7nm.csv \
 ```
 
 ## 3.常见问题(FAQ)
