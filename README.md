@@ -70,6 +70,17 @@ source results_gen.sh
 输出结果​​：多组配置的合并结果文件，可分析规律。
 
 #### 方式三：自定义运行
+一键运行：Makefile
+```bash
+# 命令格式
+make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
+#BATCH=[BATCH] \               # 总批次大小
+#MICRO_BATCH=[MICRO_BATCH] \   # 微批次大小
+#DP=[DP] \                     # 数据并行度
+#ARCH=[CIM/DAVICIN]            # 硬件架构
+#TECH=7/22                     # 工艺节点
+#OUTPUT=[OUTPUT]			   # 结果文件保存路径
+```
 分两步：生成指令序列 → 运行仿真。
 - 步骤1：生成指令序列(../tools/inst_generation.py)
 ```bash
@@ -99,6 +110,7 @@ python run.py \
   -b [BATCH] \          # 总批次大小（必选，需与步骤 1 一致）
   -mb [MICRO_BATCH] \   # 微批次大小（必选，需与步骤 1 一致）
   -dp [DP] \            # 数据并行度（必选，需与步骤 1 一致）
+  -t [Tech] \           # 工艺节点，仅可选 7/22
   --arch_name [ARCH] \  # 架构名（可选，默认 CIM，如 CIM/DaVinci）
   --arch [ARCH_FILE] \  # 硬件架构配置文件（必选，如 arch/cim.json）
   --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 tests/batch_1_micro_1_dp_2.json）
@@ -112,6 +124,7 @@ python run.py \
   -b 1 \
   -mb 1 \
   -dp 2 \
+  -t 7  \
   --arch_name CIM \
   --arch arch/cim.json \
   --workload tests/batch_1_micro_1_dp_2.json \
