@@ -48,17 +48,22 @@ Python 版本：推荐 Python 3.8~3.11（兼容 Pydantic、SimPy 等库，避免
 pip install -r requirements.txt
 ```
 ### 2.2 运行仿真（三种方式）
-#### 方式一：使用Makefile一键运行（快速测试默认配置）
-```bash
-# 1. 克隆项目
-git clone -b project_wc https://github.com/hakukohaku/mcore-sim.git
-cd mcore-sim
 
-# 2. 一键运行仿真（自动调用默认配置）
-make run
+注：由于不同DP会产生完全独立且同步工作的硬件组，我们仅仿真其中一个DP硬件组来加速仿真，DP的设置决定了该硬件组分配到的batch size以及最后系统的总功耗（单独硬件功耗×DP）
+
+#### 方式一：使用Makefile一键运行（快速测试默认配置）
+
+```bash
+# 命令格式
+make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
+#BATCH=[BATCH] \               # 总批次大小
+#MICRO_BATCH=[MICRO_BATCH] \   # 微批次大小
+#DP=[DP] \                     # 数据并行度
+#ARCH=[CIM/DAVICIN]            # 硬件架构
+#TECH=7/22                     # 工艺节点
 ```
+
 说明：
-- Makefile 默认配置：CIM 架构、固定 batch/micro_batch/dp 参数。
 - 若需修改默认参数，直接编辑项目根目录的 Makefile，修改 BATCH、MICRO_BATCH、DP 等变量值。
 
 #### 方式二：参数化扫描
@@ -69,21 +74,8 @@ source results_gen.sh
 ```
 输出结果​​：多组配置的合并结果文件，可分析规律。
 
-#### 方式三：自定义运行
-注：由于不同DP会产生完全独立且同步工作的硬件组，我们仅仿真其中一个DP硬件组来加速仿真，DP的设置决定了该硬件组分配到的batch size以及最后系统的总功耗（单独硬件功耗×DP）
+#### 方式三：分步运行
 
-
-一键运行：Makefile
-```bash
-# 命令格式
-make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
-#BATCH=[BATCH] \               # 总批次大小
-#MICRO_BATCH=[MICRO_BATCH] \   # 微批次大小
-#DP=[DP] \                     # 数据并行度
-#ARCH=[CIM/DAVICIN]            # 硬件架构
-#TECH=7/22                     # 工艺节点
-#OUTPUT=[OUTPUT]			   # 结果文件保存路径
-```
 分步运行：生成指令序列 → 运行仿真。
 - 步骤1：生成指令序列(../tools/inst_generation.py)
 ```bash
