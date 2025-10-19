@@ -16,7 +16,7 @@ mcore-sim
 ├─ .vscode/                 # 调试配置文件                     
 ├─ arch/                    # 硬件架构配置文件(JSON)                            
 ├─ config/                  # 模型结构与流水线配置文件(JSON)               
-├─ failslow/                # 故障注入文件
+├─ failslow/                # 故障注入文件（无需更改，对仿真无影响，仅兼容性要求）
 ├─ output/                  # 运行结果输出目录(CSV)
 ├─ power/                   # 操作能耗配置目录
 ├─ src                      # 核心模块目录
@@ -70,6 +70,7 @@ source results_gen.sh
 输出结果​​：多组配置的合并结果文件，可分析规律。
 
 #### 方式三：自定义运行
+注：由于不同DP会产生完全独立且同步工作的硬件组，我们仅仿真其中一个DP硬件组来加速仿真，DP的设置决定了该硬件组分配到的batch size以及最后系统的总功耗（单独硬件功耗×DP）
 一键运行：Makefile
 ```bash
 # 命令格式
@@ -81,7 +82,7 @@ make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
 #TECH=7/22                     # 工艺节点
 #OUTPUT=[OUTPUT]			   # 结果文件保存路径
 ```
-分两步：生成指令序列 → 运行仿真。
+分步运行：生成指令序列 → 运行仿真。
 - 步骤1：生成指令序列(../tools/inst_generation.py)
 ```bash
 # 命令格式
