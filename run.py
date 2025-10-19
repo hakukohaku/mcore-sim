@@ -64,7 +64,7 @@ def output_csv(filename: str):
         writer = csv.writer(f)
         header=["Tech","Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "E_Compute", "E_DRAM_Access", \
             "E_NOC_Hop", "E_SRAM_Read", "E_SRAM_Write", "E_SRAM_Access","E_CIM_Local_Read", "Total_Energy","P_Compute", "P_DRAM_Access", \
-            "P_DRAM_Access", "P_NOC_Hop", "P_SRAM_Read", "P_SRAM_Write", "P_SRAM_Access","P_CIM_Local_Read", "P_Total_Power"]
+            "P_NOC_Hop", "P_SRAM_Read", "P_SRAM_Write", "P_SRAM_Access","P_CIM_Local_Read", "P_Total_Power"]
         writer.writerow(header)
         return writer
 
