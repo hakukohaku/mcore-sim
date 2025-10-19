@@ -33,7 +33,7 @@ run:
 
 
 clean:
-	rm -rf $(OUTPUT_DIR)/run.log
+	rm -rf $(OUTPUT_DIR)/*
 	rm -rf $(CURRENT_DIR)/log/*
 	rm -rf $(CURRENT_DIR)/tests/*
 	rm -rf $(CURRENT_DIR)/data/*

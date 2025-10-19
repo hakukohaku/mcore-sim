@@ -3534,3 +3534,14 @@
 [time]:10874, [core_id]:6, [task_id]:1990, [power]:4.8734208, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:147456
 [time]:10874, [core_id]:7, [task_id]:1766, [power]:4.8734208, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:147456
 [time]:10874, [core_id]:8, [task_id]:1542, [power]:4.8734208, [type]:tpu_compute, [feat_precision]:1, [para_precision]:1, [flops]:147456
+
+[total_power]:6493.320806399942
+
+Power Summary:
+  [compute]: 1689.7351680000008
+  [dram_read]: 393.21599999999995
+  [dram_write]: 0
+  [noc_hop]: 125.54403840000015
+  [sram_read]: 1513.8815999999922
+  [sram_write]: 2660.10624000005
+  [cim_local_read]: 110.83775999999943

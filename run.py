@@ -62,8 +62,8 @@ def output_csv(filename: str):
         os.makedirs(output_dir, exist_ok=True)
     with open(filename, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        header=["Tech","Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "E_Compute", "E_DRAM_Read", "E_DRAM_Write", \
-            "E_DRAM_Access", "E_NOC_Hop", "E_SRAM_Read", "E_SRAM_Write", "E_SRAM_Access","E_CIM_Local_Read", "Total_Energy","P_Compute", "P_DRAM_Read", "P_DRAM_Write", \
+        header=["Tech","Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "E_Compute", "E_DRAM_Access", \
+            "E_NOC_Hop", "E_SRAM_Read", "E_SRAM_Write", "E_SRAM_Access","E_CIM_Local_Read", "Total_Energy","P_Compute", "P_DRAM_Access", \
             "P_DRAM_Access", "P_NOC_Hop", "P_SRAM_Read", "P_SRAM_Write", "P_SRAM_Access","P_CIM_Local_Read", "P_Total_Power"]
         writer.writerow(header)
         return writer
@@ -119,9 +119,7 @@ def main():
     cycle = arch.end_time
     latency = arch.end_time/1e6/freq
     e_compute = common.power_summary["compute"]
-    e_dram_read = common.power_summary["dram_read"]
-    e_dram_write = common.power_summary["dram_write"]
-    e_dram_access = e_dram_read + e_dram_write
+    e_dram_access = common.power_summary["dram_read"] + common.power_summary["dram_write"]
     e_noc_hop = common.power_summary["noc_hop"]
     e_sram_read = common.power_summary["sram_read"] if arch_name == "CIM" else (common.power_summary["sram_read"] + common.power_summary["cim_local_read"])
     e_sram_write = common.power_summary["sram_write"]
@@ -129,8 +127,6 @@ def main():
     e_cim_local_read = common.power_summary["cim_local_read"] if arch_name == "CIM" else 0
     total_energy = common.total_power
     p_compute = dp * e_compute / (cycle/freq)
-    p_dram_read = dp * e_dram_read / (cycle/freq)
-    p_dram_write = dp * e_dram_write / (cycle/freq)
     p_dram_access = dp * e_dram_access / (cycle/freq)
     p_noc_hop = dp * e_noc_hop / (cycle/freq)  
     p_sram_read = dp * e_sram_read / (cycle/freq)
@@ -139,11 +135,9 @@ def main():
     p_cim_local_read = dp * e_cim_local_read / (cycle/freq)
     p_total_power = dp * common.total_power / (cycle/freq)
     
-    result_data = [tech, arch_name, batchsize, micro_batch_size, dp, cycle, latency, e_compute, e_dram_read, e_dram_write, e_dram_access, e_noc_hop, \
-            e_sram_read, e_sram_write, e_sram_access, e_cim_local_read, total_energy, p_compute, p_dram_read, p_dram_write, p_dram_access, \
+    result_data = [tech, arch_name, batchsize, micro_batch_size, dp, cycle, latency, e_compute, e_dram_access, e_noc_hop, \
+            e_sram_read, e_sram_write, e_sram_access, e_cim_local_read, total_energy, p_compute, p_dram_access, \
             p_noc_hop, p_sram_read, p_sram_write, p_sram_access, p_cim_local_read, p_total_power]
-    print("Writing result data...")
-    print(f"check:{p_total_power/(p_compute + p_dram_access + p_noc_hop + p_sram_access + p_cim_local_read)}")
     with open(args.output, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(result_data)

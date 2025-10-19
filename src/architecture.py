@@ -565,7 +565,10 @@ class Arch:
                                     end_time = inst.record.exe_end_time[0]
                                 )
                             )
-
+        # print("Power Summary:")
+        # for key, value in common.power_summary.items():
+        #     print(f"  [{key}]: {value}")
+        
         compute_trace = CompTrace(trace=compute_trace)
         comp_json_file = os.path.join(file_path, "comp_trace.json")
         with open(comp_json_file, "w") as file:
@@ -608,9 +611,6 @@ class Arch:
         self.output_data(self.net_name, self.fail_kind)
 
         print(f"Total power: {common.total_power}")
-        print("Power Summary:")
-        for key, value in common.power_summary.items():
-            print(f"  [{key}]: {value}")
         common.close_power_trace()
         
         # self.draw()
