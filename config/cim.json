@@ -1,21 +1,21 @@
 {
 	"model" : {
-		"n_channel" : 16,
-		"n_blocks" : 10,
+		"n_channel" : 32,
+		"n_blocks" : 16,
 		"n_head" : 1,
 		"n_kv_head" : 1,
 		"dim" : 32,
 		"head_dim" : 32,
-		"ffn_dim" : 64,
-		"input_len" : 48
+		"ffn_dim" : 128,
+		"input_len" : 64
 	},
 	"pipeline_config" : {
 		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],
 		"loop" : 1
 	},
 	"tp_config" : {
-		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],
-		"tp" : 10,
+		"core_list" : [0, 1,2,3],
+		"tp" : 4,
 		"n_input_loop" : 1
 	}
 }

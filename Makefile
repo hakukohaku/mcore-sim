@@ -5,7 +5,7 @@ OUTPUT_DIR := $(CURRENT_DIR)/output
 BATCH ?= 1
 MICRO_BATCH ?= 1
 DP ?= 2
-PP ?= 1
+PP ?= 8
 N_ENCODER_KV_LEN ?=0
 ARCH ?= CIM
 TECH ?= 7
@@ -37,6 +37,10 @@ run_tp:
 	$(CREATE_OUTPUT_DIR)
 	python $(CURRENT_DIR)/tools/tp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -pp $(PP) -ekv $(N_ENCODER_KV_LEN) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
 	python $(CURRENT_DIR)/run.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -t $(TECH) --arch_name $(ARCH) --arch $(ARCHITECTURE) --fail $(FAIL) --workload $(INST_STREAM) --power $(POWER) --log $(LOG) --level debug  --output $(OUTPUT) > $(OUTPUT_DIR)/run.log 2>&1
+
+gen_tp:
+	$(CREATE_OUTPUT_DIR)
+	python $(CURRENT_DIR)/tools/tp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -pp $(PP) -ekv $(N_ENCODER_KV_LEN) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
 
 clean:
 	rm -rf $(OUTPUT_DIR)/*

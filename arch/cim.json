@@ -12,7 +12,7 @@
 		},
 		"compute" : {
 			"flops" : 1024,
-			"vect_flops" : 32
+			"vect_flops" : 1024
 		},
 		"lsu" : {
 			"width" : 4

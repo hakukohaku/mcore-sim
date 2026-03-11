@@ -89,25 +89,17 @@ def load_tp_config(config: dict, core_num: int) -> TPConfig:
         raise ValueError(f"Tensor parallel core ids must be in [0, {core_num - 1}].")
     return tp_config
 
-
-def shard_bounds(total: int, shard_num: int, shard_id: int) -> Tuple[int, int]:
-    base = total // shard_num
-    extra = total % shard_num
-    start = shard_id * base + min(shard_id, extra)
-    end = start + base + (1 if shard_id < extra else 0)
-    return start, end
-
-
 def build_tp_networks(input_model: TransformerModel, tp_config: TPConfig) -> Dict[int, TransformerNetwork]:
     networks: Dict[int, TransformerNetwork] = {}
-    shard_num = len(tp_config.core_list)
     tp_degree = tp_config.tp
     
+    print(f"tp_degree: {tp_degree}, core_list: {tp_config.core_list}")
     for core_position, core_id in enumerate(tp_config.core_list):
         network = TransformerNetwork(n_blocks=input_model.n_blocks, layers=[])
 
         def append_layer(name: str, dim_m: int, dim_n: int, dim_k: int, n_loop: int, nonlinear_en: bool, reduce_en: bool = False):
-            dim_n_start, dim_n_end = shard_bounds(dim_n, shard_num, core_position)
+            dim_n_start, dim_n_end =0, dim_n
+            #print(f"dim_n: {dim_n}, dim_n_start: {dim_n_start}, dim_n_end: {dim_n_end}, core_id: {core_id}")
             network.layers.append(
                 TransformerLayer(
                     name=name,
@@ -402,7 +394,8 @@ if __name__ == "__main__":
     global_inst_id = 0
     pewls = [PEworkload(id=idx) for idx in range(core_num)]
 
-    batch_per_dp = math.ceil(batch * channel / dp)
+    #batch_per_dp = math.ceil(batch * channel / dp)
+    batch_per_dp = math.ceil(batch * channel)
     n_micro_batch = math.ceil(batch_per_dp / micro_batch)
 
     transformer_model = TransformerModel(
