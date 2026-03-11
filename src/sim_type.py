@@ -55,6 +55,7 @@ class TaskType(IntEnum):
     SEND = 2
     RECV = 3
     STAY = 4
+    RING = 16
 
     CONV = 5
     POOL = 6
@@ -423,6 +424,8 @@ class Instruction(BaseModel):
     # 数据精度，以byte为单位，默认为1
     feat_precision: int = 1
     para_precision: int = 1
+    # RING 指令专用：本地停留周期（0 表示按数据量自动估算）
+    ring_cycles: int = 0
     target_dram_id: int = -1
 
     # 在想应该累计每个block对后面造成的影响，这样的热点或许更有效
@@ -672,6 +675,44 @@ class Stay(Task):
     def output_size(self):
         return 0
 
+class Ring(Task):
+    opcode: str = "Ring"
+    num_operands: int = 0
+
+    def run(self, core, ins):
+        from src.common import record_power_trace, noc_hop_power
+
+        ins.record.pe_id = core.id
+        ins.record.ready_run_time.append(core.env.now)
+        ins.record.exe_start_time.append(core.env.now)
+
+        elem_count = Slice(tensor_slice=self.tensor_slice).size() if self.tensor_slice else 0
+        precision = self.feat_precision if ins.data_type == DataType.FEAT else self.para_precision
+        size_in_bytes = elem_count * precision
+
+        # Empty collective payload is treated as a no-op.
+        if size_in_bytes <= 0:
+            ins.record.exe_end_time.append(core.env.now)
+            yield core.env.timeout(0)
+            return
+
+        ring_cycles = ins.ring_cycles
+        if ring_cycles <= 0:
+            # 与 SEND/RECV 的带宽建模保持一致：按 NoC 链路带宽估算传输时间
+            noc_bandwidth = core.arch.noc.link_config.width if hasattr(core.arch, "noc") else core.lsu_bandwidth
+            ring_cycles = max(1, ceil(size_in_bytes, noc_bandwidth)) if size_in_bytes > 0 else 1
+
+        record_power_trace(core.env.now, core.id, self.index, size_in_bytes * noc_hop_power, "noc_hop")
+
+        yield core.env.timeout(ring_cycles)
+        ins.record.exe_end_time.append(core.env.now)
+
+    def input_size(self):
+        return 0
+
+    def output_size(self):
+        return 0
+
 class Send(CommunicationTask):
     opcode: str = "Send"
     src: int = -1
@@ -781,4 +822,3 @@ class Free(Task):
 
     def output_size(self):
         return 0
-

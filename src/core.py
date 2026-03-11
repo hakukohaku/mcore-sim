@@ -32,13 +32,23 @@ waitready = []
 #         self.data.append((string,self.capacity,"free",size,self.env.now,"E"))
 
 class SPMManager:
-    def __init__(self, env, id, config: ScratchpadConfig):
+    def __init__(self, env, id, config: ScratchpadConfig, arch=None):
         self.delay = config.delay
         self.env = env
         self.id = id
+        self.arch = arch
         self.container = simpy.Container(self.env, init=config.size, capacity=config.size)
         self.max_buf = 0
         self.data=[]
+
+    def current_usage(self):
+        return self.container.capacity - self.container.level
+
+    def update_usage_stats(self):
+        current_usage = self.current_usage()
+        self.max_buf = max(self.max_buf, current_usage)
+        if self.arch is not None:
+            self.arch.update_sram_usage(self.id, current_usage)
 
     def allocate(self, string, size):
         if size > 0:
@@ -48,7 +58,7 @@ class SPMManager:
             yield self.container.get(size)
             logger.debug(f"Time {self.env.now:.2f}: Core{self.id} after-allocate: {size}, [{self.container.level}/{self.container.capacity}]")
         #TODO:add instruction type and id and check if need record
-        self.max_buf = max(self.max_buf, self.container.capacity-self.container.level)
+        self.update_usage_stats()
         self.data.append((string, self.container.level, "alloc", size, self.env.now, "B"))
 
     def free(self, string, size):
@@ -57,6 +67,7 @@ class SPMManager:
             yield self.container.put(size)
             logger.debug(f"Time {self.env.now:.2f}: Core{self.id} after-free: {size}, [{self.container.level}/{self.container.capacity}]")
         #TODO：add instruction type and id and check if need record
+        self.update_usage_stats()
         self.data.append((string, self.container.level, "free", size, self.env.now, "E"))
 
 class Graph:
@@ -142,6 +153,8 @@ class GraphScheduler:
                             outputs.append(idx)
                         case "SEND":
                             outputs.append(idx)
+                        case "RING":
+                            outputs.append(idx)
                         case "COMP":
                             comp_pos = idx
                     
@@ -174,6 +187,8 @@ class GraphScheduler:
                     return Write(index=inst.index, size=inst.size, feat_precision=1, para_precision=1)
                 case "SEND":
                     return Send(index=inst.index, size=inst.size, dst=inst.position, feat_precision=1, para_precision=1)
+                case "RING":
+                    return Ring(index=inst.index, size=inst.size, feat_precision=1, para_precision=1)
                 case "COMP":
                     match inst.operation:
                         case "CONV":
@@ -246,11 +261,57 @@ class TableScheduler:
                 case TaskType.SEND:
                     self.tasks.append(Send(index=inst.index, feat_num=inst.feat_num,tensor_slice=inst.tensor_slice, inst=inst, dst=inst.position, path_dst=inst.path_dst, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.LOAD:
-                    self.tasks.append(Load(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
+                    self.tasks.append(
+                        Load(
+                            index=inst.index,
+                            tensor_slice=inst.tensor_slice,
+                            inst=inst,
+                            layer_id=inst.layer_id,
+                            feat_num=inst.feat_num,
+                            para_num=inst.para_num,
+                            feat_precision=inst.feat_precision,
+                            para_precision=inst.para_precision,
+                        )
+                    )
                 case TaskType.STORE:
-                    self.tasks.append(Store(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
+                    self.tasks.append(
+                        Store(
+                            index=inst.index,
+                            tensor_slice=inst.tensor_slice,
+                            inst=inst,
+                            layer_id=inst.layer_id,
+                            feat_num=inst.feat_num,
+                            para_num=inst.para_num,
+                            feat_precision=inst.feat_precision,
+                            para_precision=inst.para_precision,
+                        )
+                    )
                 case TaskType.FREE:
-                    self.tasks.append(Free(index=inst.index, tensor_slice=inst.tensor_slice, inst=inst))
+                    self.tasks.append(
+                        Free(
+                            index=inst.index,
+                            tensor_slice=inst.tensor_slice,
+                            inst=inst,
+                            layer_id=inst.layer_id,
+                            feat_num=inst.feat_num,
+                            para_num=inst.para_num,
+                            feat_precision=inst.feat_precision,
+                            para_precision=inst.para_precision,
+                        )
+                    )
+                case TaskType.RING:
+                    self.tasks.append(
+                        Ring(
+                            index=inst.index,
+                            tensor_slice=inst.tensor_slice,
+                            inst=inst,
+                            layer_id=inst.layer_id,
+                            feat_num=inst.feat_num,
+                            para_num=inst.para_num,
+                            feat_precision=inst.feat_precision,
+                            para_precision=inst.para_precision,
+                        )
+                    )
                 case TaskType.CONV:
                     self.tasks.append(Conv(index=inst.index, feat_num=inst.feat_num, para_num=inst.para_num, tensor_slice=inst.tensor_slice, inst=inst, layer_id=inst.layer_id, feat_precision=inst.feat_precision, para_precision=inst.para_precision))
                 case TaskType.POOL:
@@ -769,7 +830,7 @@ class Core:
         self.type = config.type
         self.program = program
         self.id = id
-        self.spm_manager = SPMManager(env, self.id, config.spm)
+        self.spm_manager = SPMManager(env, self.id, config.spm, arch)
         self.flow_out = []
         self.flow_in = []
         self.stage = stage

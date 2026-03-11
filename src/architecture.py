@@ -127,9 +127,18 @@ class Arch:
             common.init_graph(program)
         self.program = program
 
-        self.cores = self.build_cores(arch.core, program, arch.mem)
         self.core_x = arch.core.x
         self.core_y = arch.core.y
+        self.core_current_sram_usage = [0 for _ in range(self.core_x * self.core_y)]
+        self.core_peak_sram_usage = [0 for _ in range(self.core_x * self.core_y)]
+        self.current_total_sram_usage = 0
+        self.peak_total_sram_usage = 0
+        self.peak_total_sram_usage_time = 0
+        self.max_core_sram_usage = 0
+        self.max_core_sram_usage_core_id = 0 if self.core_current_sram_usage else -1
+        self.max_core_sram_usage_time = 0
+        self.total_sram_capacity = arch.core.spm.size * self.core_x * self.core_y
+        self.cores = self.build_cores(arch.core, program, arch.mem)
         
         self.layer_start = [-1 for _ in range(25)]
         self.layer_end = [-1 for _ in range(25)]
@@ -147,6 +156,21 @@ class Arch:
     def debug(self):
         for d in data:
             logger.info(d)
+
+    def update_sram_usage(self, core_id: int, current_usage: int):
+        previous_usage = self.core_current_sram_usage[core_id]
+        self.core_current_sram_usage[core_id] = current_usage
+        self.core_peak_sram_usage[core_id] = max(self.core_peak_sram_usage[core_id], current_usage)
+
+        if current_usage > self.max_core_sram_usage:
+            self.max_core_sram_usage = current_usage
+            self.max_core_sram_usage_core_id = core_id
+            self.max_core_sram_usage_time = self.env.now
+
+        self.current_total_sram_usage += current_usage - previous_usage
+        if self.current_total_sram_usage > self.peak_total_sram_usage:
+            self.peak_total_sram_usage = self.current_total_sram_usage
+            self.peak_total_sram_usage_time = self.env.now
 
     def link_fail(self, fail: LinkFail):
         yield self.env.timeout(fail.start_time)
@@ -600,7 +624,18 @@ class Arch:
             self.end_time = max(self.end_time, self.cores[id].end_time)
             print(f"Core{id} end time: {self.cores[id].end_time}")
             print(f"Core{id} processed [{self.cores[id].scheduler.inst_counter}/{len(self.cores[id].program)}] instructions.")
-            print(f"Max buffer usage is {self.cores[id].spm_manager.max_buf}. [{self.cores[id].spm_manager.container.capacity-self.cores[id].spm_manager.container.level}/{self.cores[id].spm_manager.container.capacity}]")
+            current_usage = self.cores[id].spm_manager.current_usage()
+            capacity = self.cores[id].spm_manager.container.capacity
+            print(f"Core{id} SRAM peak usage: {self.cores[id].spm_manager.max_buf}. [{current_usage}/{capacity}]")
+
+        print(
+            f"Peak per-core SRAM usage is {self.max_core_sram_usage} on Core{self.max_core_sram_usage_core_id} "
+            f"at time {self.max_core_sram_usage_time}."
+        )
+        print(
+            f"Peak total SRAM usage is {self.peak_total_sram_usage}/{self.total_sram_capacity} "
+            f"at time {self.peak_total_sram_usage_time}."
+        )
 
         print("Simulation finished.")
         # 将值传入json文件

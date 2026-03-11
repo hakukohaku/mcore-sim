@@ -1,7 +1,7 @@
 {
 	"model" : {
 		"n_channel" : 16,
-		"n_layers" : 10,
+		"n_blocks" : 10,
 		"n_head" : 1,
 		"n_kv_head" : 1,
 		"dim" : 32,
@@ -12,5 +12,9 @@
 	"pipeline_config" : {
 		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],
 		"loop" : 1
+	},
+	"tp_config" : {
+		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],
+		"n_input_loop" : 1
 	}
 }

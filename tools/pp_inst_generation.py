@@ -61,7 +61,7 @@ class Transformer_Layer(BaseModel):
     dim_K: int
 
 class Transformer_Network(BaseModel):
-    n_layers: int
+    n_blocks: int
     layers: List[Transformer_Layer]
 
 class Pipe_Config(BaseModel):
@@ -73,7 +73,7 @@ class Pipe_Config(BaseModel):
 
 class Transformer_model(BaseModel):
     type: str
-    n_layers: int
+    n_blocks: int
     n_head: int
     n_kv_head: int
     dim: int
@@ -83,8 +83,26 @@ class Transformer_model(BaseModel):
     batch_size: int
     layers: List=["qkv_gen", "attn_score", "attn_context", "output", "ffn_f1", "ffn_f2"]
 
+
+def load_pipeline_config(config: dict, core_num: int) -> Pipe_Config:
+    pipeline_config_data = config.get("pipeline_config")
+    if pipeline_config_data is None:
+        raise ValueError("Config must contain 'pipeline_config'.")
+
+    pipeline_config = Pipe_Config.model_validate(pipeline_config_data)
+    if not pipeline_config.core_list:
+        raise ValueError("Pipeline core_list must not be empty.")
+    if pipeline_config.loop <= 0:
+        raise ValueError("Pipeline loop must be a positive integer.")
+    if len(set(pipeline_config.core_list)) != len(pipeline_config.core_list):
+        raise ValueError("Pipeline core_list must not contain duplicate core ids.")
+    if min(pipeline_config.core_list) < 0 or max(pipeline_config.core_list) >= core_num:
+        raise ValueError(f"Pipeline core ids must be in [0, {core_num - 1}].")
+    return pipeline_config
+
+
 def data_mapping(input_model: Transformer_model) -> Transformer_Network:
-    network = Transformer_Network(n_layers=input_model.n_layers, layers=[])
+    network = Transformer_Network(n_blocks=input_model.n_blocks, layers=[])
     for layer_name in input_model.layers:
         if layer_name == "qkv_gen":
             dim_M = input_model.batch_size * input_model.input_len
@@ -127,7 +145,7 @@ def data_mapping(input_model: Transformer_model) -> Transformer_Network:
 
 
 
-def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, tf_layer_id: int, last_core_id: int, next_core_id: int, n_micro_batch: int, pipe_recv_en: False, pipe_sent_en: False, finish: False):
+def layer_cmd_gen_for_single_core(network: Transformer_Network, core_id: int, block_id: int, last_core_id: int, next_core_id: int, n_micro_batch: int, pipe_recv_en: False, pipe_sent_en: False, finish: False):
     global global_inst_id, pewls, last_send_id
     
     for micro_batch_id in range(n_micro_batch):
@@ -150,16 +168,16 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
 
             for layer_loop_id in range(layer.n_loop):
         # --- 1. 为输入Activation生成 READ / RECV / LOAD 指令 ---
-                if layer_id == 0: #第一层
-                    if tf_layer_id == 0: #第一层
-                        # 模型第一层：从DRAM读取初始数据
+                if layer_id == 0: # block 内第一层算子
+                    if block_id == 0: # 第一个 Transformer block
+                        # 模型第一个 block：从DRAM读取初始数据
                         if micro_batch_id == 0:
                             input_provider_inst = Instruction(
                                 inst_type=TaskType.READ,
                                 inst_name="READ",
                                 index=global_inst_id,
                                 layer_loop_id=layer_loop_id,
-                                layer_id=tf_layer_id,
+                                layer_id=block_id,
                                 layer_name=layer.name,
                                 data_type=DataType.FEAT,
                                 feat_num=0,
@@ -171,7 +189,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                                 inst_name="READ",
                                 index=global_inst_id,
                                 layer_loop_id=layer_loop_id,
-                                layer_id=tf_layer_id,
+                                layer_id=block_id,
                                 layer_name=layer.name,
                                 data_type=DataType.FEAT,
                                 feat_num=1,
@@ -180,13 +198,13 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                             op_finsih_inst.trigger_index.append(input_provider_inst.index)
 
                     elif pipe_recv_en:
-                        # 模型第一层但有流水线数据：接收上一级流水线core的数据
+                        # block 内第一层算子且有流水线数据：接收上一级流水线 core 的数据
                         input_provider_inst = Instruction(
                             inst_type=TaskType.RECV,
                             inst_name="RECV",
                             index=last_send_id[micro_batch_id][last_core_id],  # 与上一级的SEND指令共享ID
                             layer_loop_id=layer_loop_id,
-                            layer_id=tf_layer_id,
+                            layer_id=block_id,
                             layer_name=layer.name,
                             data_type=DataType.FEAT,
                             feat_num=1, # RECV指令初始feat_num为0
@@ -194,13 +212,13 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         )
                         
                     else:
-                        #模型第一层且无流水线数据传递：从本地SRAM加载数据
+                        # block 内第一层算子且无流水线数据传递：从本地 SRAM 加载数据
                         input_provider_inst = Instruction(
                             inst_type=TaskType.LOAD,
                             inst_name="LOAD",
                             index=global_inst_id,  
                             layer_loop_id=layer_loop_id,
-                            layer_id=tf_layer_id,
+                            layer_id=block_id,
                             layer_name=layer.name,
                             data_type=DataType.FEAT,
                             feat_num=1, 
@@ -208,12 +226,12 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         )
                         op_finsih_inst.trigger_index.append(input_provider_inst.index)
                 else:
-                    #非模型第一层：从本地SRAM加载数据
+                    # block 内非第一层算子：从本地 SRAM 加载数据
                     input_provider_inst = Instruction(
                         inst_type=TaskType.LOAD,
                         inst_name="LOAD_IN",
                         index=global_inst_id,  
-                        layer_id=tf_layer_id,
+                        layer_id=block_id,
                         layer_name=layer.name,
                         data_type=DataType.FEAT,
                         feat_num=1, 
@@ -229,7 +247,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                     inst_name="LOAD_W",
                     index=global_inst_id,
                     layer_loop_id=layer_loop_id,
-                    layer_id=tf_layer_id,
+                    layer_id=block_id,
                     layer_name=layer.name,
                     data_type=DataType.PARA,
                     feat_num=1,
@@ -244,7 +262,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                     inst_name="FC",
                     index=global_inst_id,
                     layer_loop_id=layer_loop_id,
-                    layer_id=tf_layer_id,
+                    layer_id=block_id,
                     layer_name=layer.name,
                     data_type=DataType.FEAT,
                     feat_num=1,
@@ -267,7 +285,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         inst_name="NONLINEAR",
                         index=global_inst_id,
                         layer_loop_id=layer_loop_id,
-                        layer_id=tf_layer_id,
+                        layer_id=block_id,
                         layer_name=layer.name,
                         data_type=DataType.FEAT,
                         feat_num=1,
@@ -288,7 +306,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         inst_name="SEND",
                         index=global_inst_id,
                         layer_loop_id=layer_loop_id,
-                        layer_id=tf_layer_id,
+                        layer_id=block_id,
                         layer_name=layer.name,
                         data_type=DataType.FEAT,
                         feat_num=1,
@@ -303,7 +321,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         inst_name="STORE",
                         index=global_inst_id,
                         layer_loop_id=layer_loop_id,
-                        layer_id=tf_layer_id,
+                        layer_id=block_id,
                         layer_name=layer.name,
                         data_type=DataType.FEAT,
                         feat_num=1,
@@ -330,7 +348,7 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                         inst_name="RECV",
                         index=last_send_id[micro_batch_id][core_id],
                         layer_loop_id=layer_loop_id,
-                        layer_id=tf_layer_id,
+                        layer_id=block_id,
                         layer_name=layer.name,
                         data_type=DataType.FEAT,
                         feat_num=1,
@@ -339,15 +357,15 @@ def layer_cmd_gen_for_single_core( network: Transformer_Network, core_id: int, t
                     pewls[next_core_id].insts.append(loop_back_recv_inst)
 
 
-def cmd_stream_gen(tf_network: Transformer_Network, n_micro_batch: int, pipeline_config: Pipe_Config):
+def cmd_stream_gen(network: Transformer_Network, n_micro_batch: int, pipeline_config: Pipe_Config):
 
     pipe_stage = len(pipeline_config.core_list)
-    layer_per_loop = tf_network.n_layers // pipeline_config.loop
-    layer_per_loop_stage = tf_network.n_layers // pipeline_config.loop // pipe_stage
+    block_per_loop = network.n_blocks // pipeline_config.loop
+    block_per_stage = network.n_blocks // pipeline_config.loop // pipe_stage
 
     for loop_id in range(pipeline_config.loop):            
         for i, core_id in enumerate(pipeline_config.core_list):
-            for layer_id in range(layer_per_loop_stage):
+            for block_offset in range(block_per_stage):
                 if i < pipe_stage - 1:
                     next_core_id = pipeline_config.core_list[i+1]
                 else:
@@ -358,14 +376,14 @@ def cmd_stream_gen(tf_network: Transformer_Network, n_micro_batch: int, pipeline
                 else:
                     last_core_id = pipeline_config.core_list[pipe_stage - 1]    
 
-                pipe_recv_en = (layer_id == 0)
-                pipe_sent_en = (layer_id == layer_per_loop_stage - 1)
-                finish = (loop_id == pipeline_config.loop - 1) and (layer_id == layer_per_loop_stage - 1) and (i == pipe_stage - 1)
-                tf_layer_id = loop_id * layer_per_loop + i *layer_per_loop_stage + layer_id
+                pipe_recv_en = (block_offset == 0)
+                pipe_sent_en = (block_offset == block_per_stage - 1)
+                finish = (loop_id == pipeline_config.loop - 1) and (block_offset == block_per_stage - 1) and (i == pipe_stage - 1)
+                block_id = loop_id * block_per_loop + i * block_per_stage + block_offset
 
                 
-                #print(f"tf_layer_id: {tf_layer_id}",f"core_id: {core_id}",f"next_core_id: {next_core_id}",f"pipe_recv_en: {pipe_recv_en}",f"pipe_sent_en: {pipe_sent_en}",f"finish: {finish}")
-                layer_cmd_gen_for_single_core(tf_network, core_id, tf_layer_id, last_core_id, next_core_id, n_micro_batch, pipe_recv_en, pipe_sent_en, finish)
+                #print(f"block_id: {block_id}",f"core_id: {core_id}",f"next_core_id: {next_core_id}",f"pipe_recv_en: {pipe_recv_en}",f"pipe_sent_en: {pipe_sent_en}",f"finish: {finish}")
+                layer_cmd_gen_for_single_core(network, core_id, block_id, last_core_id, next_core_id, n_micro_batch, pipe_recv_en, pipe_sent_en, finish)
             
 
 if __name__ == "__main__":
@@ -390,11 +408,9 @@ if __name__ == "__main__":
     core_num = arch_configs.core.x * arch_configs.core.y
     config = json_analyzer(args.config)
     model = config["model"]
-    pipeline_config = config["pipeline_config"]
+    pipeline_config = load_pipeline_config(config, core_num)
 
     channel = model["n_channel"]
-    core_list = pipeline_config["core_list"]
-    loop = pipeline_config["loop"]
     
     inf = 10000000
     global_inst_id = 0
@@ -405,7 +421,7 @@ if __name__ == "__main__":
 
     transformer_model = Transformer_model(
         type="transformer",
-        n_layers=model["n_layers"],
+        n_blocks=model["n_blocks"],
         n_head=model["n_head"],
         n_kv_head=model["n_kv_head"],
         dim=model["dim"],
@@ -415,10 +431,8 @@ if __name__ == "__main__":
         batch_size=micro_batch,
         layers=["qkv_gen", "attn_score", "attn_context", "output", "ffn_f1", "ffn_f2"]
     )
-    tf_network = data_mapping(transformer_model)
-    # pipeline_config = Pipe_Config(core_list=[0, 1, 2, 3, 4, 9, 8, 7, 6, 5], loop=1)
-    pipeline_config = Pipe_Config(core_list=core_list, loop=loop)
-    cmd_stream_gen(tf_network, n_micro_batch, pipeline_config)
+    network = data_mapping(transformer_model)
+    cmd_stream_gen(network, n_micro_batch, pipeline_config)
 
 
     # 将生成的workload输出到json文件

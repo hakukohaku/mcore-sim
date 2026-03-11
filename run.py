@@ -62,7 +62,7 @@ def output_csv(filename: str):
         os.makedirs(output_dir, exist_ok=True)
     with open(filename, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        header=["Tech","Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "E_Compute", "E_DRAM_Access", \
+        header=["Tech","Arch","Batch Size", "Micro Batch Size", "DP", "Cycle", "Latency", "Max_Core_SRAM_Usage", "Max_Core_SRAM_Core_Id", "Peak_Total_SRAM_Usage", "E_Compute", "E_DRAM_Access", \
             "E_NOC_Hop", "E_SRAM_Read", "E_SRAM_Write", "E_SRAM_Access","E_CIM_Local_Read", "Total_Energy","P_Compute", "P_DRAM_Access", \
             "P_NOC_Hop", "P_SRAM_Read", "P_SRAM_Write", "P_SRAM_Access","P_CIM_Local_Read", "P_Total_Power"]
         writer.writerow(header)
@@ -118,6 +118,9 @@ def main():
     tech = args.tech
     cycle = arch.end_time
     latency = arch.end_time/1e6/freq
+    max_core_sram_usage = arch.max_core_sram_usage
+    max_core_sram_core_id = arch.max_core_sram_usage_core_id
+    peak_total_sram_usage = arch.peak_total_sram_usage
     e_compute = common.power_summary["compute"]
     e_dram_access = common.power_summary["dram_read"] + common.power_summary["dram_write"]
     e_noc_hop = common.power_summary["noc_hop"]
@@ -135,7 +138,7 @@ def main():
     p_cim_local_read = dp * e_cim_local_read / (cycle/freq)
     p_total_power = dp * common.total_power / (cycle/freq)
     
-    result_data = [tech, arch_name, batchsize, micro_batch_size, dp, cycle, latency, e_compute, e_dram_access, e_noc_hop, \
+    result_data = [tech, arch_name, batchsize, micro_batch_size, dp, cycle, latency, max_core_sram_usage, max_core_sram_core_id, peak_total_sram_usage, e_compute, e_dram_access, e_noc_hop, \
             e_sram_read, e_sram_write, e_sram_access, e_cim_local_read, total_energy, p_compute, p_dram_access, \
             p_noc_hop, p_sram_read, p_sram_write, p_sram_access, p_cim_local_read, p_total_power]
     with open(args.output, "a", newline="", encoding="utf-8") as f:

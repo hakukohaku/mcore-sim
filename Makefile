@@ -26,11 +26,15 @@ FAIL ?= $(CURRENT_DIR)/failslow/normal.json
 LOG ?= $(CURRENT_DIR)/log/$(ARCH)_batch_$(BATCH)_micro_$(MICRO_BATCH)_dp_$(DP)_tech_$(TECH)nm.txt
 OUTPUT ?= $(OUTPUT_DIR)/results/results_arch_$(ARCH)_batch_$(BATCH)_micro_$(MICRO_BATCH)_dp_$(DP)_tech_$(TECH)nm.csv
 
-run:
+run_pp:
 	$(CREATE_OUTPUT_DIR)
-	python $(CURRENT_DIR)/tools/inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
+	python $(CURRENT_DIR)/tools/pp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
 	python $(CURRENT_DIR)/run.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -t $(TECH) --arch_name $(ARCH) --arch $(ARCHITECTURE) --fail $(FAIL) --workload $(INST_STREAM) --power $(POWER) --log $(LOG) --level debug  --output $(OUTPUT) > $(OUTPUT_DIR)/run.log 2>&1
 
+run_tp:
+	$(CREATE_OUTPUT_DIR)
+	python $(CURRENT_DIR)/tools/tp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
+	python $(CURRENT_DIR)/run.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -t $(TECH) --arch_name $(ARCH) --arch $(ARCHITECTURE) --fail $(FAIL) --workload $(INST_STREAM) --power $(POWER) --log $(LOG) --level debug  --output $(OUTPUT) > $(OUTPUT_DIR)/run.log 2>&1
 
 clean:
 	rm -rf $(OUTPUT_DIR)/*

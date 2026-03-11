@@ -47,15 +47,25 @@ Python 版本：推荐 Python 3.8~3.11（兼容 Pydantic、SimPy 等库，避免
 ```bash
 pip install -r requirements.txt
 ```
-### 2.2 运行仿真（三种方式）
+### 2.2 运行仿真（TP / PP 两种方式）
 
 注：由于不同DP会产生完全独立且同步工作的硬件组，我们仅仿真其中一个DP硬件组来加速仿真，DP的设置决定了该硬件组分配到的batch size以及最后系统的总功耗（单独硬件功耗×DP）
 
-#### 方式一：使用Makefile一键运行（快速测试默认配置）
+#### 方式一：使用 Makefile 一键运行
+
+当前仓库按两种并行映射方式分别提供入口：
+- `make run_tp`：Tensor Parallel，读取 `config/*.json` 中的 `tp_config`
+- `make run_pp`：Pipeline Parallel，读取 `config/*.json` 中的 `pipeline_config`
+
+模型配置统一读取 `model` 字段，其中层数字段为 `n_blocks`。
 
 ```bash
-# 命令格式
-make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
+# Tensor Parallel
+make run_tp BATCH=72 MICRO_BATCH=4 DP=2 ARCH=CIM TECH=7
+
+# Pipeline Parallel
+make run_pp BATCH=72 MICRO_BATCH=4 DP=2 ARCH=CIM TECH=7
+
 #BATCH=[BATCH] \               # 总批次大小
 #MICRO_BATCH=[MICRO_BATCH] \   # 微批次大小
 #DP=[DP] \                     # 数据并行度
@@ -66,21 +76,14 @@ make run BATCH=72 MICRO_BATCH=4 ARCH=CIM TECH=7
 说明：
 - 若需修改默认参数，直接编辑项目根目录的 Makefile，修改 BATCH、MICRO_BATCH、DP 等变量值。
 
-#### 方式二：参数化扫描
-适合需要测试 “不同 batch/micro_batch/ 架构” 对性能 / 能耗影响的场景，通过脚本循环扫描参数：
-```bash
-# 扫描参数BATCH、MICRO_BATCH、ARCH
-source results_gen.sh
-```
-输出结果​​：多组配置的合并结果文件，可分析规律。
-
-#### 方式三：分步运行
+#### 方式二：分步运行
 
 分步运行：生成指令序列 → 运行仿真。
-- 步骤1：生成指令序列(../tools/inst_generation.py)
+- 步骤1：生成指令序列
+
+TP 模式：
 ```bash
-# 命令格式
-python tools/inst_generation.py \
+python tools/tp_inst_generation.py \
   -b [BATCH] \          # 总批次大小（必选，如 8）
   -mb [MICRO_BATCH] \   # 微批次大小（必选，如 2）
   -dp [DP] \            # 数据并行度（必选，如 4）
@@ -88,8 +91,8 @@ python tools/inst_generation.py \
   -a [ARCH_FILE] \      # 硬件架构配置文件（必选，如 arch/cim.json）
   -c [CONFIG_FILE]      # 模型配置文件（必选，如 config/cim.json）
 
-# 示例：生成 CIM 架构、batch=1、micro_batch=1、dp=2 的指令序列
-python tools/inst_generation.py \
+# 示例：生成 TP 指令序列
+python tools/tp_inst_generation.py \
   -b 1 \
   -mb 1 \
   -dp 2 \
@@ -97,6 +100,23 @@ python tools/inst_generation.py \
   -a arch/cim.json \
   -c config/cim.json
 ```
+
+PP 模式：
+```bash
+python tools/pp_inst_generation.py \
+  -b 1 \
+  -mb 1 \
+  -dp 2 \
+  -o tests/batch_1_micro_1_dp_2.json \
+  -a arch/cim.json \
+  -c config/cim.json
+```
+
+配置约定：
+- `tools/tp_inst_generation.py` 只读取 `tp_config`
+- `tools/pp_inst_generation.py` 只读取 `pipeline_config`
+- `model.n_blocks` 表示 Transformer block 数量
+
 - 步骤2：运行仿真(run.py)
 使用生成的指令序列，配置能耗、日志等参数，执行仿真。
 ```bash
@@ -109,10 +129,10 @@ python run.py \
   --arch_name [ARCH] \  # 架构名（可选，默认 CIM，如 CIM/DaVinci）
   --arch [ARCH_FILE] \  # 硬件架构配置文件（必选，如 arch/cim.json）
   --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 tests/batch_1_micro_1_dp_2.json）
-  --power [POWER_FILE] \      # 功率配置文件（必选，如 power/power_config/cim_power.json）
+  --power [POWER_FILE] \      # 功率配置文件（必选，如 power/power_config/cim_power_7nm.json）
   --log [LOG_FILE] \    # 日志输出路径（可选，默认 log/run.log）
   --level [LOG_LEVEL] \ # 日志级别（可选，info/debug，默认 info）
-  --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/results_arch_CIM_batch_1_micro_1_dp_4_tech_7nm.csv）
+  --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/results/results_arch_CIM_batch_1_micro_1_dp_2_tech_7nm.csv）
 
 # 示例：运行 CIM 架构仿真，输出日志与结果
 python run.py \
@@ -123,10 +143,43 @@ python run.py \
   --arch_name CIM \
   --arch arch/cim.json \
   --workload tests/batch_1_micro_1_dp_2.json \
-  --power power/power_config/cim_power.json \
+  --power power/power_config/cim_power_7nm.json \
   --log log/cim_sim.log \
   --level debug \
-  --output output/results_arch_CIM_batch_1_micro_1_dp_4_tech_7nm.csv \
+  --output output/results/results_arch_CIM_batch_1_micro_1_dp_2_tech_7nm.csv \
+```
+
+### 2.3 `RING` 指令（简化 Ring All-Reduce）
+`RING` 用于近似模拟 ring all-reduce 的通信开销，不需要指定 `src/dst`，不会显式生成 `SEND/RECV` 指令。
+
+- `inst_type`: `16`（`TaskType.RING`）
+- `ring_cycles`: 本地停留周期；`0` 表示按数据量与 `NoC` 带宽自动估算
+- `tensor_slice`: 用于估算数据量和功耗（可保留与当前层输出一致的切片）
+- `feat_num`: 若 `RING` 依赖上一条产出指令，通常设为 `1`
+- `position/path_dst`: 对 `RING` 无效，可省略
+
+使用约定：
+- `RING` 是本地延时建模，不做 collective 同步，也不建模 NoC 拥堵。
+- 当 `tensor_slice` 对应的数据量为 `0` 时，`RING` 视为 no-op：`cycle = 0`，功耗也为 `0`。
+- 当数据量大于 `0` 时，通信功耗直接计入 `noc_hop`，不会单独统计一个 `ring` 功耗项。
+- 若要表示“上一层输出后再做一次 all-reduce 延时”，请让上一条指令通过 `trigger_index` 触发该 `RING`，并将 `RING.feat_num` 设为 `1`。
+
+示例：
+```json
+{
+  "inst_type": 16,
+  "index": 10001,
+  "trigger_index": [],
+  "trigger_core_id": [],
+  "layer_id": 0,
+  "data_type": 1,
+  "tensor_slice": [
+    { "start": 0, "end": 4096 }
+  ],
+  "feat_num": 1,
+  "para_num": 0,
+  "ring_cycles": 128
+}
 ```
 
 ## 3.常见问题(FAQ)
@@ -134,6 +187,3 @@ python run.py \
 1. 如何自定义硬件架构？
 复制 arch/cim.json并修改参数，运行时通过 --arch指定新文件：
 python run.py --arch arch/my_custom.json
-
-
-
