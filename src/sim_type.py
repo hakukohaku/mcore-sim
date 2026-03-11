@@ -424,8 +424,6 @@ class Instruction(BaseModel):
     # 数据精度，以byte为单位，默认为1
     feat_precision: int = 1
     para_precision: int = 1
-    # RING 指令专用：本地停留周期（0 表示按数据量自动估算）
-    ring_cycles: int = 0
     target_dram_id: int = -1
 
     # 在想应该累计每个block对后面造成的影响，这样的热点或许更有效
@@ -696,11 +694,9 @@ class Ring(Task):
             yield core.env.timeout(0)
             return
 
-        ring_cycles = ins.ring_cycles
-        if ring_cycles <= 0:
-            # 与 SEND/RECV 的带宽建模保持一致：按 NoC 链路带宽估算传输时间
-            noc_bandwidth = core.arch.noc.link_config.width if hasattr(core.arch, "noc") else core.lsu_bandwidth
-            ring_cycles = max(1, ceil(size_in_bytes, noc_bandwidth)) if size_in_bytes > 0 else 1
+        # 与 SEND/RECV 的带宽建模保持一致：按 NoC 链路带宽估算传输时间
+        noc_bandwidth = core.arch.noc.link_config.width if hasattr(core.arch, "noc") else core.lsu_bandwidth
+        ring_cycles = size_in_bytes / noc_bandwidth if size_in_bytes > 0 else 0
 
         record_power_trace(core.env.now, core.id, self.index, size_in_bytes * noc_hop_power, "noc_hop")
 

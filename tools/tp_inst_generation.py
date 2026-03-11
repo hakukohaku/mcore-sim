@@ -32,6 +32,7 @@ def json_analyzer(filename: str):
 
 class TPConfig(BaseModel):
     core_list: List[int]
+    tp: int
     n_input_loop: int = 1
 
 
@@ -39,6 +40,7 @@ class TransformerLayer(BaseModel):
     name: str
     n_loop: int
     nonlinear_en: bool
+    reduce_en: bool = False
     dim_M: int
     dim_N_start: int
     dim_N_end: int
@@ -55,6 +57,7 @@ class TransformerModel(BaseModel):
     n_blocks: int
     n_head: int
     n_kv_head: int
+    n_encoder_kv_len: int = 0
     dim: int
     head_dim: int
     ffn_dim: int
@@ -98,11 +101,12 @@ def shard_bounds(total: int, shard_num: int, shard_id: int) -> Tuple[int, int]:
 def build_tp_networks(input_model: TransformerModel, tp_config: TPConfig) -> Dict[int, TransformerNetwork]:
     networks: Dict[int, TransformerNetwork] = {}
     shard_num = len(tp_config.core_list)
-
+    tp_degree = tp_config.tp
+    
     for core_position, core_id in enumerate(tp_config.core_list):
         network = TransformerNetwork(n_blocks=input_model.n_blocks, layers=[])
 
-        def append_layer(name: str, dim_m: int, dim_n: int, dim_k: int, n_loop: int, nonlinear_en: bool):
+        def append_layer(name: str, dim_m: int, dim_n: int, dim_k: int, n_loop: int, nonlinear_en: bool, reduce_en: bool = False):
             dim_n_start, dim_n_end = shard_bounds(dim_n, shard_num, core_position)
             network.layers.append(
                 TransformerLayer(
@@ -113,6 +117,7 @@ def build_tp_networks(input_model: TransformerModel, tp_config: TPConfig) -> Dic
                     dim_K=dim_k,
                     n_loop=n_loop,
                     nonlinear_en=nonlinear_en,
+                    reduce_en=reduce_en
                 )
             )
 
@@ -120,49 +125,55 @@ def build_tp_networks(input_model: TransformerModel, tp_config: TPConfig) -> Dic
             name="qkv_gen",
             dim_m=input_model.batch_size * input_model.input_len,
             dim_n=input_model.dim,
-            dim_k=input_model.n_head * input_model.head_dim + 2 * input_model.n_kv_head * input_model.head_dim,
+            dim_k=(input_model.n_head * input_model.head_dim + 2 * input_model.n_kv_head * input_model.head_dim) // tp_degree,
             n_loop=1,
             nonlinear_en=False,
+            reduce_en=True,
         )
         append_layer(
             name="attn_score",
             dim_m=input_model.input_len * (input_model.n_head // input_model.n_kv_head),
-            dim_n=input_model.head_dim,
-            dim_k=input_model.input_len,
+            dim_n=input_model.head_dim * input_model.n_kv_head // tp_degree,
+            dim_k=(input_model.input_len + input_model.n_encoder_kv_len),
             n_loop=input_model.batch_size * input_model.n_kv_head,
             nonlinear_en=True,
+            reduce_en=True,
         )
         append_layer(
             name="attn_context",
-            dim_m=input_model.input_len,
-            dim_n=input_model.input_len,
-            dim_k=input_model.head_dim,
+            dim_m=(input_model.input_len + input_model.n_encoder_kv_len),
+            dim_n=(input_model.input_len + input_model.n_encoder_kv_len),
+            dim_k=input_model.head_dim * input_model.n_kv_head // tp_degree,
             n_loop=input_model.batch_size * input_model.n_kv_head,
             nonlinear_en=False,
+            reduce_en=True,
         )
         append_layer(
             name="output",
             dim_m=input_model.batch_size * input_model.input_len,
             dim_n=input_model.dim,
-            dim_k=input_model.dim,
+            dim_k=input_model.dim // tp_degree,
             n_loop=1,
             nonlinear_en=True,
+            reduce_en=True,
         )
         append_layer(
             name="ffn_f1",
             dim_m=input_model.batch_size * input_model.input_len,
-            dim_n=input_model.dim,
+            dim_n=input_model.dim // tp_degree ,
             dim_k=input_model.ffn_dim,
             n_loop=1,
             nonlinear_en=True,
+                
         )
         append_layer(
             name="ffn_f2",
             dim_m=input_model.batch_size * input_model.input_len,
-            dim_n=input_model.ffn_dim,
+            dim_n=input_model.ffn_dim // tp_degree ,
             dim_k=input_model.dim,
             n_loop=1,
             nonlinear_en=True,
+            reduce_en=True,
         )
         networks[core_id] = network
 
@@ -257,8 +268,7 @@ def build_feature_provider(
 
 def layer_cmd_gen_for_single_core(network: TransformerNetwork, core_id: int, n_micro_batch: int, n_input_loop: int = 1):
     previous_finish_inst = None
-
-    for _micro_batch_id in range(n_micro_batch):
+    for m_batch_id in range(n_micro_batch):
         for block_id in range(network.n_blocks):
             for layer in network.layers:
                 act_slice, weight_slice, output_slice = build_slices(layer)
@@ -300,6 +310,25 @@ def layer_cmd_gen_for_single_core(network: TransformerNetwork, core_id: int, n_m
                     weight_inst.trigger_index.append(comp_inst.index)
 
                     result_inst = comp_inst
+
+                    if layer.reduce_en:
+                        ring_inst = append_instruction(
+                            core_id,
+                            inst_type=TaskType.RING,
+                            index=next_inst_index(),
+                            layer_loop_id=layer_loop_id,
+                            layer_id=block_id,
+                            layer_name=layer.name,
+                            data_type=DataType.FEAT,
+                            feat_num=1,
+                            tensor_slice=scaled_tensor_slice(
+                                output_slice.tensor_slice,
+                                (n_input_loop - 1) / n_input_loop,
+                            ),
+                        )
+                        result_inst.trigger_index.append(ring_inst.index)
+                        result_inst = ring_inst
+
                     if layer.nonlinear_en:
                         nonlinear_inst = append_instruction(
                             core_id,
@@ -315,24 +344,6 @@ def layer_cmd_gen_for_single_core(network: TransformerNetwork, core_id: int, n_m
                         result_inst.trigger_index.append(nonlinear_inst.index)
                         result_inst = nonlinear_inst
 
-                    ring_inst = append_instruction(
-                        core_id,
-                        inst_type=TaskType.RING,
-                        index=next_inst_index(),
-                        layer_loop_id=layer_loop_id,
-                        layer_id=block_id,
-                        layer_name=layer.name,
-                        data_type=DataType.FEAT,
-                        feat_num=1,
-                        tensor_slice=scaled_tensor_slice(
-                            output_slice.tensor_slice,
-                            (n_input_loop - 1) / n_input_loop,
-                        ),
-                        ring_cycles=0,
-                    )
-                    
-                    result_inst.trigger_index.append(ring_inst.index)
-
                     store_inst = append_instruction(
                         core_id,
                         inst_type=TaskType.STORE,
@@ -344,7 +355,7 @@ def layer_cmd_gen_for_single_core(network: TransformerNetwork, core_id: int, n_m
                         feat_num=1,
                         tensor_slice=output_slice.tensor_slice,
                     )
-                    ring_inst.trigger_index.append(store_inst.index)
+                    result_inst.trigger_index.append(store_inst.index)
                     previous_finish_inst = store_inst
 
 
@@ -363,17 +374,21 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-b", "--batch", type=int, help="batch size")
     parser.add_argument("-a", "--architecture", type=str, help="architecture")
-    parser.add_argument("-mb", "--micro_batch", type=int, help="micro batch size")
+    parser.add_argument("-mb", "--micro-batch", type=int, help="micro batch size")
+    parser.add_argument("-pp", "--pp", type=int, default=1, help="pipeline parallelism")
     parser.add_argument("-dp", "--dp", type=int, help="data parallelism")
+    parser.add_argument("-ekv", "--encoder_kv_len", type=int, default=0, help="encoder KV length")
     parser.add_argument("-o", "--output", type=str, help="output path")
     parser.add_argument("-c", "--config", type=str, help="config")
     args = parser.parse_args()
 
     batch = args.batch
-    micro_batch = args.micro_batch
     dp = args.dp
+    pp = args.pp
+    micro_batch = args.micro_batch
     output_file = args.output
     architecture = args.architecture
+    n_encoder_kv_len = args.encoder_kv_len
 
     arch_configs = config_analyzer(architecture)
     core_num = arch_configs.core.x * arch_configs.core.y
@@ -392,9 +407,10 @@ if __name__ == "__main__":
 
     transformer_model = TransformerModel(
         type="transformer",
-        n_blocks=model["n_blocks"],
+        n_blocks=model["n_blocks"] // pp,
         n_head=model["n_head"],
         n_kv_head=model["n_kv_head"],
+        n_encoder_kv_len=n_encoder_kv_len,
         dim=model["dim"],
         head_dim=model["head_dim"],
         ffn_dim=model["ffn_dim"],

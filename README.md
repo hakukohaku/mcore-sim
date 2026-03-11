@@ -153,13 +153,13 @@ python run.py \
 `RING` 用于近似模拟 ring all-reduce 的通信开销，不需要指定 `src/dst`，不会显式生成 `SEND/RECV` 指令。
 
 - `inst_type`: `16`（`TaskType.RING`）
-- `ring_cycles`: 本地停留周期；`0` 表示按数据量与 `NoC` 带宽自动估算
-- `tensor_slice`: 用于估算数据量和功耗（可保留与当前层输出一致的切片）
+- `tensor_slice`: 用于按数据量与 `NoC` 带宽自动估算延时和功耗（可保留与当前层输出一致的切片）
 - `feat_num`: 若 `RING` 依赖上一条产出指令，通常设为 `1`
 - `position/path_dst`: 对 `RING` 无效，可省略
 
 使用约定：
 - `RING` 是本地延时建模，不做 collective 同步，也不建模 NoC 拥堵。
+- `RING` 延时固定按 `ceil(size_in_bytes, noc.link.width)` 自动估算，不再支持手动指定固定 cycle。
 - 当 `tensor_slice` 对应的数据量为 `0` 时，`RING` 视为 no-op：`cycle = 0`，功耗也为 `0`。
 - 当数据量大于 `0` 时，通信功耗直接计入 `noc_hop`，不会单独统计一个 `ring` 功耗项。
 - 若要表示“上一层输出后再做一次 all-reduce 延时”，请让上一条指令通过 `trigger_index` 触发该 `RING`，并将 `RING.feat_num` 设为 `1`。
@@ -177,8 +177,7 @@ python run.py \
     { "start": 0, "end": 4096 }
   ],
   "feat_num": 1,
-  "para_num": 0,
-  "ring_cycles": 128
+  "para_num": 0
 }
 ```
 

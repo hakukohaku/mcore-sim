@@ -15,6 +15,7 @@
 	},
 	"tp_config" : {
 		"core_list" : [0, 1, 2, 3, 4, 9, 8, 7, 6, 5],
+		"tp" : 10,
 		"n_input_loop" : 1
 	}
 }
