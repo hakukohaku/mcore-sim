@@ -2,8 +2,8 @@
 	"freq" :0.8,
 	"core" : {
 		"type" : "Simple",
-		"x" : 5,
-		"y" : 2,
+		"x" : 4,
+		"y" : 4,
 		"width" : 8,
 		"blk_size" : 100000000,
 		"spm" : {
@@ -20,8 +20,8 @@
 	},
 	"noc" : {
 		"type" : "Mesh",
-		"x" : 5,
-		"y" : 2,
+		"x" : 4,
+		"y" : 4,
 		"router" : {
 			"type" : "XY",
 			"vc" : 2

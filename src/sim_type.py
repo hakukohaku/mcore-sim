@@ -350,11 +350,12 @@ class ComputeTask(Task):
         ins.record.ready_run_time.append(core.env.now)
         ins.record.pe_id = core.id
 
-        # SRAM read power for features
-        feat_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.feat) * self.feat_precision
-        if feat_size > 0:
-            power = feat_size * sram_read_power
-            record_power_trace(core.env.now, core.id, self.index, power, "sram_read_feat")
+        # SRAM read power for features (NonLinear is in-place, no extra SRAM read)
+        if self.opcode != "NonLinear":
+            feat_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.feat) * self.feat_precision
+            if feat_size > 0:
+                power = feat_size * sram_read_power
+                record_power_trace(core.env.now, core.id, self.index, power, "sram_read_feat")
 
         # SRAM read power for parameters (CIM local read)
         para_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.para) * self.para_precision
@@ -776,15 +777,14 @@ class Store(Task):
 
     def run(self, core, ins):
         ins.record.exe_start_time.append(core.env.now)
-        # Allocate space for the tensor in SPM. After this, the data is considered available.
-        yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.size()))
+        yield core.env.timeout(0)
         ins.record.exe_end_time.append(core.env.now)
 
     def input_size(self):
         return 0
 
     def output_size(self):
-        return self.size()
+        return 0
 
 class Load(Task):
     opcode: str = "Load"

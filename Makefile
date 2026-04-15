@@ -2,7 +2,7 @@
 
 CURRENT_DIR := $(shell pwd)
 OUTPUT_DIR := $(CURRENT_DIR)/output
-BATCH ?= 1
+BATCH ?= 24
 MICRO_BATCH ?= 1
 DP ?= 2
 PP ?= 8
@@ -36,6 +36,11 @@ run_pp:
 run_tp:
 	$(CREATE_OUTPUT_DIR)
 	python $(CURRENT_DIR)/tools/tp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -pp $(PP) -ekv $(N_ENCODER_KV_LEN) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
+	python $(CURRENT_DIR)/run.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -t $(TECH) --arch_name $(ARCH) --arch $(ARCHITECTURE) --fail $(FAIL) --workload $(INST_STREAM) --power $(POWER) --log $(LOG) --level debug  --output $(OUTPUT) > $(OUTPUT_DIR)/run.log 2>&1
+
+run_pptp:
+	$(CREATE_OUTPUT_DIR)
+	python $(CURRENT_DIR)/tools/tp_inst_generation.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -o $(INST_STREAM) -a $(ARCHITECTURE) -c $(CONFIG)
 	python $(CURRENT_DIR)/run.py -b $(BATCH) -mb $(MICRO_BATCH) -dp $(DP) -t $(TECH) --arch_name $(ARCH) --arch $(ARCHITECTURE) --fail $(FAIL) --workload $(INST_STREAM) --power $(POWER) --log $(LOG) --level debug  --output $(OUTPUT) > $(OUTPUT_DIR)/run.log 2>&1
 
 gen_tp:
