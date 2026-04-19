@@ -111,12 +111,12 @@ monitor1 = partial(monitor1, data)
 monitor2 = partial(monitor2, data)
 
 class Arch:
-    def __init__(self, arch: ArchConfig, program: List[List[Instruction]], fail: FailSlow, net_name: str, fail_kind: str, power_config: str, stage=None):
+    def __init__(self, arch: ArchConfig, program: List[List[Instruction]], fail: FailSlow, net_name: str, fail_kind: str, power_config: str, stage=None, power_trace_path: str = 'power/power_trace/power_trace.txt', quiet: bool = False):
         print("Constructing hardware architecture.")
         self.env = simpy.Environment()
         self.stage = stage
-        
-        common.init_power_trace(power_config, 'power/power_trace/power_trace.txt')
+
+        common.init_power_trace(power_config, power_trace_path)
         
         self.mem_type = arch.mem.type
         self.noc = self.build_noc(arch.noc)
@@ -146,6 +146,7 @@ class Arch:
         self.net_name = net_name
         self.end_time = 0
         self.fail_kind = fail_kind
+        self.quiet = quiet
         
         trace(self.env, monitor)
         patch_resource(self.cores[0].data_in.store, pre=monitor1, post=monitor2)
@@ -409,11 +410,11 @@ class Arch:
 
         file_path = os.path.join("data/", net)
         if not os.path.exists(file_path):
-            os.mkdir(file_path)
+            os.makedirs(file_path)
 
         file_path = os.path.join(file_path, fail)
         if not os.path.exists(file_path):
-            os.mkdir(file_path)
+            os.makedirs(file_path)
 
         inst_file = os.path.join(file_path, "inst_info.txt")
         compute_trace = []
@@ -485,8 +486,8 @@ class Arch:
                                 instruction_type = inst.inst_type,
                                 layer_id = inst.layer_id,
                                 pe_id = inst.record.pe_id,
-                                start_time = inst.record.exe_start_time[0],
-                                end_time = inst.record.exe_end_time[0]
+                                start_time = int(inst.record.exe_start_time[0]),
+                                end_time = int(inst.record.exe_end_time[0])
                             )
                         )
                     else:
@@ -533,8 +534,8 @@ class Arch:
                                         # 当前层的id
                                         layer_id = inst.layer_id,
                                         pe_id = inst.record.pe_id,
-                                        start_time = comm_record[inst.index].exe_start_time[0],
-                                        end_time = inst.record.exe_end_time[0],
+                                        start_time = int(comm_record[inst.index].exe_start_time[0]),
+                                        end_time = int(inst.record.exe_end_time[0]),
                                         src_id = comm_record[inst.index].pe_id,
                                         dst_id = inst.record.pe_id
                                     )
@@ -549,8 +550,8 @@ class Arch:
                                             instruction_type = inst.inst_type,
                                             layer_id = inst.layer_id,
                                             pe_id = inst.record.pe_id,
-                                            start_time = inst.record.exe_start_time[0],
-                                            end_time = inst.record.exe_end_time[0],
+                                            start_time = int(inst.record.exe_start_time[0]),
+                                            end_time = int(inst.record.exe_end_time[0]),
                                             src_id = -1,  # 未知源
                                             dst_id = inst.record.pe_id
                                         )
@@ -585,8 +586,8 @@ class Arch:
                                     # 当前层的id
                                     layer_id = inst.layer_id,
                                     pe_id = inst.record.pe_id,
-                                    start_time = inst.record.exe_start_time[0],
-                                    end_time = inst.record.exe_end_time[0]
+                                    start_time = int(inst.record.exe_start_time[0]),
+                                    end_time = int(inst.record.exe_end_time[0])
                                 )
                             )
         # print("Power Summary:")
@@ -643,7 +644,8 @@ class Arch:
         if self.stage == "post_analysis":
             self.process()
 
-        self.output_data(self.net_name, self.fail_kind)
+        if not self.quiet:
+            self.output_data(self.net_name, self.fail_kind)
 
         print(f"Total power: {common.total_power}")
         common.close_power_trace()

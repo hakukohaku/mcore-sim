@@ -47,13 +47,13 @@ class Link:
         #calc latency:
         slice = Slice(tensor_slice=msg.data.tensor_slice)
         if msg.ins.data_type == DataType.FEAT:
-            transmission_time = ceil(slice.size()*msg.ins.feat_precision, self.width)
+            transmission_time = ceil(slice.size()*msg.ins.feat_precision*common.data_scale, self.width)
         else:
-            transmission_time = ceil(slice.size()*msg.ins.para_precision, self.width)
+            transmission_time = ceil(slice.size()*msg.ins.para_precision*common.data_scale, self.width)
         latency = self.delay + transmission_time
         latency = latency * self.delay_factor
 
-        self.hop += slice.size()/64
+        self.hop += slice.size()*common.data_scale/64
         # 对于数据包,记录了路由路径中每个link的ready_run_time
         msg.ins.record.ready_run_time.append(self.env.now)
         yield self.linkentry.execute("SEND"+str(msg.data.index),latency,msg.ins,attributes=msg.dst)
@@ -241,7 +241,7 @@ class Router:
             if message.data:
                 logger.info(f"Time {self.env.now:.2f}: Router {self.id} start hop-by-hop forwarding data {message.data.index} to Router {next_router} (dst: {message.dst}).")
                 slice = Slice(tensor_slice=message.data.tensor_slice)
-                size = slice.size() * (message.ins.feat_precision if message.ins.data_type == DataType.FEAT else message.ins.para_precision)
+                size = slice.size() * (message.ins.feat_precision if message.ins.data_type == DataType.FEAT else message.ins.para_precision) * common.data_scale
                 power = size * common.noc_hop_power
                 common.record_power_trace(self.env.now, self.id, message.data.index, power, "noc_hop_by_hop")
             else:
@@ -599,11 +599,11 @@ class NoC:
         if msg.msg_type == MsgType.DATA and msg.data:
             slice = Slice(tensor_slice=msg.data.tensor_slice)
             if msg.ins.data_type == DataType.FEAT:
-                transmission_time = ceil(slice.size() * msg.ins.feat_precision, min_bandwidth)
-                data_size = slice.size() * msg.ins.feat_precision
+                transmission_time = ceil(slice.size() * msg.ins.feat_precision * common.data_scale, min_bandwidth)
+                data_size = slice.size() * msg.ins.feat_precision * common.data_scale
             else:
-                transmission_time = ceil(slice.size() * msg.ins.para_precision, min_bandwidth)
-                data_size = slice.size() * msg.ins.para_precision
+                transmission_time = ceil(slice.size() * msg.ins.para_precision * common.data_scale, min_bandwidth)
+                data_size = slice.size() * msg.ins.para_precision * common.data_scale
         else: # for MEM_REQUEST or other types
             transmission_time = 1 # Assume a small, fixed transmission time for request packets
 

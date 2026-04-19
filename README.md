@@ -28,161 +28,178 @@ mcore-sim
 │  ├─ draw.py               # 绘制仿真结果图表
 │  ├─ noc_new.py            # 定义NoC组件本身的行为
 │  ├─ sim_type.py           # 定义数据类型、任务类型、指令类型和通信机制
+├─ analysis/                # 仿真后分析工具
 ├─ tests/                   # 工作负载存放目录
 ├─ tools/                   # 指令序列生成工具
 ├─ Makefile                 # 自动化执行脚本                        
+├─ run.py                   # 主程序（单次仿真）
+├─ run_all.py               # 批量并行仿真（多架构+多优化配置）
 ├─ process_results.py       # 将.csv合并
 ├─ README.md  
 ├─ requirements.txt         # 依赖库清单
-├─ results_gen.sh           # 参数化扫描仿真脚本
-├─ run.py                   # 主程序
 ```
 
 ## 2.Get Started/使用说明
 
 ### 2.1 Installation
-Please run the following commands to create a python environment and install required packages.
-
 Python 版本：推荐 Python 3.8~3.11（兼容 Pydantic、SimPy 等库，避免高版本兼容性问题）
 ```bash
 pip install -r requirements.txt
 ```
-### 2.2 运行仿真（TP / PP 两种方式）
+
+### 2.2 批量并行仿真最终结果
+
+使用 `run_all.py` 可一次性运行多种架构 × 优化配置的 encoder/decoder 仿真，**多进程并行**执行。
+
+```bash
+python run_all.py --tech 7 --batch 24 --micro_batch 1 --dp 2 \
+    --config “DAVINCI,complex” \
+    --config “CIM,complex” \
+    --config “CIM,complex,complex_opt” \
+    --config “CIM,complex,complex_opt,co_opt”
+```
+
+执行流程：
+1. **Phase 1**（串行）：按架构（CIM/DAVINCI）生成 instruction JSON，相同架构的不同优化配置**共享同一份指令文件**，避免磁盘浪费
+2. **Phase 2**（并行）：同时启动所有仿真进程（每个配置的 encoder + decoder），输出独立 CSV
+
+上述命令会并行运行 8 个仿真（4 配置 × encoder/decoder），结果输出到 `output/results/`：
+```
+output/results/
+├─ encoder_DAVINCI_complex.csv
+├─ decoder_DAVINCI_complex.csv
+├─ encoder_CIM_complex.csv
+├─ decoder_CIM_complex.csv
+├─ encoder_CIM_complex_complex_opt.csv
+├─ decoder_CIM_complex_complex_opt.csv
+├─ encoder_CIM_co_opt_complex_complex_opt.csv
+└─ decoder_CIM_co_opt_complex_complex_opt.csv
+```
+
+#### run_all.py 参数说明
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--batch` | 总批次大小 | 24 |
+| `--micro_batch` | 微批次大小 | 1 |
+| `--dp` | 数据并行度 | 2 |
+| `--tech` | 工艺节点（7 或 22） | 7 |
+| `--config` | 架构+优化标志，可多次指定 | （必选） |
+| `--encoder_input_len` | Encoder 输入长度 | 68 |
+| `--encoder_ekv` | Encoder KV 长度 | 0 |
+| `--decoder_input_len` | Decoder 输入长度 | 64 |
+| `--decoder_ekv` | Decoder KV 长度 | 68 |
+| `--output_dir` | CSV 输出目录 | output/results |
+| `--verbose` | 保留 log/power_trace/data 输出 | 默认关闭（quiet 模式，只生成 CSV） |
+
+`--config` 格式为 `ARCH,flag1,flag2,...`，可用标志：
+
+| 标志 | 说明 |
+|------|------|
+| `complex` | 复数模型 |
+| `complex_opt` | 启用复数计算优化 |
+| `co_opt` | 启用算芯协同优化 |
+| `single_tp` | 单 TP 核模式，快速仿真，能耗按 TP 度缩放 |
+
+
+### 2.3 单次仿真（Makefile）
 
 注：由于不同DP会产生完全独立且同步工作的硬件组，我们仅仿真其中一个DP硬件组来加速仿真，DP的设置决定了该硬件组分配到的batch size以及最后系统的总功耗（单独硬件功耗×DP）
 
-#### 方式一：使用 Makefile 一键运行
-
-当前仓库按两种并行映射方式分别提供入口：
-- `make run_tp`：Tensor Parallel，读取 `config/*.json` 中的 `tp_config`
-- `make run_pp`：Pipeline Parallel，读取 `config/*.json` 中的 `pipeline_config`
-
-模型配置统一读取 `model` 字段，其中层数字段为 `n_blocks`。
-
 ```bash
-# Tensor Parallel
-make run_tp BATCH=72 MICRO_BATCH=4 DP=2 ARCH=CIM TECH=7
 
-# Pipeline Parallel
-make run_pp BATCH=72 MICRO_BATCH=4 DP=2 ARCH=CIM TECH=7
+# Combined PP+TP
+make run_pptp BATCH=24 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7
 
-#BATCH=[BATCH] \               # 总批次大小
-#MICRO_BATCH=[MICRO_BATCH] \   # 微批次大小
-#DP=[DP] \                     # 数据并行度
-#ARCH=[CIM/DAVICIN]            # 硬件架构
-#TECH=7/22                     # 工艺节点
+# 启用 quiet 模式（跳过 log/power_trace/data 输出，只保留 CSV）
+make run_tp BATCH=1 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7 QUIET=1
+
+# 启用复杂度缩放
+make run_tp BATCH=1 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7 \
+    COMPLEX_ENABLE=1 COMPLEX_OPT_ENABLE=1 CO_OPT_ENABLE=1
+
+# 只生成指令序列（不运行仿真）
+make gen_tp BATCH=1 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7
+make gen_pptp BATCH=24 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7
+
+# 只运行仿真（使用已生成的指令序列）
+make sim_pptp BATCH=24 MICRO_BATCH=1 DP=2 ARCH=CIM TECH=7 \
+    INST_STREAM=tests/pipeline/my_workload.json
+
+# 清理所有输出
+make clean
 ```
 
-说明：
-- 若需修改默认参数，直接编辑项目根目录的 Makefile，修改 BATCH、MICRO_BATCH、DP 等变量值。
+Makefile 变量：
 
-#### 方式二：分步运行
+| 变量 | 说明 | 默认值 |
+|------|------|--------|
+| `BATCH` | 总批次大小 | 2 |
+| `MICRO_BATCH` | 微批次大小 | 1 |
+| `DP` | 数据并行度 | 2 |
+| `PP` | 流水线级数 | 8 |
+| `ARCH` | 架构（CIM / DAVINCI） | CIM |
+| `TECH` | 工艺节点（7 / 22） | 7 |
+| `QUIET` | 设为 1 跳过 log/trace 输出 | 空（不启用） |
+| `COMPLEX_ENABLE` | 复杂度模式 | 空 |
+| `COMPLEX_OPT_ENABLE` | 复杂度优化 | 空 |
+| `CO_OPT_ENABLE` | 协同优化 | 空 |
+| `INPUT_LEN` | 输入序列长度 | 空（读取 config） |
+| `N_ENCODER_KV_LEN` | Encoder KV 长度 | 0 |
+| `SINGLE_TP` | 单 TP 核模式 | 空 |
+| `TP_SCALE` | 能耗缩放因子 | 空 |
+
+### 2.4 分步手动运行
 
 分步运行：生成指令序列 → 运行仿真。
-- 步骤1：生成指令序列
 
-TP 模式：
+步骤1：生成指令序列
 ```bash
-python tools/tp_inst_generation.py \
-  -b [BATCH] \          # 总批次大小（必选，如 8）
-  -mb [MICRO_BATCH] \   # 微批次大小（必选，如 2）
-  -dp [DP] \            # 数据并行度（必选，如 4）
-  -o [INST_STREAM] \    # 指令序列输出路径（必选，如 tests/batch_1_micro_1_dp_2.json）
-  -a [ARCH_FILE] \      # 硬件架构配置文件（必选，如 arch/cim.json）
-  -c [CONFIG_FILE]      # 模型配置文件（必选，如 config/cim.json）
-
-# 示例：生成 TP 指令序列
-python tools/tp_inst_generation.py \
-  -b 1 \
-  -mb 1 \
-  -dp 2 \
-  -o tests/batch_1_micro_1_dp_2.json \
-  -a arch/cim.json \
-  -c config/cim.json
+# PP+TP 模式
+python tools/pptp_inst_generation.py \
+  -b 24 -mb 1 -dp 2 \
+  -o tests/batch_24_micro_1_dp_2.json \
+  -a arch/cim.json -c config/cim.json
 ```
 
-PP 模式：
+步骤2：运行仿真
 ```bash
-python tools/pp_inst_generation.py \
-  -b 1 \
-  -mb 1 \
-  -dp 2 \
-  -o tests/batch_1_micro_1_dp_2.json \
-  -a arch/cim.json \
-  -c config/cim.json
-```
-
-配置约定：
-- `tools/tp_inst_generation.py` 只读取 `tp_config`
-- `tools/pp_inst_generation.py` 只读取 `pipeline_config`
-- `model.n_blocks` 表示 Transformer block 数量
-
-- 步骤2：运行仿真(run.py)
-使用生成的指令序列，配置能耗、日志等参数，执行仿真。
-```bash
-# 命令格式
 python run.py \
-  -b [BATCH] \          # 总批次大小（必选，需与步骤 1 一致）
-  -mb [MICRO_BATCH] \   # 微批次大小（必选，需与步骤 1 一致）
-  -dp [DP] \            # 数据并行度（必选，需与步骤 1 一致）
-  -t [Tech] \           # 工艺节点，仅可选 7/22
-  --arch_name [ARCH] \  # 架构名（可选，默认 CIM，如 CIM/DaVinci）
-  --arch [ARCH_FILE] \  # 硬件架构配置文件（必选，如 arch/cim.json）
-  --workload [INST_STREAM] \  # 指令序列路径（必选，步骤 1 生成的文件，如 tests/batch_1_micro_1_dp_2.json）
-  --power [POWER_FILE] \      # 功率配置文件（必选，如 power/power_config/cim_power_7nm.json）
-  --log [LOG_FILE] \    # 日志输出路径（可选，默认 log/run.log）
-  --level [LOG_LEVEL] \ # 日志级别（可选，info/debug，默认 info）
-  --output [OUTPUT_CSV] # 结果输出路径（可选，默认 output/results/results_arch_CIM_batch_1_micro_1_dp_2_tech_7nm.csv）
-
-# 示例：运行 CIM 架构仿真，输出日志与结果
-python run.py \
-  -b 1 \
-  -mb 1 \
-  -dp 2 \
-  -t 7  \
+  -b 1 -mb 1 -dp 2 -t 7 \
   --arch_name CIM \
   --arch arch/cim.json \
+  --fail failslow/normal.json \
   --workload tests/batch_1_micro_1_dp_2.json \
   --power power/power_config/cim_power_7nm.json \
-  --log log/cim_sim.log \
+  --log log/sim.log \
   --level debug \
-  --output output/results/results_arch_CIM_batch_1_micro_1_dp_2_tech_7nm.csv \
+  --output output/results/result.csv
 ```
 
-### 2.3 `RING` 指令（简化 Ring All-Reduce）
-`RING` 用于近似模拟 ring all-reduce 的通信开销，不需要指定 `src/dst`，不会显式生成 `SEND/RECV` 指令。
+run.py 额外参数：
+- `--quiet`：跳过 log、power_trace、data trace 输出，只生成 CSV
+- `--power_trace PATH`：指定 power trace 输出路径（quiet 模式下自动跳过）
+- `--simstart` / `--simend`：指定仿真起止周期
+- `--flow`：启用流追踪（输出到 `gen/`）
+- `--tp_scale N`：能耗乘以 N（单 TP 核模式）
+- `--complex_enable` / `--complex_opt_enable` / `--co_opt_enable`：复杂度缩放标志
 
-- `inst_type`: `16`（`TaskType.RING`）
-- `tensor_slice`: 用于按数据量与 `NoC` 带宽自动估算延时和功耗（可保留与当前层输出一致的切片）
-- `feat_num`: 若 `RING` 依赖上一条产出指令，通常设为 `1`
-- `position/path_dst`: 对 `RING` 无效，可省略
+### 2.5 合并结果
 
-使用约定：
-- `RING` 是本地延时建模，不做 collective 同步，也不建模 NoC 拥堵。
-- `RING` 延时固定按 `ceil(size_in_bytes, noc.link.width)` 自动估算，不再支持手动指定固定 cycle。
-- 当 `tensor_slice` 对应的数据量为 `0` 时，`RING` 视为 no-op：`cycle = 0`，功耗也为 `0`。
-- 当数据量大于 `0` 时，通信功耗直接计入 `noc_hop`，不会单独统计一个 `ring` 功耗项。
-- 若要表示“上一层输出后再做一次 all-reduce 延时”，请让上一条指令通过 `trigger_index` 触发该 `RING`，并将 `RING.feat_num` 设为 `1`。
-
-示例：
-```json
-{
-  "inst_type": 16,
-  "index": 10001,
-  "trigger_index": [],
-  "trigger_core_id": [],
-  "layer_id": 0,
-  "data_type": 1,
-  "tensor_slice": [
-    { "start": 0, "end": 4096 }
-  ],
-  "feat_num": 1,
-  "para_num": 0
-}
+```bash
+python process_results.py --input_dir output/results --output output/all_results.csv
 ```
 
 ## 3.常见问题(FAQ)
 
 1. 如何自定义硬件架构？
-复制 arch/cim.json并修改参数，运行时通过 --arch指定新文件：
+复制 `arch/cim.json` 并修改参数，运行时通过 `--arch` 指定新文件：
+```bash
 python run.py --arch arch/my_custom.json
+```
+
+2. 磁盘空间不足？
+batch 较大时 instruction JSON 文件很大（batch=24 约 1.2GB/文件）。`run_all.py` 会自动合并相同架构的指令文件以节省空间。也可用 `QUIET=1` 跳过 log/trace 输出（单次 batch=24 可节省数百 MB）。
+
+3. 如何只看 CSV 结果？
+使用 `run_all.py`（默认 quiet 模式）或 Makefile 加 `QUIET=1`，只生成 CSV，跳过 debug log、power trace、data trace 等中间文件。

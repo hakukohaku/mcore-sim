@@ -202,9 +202,10 @@ class MemTask(Task):
     data_type: DataType = DataType.FEAT # 代理任务需要继承此属性
 
     def size_in_bytes(self) -> int:
+        from src.common import data_scale
         base_size = self.size()
         precision = self.feat_precision if self.data_type == DataType.FEAT else self.para_precision
-        return base_size * precision
+        return base_size * precision * data_scale
 
     def run(self, core, ins, dram):
         # 代理任务的专属执行路径
@@ -217,12 +218,13 @@ class MemTask(Task):
             target_dram_id = core.dram_list[0]
             logger.debug(f"Time {core.env.now:.2f}: Core {core.id} executing PROXY access to its local DRAM {target_dram_id}")
 
+            from src.common import data_scale as _ds
             ins.record.exe_start_time.append(core.env.now)
             if self.opcode.lower() == "read":
-                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
+                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size() * _ds))
                 yield from dram[target_dram_id].read(self.size_in_bytes(), ins)
             elif self.opcode.lower() == "write":
-                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
+                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size() * _ds))
                 yield from dram[target_dram_id].write(self.size_in_bytes(), ins)
             ins.record.exe_end_time.append(core.env.now)
             return # 代理任务执行完毕，结束
@@ -261,16 +263,17 @@ class MemTask(Task):
 
         if is_local:
             # --- 本地执行 ---
+            from src.common import data_scale as _ds
             logger.debug(f"Time {core.env.now:.2f}: Core {core.id} performing LOCAL access to DRAM {target_dram_id}")
-            
+
             ins.record.exe_start_time.append(core.env.now)
-            
+
             if self.opcode.lower() == "read":
-                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size()))
+                yield core.env.process(core.spm_manager.allocate(self.opcode + str(self.index), self.output_size() * _ds))
                 yield from dram[target_dram_id].read(self.size_in_bytes(), ins)
-            
+
             elif self.opcode.lower() == "write":
-                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size()))
+                yield core.env.process(core.spm_manager.free(self.opcode + str(self.index), self.input_size() * _ds))
                 yield from dram[target_dram_id].write(self.size_in_bytes(), ins)
 
             ins.record.exe_end_time.append(core.env.now)
@@ -345,48 +348,54 @@ class ComputeTask(Task):
         raise NotImplementedError(f"{self.opcode} 类未实现 calc_flops 方法")
     
     def run(self, core, ins):
-        from src.common import tpu_flop_power, vect_flop_power, record_power_trace, sram_read_power, cim_local_read_power
+        from src.common import (tpu_flop_power, vect_flop_power, record_power_trace,
+                                sram_read_power, cim_local_read_power,
+                                data_scale, flops_scale, compute_delay_factor,
+                                compute_power_factor, cim_power_factor)
         self.calc_flops()
+        self.flops = int(self.flops * flops_scale)
         ins.record.ready_run_time.append(core.env.now)
         ins.record.pe_id = core.id
 
         # SRAM read power for features (NonLinear is in-place, no extra SRAM read)
         if self.opcode != "NonLinear":
-            feat_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.feat) * self.feat_precision
+            feat_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.feat) * self.feat_precision * data_scale
             if feat_size > 0:
                 power = feat_size * sram_read_power
                 record_power_trace(core.env.now, core.id, self.index, power, "sram_read_feat")
 
         # SRAM read power for parameters (CIM local read)
-        para_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.para) * self.para_precision
+        para_size = sum(Slice(tensor_slice=d.tensor_slice).size() for d in self.para) * self.para_precision * data_scale
         if para_size > 0:
-            power = para_size * cim_local_read_power
+            power = para_size * cim_local_read_power * cim_power_factor
             record_power_trace(core.env.now, core.id, self.index, power, "cim_local_read_para")
 
         # log_prefix = f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}]"
         # logger.debug(f"{log_prefix} - ComputeTask.run START")
 
         #为output准备空间
-        yield core.env.process(core.spm_manager.allocate(self.opcode+str(self.index), self.output_size()))
-        
+        yield core.env.process(core.spm_manager.allocate(self.opcode+str(self.index), self.output_size() * data_scale))
+
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - ALLOC complete, starting TPU execute.")
 
         #执行计算
         if self.opcode == "NonLinear": # 非线性计算交给vect unit
-            yield core.vect_unit.execute(self.opcode+str(self.index), ceil(self.flops, core.vect_flops), ins, self.index)
-            
-            power = self.flops * vect_flop_power
+            delay = int(ceil(self.flops, core.vect_flops) * compute_delay_factor)
+            yield core.vect_unit.execute(self.opcode+str(self.index), delay, ins, self.index)
+
+            power = self.flops * vect_flop_power * compute_power_factor
             record_power_trace(core.env.now, core.id, self.index, power, "vect_compute", self.feat_precision, self.para_precision, self.flops)
         else:
-            yield core.tpu.execute(self.opcode+str(self.index), ceil(self.flops, core.tpu_flops), ins, self.index)
+            delay = int(ceil(self.flops, core.tpu_flops) * compute_delay_factor)
+            yield core.tpu.execute(self.opcode+str(self.index), delay, ins, self.index)
 
-            power = self.flops * tpu_flop_power
+            power = self.flops * tpu_flop_power * compute_power_factor
             record_power_trace(core.env.now, core.id, self.index, power, "tpu_compute", self.feat_precision, self.para_precision, self.flops)
 
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - TPU EXEC complete.")
 
         #释放input空间
-        core.env.process(core.spm_manager.free(self.opcode+str(self.index), self.input_size()))
+        core.env.process(core.spm_manager.free(self.opcode+str(self.index), self.input_size() * data_scale))
         # logger.debug(f"Time {core.env.now:.2f}: Core{core.id} [Task {self.index}] - ComputeTask.run END (free initiated).")
     
 class Record(BaseModel):
@@ -679,7 +688,7 @@ class Ring(Task):
     num_operands: int = 0
 
     def run(self, core, ins):
-        from src.common import record_power_trace, noc_hop_power
+        from src.common import record_power_trace, noc_hop_power, data_scale
 
         ins.record.pe_id = core.id
         ins.record.ready_run_time.append(core.env.now)
@@ -687,7 +696,7 @@ class Ring(Task):
 
         elem_count = Slice(tensor_slice=self.tensor_slice).size() if self.tensor_slice else 0
         precision = self.feat_precision if ins.data_type == DataType.FEAT else self.para_precision
-        size_in_bytes = elem_count * precision
+        size_in_bytes = elem_count * precision * data_scale
 
         # Empty collective payload is treated as a no-op.
         if size_in_bytes <= 0:
@@ -716,10 +725,10 @@ class Send(CommunicationTask):
     path_dst: List[int] = []  # 路径广播目标列表，默认为空列表
     
     def run(self, core, ins):
-        from src.common import record_power_trace, sram_read_power
+        from src.common import record_power_trace, sram_read_power, data_scale
         logger.debug(f"Time {core.env.now:.2f}: Core {core.id} [Send.run] START for index {self.index}")
         # SRAM read power for sending data
-        size = self.size() * (self.feat_precision if ins.data_type == DataType.FEAT else self.para_precision)
+        size = self.size() * (self.feat_precision if ins.data_type == DataType.FEAT else self.para_precision) * data_scale
         if size > 0:
             power = size * sram_read_power
             record_power_trace(core.env.now, core.id, self.index, power, "sram_read_send")

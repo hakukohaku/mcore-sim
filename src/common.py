@@ -1,6 +1,7 @@
 import simpy
 #monitor resource such as lsu and tpu
 import json
+import os
 import time
 import logging
 import argparse
@@ -15,6 +16,9 @@ class CFG:
         self.simstart = args.simstart
         self.simend = args.simend
         self.flow = args.flow
+        self.complex_enable = getattr(args, 'complex_enable', False)
+        self.complex_opt_enable = getattr(args, 'complex_opt_enable', False)
+        self.co_opt_enable = getattr(args, 'co_opt_enable', False)
 
 # parser = argparse.ArgumentParser()
 
@@ -185,6 +189,29 @@ sram_write_power = 0
 sram_read_power = 0
 cim_local_read_power = 0
 
+# Scaling factors (set by init_scaling_factors based on CLI flags)
+data_scale = 1
+flops_scale = 1
+compute_delay_factor = 1.0
+compute_power_factor = 1.0
+cim_power_factor = 1.0
+
+def init_scaling_factors():
+    global data_scale, flops_scale, compute_delay_factor, compute_power_factor, cim_power_factor
+    if cfg.complex_enable:
+        flops_scale = 4
+        data_scale = 2
+    if cfg.complex_opt_enable:
+        compute_delay_factor = 0.75
+    if cfg.complex_opt_enable and cfg.co_opt_enable:
+        compute_power_factor = 0.6
+    elif cfg.complex_opt_enable:
+        compute_power_factor = 0.83
+    elif cfg.co_opt_enable:
+        compute_power_factor = 0.77
+    if cfg.co_opt_enable:
+        cim_power_factor = 0.73
+
 def init_power_trace(power_config_path, power_trace_path):
     global power_trace_file, tpu_flop_power, vect_flop_power, dram_read_power, dram_write_power, noc_hop_power, sram_write_power, sram_read_power, cim_local_read_power
     with open(power_config_path, 'r') as f:
@@ -197,8 +224,12 @@ def init_power_trace(power_config_path, power_trace_path):
         sram_write_power = power_config['sram_write_power']
         sram_read_power = power_config['sram_read_power']
         cim_local_read_power = power_config['cim_local_read_power']
-    
-    power_trace_file = open(power_trace_path, 'w')
+
+    if power_trace_path:
+        os.makedirs(os.path.dirname(power_trace_path) or '.', exist_ok=True)
+        power_trace_file = open(power_trace_path, 'w')
+    else:
+        power_trace_file = None
 
 def record_power_trace(time, device_id, task_id, power, event_type, feat_precision="", para_precision="", flops=""):
     global total_power

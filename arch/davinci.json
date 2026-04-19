@@ -3,7 +3,7 @@
 	"core" : {
 		"type" : "Simple",
 		"x" : 2,
-		"y" : 1,
+		"y" : 2,
 		"width" : 8,
 		"blk_size" : 100000000,
 		"spm" : {
@@ -12,16 +12,16 @@
 		},
 		"compute" : {
 			"flops" : 8192,
-			"vect_flops" : 256
+			"vect_flops" : 4096
 		},
 		"lsu" : {
-			"width" : 4
+			"width" : 128
 		}
 	},
 	"noc" : {
 		"type" : "Mesh",
 		"x" : 2,
-		"y" : 1,
+		"y" : 2,
 		"router" : {
 			"type" : "XY",
 			"vc" : 2

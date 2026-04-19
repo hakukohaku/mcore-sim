@@ -81,19 +81,18 @@ def main():
     workload = workload_analyzer(args.workload)
     print(f"Finished loading {workload.name} as simulation workload.")
 
-    print("Setting up logging.")
+    if not args.quiet:
+        print("Setting up logging.")
+        if args.level == "debug":
+            level = logging.DEBUG
+        elif args.level == "info":
+            level = logging.INFO
+        setup_logging(args.log, level)
+        print("Finished.")
 
-    if args.level == "debug":
-        level = logging.DEBUG
-    elif args.level == "info":
-        level = logging.INFO
-    
-    setup_logging(args.log, level)
-
-    print("Finished.")
-
+    power_trace = None if args.quiet else args.power_trace
     stage = None
-    arch = Arch(arch_config, [pe.insts for pe in workload.pes], fail_slow, workload.name, args.fail, args.power, stage)
+    arch = Arch(arch_config, [pe.insts for pe in workload.pes], fail_slow, workload.name, args.fail, args.power, stage, power_trace, quiet=args.quiet)
 
     start_time = time.time()
     result = arch.run()
@@ -109,6 +108,13 @@ def main():
         result = arch.run()
         end_time = time.time()
         simulation_time = end_time - start_time
+
+    # Scale energy for single-TP-core mode
+    tp_scale = args.tp_scale
+    if tp_scale > 1:
+        for key in common.power_summary:
+            common.power_summary[key] *= tp_scale
+        common.total_power *= tp_scale
 
     freq = arch_config.freq
     arch_name = args.arch_name
@@ -173,7 +179,14 @@ if __name__ == '__main__':
     parser.add_argument('-mb', '--micro_batch', type=int, help='micro batch size')
     parser.add_argument('-dp', '--dp', type=int, help='data parallelism')
     parser.add_argument('-t', '--tech', type=int, help='technology node')
+    parser.add_argument('--tp_scale', type=int, default=1, help='scale energy by TP degree (for single-TP-core mode)')
+    parser.add_argument('--complex_enable', action='store_true', help='Enable complex mode: FLOPs*4, data*2')
+    parser.add_argument('--complex_opt_enable', action='store_true', help='Complex optimization: compute delay*0.75, compute power*0.83')
+    parser.add_argument('--co_opt_enable', action='store_true', help='Co-optimization: cim_local_read power*0.73, compute power*0.77')
+    parser.add_argument('--power_trace', type=str, default='power/power_trace/power_trace.txt', help='power trace output path')
+    parser.add_argument('--quiet', action='store_true', help='Skip log, power_trace, and data trace output; only produce CSV')
 
     args = parser.parse_args()
     common.cfg=common.CFG(args)
+    common.init_scaling_factors()
     main()

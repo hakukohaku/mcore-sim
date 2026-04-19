@@ -2,7 +2,7 @@
 	"freq" :0.8,
 	"core" : {
 		"type" : "Simple",
-		"x" : 4,
+		"x" : 8,
 		"y" : 4,
 		"width" : 8,
 		"blk_size" : 100000000,
@@ -11,16 +11,16 @@
 			"delay" : 0
 		},
 		"compute" : {
-			"flops" : 1024,
-			"vect_flops" : 1024
+			"flops" : 512,
+			"vect_flops" : 512
 		},
 		"lsu" : {
-			"width" : 4
+			"width" : 128
 		}
 	},
 	"noc" : {
 		"type" : "Mesh",
-		"x" : 4,
+		"x" : 8,
 		"y" : 4,
 		"router" : {
 			"type" : "XY",
